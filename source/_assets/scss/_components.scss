@@ -1,0 +1,38 @@
+.btn-gray-600 {
+    background-color: $gray-600;
+    color: #fafcfc;
+}
+
+.btn-gray-700 {
+    background-color: $gray-700;
+    color: #fafcfc;
+}
+
+.btn-gray-800 {
+    background-color: $gray-800;
+    color: #fafcfc;
+}
+
+.btn-gray-900 {
+    background-color: $gray-900;
+    color: #fafcfc;
+}
+
+.border-top-gray-400 {
+    border-top-color: $gray-400;
+}
+
+.gradient-mint-to-white{
+    background: $gray-100;
+    background: linear-gradient(180deg, $gray-300 0%, $gray-100 100%);
+}
+
+
+.gradient-white-to-mint{
+    background: $gray-300;
+    background: linear-gradient(180deg, $gray-100 0%, $gray-300 100%);
+}
+
+.text-logo-secondary{
+    color: $logo-secondary;
+}
