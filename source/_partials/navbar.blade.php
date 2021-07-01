@@ -4,7 +4,7 @@
     <!-- Brand -->
     <a class="navbar-brand" href="/">
 
-      <img src="{{ mix('img/brand.svg', 'assets/build') }}" class="navbar-brand-img" alt="...">
+      <img src="{{ mix('img/logos/brand.svg', 'assets/build') }}" class="navbar-brand-img" alt="...">
     </a>
 
     <!-- Toggler -->
@@ -43,12 +43,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/careers.html" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="/careers" aria-haspopup="true" aria-expanded="false">
             Careers
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact-us.html" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="/contact-us" aria-haspopup="true" aria-expanded="false">
             Contact
           </a>
         </li>

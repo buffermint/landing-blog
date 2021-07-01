@@ -5,7 +5,7 @@
 
         <!-- Brand -->
 
-        <img src="{{ mix('img/brand.svg', 'assets/build') }}" class="footer-brand img-fluid mb-2" alt="...">
+        <img src="{{ mix('img/logos/brand.svg', 'assets/build') }}" class="footer-brand img-fluid mb-2" alt="...">
 
         <!-- Text -->
         <p class="text-gray-600 mb-2">
@@ -16,12 +16,12 @@
         <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
           <li class="list-inline-item list-social-item mr-3">
             <a href="https://www.facebook.com/buffermint/" class="text-decoration-none">
-              <img src="{{ mix('img/icons/social/facebook.svg', 'assets/build') }}" class="list-social-icon" alt="...">
+              <img src="{{ mix('img/social/facebook.svg', 'assets/build') }}" class="list-social-icon" alt="...">
             </a>
           </li>
           <li class="list-inline-item list-social-item mr-3">
             <a href="https://twitter.com/BufferMint" class="text-decoration-none">
-              <img src="{{ mix('img/icons/social/twitter.svg', 'assets/build') }}" class="list-social-icon" alt="...">
+              <img src="{{ mix('img/social/twitter.svg', 'assets/build') }}" class="list-social-icon" alt="...">
             </a>
           </li>
         </ul>
@@ -46,12 +46,12 @@
           </a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="/careers.html">
+          <a href="/careers">
             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Careers</h4>
           </a>
         </div>
         <div class="col-6 col-md-3">
-          <a href="/contact-us.html">
+          <a href="/contact-us">
             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Contact</h4>
           </a>
         </div>

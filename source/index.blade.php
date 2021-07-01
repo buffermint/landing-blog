@@ -51,7 +51,7 @@
 
                   <!-- Image -->
                   <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                    <img src="assets/img/photos/photo-15.jpg" class="img-fluid" alt="...">
+                    <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
                   </div>
 
                 </div>
@@ -194,7 +194,7 @@
               <!-- Logo -->
               <div class="img-fluid mb-5 mb-md-7 mx-auto svg-shim" style="max-width: 120px;">
                 <a href="https://www.zenmindmap.com/">
-                  <img src="assets/img/brands/zmm-logo.png" class="img-fluid" alt="Zen Mind Maps" style="max-height: 2.5rem;">
+                  <img src="{{ mix('img/logos/zmm-logo.png', 'assets/build') }}" class="img-fluid" alt="Zen Mind Maps" style="max-height: 2.5rem;">
                 </a>
               </div>
 
@@ -206,7 +206,7 @@
               <!-- Footer -->
               <footer class="blockquote-footer mb-0">
                 <div class="avatar mr-3">
-                  <img src="assets/img/photos/nick.png" class="avatar-img rounded-circle" alt="...">
+                  <img src="{{ mix('img/photos/nick.png', 'assets/build') }}" class="avatar-img rounded-circle" alt="...">
                 </div> <span class="h6 text-uppercase">Nick Hoang</span>
               </footer>
 
@@ -387,7 +387,7 @@
               <!-- Logo -->
               <div class="img-fluid mb-5 mb-md-7 mx-auto svg-shim" style="max-width: 120px;">
                 <a href="https://www.shasilluminated.org/">
-                  <img src="assets/img/brands/shas-logo.png" class="img-fluid" alt="Shas Illuminated" style="max-height: 5rem;">
+                  <img src="{{ mix('/img/logos/shas-logo.png', 'assets/build') }}" class="img-fluid" alt="Shas Illuminated" style="max-height: 5rem;">
                 </a>
               </div>
 
@@ -399,7 +399,7 @@
               <!-- Footer -->
               <footer class="blockquote-footer mb-0">
                 <div class="avatar mr-3">
-                  <img src="assets/img/photos/yacov.jpeg" class="avatar-img rounded-circle" alt="...">
+                  <img src="{{ mix('img/photos/yacov.jpeg', 'assets/build') }}" class="avatar-img rounded-circle" alt="...">
                 </div> <span class="h6 text-uppercase">Yacov Metz</span>
               </footer>
 
