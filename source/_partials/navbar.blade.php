@@ -22,16 +22,6 @@
 
       <!-- Navigation -->
       <ul class="navbar-nav ml-auto">
-        <!-- <li>
-          <a class="nav-link" href="/careers.html" aria-haspopup="true" aria-expanded="false">
-            Work
-          </a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="/careers.html" aria-haspopup="true" aria-expanded="false">
-            Blog
-          </a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/#what-we-do" aria-haspopup="true" aria-expanded="false">
             What we do?
@@ -47,6 +37,11 @@
             Careers
           </a>
         </li>
+        {{-- <li class="nav-item">
+          <a class="nav-link" href="/blog" aria-haspopup="true" aria-expanded="false">
+            Blog
+          </a>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link" href="/contact-us" aria-haspopup="true" aria-expanded="false">
             Contact

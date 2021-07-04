@@ -4,6 +4,7 @@ require("laravel-mix-jigsaw");
 mix.disableSuccessNotifications();
 mix
   .setPublicPath("source/assets/build")
+  .copy("source/_assets/img/favicons/*", "source/assets/build/img/favicons")
   .copy("source/_assets/img/photos/*", "source/assets/build/img/photos")
   .copy("source/_assets/img/logos/*", "source/assets/build/img/logos")
   .copy("source/_assets/img/masks/*", "source/assets/build/img/masks")
@@ -13,7 +14,7 @@ mix
   .copy("source/_assets/fonts/HK Grotesk Pro/*", "source/assets/build/css/fonts/HKGroteskPro")
   .copy("source/_assets/fonts/Feather/fonts/", "source/assets/build/fonts/feather/fonts")
   .copy("source/_assets/fonts/Feather/*", "source/assets/build/fonts/feather")
-  .combine('source/_assets/js/*', 'source/assets/build/js/theme.js')
+  .combine('source/_assets/js/theme/*', 'source/assets/build/js/theme.js')
   .combine(
     [
       "node_modules/jquery/dist/jquery.min.js",
@@ -53,7 +54,10 @@ mix
     ],
     "source/assets/build/css/vendor.css"
   )
+  .js('source/_assets/js/main.js', 'js/main.js').vue()
   .sass("source/_assets/scss/theme.scss", "css/theme.css")
-  .jigsaw()
+  .jigsaw({
+        watch: ['config.php', 'source/**/*.md', 'source/**/*.php', 'source/**/*.scss'],
+    })
   .options({ processCssUrls: false })
   .version();
