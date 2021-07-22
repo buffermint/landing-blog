@@ -6,6 +6,8 @@ return [
     'title' => 'BufferMint',
     'description' => 'We are BufferMint. We Design, Build & Launch products for founders.',
 
+    'discovery_call_url' => 'https://calendly.com/buffermint/30min',
+
     // collections
     'collections' => [
         'posts' => [
@@ -17,14 +19,15 @@ return [
             }
         ],
 
-//        'about' => [
-//            'author' => 'Rishabh Pandey', // Default author, if not provided in a post
-//            'sort' => '-date',
-//            'path' => '{filename}',
-//            'filter' => function ($post) {
-//                return ($post->published ?? true);
-//            }
-//        ],
+       'about' => [
+           'author' => 'Rishabh Pandey', // Default author, if not provided in a post
+           'show_meta' => false,
+           'sort' => '-date',
+           'path' => '/{filename}',
+           'filter' => function ($post) {
+               return ($post->published ?? true);
+           }
+       ],
 //
 //        'categories' => [
 //            'path' => '/articles/categories/{filename}',

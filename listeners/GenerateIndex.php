@@ -18,6 +18,8 @@ class GenerateIndex
                 'title' => $page->title,
                 'description' => $page->description,
                 'categories' => $page->categories,
+                'image' => $page->featured_thumbnail ?? $page->featured_image,
+                'author' => $page->author,
                 'link' => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
                 'snippet' => $page->getExcerpt(),
                 'date' => gmdate("d M Y", $page->getModifiedTime())

@@ -1,0 +1,46 @@
+@import 'user-variables';
+
+p{
+    margin-bottom: 1.5rem;
+}
+
+img{
+    max-width: 100%;
+    max-height: 450px;
+    margin: 40px 0;
+}
+
+
+h2,h3{
+    margin: 45px 0px 20px 0;
+    color: $gray-800;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+strong{
+    color: $gray-800;
+}
+
+hr{
+    border-color: $gray-400;
+}
+
+.badge.bg-success-soft {
+    background-color: $logo-secondary;
+    color: $white;
+    font-size: 1rem;
+}
+
+#blog-scroll-position{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8px;
+    background: $logo-secondary;
+    z-index: 100000;
+}

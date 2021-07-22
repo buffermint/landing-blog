@@ -10,6 +10,7 @@ mix
   .copy("source/_assets/img/masks/*", "source/assets/build/img/masks")
   .copy("source/_assets/img/social/*", "source/assets/build/img/social")
   .copy("source/_assets/img/shapes/**/*", "source/assets/build/img/shapes")
+  .copy("source/_assets/img/blog/**/*", "source/assets/build/img/blog")
 
   .copy("source/_assets/fonts/HK Grotesk Pro/*", "source/assets/build/css/fonts/HKGroteskPro")
   .copy("source/_assets/fonts/Feather/fonts/", "source/assets/build/fonts/feather/fonts")
@@ -55,7 +56,9 @@ mix
     "source/assets/build/css/vendor.css"
   )
   .js('source/_assets/js/main.js', 'js/main.js').vue()
+  .js('source/_assets/js/posts.js', 'js/posts.js').vue()
   .sass("source/_assets/scss/theme.scss", "css/theme.css")
+  .sass("source/_assets/scss/posts.scss", "css/posts.css")
   .jigsaw({
         watch: ['config.php', 'source/**/*.md', 'source/**/*.php', 'source/**/*.scss'],
     })

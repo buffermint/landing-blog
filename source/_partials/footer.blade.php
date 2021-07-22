@@ -43,9 +43,15 @@
                             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">What we do?</h4>
                         </a>
                     </div>
+
                     <div class="col-6 col-md">
                         <a href="/#pricing">
                             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Pricing</h4>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md">
+                        <a href="/articles">
+                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Blog</h4>
                         </a>
                     </div>
                     <div class="col-6 col-md">
@@ -53,11 +59,7 @@
                             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Careers</h4>
                         </a>
                     </div>
-                    {{-- <div class="col-6 col-md">
-                        <a href="/blog">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Blog</h4>
-                        </a>
-                    </div> --}}
+
                     <div class="col-6 col-md">
                         <a href="/contact-us">
                             <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Contact</h4>

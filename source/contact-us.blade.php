@@ -28,7 +28,7 @@
               We are a small team of remote developers and founders, each of us
               seasoned in their own field. Our preferred means to start a
               conversation is by
-              <a href="https://calendly.com/buffermint/30min" target="_blank"
+              <a href="{{ $page->discovery_call_url }}" target="_blank"
                 ><strong>booking a discovery call</strong></a
               >. <br /><br />
               You can always reach us using the conventional means.

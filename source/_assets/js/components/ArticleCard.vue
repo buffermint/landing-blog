@@ -3,17 +3,17 @@
             <!-- Card -->
             <div class="card mb-6 shadow-light-lg lift lift-lg">
               <!-- Image -->
-              <a class="card-img-top" href="#!">
+              <a class="card-img-top" :href="article.link">
                 <!-- Image -->
                 <img
-                  src="assets/img/photos/photo-15.jpg"
-                  alt="..."
+                  :src="article.image"
+                  :alt="article.title"
                   class="card-img-top"
                 />
               </a>
 
               <!-- Body -->
-              <a class="card-body" href="#!">
+              <a class="card-body" :href="article.link">
                 <!-- Heading -->
                 <h3>{{ article.title }}</h3>
 
@@ -27,15 +27,6 @@
               <a class="card-meta mt-auto" href="#!">
                 <!-- Divider -->
                 <hr class="card-meta-divider" />
-
-                <!-- Avatar -->
-                <div class="avatar avatar-sm mr-2">
-                  <img
-                    src="assets/img/avatars/avatar-1.jpg"
-                    alt="..."
-                    class="avatar-img rounded-circle"
-                  />
-                </div>
 
                 <!-- Author -->
                 <h6 class="text-uppercase text-muted mr-2 mb-0">{{ article.author }}</h6>

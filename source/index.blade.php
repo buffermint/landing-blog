@@ -323,7 +323,7 @@
                   Learn more
                 </a> -->
                 <hr>
-                <a href="https://calendly.com/buffermint/30min" target="_blank" class="btn btn-block btn-lg btn-primary custom-card-btn custom-card-btn-right">
+                <a href="{{ $page->discovery_call_url }}" target="_blank" class="btn btn-block btn-lg btn-primary custom-card-btn custom-card-btn-right">
                   <span class="d-none d-lg-block">Book a discovery call</span>
                   <span class="d-lg-none">Book a call</span>
                 </a>
@@ -355,7 +355,7 @@
                       Even though we don't recommend building a full feature-rich product without going to market for everyone, you may have market research or insight that shows otherwise.
                       <br><br>
 
-                      <a href="https://calendly.com/buffermint/30min" target="_blank">
+                      <a href="{{ $page->discovery_call_url }}" target="_blank">
                         <strong class="text-muted">Let's talk about it.</strong>
                         </a>
                     </p>
@@ -426,7 +426,7 @@
             </p>
 
             <!-- Button -->
-            <a class="btn btn-primary rounded-pill" href="https://calendly.com/buffermint/30min" target="_blank">
+            <a class="btn btn-primary rounded-pill" href="{{ $page->discovery_call_url }}" target="_blank">
               Book a discovery call <i class="fe fe-arrow-right ml-2"></i>
             </a>
 

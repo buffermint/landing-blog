@@ -27,9 +27,15 @@
             What we do?
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/#pricing" aria-haspopup="true" aria-expanded="false">
             Pricing
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/articles" aria-haspopup="true" aria-expanded="false">
+            Blog
           </a>
         </li>
         <li class="nav-item">
@@ -37,11 +43,6 @@
             Careers
           </a>
         </li>
-        {{-- <li class="nav-item">
-          <a class="nav-link" href="/blog" aria-haspopup="true" aria-expanded="false">
-            Blog
-          </a>
-        </li> --}}
         <li class="nav-item">
           <a class="nav-link" href="/contact-us" aria-haspopup="true" aria-expanded="false">
             Contact
@@ -50,7 +51,7 @@
       </ul>
 
       <!-- Button -->
-      <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="https://calendly.com/buffermint/30min" target="_blank">
+      <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="{{ $page->discovery_call_url }}" target="_blank">
         Book a discovery call
       </a>
 
