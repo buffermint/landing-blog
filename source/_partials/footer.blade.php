@@ -5,8 +5,8 @@
 
                 <!-- Brand -->
 
-                <img src="{{ mix('img/logos/brand.svg', 'assets/build') }}" class="footer-brand img-fluid mb-2"
-                     alt="...">
+                <img src="{{ mix('img/logos/brand.svg', 'assets/build') }}" class="footer-brand img-fluid mb-2 mt-0"
+                     alt="Logo">
 
                 <!-- Text -->
                 <p class="text-gray-600 mb-2">
@@ -30,41 +30,19 @@
                 </ul>
 
             </div>
-            <div class="col site-links">
+            <div class="col site-links d-flex justify-content-end">
                 <div class="row">
-                    <!-- <div class="offset-md-4 col-6 col-md-2">
-                      <h4 class="text-gray-800 ml-md-auto my-1 my-md-auto text-md-right">Work</h4>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Blog</h4>
-                    </div> -->
-                    <div class="col-6 col-md">
-                        <a href="/#what-we-do">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">What we do?</h4>
-                        </a>
-                    </div>
 
+                    @foreach ($page->nav_menu as $name => $url)
                     <div class="col-6 col-md">
-                        <a href="/#pricing">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Pricing</h4>
+                        <a href="{{ $url }}">
+                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">
+                                {{ $name }}
+                            </h4>
                         </a>
                     </div>
-                    <div class="col-6 col-md">
-                        <a href="/articles">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Blog</h4>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md">
-                        <a href="/careers">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Careers</h4>
-                        </a>
-                    </div>
+                    @endforeach
 
-                    <div class="col-6 col-md">
-                        <a href="/contact-us">
-                            <h4 class="text-gray-600 ml-md-auto my-1 my-md-auto text-md-right">Contact</h4>
-                        </a>
-                    </div>
                     <div class="col-12 text-md-right mt-5">
                       <span class="text-gray-600 ml-md-auto my-1 my-md-auto">
                         © Copyright <script>document.write(new Date().getFullYear())</script> BufferMint

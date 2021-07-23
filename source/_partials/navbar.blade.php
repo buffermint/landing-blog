@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light py-6">
   <div class="container">
 
     <!-- Brand -->
@@ -22,32 +22,15 @@
 
       <!-- Navigation -->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/#what-we-do" aria-haspopup="true" aria-expanded="false">
-            What we do?
-          </a>
-        </li>
 
+        @foreach ($page->nav_menu as $name => $url)
         <li class="nav-item">
-          <a class="nav-link" href="/#pricing" aria-haspopup="true" aria-expanded="false">
-            Pricing
+          <a class="nav-link {{ str_ends_with($page->getUrl(), $url) ? 'active' : '' }}" href="{{ $url }}" aria-haspopup="true" aria-expanded="false">
+            {{ $name }}
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/articles" aria-haspopup="true" aria-expanded="false">
-            Blog
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/careers" aria-haspopup="true" aria-expanded="false">
-            Careers
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact-us" aria-haspopup="true" aria-expanded="false">
-            Contact
-          </a>
-        </li>
+        @endforeach
+
       </ul>
 
       <!-- Button -->

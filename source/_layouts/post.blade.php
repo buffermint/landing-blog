@@ -109,11 +109,12 @@
     <section class="pt-6 pt-md-8">
         <div class="container" id="post-container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+                <div class="col-12 col-md-10 col-lg-9 col-xl-8" id="post-content">
 
                     @yield('postContent')
 
                 </div>
+                @if ($page->show_meta ?? true)
                 <div class="col-12 text-center py-4">
 
                     <hr>
@@ -141,6 +142,7 @@
                     </ul>
 
                 </div>
+                @endif
             </div> <!-- / .row -->
         </div> <!-- / .container -->
     </section>
