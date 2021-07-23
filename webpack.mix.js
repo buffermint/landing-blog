@@ -56,7 +56,7 @@ mix
     "source/assets/build/css/vendor.css"
   )
   .js('source/_assets/js/main.js', 'js/main.js').vue()
-  .js('source/_assets/js/posts.js', 'js/posts.js').vue()
+  .js('source/_assets/js/posts.js', 'js/posts.js')
   .sass("source/_assets/scss/theme.scss", "css/theme.css")
   .sass("source/_assets/scss/posts.scss", "css/posts.css")
   .jigsaw({
