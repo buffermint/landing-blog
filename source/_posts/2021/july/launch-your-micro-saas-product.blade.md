@@ -4,7 +4,6 @@ section: postContent
 title: "How to Start a Micro-SaaS Company and Launch a Kickass Product?"
 author: "Rishabh Pandey"
 seo_description: "This guide covers all the steps you'll need to take from coming up with your idea for a product, launching that product, and marketing it successfully."
-excerpt: ""
 featured_image: https://images.unsplash.com/photo-1566050980594-f65e237a2e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
 featured_thumbnail: https://images.unsplash.com/photo-1566050980594-f65e237a2e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
 date: 2021-07-20

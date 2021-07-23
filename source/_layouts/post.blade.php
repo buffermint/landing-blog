@@ -28,26 +28,28 @@
                     <!-- Meta -->
                     @if ($page->show_meta ?? true)
                     <div class="row align-items-center py-5 border-top border-bottom">
-                        @if ($page->author_image)
-                        <div class="col-auto">
-                            <div class="avatar avatar-lg">
-                                <img src="{{ $page->author_image }}" alt="..." class="avatar-img rounded-circle">
-                            </div>
-                        </div>
-                        @endif
 
-                        <div class="col ml-n5">
+                        <div class="col d-flex">
+
+                            @if ($page->author_image)
+                            <div class="mr-4">
+                                <div class="avatar avatar-lg">
+                                    <img src="{{ $page->author_image }}" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            @endif
 
                             <!-- Name -->
-                            <h6 class="text-uppercase mb-0">
-                                {{ $page->author }}
-                            </h6>
+                            <div>
+                                <h6 class="text-uppercase mb-0">
+                                    {{ $page->author }}
+                                </h6>
 
-                            <!-- Date -->
-                            <time class="font-size-sm text-muted" datetime="2019-05-20">
-                                Published on {{ date('F j, Y', $page->date) }}
-                            </time>
-
+                                <!-- Date -->
+                                <time class="font-size-sm text-muted" datetime="2019-05-20">
+                                    Published on {{ date('F j, Y', $page->date) }}
+                                </time>
+                            </div>
                         </div>
                         <div class="col-auto">
 
