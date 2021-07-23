@@ -35,13 +35,13 @@
         color: $white;
         font-size: 1rem;
     }
+}
 
-    #blog-scroll-position{
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 8px;
-        background: $logo-secondary;
-        z-index: 100000;
-    }
+#blog-scroll-position{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8px;
+    background: $logo-secondary;
+    z-index: 100000;
 }
