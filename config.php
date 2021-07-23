@@ -53,11 +53,7 @@ return [
         return Datetime::createFromFormat('U', $page->date);
     },
 
-    'getExcerpt' => function ($page, $length = 255) {
-        if ($page->excerpt) {
-            return $page->excerpt;
-        }
-
+    'getSnippet' => function ($page, $length = 255) {
         $content = preg_split('/<!-- more -->/m', $page->getContent(), 2);
         $cleaned = trim(
             strip_tags(

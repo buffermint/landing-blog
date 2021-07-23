@@ -21,7 +21,8 @@ class GenerateIndex
                 'image' => $page->featured_thumbnail ?? $page->featured_image,
                 'author' => $page->author,
                 'link' => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
-                'snippet' => $page->getExcerpt(),
+                'snippet' => $page->getSnippet(),
+                'excerpt' => $page->excerpt,
                 'date' => gmdate("d M Y", $page->getModifiedTime())
             ];
         })->values());

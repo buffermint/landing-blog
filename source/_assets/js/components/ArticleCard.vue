@@ -9,6 +9,7 @@
                   :src="article.image"
                   :alt="article.title"
                   class="card-img-top"
+                  style="height: 200px;"
                 />
               </a>
 
