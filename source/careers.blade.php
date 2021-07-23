@@ -2,7 +2,7 @@
 @section('content')
 
 
-<section class="mt-n10 scroll-section gradient-mint-to-white" id="sectionOne">
+<section class="mt-n12 scroll-section gradient-mint-to-white" id="sectionOne">
   <div class="container d-flex flex-column">
     <div class="row align-items-center justify-content-center min-vh-100 py-8 py-md-11">
       <div class="col-12 col-md-8 col-lg-7 mt-auto text-center">

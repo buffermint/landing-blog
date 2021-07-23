@@ -5,7 +5,7 @@
 
 
 <section
-      class="mt-n10 scroll-section gradient-mint-to-white"
+      class="mt-n12 scroll-section gradient-mint-to-white"
       id="sectionOne"
     >
       <div class="container d-flex flex-column">

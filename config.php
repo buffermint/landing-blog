@@ -8,6 +8,8 @@ return [
 
     'discovery_call_url' => 'https://calendly.com/buffermint/30min',
 
+    'featured_posts_count' => 9,
+
     'nav_menu' => [
         "About Us" => "/about-us",
         // "What we do?" => "/#what-we-do",

@@ -58,7 +58,9 @@
     <section>
       <div class="container">
         <div class="row" v-if="results && results.length > 0">
-            <ArticleCard :article="article" :key="index" v-for="(article, index) in results"></ArticleCard>
+           <div class="col-12 col-md-6 col-lg-4 d-flex" :key="index" v-for="(article, index) in results">
+              <ArticleCard :article="article"></ArticleCard>
+           </div>
         </div>
         <div v-else class="text-muted">No articles found</div>
       </div>

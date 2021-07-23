@@ -6,7 +6,7 @@
 
     <!-- WELCOME
     ================================================== -->
-    <section class="mt-n10 scroll-section gradient-mint-to-white" id="sectionOne">
+    <section class="mt-n12 scroll-section gradient-mint-to-white" id="sectionOne">
       <div class="container d-flex flex-column">
         @include("_partials/hero")
       </div> <!-- / .container -->
@@ -51,7 +51,7 @@
 
                   <!-- Image -->
                   <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                    <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
+                    <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
                   </div>
 
                 </div>

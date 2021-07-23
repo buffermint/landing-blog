@@ -1,7 +1,6 @@
 <template>
- <div class="col-12 col-md-6 col-lg-4 d-flex">
             <!-- Card -->
-            <div class="card mb-6 shadow-light-lg lift lift-lg">
+            <div class="card mb-6 shadow-light-lg lift lift-lg article-card">
               <!-- Image -->
               <a class="card-img-top" :href="article.link">
                 <!-- Image -->
@@ -9,7 +8,6 @@
                   :src="article.image"
                   :alt="article.title"
                   class="card-img-top"
-                  style="height: 200px;"
                 />
               </a>
 
@@ -38,7 +36,6 @@
                 </p>
               </a>
             </div>
-          </div>
 </template>
 
 <script>
@@ -47,6 +44,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.article-card img.card-img-top{
+  height: 200px;
 
+  @media (max-width: 768px){
+    height: unset;
+  }
+}
 </style>
