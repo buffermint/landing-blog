@@ -51,7 +51,7 @@
 
                   <!-- Image -->
                   <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                    <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
+                    <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
                   </div>
 
                 </div>
@@ -422,7 +422,7 @@
 
             <!-- Text -->
             <p class="mb-5 font-size-lg text-gray-800">
-              We love to work with first-time founders and recommend having at least than 3 years of experience before launching a product in any industry. Let us help you launch an exceptional product.
+              We love to work with first-time founders and with at least 3 years of experience in their industry. Let us help you launch an exceptional product.
             </p>
 
             <!-- Button -->
