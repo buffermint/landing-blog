@@ -8,7 +8,7 @@
 
     <div class="pt-4 mt-6 mb-0 ">
       <h3 class="text-gray-800 h3">
-        We turn your SaaS idea into an amazing MVP on a fixed budget and take your idea to market ASAP.
+        We turn your idea into an amazing MVP on a fixed budget and take your product to market ASAP.
       </h3>
     </div>
 
