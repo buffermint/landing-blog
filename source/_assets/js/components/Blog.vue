@@ -109,7 +109,7 @@ import ArticleCard from "./ArticleCard.vue";
 
 export default {
   components: { ArticleCard },
-  props: { galleryMode: { default: false } },
+  props: { galleryMode: { default: false }, postCount: { default: null } },
   data() {
     return {
       recentPostCount: 6,
@@ -162,7 +162,8 @@ export default {
           return Date.parse(a.date) - Date.parse(b.date);
         });
 
-        this.filteredPosts = this.posts.splice(0, this.recentPostCount);
+        let count = this.postCount || this.recentPostCount;
+        this.filteredPosts = this.posts.splice(0, count);
       });
   },
 };

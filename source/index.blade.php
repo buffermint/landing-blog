@@ -53,7 +53,7 @@
 
               <!-- Image -->
               <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
+                <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
               </div>
 
             </div>
@@ -428,9 +428,9 @@
 <section id="blogSection" class="scroll-section">
   <div class="container d-flex flex-column">
     <h2 class="display-3 mb-7 mb-md-9 text-center">
-      Featured Posts
+      Latest Insights
     </h2>
-    <blog :gallery-mode="true"></blog>
+    <blog :post-count="3" :gallery-mode="true"></blog>
     <newsletter></newsletter>
   </div>
 </section>
