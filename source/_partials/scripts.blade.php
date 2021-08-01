@@ -1,3 +1,4 @@
+@stack('scripts')
 <!-- Libs JS -->
 <script src="{{ mix('js/vendor.js', 'assets/build') }}"></script>
 

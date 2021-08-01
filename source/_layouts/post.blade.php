@@ -52,30 +52,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-
-                            <!-- Share -->
-                            <span class="h6 text-uppercase text-muted d-none d-md-inline mr-4">
-                                Share:
-                            </span>
-
-                            <!-- Icons -->
-                            <ul class="d-inline list-unstyled list-inline list-social">
-                                <li class="list-inline-item list-social-item mr-3">
-                                    <a href="https://www.facebook.com/sharer.php?u={{ $page->getUrl() }}"
-                                        class="text-decoration-none">
-                                        <img src="{{ mix('img/social/facebook.svg', 'assets/build') }}"
-                                            class="list-social-icon" alt="Share on Facebook">
-                                    </a>
-                                </li>
-                                <li class="list-inline-item list-social-item mr-3">
-                                    <a href="https://twitter.com/share?url={{  $page->getUrl() }}&text={{ $page->title }}&hashtags=buffermint"
-                                        class="text-decoration-none">
-                                        <img src="{{ mix('img/social/twitter.svg', 'assets/build') }}"
-                                            class="list-social-icon" alt="Share on Twitter">
-                                    </a>
-                                </li>
-                            </ul>
-
+                            <x-share-social url="{{ $page->getUrl() }}" title="{{ $page->title }}" />
                         </div>
                     </div>
                     @else
@@ -118,36 +95,26 @@
                 </div>
                 @if ($page->show_meta ?? true)
                 <div class="col-12 text-center py-4">
-
-                    <hr>
-                    <!-- Share -->
-                    <span class="h6 text-uppercase text-muted d-none d-md-inline mr-4">
-                        Share:
-                    </span>
-
-                    <!-- Icons -->
-                    <ul class="d-inline list-unstyled list-inline list-social">
-                        <li class="list-inline-item list-social-item mr-3">
-                            <a href="https://www.facebook.com/sharer.php?u={{ $page->getUrl() }}"
-                                class="text-decoration-none">
-                                <img src="{{ mix('img/social/facebook.svg', 'assets/build') }}"
-                                    class="list-social-icon" alt="Share on Facebook">
-                            </a>
-                        </li>
-                        <li class="list-inline-item list-social-item mr-3">
-                            <a href="https://twitter.com/share?url={{  $page->getUrl() }}&text={{ $page->title }}&hashtags=buffermint"
-                                class="text-decoration-none">
-                                <img src="{{ mix('img/social/twitter.svg', 'assets/build') }}"
-                                    class="list-social-icon" alt="Share on Twitter">
-                            </a>
-                        </li>
-                    </ul>
-
+                    <x-share-social url="{{ $page->getUrl() }}" title="{{ $page->title }}" />
                 </div>
                 @endif
             </div> <!-- / .row -->
+            <newsletter></newsletter>
+
         </div> <!-- / .container -->
+        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/shell.js"></script>
+        <script>
+            hbspt.forms.create({
+          region: "eu1",
+          portalId: "24917138",
+          formId: "27b9a8e8-95e1-42ec-ae6b-c6430abba972",
+        });
+        </script>
     </section>
 </div>
+
+@push('scripts')
 <script src="{{ mix('js/posts.js', 'assets/build') }}"></script>
+@endpush
+
 @endsection
