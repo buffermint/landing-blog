@@ -5,6 +5,13 @@
     <h1 class="display-1 fw-bold mb-0">
       Launch your <br> <span class="text-primary">SaaS in 45 days</span> 
     </h1>
+
+    <div class="pt-4 mt-6 mb-0 ">
+      <h3 class="text-gray-800 h3">
+        We turn your SaaS idea into an amazing MVP on a fixed budget and take your idea to market ASAP.
+      </h3>
+    </div>
+
   </div>
   <div class="col-12 mt-auto text-center">
 
