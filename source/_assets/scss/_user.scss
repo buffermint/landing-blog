@@ -52,26 +52,11 @@ footer .site-links {
 }
 
 .hero-section {
-    .first-typed-container .typed-cursor,
-    .second-typed-container .typed-cursor {
-        left: -5px;
-        position: relative;
-    }
-
-    h1,
-    h2,
     h3 {
-        left: 0;
-        right: 0;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        -ie-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        transition: all 1s ease;
-    }
-
-    .third-typed-container {
-        top: 150px;
+        font-size: 1.5rem;
+        @media (max-width: 992px) {
+            font-size: 1.25rem;
+        }
     }
 }
 
