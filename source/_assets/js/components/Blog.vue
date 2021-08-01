@@ -1,6 +1,6 @@
 <template>
   <div class="min-vh-90">
-    <section class="py-6">
+    <section class="py-6" v-if="!galleryMode">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -58,9 +58,13 @@
     <section>
       <div class="container">
         <div class="row" v-if="results && results.length > 0">
-           <div class="col-12 col-md-6 col-lg-4 d-flex" :key="index" v-for="(article, index) in results">
-              <ArticleCard :article="article"></ArticleCard>
-           </div>
+          <div
+            class="col-12 col-md-6 col-lg-4 d-flex"
+            :key="index"
+            v-for="(article, index) in results"
+          >
+            <ArticleCard :article="article"></ArticleCard>
+          </div>
         </div>
         <div v-else class="text-muted">No articles found</div>
       </div>
@@ -68,7 +72,12 @@
 
     <!-- MORE
       ================================================== -->
-    <section class="py-7 py-md-10" v-if="!query && posts && filteredPosts.length < posts.length">
+    <section
+      class="py-7 py-md-10"
+      v-if="
+        !galleryMode && !query && posts && filteredPosts.length < posts.length
+      "
+    >
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-9 col-lg-8 col-xl-7">
@@ -96,10 +105,11 @@
 
 <script>
 import Fuse from "fuse.js";
-import ArticleCard from './ArticleCard.vue';
+import ArticleCard from "./ArticleCard.vue";
 
 export default {
-  components:{ArticleCard},
+  components: { ArticleCard },
+  props: { galleryMode: { default: false } },
   data() {
     return {
       recentPostCount: 6,
@@ -112,7 +122,9 @@ export default {
   },
   computed: {
     results() {
-      return this.query ? this.fuse.search(this.query).map(s => s.item) : this.filteredPosts;
+      return this.query
+        ? this.fuse.search(this.query).map((s) => s.item)
+        : this.filteredPosts;
     },
   },
   methods: {
@@ -126,30 +138,32 @@ export default {
       this.query = "";
       this.searching = false;
     },
-    loadMore(){
+    loadMore() {
       let currentCount = this.filteredPosts.length;
       this.filteredPosts.splice(0);
-      this.recentPostCount.filter(currentCount + this.recentPostCount).forEach(p => this.filteredPosts.push(p));
-    }
+      this.recentPostCount
+        .filter(currentCount + this.recentPostCount)
+        .forEach((p) => this.filteredPosts.push(p));
+    },
   },
   created() {
     fetch("/index.json")
-    .then((response) => {
-      return response.json()
-    }).
-    then((data) => {
-       this.fuse = new Fuse(data, {
-        minMatchCharLength: 4,
-        keys: ["title", "snippet", "categories"],
-      });
-
-      let newData = JSON.parse(JSON.stringify(data));
-      this.posts = newData.sort(function(a, b){
-        return Date.parse(a.date) - Date.parse(b.date);
+      .then((response) => {
+        return response.json();
       })
+      .then((data) => {
+        this.fuse = new Fuse(data, {
+          minMatchCharLength: 4,
+          keys: ["title", "snippet", "categories"],
+        });
 
-      this.filteredPosts = this.posts.splice(0, this.recentPostCount);
-    });
+        let newData = JSON.parse(JSON.stringify(data));
+        this.posts = newData.sort(function (a, b) {
+          return Date.parse(a.date) - Date.parse(b.date);
+        });
+
+        this.filteredPosts = this.posts.splice(0, this.recentPostCount);
+      });
   },
 };
 </script>

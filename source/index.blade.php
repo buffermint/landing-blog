@@ -32,7 +32,7 @@
 
           <!-- Text -->
           <p class="lead text-gray-800 mb-6 mb-md-0">
-            We believe the best way to build a successful product in today's market is the lean startup approach.
+            We believe the best way to build a successful SaaS product in today's market is the lean startup approach.
           </p>
 
         </div>
@@ -53,7 +53,7 @@
 
               <!-- Image -->
               <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
+                <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
               </div>
 
             </div>
@@ -109,7 +109,7 @@
 
               <!-- Text -->
               <p class="text-gray-600 mb-6 mb-md-0">
-                In this step, we map out a version of your product with just enough features to be loved by early
+                In this step, we map out a version of your SaaS product with just enough features to be loved by early
                 customers who can then provide feedback for future iterations.
               </p>
 
@@ -178,7 +178,8 @@
 
               <!-- Text -->
               <p class="text-gray-600 mb-0">
-                After launching the MVP, we help you to gain traction for the product using multiple channels. We work
+                After launching the MVP, we help you to gain traction for your SaaS product using multiple channels. We
+                work
                 with you to collect user feedback and plan upcoming features and releases.
               </p>
 
@@ -279,7 +280,7 @@
 
                   <!-- Text -->
                   <p>
-                    Brainstorming, design and development
+                    Plan to launch in 45 days
                   </p>
 
                 </div>
@@ -292,7 +293,7 @@
 
                   <!-- Text -->
                   <p>
-                    Plan to launch in 45 days
+                    Brainstorming, design and development
                   </p>
 
                 </div>
@@ -362,7 +363,7 @@
 
                 <!-- Text -->
                 <p class="lead text-center text-muted mb-0 mb-md-10">
-                  Even though we don't recommend building a full feature-rich product without going to market for
+                  Even though we don't recommend building a full feature-rich SaaS product without going to market for
                   everyone, you may have market research or insight that shows otherwise.
                   <br><br>
 
@@ -424,6 +425,16 @@
   </div>
 </section>
 
+<section id="blogSection" class="scroll-section">
+  <div class="container d-flex flex-column">
+    <h2 class="display-3 mb-7 mb-md-9 text-center">
+      Featured Posts
+    </h2>
+    <blog :gallery-mode="true"></blog>
+    <newsletter></newsletter>
+  </div>
+</section>
+
 <!-- CTA
     ================================================== -->
 <section id="discoverySection" class="scroll-section gradient-white-to-mint">
@@ -437,7 +448,7 @@
         <!-- Text -->
         <p class="mb-5 font-size-lg text-gray-800">
           We love to work with first-time founders and with at least 3 years of experience in their industry. Let us
-          help you launch an exceptional product.
+          help you launch an exceptional SaaS product.
         </p>
 
         <!-- Button -->

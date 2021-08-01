@@ -4,11 +4,12 @@ section: postContent
 title: "About Us"
 excerpt: "We turn your idea into reality."
 ---
-**We are BufferMint.** We Design, Build & Launch products for founders. We are a unique design and development studio and our sole focus is building amazing products for founders.
+
+**We are BufferMint.** We Design, Build & Launch SaaS products for founders. We are a unique design and development studio and our sole focus is building amazing SaaS products for founders.
 
 Say you have an amazing idea to improve how something is done right now. An idea that solves a real problem for a viable customer base.
 
-Founders get excited about their products and would love to take them from concept through to launch up themselves, but very few people have coding skills, experience in design, or time to do it.
+Founders get excited about their SaaS products and would love to take them from concept through to launch up themselves, but very few people have coding skills, experience in design, or time to do it.
 
 This is where we come in…
 
@@ -28,8 +29,6 @@ No, not just more, we wanted to build services and products that would help peop
 
 <x-image :wide="true" alt="Buffermint is born" url="https://images.unsplash.com/photo-1584907797015-7554cd315667?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80" caption="So, BufferMint was born." />
 
-
-
 ### What do we do?
 
 We look at services differently.
@@ -42,7 +41,6 @@ We do this from ideation to market. We get excited about services or products an
 
 We do like working on X for Y types of projects, like a social network for pet owners or uber for florists. We work with people who are passionate about their idea and want to build something which solves a real problem. We only work with founders who have first-hand experience working in the industry in which they want to launch a product.
 
-
 **Our process looks something like this,**
 
 <x-list :list='[
@@ -51,10 +49,4 @@ We do like working on X for Y types of projects, like a social network for pet o
     "Launch and Reiterate <br/> After launching the MVP, we help you to gain traction for the product using multiple channels. We work with you to collect user feedback and plan upcoming features and releases.",
 ]' />
 
-
 If you think we are a good fit. Let us help you launch an exceptional product. [Book a discovery call now]({{ $page->discovery_call_url }}).
-
-
-
-
-

@@ -18,63 +18,63 @@ a:hover {
     }
 }
 
-.navbar.navbar-expand-lg.navbar-light{
+.navbar.navbar-expand-lg.navbar-light {
     background-color: $gray-300;
 }
 
-.pricing-cta .custom-card-btn{
+.pricing-cta .custom-card-btn {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-.pricing-cta .custom-card-btn-left{
+.pricing-cta .custom-card-btn-left {
     background-color: $gray-700;
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
     border-bottom-right-radius: 0;
-    &:hover{
+    &:hover {
         background-color: $gray-900;
         color: $white;
     }
 }
-.pricing-cta .custom-card-btn-right{
-    margin-top:0.5rem;
+.pricing-cta .custom-card-btn-right {
+    margin-top: 0.5rem;
     border-left: solid $gray-200;
     // border-bottom-left-radius: 0;
 }
 
-footer .site-links{
-    a:hover{
-      text-decoration: none;
+footer .site-links {
+    a:hover {
+        text-decoration: none;
     }
-    h4:hover{
-      color: $white !important;
+    h4:hover {
+        color: $white !important;
     }
 }
 
-.hero-section{
-    .first-typed-container .typed-cursor, .second-typed-container .typed-cursor{
+.hero-section {
+    .first-typed-container .typed-cursor,
+    .second-typed-container .typed-cursor {
         left: -5px;
         position: relative;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         left: 0;
         right: 0;
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
-         -ie-transition: all 1s ease;
-          -o-transition: all 1s ease;
-             transition: all 1s ease;
+        -ie-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
     }
 
-    .third-typed-container{
+    .third-typed-container {
         top: 150px;
     }
 }
 
-#scroll-btn{
-    // @media (max-width: 992px) {
-    //     position: relative;
-    //     top: -45px;
-    // }
+.hbspt-form {
+    display: none;
 }

@@ -4,7 +4,7 @@ return [
     'production' => false,
     'baseUrl' => 'http://localhost:3000/',
     'title' => 'BufferMint',
-    'description' => 'We are BufferMint. We Design, Build & Launch products for founders.',
+    'description' => 'We are BufferMint. We Design, Build & Launch SaaS products for founders.',
 
     'discovery_call_url' => 'https://calendly.com/buffermint/30min',
 

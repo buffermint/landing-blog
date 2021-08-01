@@ -13,7 +13,8 @@
         </h1>
 
         <p class="lead text-gray-800 mt-4">
-          We empower people to innovate and collaborate openly. We believe in adding individual brilliance to each product we deliver, and we do that as a team.
+          We empower people to innovate and collaborate openly. We believe in adding individual brilliance to each SaaS
+          product we deliver, and we do that as a team.
         </p>
 
       </div>
@@ -42,9 +43,12 @@
         <p class="font-size-lg text-gray-800 mb-6 mb-md-0">
           <!-- <strong class="text-dark font-size-lg">“Do what you can. Do the best you can”.</strong> -->
           <br>
-          We are a tight-knit community of dedicated individuals set to craft a unique digital experience for every project. Our all-around and talented team will ensure that our solutions align with your business goals, delight your users, and deliver unique value to your business.
+          We are a tight-knit community of dedicated individuals set to craft a unique digital experience for every
+          project. Our all-around and talented team will ensure that our solutions align with your business goals,
+          delight your users, and deliver unique value to your business.
           <br><br>
-          If you can bring your effulgence to meet or exceed what everyone else around you is doing, then we’d like to get in touch with you.
+          If you can bring your effulgence to meet or exceed what everyone else around you is doing, then we’d like to
+          get in touch with you.
         </p>
 
       </div>
@@ -55,7 +59,9 @@
 
             <!-- Image -->
             <div class="w-150 mt-9 p-1 bg-white shadow-lg">
-              <img src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80" class="img-fluid" alt="...">
+              <img
+                src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80"
+                class="img-fluid" alt="...">
             </div>
 
           </div>
@@ -63,7 +69,9 @@
 
             <!-- Image -->
             <div class="w-150 p-1 bg-white shadow-lg">
-              <img src="https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" class="img-fluid" alt="...">
+              <img
+                src="https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
+                class="img-fluid" alt="...">
             </div>
 
           </div>
@@ -71,7 +79,9 @@
 
             <!-- Image -->
             <div class="w-150 mt-11 float-right p-1 bg-white shadow-lg">
-              <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" class="img-fluid" alt="...">
+              <img
+                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                class="img-fluid" alt="...">
             </div>
 
           </div>

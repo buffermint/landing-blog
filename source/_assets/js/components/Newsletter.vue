@@ -1,7 +1,7 @@
 <template>
   <section
     class="py-6 position-relative"
-    style="margin-left: -100%; margin-right: -100%"
+    :style="isInsidePost ? 'margin-left: -100%; margin-right: -100%' : ''"
   >
     <div
       class="container py-6 py-md-8 border-top border-bottom border-gray-300"
@@ -22,7 +22,7 @@
             From us to your inbox weekly.
           </p>
         </div>
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-md-6">
           <!-- Form -->
           <form @submit.prevent="submit">
             <div class="row">
@@ -38,7 +38,17 @@
               </div>
               <div class="col-auto ms-n5">
                 <!-- Button -->
-                <button class="btn btn-primary" type="submit">Subscribe</button>
+                <button class="btn btn-primary" type="submit">
+                  <span
+                    v-if="loading"
+                    class="spinner-border text-white mx-6"
+                    role="status"
+                    style="width: 1.5rem; height: 1.5rem"
+                  >
+                    <span class="visually-hidden"></span>
+                  </span>
+                  <span v-else>Subscribe</span>
+                </button>
               </div>
             </div>
             <!-- / .row -->
@@ -54,79 +64,46 @@
 <script>
 export default {
   data() {
-    return { msg: null, email: "" };
+    return { msg: null, email: "", isInsidePost: false, loading: false };
+  },
+  mounted() {
+    this.isInsidePost = this.hasSomeParentTheID(this.$el, "post-content");
   },
   methods: {
-    submit() {
-      fetch(
-        "https://forms-eu1.hsforms.com/emailcheck/v1/json-ext?portalId=24917138&includeFreemailSuggestions=true",
-        {
-          headers: {
-            accept: "application/json, text/javascript",
-            "accept-language": "en-US,en;q=0.9",
-            "content-type": "application/json",
-            "sec-ch-ua":
-              '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
-            "sec-ch-ua-mobile": "?0",
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "cross-site",
-          },
-          referrerPolicy: "strict-origin-when-cross-origin",
-          body: this.email,
-          method: "POST",
-          mode: "cors",
-          credentials: "omit",
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          this.email = "";
-          this.msg = "Thanks for subscribing.";
-        });
+    hasSomeParentTheID(element, id) {
+      if (element.id == id) return true;
+      return (
+        element.parentNode && this.hasSomeParentTheID(element.parentNode, id)
+      );
     },
-    submitOld() {
-      let url =
-        "https://api.hsforms.com/submissions/v3/integration/submit/24917138/27b9a8e8-95e1-42ec-ae6b-c6430abba972";
-
-      let data = {
-        fields: [
-          {
-            name: "email",
-            value: this.email,
-          },
-        ],
-        legalConsentOptions: {
-          consent: {
-            // Include this object when GDPR options are enabled
-            consentToProcess: true,
-            text: "I agree to allow BufferMint to store and process my personal data.",
-            communications: [
-              {
-                value: true,
-                subscriptionTypeId: 999,
-                text: "I agree to receive marketing communications from BufferMint.",
-              },
-            ],
-          },
+    submit() {
+      this.loading = true;
+      let iframe = $(".hbspt-form iframe")[0];
+      let formID = "27b9a8e8-95e1-42ec-ae6b-c6430abba972";
+      let frm = iframe.contentWindow.document.querySelector(
+        "form[data-form-id='" + formID + "']"
+      );
+      let data = new FormData(frm);
+      data.append("email", this.email);
+      let that = this;
+      $.ajax({
+        type: frm.getAttribute("method"),
+        url: frm.getAttribute("action"),
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (data) {
+          that.loading = false;
+          that.email = "";
+          that.msg = "Thanks for subscribing.";
         },
-      };
-
-      fetch(url, {
-        method: "post",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
+        error: function (data) {
+          that.loading = false;
+          that.email = "";
+          alert("Issue while submitting your newsletter.");
         },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.log(res);
-          this.email = "";
-          this.msg = "Thanks for subscribing.";
-        });
+      });
     },
   },
 };

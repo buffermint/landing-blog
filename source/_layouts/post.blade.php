@@ -102,14 +102,6 @@
             <newsletter></newsletter>
 
         </div> <!-- / .container -->
-        <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/shell.js"></script>
-        <script>
-            hbspt.forms.create({
-          region: "eu1",
-          portalId: "24917138",
-          formId: "27b9a8e8-95e1-42ec-ae6b-c6430abba972",
-        });
-        </script>
     </section>
 </div>
 
