@@ -159,7 +159,7 @@ export default {
 
         let newData = JSON.parse(JSON.stringify(data));
         this.posts = newData.sort(function (a, b) {
-          return Date.parse(a.date) - Date.parse(b.date);
+          return Date.parse(b.date) - Date.parse(a.date);
         });
 
         let count = this.postCount || this.recentPostCount;
