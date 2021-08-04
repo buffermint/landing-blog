@@ -99,16 +99,18 @@
       </div>
       <!-- / .container -->
     </section>
-    <div v-else class="my-5"></div>
+
+    <newsletter :borderBottom="false"></newsletter>
   </div>
 </template>
 
 <script>
 import Fuse from "fuse.js";
 import ArticleCard from "./ArticleCard.vue";
+import Newsletter from "./Newsletter.vue";
 
 export default {
-  components: { ArticleCard },
+  components: { ArticleCard, Newsletter },
   props: { galleryMode: { default: false }, postCount: { default: null } },
   data() {
     return {

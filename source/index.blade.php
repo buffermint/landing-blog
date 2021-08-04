@@ -1,6 +1,6 @@
 @extends('_layouts.main')
 
-
+@section('page-title', 'Home')
 
 @section('content')
 
@@ -431,7 +431,6 @@
       Latest Insights
     </h2>
     <blog :post-count="3" :gallery-mode="true"></blog>
-    <newsletter></newsletter>
   </div>
 </section>
 

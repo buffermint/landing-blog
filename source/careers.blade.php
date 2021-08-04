@@ -1,4 +1,7 @@
 @extends('_layouts.main')
+
+@section('page-title', 'Careers')
+
 @section('content')
 
 

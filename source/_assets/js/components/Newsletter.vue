@@ -3,9 +3,7 @@
     class="py-6 position-relative"
     :style="isInsidePost ? 'margin-left: -100%; margin-right: -100%' : ''"
   >
-    <div
-      class="container py-6 py-md-8 border-top border-bottom border-gray-300"
-    >
+    <div :class="newsletterClass">
       <div v-if="msg" class="py-5 text-center">{{ msg }}</div>
 
       <div class="row align-items-center" v-else>
@@ -63,8 +61,17 @@
 
 <script>
 export default {
+  props: { borderTop: { default: true }, borderBottom: { default: true } },
   data() {
     return { msg: null, email: "", isInsidePost: false, loading: false };
+  },
+  computed: {
+    newsletterClass() {
+      let c = "container py-6 py-md-8 border-gray-300";
+      if (this.borderTop) c += " border-top";
+      if (this.borderBottom) c += " border-bottom";
+      return c;
+    },
   },
   mounted() {
     this.isInsidePost = this.hasSomeParentTheID(this.$el, "post-content");

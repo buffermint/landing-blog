@@ -3,7 +3,7 @@
 
 <head>
   @include('_partials.head', [
-  'page_title' => ($page->title ?? 'Home') . ' | BufferMint',
+  'page_title' => ($page_title ?? $page->title ?? 'Home'),
   'description' => ($page->seo_description ?? $page->excerpt) ?? 'We Design, Build & Launch SaaS products for founders.
   We
   help you launch and scale a high-quality MVP on a fixed budget.'

@@ -11,8 +11,7 @@
 
 <link rel="stylesheet" href="{{ mix('css/theme.css', 'assets/build') }}">
 
-
-<title>{{ $page_title }}</title>
+<title>@yield('page-title', $page_title) | BufferMint</title>
 <meta name="description" content="{{ $description }}">
 
 <link rel="apple-touch-icon" sizes="57x57" href="{{ mix('img/favicons/apple-icon-57x57.png', 'assets/build') }}">
@@ -24,7 +23,8 @@
 <link rel="apple-touch-icon" sizes="144x144" href="{{ mix('img/favicons/apple-icon-144x144.png', 'assets/build') }}">
 <link rel="apple-touch-icon" sizes="152x152" href="{{ mix('img/favicons/apple-icon-152x152.png', 'assets/build') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ mix('img/favicons/apple-icon-180x180.png', 'assets/build') }}">
-<link rel="icon" type="image/png" sizes="192x192"  href="{{ mix('img/favicons/android-icon-192x192.png', 'assets/build') }}">
+<link rel="icon" type="image/png" sizes="192x192"
+  href="{{ mix('img/favicons/android-icon-192x192.png', 'assets/build') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ mix('img/favicons/favicon-32x32.png', 'assets/build') }}">
 <link rel="icon" type="image/png" sizes="96x96" href="{{ mix('img/favicons/favicon-96x96.png', 'assets/build') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ mix('img/favicons/favicon-16x16.png', 'assets/build') }}">
