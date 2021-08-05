@@ -1,6 +1,6 @@
 [build]
 
-command = "./vendor/bin/jigsaw build production && npm run prod"
+command = "yarn run prod; ./vendor/bin/jigsaw build production"
 publish = "build_production"
 environment = { PHP_VERSION = "7.4", NODE_VERSION = "15" }
 
