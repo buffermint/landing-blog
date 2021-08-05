@@ -1,6 +1,6 @@
 [build]
 
-command = "yarn run prod; ./vendor/bin/jigsaw build production"
+command = "yarn run prod"
 publish = "build_production"
 environment = { PHP_VERSION = "7.2", NODE_VERSION = "15" }
 
