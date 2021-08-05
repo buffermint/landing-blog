@@ -89,12 +89,7 @@ collections:
           widget: "string",
           hint: "Caption for hero image",
         }
-      - {
-          label: "Content",
-          name: "body",
-          widget: "markdown",
-          hint: "Main content goes here.",
-        }
+      - { label: "Blog post content", name: "body", widget: "markdown" }
       - {
           name: "extends",
           widget: "hidden",
