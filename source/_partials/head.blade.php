@@ -42,3 +42,4 @@
 
   gtag('config', 'G-10GHKFV46D');
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
