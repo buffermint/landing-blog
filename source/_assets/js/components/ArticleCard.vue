@@ -17,9 +17,9 @@
                 <h3>{{ article.title }}</h3>
 
                 <!-- Text -->
-                <p class="mb-0 text-muted">
+                <!-- <p class="mb-0 text-muted">
                   {{ article.excerpt }}
-                </p>
+                </p> -->
               </a>
 
               <!-- Meta -->

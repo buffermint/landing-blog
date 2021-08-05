@@ -1,0 +1,89 @@
+backend:
+  name: git-gateway
+display_url: https://buffermint.com
+
+publish_mode: editorial_workflow
+media_folder: "source/assets/img/uploads"
+public_folder: "assets/img/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    description: >
+      All my blog posts
+    folder: "source/_posts"
+    slug: "{{slug}}"
+    extension: "blade.md"
+    format: "yaml-frontmatter"
+    create: true
+    identifier_field: "title"
+    fields:
+      - {
+          label: "Featured Image",
+          name: "featured_image",
+          widget: "string",
+          required: true,
+          hint: "Cover image for the Post - 1950 x 80",
+        }
+      - {
+          label: "Featured Thumbnail",
+          name: "featured_thumbnail",
+          widget: "string",
+          required: true,
+          hint: "Thumbnail for the Post - 487 x 20",
+        }
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: true,
+          default: "",
+        }
+      - {
+          label: "Excerpt",
+          name: "excerpt",
+          widget: "string",
+          required: false,
+          default: "",
+        }
+      - {
+          label: "SEO Description",
+          name: "seo_description",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          required: true,
+          default: "",
+        }
+      - {
+          label: "Show Meta",
+          name: "show_meta",
+          widget: "boolean",
+          default: true,
+          required: true,
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "date",
+          format: "YYYY-MM-DD",
+          dateFormat: "YYYY-MM-DD",
+          required: true,
+        }
+      - {
+          label: "Hero Image",
+          name: "hero_image",
+          widget: "string",
+          hint: "Hero Image for the post",
+        }
+      - {
+          label: "Hero Image Caption",
+          name: "hero_image_caption",
+          widget: "string",
+          hint: "Caption for hero image",
+        }
