@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://buffermint.com/',
+    'baseUrl' => getenv('BASE_URL_STAGING') ?? 'https://buffermint.com/',
     'production' => true,
 ];

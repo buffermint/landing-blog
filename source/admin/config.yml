@@ -89,3 +89,21 @@ collections:
           widget: "string",
           hint: "Caption for hero image",
         }
+      - {
+          label: "Content",
+          name: "body",
+          widget: "markdown",
+          hint: "Main content goes here.",
+        }
+      - {
+          name: "extends",
+          widget: "hidden",
+          required: true,
+          default: "_layouts.post",
+        }
+      - {
+          name: "section",
+          widget: "hidden",
+          required: true,
+          default: "content",
+        }
