@@ -1,5 +1,7 @@
 backend:
   name: git-gateway
+  repo: buffermint/landing-blog
+  branch: main
 display_url: https://buffermint.com
 
 publish_mode: editorial_workflow
