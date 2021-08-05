@@ -82,12 +82,14 @@ collections:
           name: "hero_image",
           widget: "string",
           hint: "Hero Image for the post",
+          required: false,
         }
       - {
           label: "Hero Image Caption",
           name: "hero_image_caption",
           widget: "string",
           hint: "Caption for hero image",
+          required: false,
         }
       - { label: "Blog post content", name: "body", widget: "markdown" }
       - {
@@ -100,5 +102,5 @@ collections:
           name: "section",
           widget: "hidden",
           required: true,
-          default: "content",
+          default: "postContent",
         }
