@@ -52,7 +52,7 @@ An MVP must be built with scalability in mind so that you can add new, relevant 
 
 
 
-<>
+<x-quote>Building an MVP is not a small undertaking. </x-quote>
 
 
 
@@ -62,13 +62,5 @@ You can overcome these challenges by planning ahead and getting the right people
 * You also need to evaluate possible risks, determine the budget and make sure you understand who your audience is.
 
 If you are a non-technical founder, partnering with someone will allow you to focus on other parts of running a successful company rather than spending time trying to build everything yourself. They can also help you with other aspects of building an MVP such as identifying potential features, how to make it scalable and which features should be included.
-
-
-
-<x-quote>Building an MVP is not a small undertaking. </x-quote>
-
-
-
-When you take on the challenge of building your own product, it’s important to plan ahead and get all the right people in place who can help execute this project successfully.
 
 If you have an idea for an MVP and want to discuss it with us, you can reach us by \[booking a discovery call]({{ $page->discovery_call_url }}).
