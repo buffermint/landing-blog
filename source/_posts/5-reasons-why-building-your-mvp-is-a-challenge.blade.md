@@ -28,7 +28,7 @@ The benefits of building an MVP are:
 * It helps you identify which features are going to be relevant and important for your audience.
 * You will have a platform that you can produce other products from as the MVP gets updated and improved.
 
-\### Five challenges in building your own MVP
+### Five challenges in building your own MVP
 
 1. Lack of time or resources
 
@@ -50,11 +50,7 @@ Even though you might have an awesome idea for a product, without doing your mar
 
 An MVP must be built with scalability in mind so that you can add new, relevant features as the product or service continues to evolve. You do not want to have to completely redesign your MVP every time you need to add a new feature. When building an MVP, you will need to make sure that it is scalable for future updates and features.
 
-
-
 <x-quote>Building an MVP is not a small undertaking. </x-quote>
-
-
 
 You can overcome these challenges by planning ahead and getting the right people on board.
 
