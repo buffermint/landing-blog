@@ -59,4 +59,4 @@ You can overcome these challenges by planning ahead and getting the right people
 
 If you are a non-technical founder, partnering with someone will allow you to focus on other parts of running a successful company rather than spending time trying to build everything yourself. They can also help you with other aspects of building an MVP such as identifying potential features, how to make it scalable and which features should be included.
 
-If you have an idea for an MVP and want to discuss it with us, you can reach us by \[booking a discovery call]({{ $page->discovery_call_url }}).
+If you have an idea for an MVP and want to discuss it with us, you can reach us by [booking a discovery call]({{ $page->discovery_call_url }}).
