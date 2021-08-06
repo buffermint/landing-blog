@@ -28,7 +28,8 @@ class GenerateIndex
         file_put_contents($jigsaw->getDestinationPath() . '/featured.json', json_encode($featured));
     }
 
-    private function mappedObject($page, $jigsaw){
+    private function mappedObject($page, $jigsaw)
+    {
         return [
             'title' => $page->title,
             'categories' => $page->categories,
@@ -37,24 +38,24 @@ class GenerateIndex
             'link' => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
             'snippet' => $page->getSnippet(),
             'excerpt' => $page->excerpt,
-            'date' => gmdate("d M Y", $page->getModifiedTime())
+            'date' => gmdate("d M Y", $page->date)
         ];
     }
 
 
     public function getFeaturedCollections($collection, $featuredCount)
     {
-        $featured = $collection->filter(function ($page){
+        $featured = $collection->filter(function ($page) {
             return $page->is_featured ?? false;
         });
 
-        if($featured->count() > $featuredCount){
+        if ($featured->count() > $featuredCount) {
             return $featured->slice(0, $featuredCount);
         }
 
         $remainingCount = $featuredCount - $featured->count();
 
-        $unfeatured = $collection->filter(function ($page){
+        $unfeatured = $collection->filter(function ($page) {
             return isset($page->is_featured) ? !$page->is_featured : true;
         });
 
