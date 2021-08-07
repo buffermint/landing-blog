@@ -47,6 +47,9 @@ By keeping speed as a top priority for SaaS products, you can speed up your prod
 
 ### Implementing speed-to-market for your initial launch
 
+<x-image url="https://images.unsplash.com/photo-1517976384346-3136801d605d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" caption="Strategize for speed before your launch" />
+
+
 One way you can speed-to-market is by conducting an MVP or minimal viable product launch. An MVP launch allows you to get a sense of what features and functionality your customers want, without spending a lot of time and resources on the development process.
 
 Another way to speed-to-market is to build an agile team that can work efficiently together in order to produce things on time. This includes working with developers who use Agile discipline techniques such as Scrum or Kanban. 
@@ -63,8 +66,12 @@ If speed-to-market is important to you, then you need to be able to innovate qui
 
 Being able to adjust your strategy based on market feedback without having to go through a lot of back and forth between various teams (product, marketing...) means speed in its essence!
 
-With speed to market as an important factor in your product launch, it’s important to have a team that is agile and can work together efficiently. You also need the right technical knowledge on how to speed up development without sacrificing usability or quality of features. 
-
 <br/>
 
-The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}).
+With speed to market as an important factor in your product launch, it’s important to have a team that is agile and can work together efficiently. 
+
+You also need the right technical knowledge on how to speed up development without sacrificing usability or quality of features. 
+
+The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. 
+
+If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}).
