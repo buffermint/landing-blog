@@ -67,4 +67,4 @@ With speed to market as an important factor in your product launch, it’s impor
 
 <br/>
 
-The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by \[booking a discovery call]({{ $page->discovery_call_url }}).
+The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}).
