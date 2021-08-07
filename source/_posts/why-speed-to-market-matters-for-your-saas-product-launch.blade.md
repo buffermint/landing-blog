@@ -23,11 +23,15 @@ The initial release should have just enough features for early adopters or beta 
 
 2. **Rely on your customers to provide feedback**
 
-In order to speed up the product launch, get customer feedback early in the development period. Techniques such as landing pages and pre-launch marketing can gather initial interest so that you know what features are most important to potential users. With a good speed-to-market mindset, you'll be able to convert leads into paying customers more quickly than ever. If possible, involve beta users or early adopters in providing design suggestions for the interface so that they're not just saying "it looks nice."
+In order to speed up the product launch, get customer feedback early in the development period. Techniques such as landing pages and pre-launch marketing can gather initial interest so that you know what features are most important to potential users. 
+
+With a good speed-to-market mindset, you'll be able to convert leads into paying customers more quickly than ever. If possible, involve beta users or early adopters in providing design suggestions for the interface so that they're not just saying "it looks nice."
 
 3. **Set a clear timeline for all stages of your product release**
 
-Plan out when key milestones need to be completed so that speed to market can be achieved. Consider what tasks are needed for each stage of the product launch, so you know when everything needs to be complete. If speed is your main goal here, prioritize minor tasks to have them completed before major ones so that you don't get overwhelmed by long lists and unrealistic goals.
+Plan out when key milestones need to be completed so that speed to market can be achieved. Consider what tasks are needed for each stage of the product launch, so you know when everything needs to be complete. 
+
+If speed is your main goal here, prioritize minor tasks to have them completed before major ones so that you don't get overwhelmed by long lists and unrealistic goals.
 
 4. **Release early, release often**
 
@@ -35,11 +39,11 @@ If speed is one of the priorities for a new SaaS product launch strategy, this t
 
 5. **Keep features easy-to-use and user-friendly**
 
-Don't add in more than what's necessary for speed to be achieved - but don't just release without making sure it has the functions you want users to have either! This is a fine line, so make sure you find a way to make speed work with usability as well. If speed becomes your main focus over usability, your product could fail since users won't find it easy or interesting enough to continue using it.
+Don't add in more than what's necessary for speed to be achieved - but don't just release without making sure it has the functions you want users to have either! This is a fine line, so make sure you find a way to make speed work with usability as well. 
+
+If speed becomes your main focus over usability, your product could fail since users won't find it easy or interesting enough to continue using it.
 
 By keeping speed as a top priority for SaaS products, you can speed up your product launch while avoiding the dreaded "too many features" list that often ends projects before they even begin.
-
-
 
 ### Implementing speed-to-market for your initial launch
 
@@ -49,19 +53,18 @@ Another way to speed-to-market is to build an agile team that can work efficient
 
 Making sure your team doesn't become too hierarchical is another key point for speed-to-market success; this way everyone is familiar with tasks like how to manage bugs or technical debt.
 
-
-
-
 <x-quote>The team should feel connected and always have an open line of communication.</x-quote>
 
+Speed-to-market is also related to how much you can scale your operation (your P&L or financial model). 
 
+Part of the speed-to-market is being able to predict how many customers you can acquire through a particular marketing strategy; sometimes this requires a lot of resources. If it doesn't, then speed-to-market starts looking more like speed – as in speed to delivery, speed to production...in short: speed everything! 
 
-Also, speed-to-market is related to how much you can scale your operation (your P&L or financial model). Part of the speed-to-market is being able to predict how many customers you can acquire through a particular marketing strategy; sometimes this requires a lot of resources. If it doesn't, then speed-to-market starts looking more like speed – as in speed to delivery, speed to production...in short: speed everything! 
+If speed-to-market is important to you, then you need to be able to innovate quickly. Innovation can mean product features and improvement, or the business ecosystem itself. 
 
-If speed-to-market is important to you, then you need to be able to innovate quickly. Innovation can mean product features and improvement, or the business ecosystem itself. Being able to adjust your strategy based on market feedback without having to go through a lot of back and forth between various teams (product, marketing...) means speed in its essence!
+Being able to adjust your strategy based on market feedback without having to go through a lot of back and forth between various teams (product, marketing...) means speed in its essence!
 
 With speed to market as an important factor in your product launch, it’s important to have a team that is agile and can work together efficiently. You also need the right technical knowledge on how to speed up development without sacrificing usability or quality of features. 
 
 <br/>
 
-The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}).
+The tips provided here should help get you started thinking about what speed-to-market strategies are best for your SaaS products. If all this sounds daunting, don't worry! We at BufferMint help you launch a SaaS MVP in 45 days. If you want to discuss your idea reach out to us by \[booking a discovery call]({{ $page->discovery_call_url }}).
