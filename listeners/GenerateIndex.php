@@ -35,7 +35,7 @@ class GenerateIndex
             'categories' => $page->categories,
             'image' => $page->featured_thumbnail ?? $page->featured_image,
             'author' => $page->author,
-            'link' => rightTrimPath($jigsaw->getConfig('baseUrl')) . $page->getPath(),
+            'link' => $page->getPath(),
             'snippet' => $page->getSnippet(),
             'excerpt' => $page->excerpt,
             'date' => gmdate("d M Y", $page->date)

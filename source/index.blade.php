@@ -53,7 +53,7 @@
 
               <!-- Image -->
               <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
-                <img src="{{ mix('/img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
+                <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
               </div>
 
             </div>
