@@ -1,60 +1,11 @@
 <template>
   <div class="min-vh-90">
-    <section class="py-6" v-if="!galleryMode">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <!-- Form -->
-            <form class="rounded shadow">
-              <div class="input-group input-group-lg">
-                <!-- Prepend -->
-                <div class="input-group-prepend">
-                  <span class="input-group-text border-0 pr-1">
-                    <i class="fe fe-search"></i>
-                  </span>
-                </div>
+    <Search
+      v-if="!galleryMode"
+      v-model="query"
+      :count="results ? results.length : 0"
+    />
 
-                <!-- Input -->
-                <input
-                  id="search"
-                  v-model="query"
-                  type="text"
-                  class="form-control border-0 px-1"
-                  aria-label="Search our blog..."
-                  placeholder="Search our blog..."
-                  @keyup.esc="reset"
-                />
-
-                <!-- Append -->
-                <div class="input-group-append">
-                  <span class="input-group-text border-0 py-0 pl-1 pr-3">
-                    <!-- Text -->
-                    <span
-                      class="
-                        h6
-                        text-uppercase text-muted
-                        d-none d-md-block
-                        mb-0
-                        mr-5
-                      "
-                    >
-                    </span>
-
-                    <!-- Button -->
-                    <button type="submit" class="btn btn-sm btn-primary">
-                      Search
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- / .row -->
-      </div>
-    </section>
-    <!-- ARTICLES
-      ================================================== -->
     <section>
       <div class="container">
         <div class="row" v-if="results && results.length > 0">
@@ -85,7 +36,7 @@
             <a
               @click="loadMore"
               class="
-                btn btn-block btn-outline-gray-300
+                btn btn-block btn-outline-primary
                 d-flex
                 align-items-center
               "
@@ -107,10 +58,11 @@
 <script>
 import Fuse from "fuse.js";
 import ArticleCard from "./ArticleCard.vue";
-import Newsletter from "./Newsletter.vue";
+import Search from "./Search.vue";
+import Newsletter from "../Newsletter.vue";
 
 export default {
-  components: { ArticleCard, Newsletter },
+  components: { ArticleCard, Newsletter, Search },
   props: { galleryMode: { default: false }, postCount: { default: null } },
   data() {
     return {
@@ -143,9 +95,11 @@ export default {
     loadMore() {
       let currentCount = this.filteredPosts.length;
       this.filteredPosts.splice(0);
-      this.recentPostCount
-        .filter(currentCount + this.recentPostCount)
+      this.posts
+        .slice(0, currentCount + this.recentPostCount)
         .forEach((p) => this.filteredPosts.push(p));
+
+      console.log(currentCount + this.recentPostCount, this.posts);
     },
   },
   created() {
@@ -165,7 +119,7 @@ export default {
         });
 
         let count = this.postCount || this.recentPostCount;
-        this.filteredPosts = this.posts.splice(0, count);
+        this.filteredPosts = this.posts.slice(0, count);
       });
   },
 };
