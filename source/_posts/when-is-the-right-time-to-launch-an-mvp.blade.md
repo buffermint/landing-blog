@@ -10,7 +10,7 @@ date: 2021-08-09
 extends: _layouts.post
 section: postContent
 ---
-[{{ $page->discovery_call_url }}](<{{ $page->discovery_call_url }}>)The answer to that is, 'as soon as you can'. Not in months, but weeks after finalizing the earlier development stages. Make sure that you don't rush there.
+\[{{ $page->discovery_call_url }}](<{{ $page->discovery_call_url }}>)The answer to that is, 'as soon as you can'. Not in months, but weeks after finalizing the earlier development stages. Make sure that you don't rush there.
 
 Once you have an idea and validated it, launch your MVP in a few weeks. Get your product into the market fast.
 
@@ -64,7 +64,7 @@ Keeping your MVP as simple as possible is always a good idea. So you and your te
 
 The moment you find that something is not working properly, be quick to fix it. Do whatever it takes to make sure that your MVP solves the problem for your users.
 
-Launches are over-hyped
+### Launches are over-hyped
 
 We all love a product launch that has a sense of ballyhoo around it. But the thing is, most MVPs don't hit that big-bang launch day.
 
@@ -84,4 +84,4 @@ If you’ve already done your research, gotten feedback from users and investors
 
 Launch in 45 days or sooner! With BufferMint, launching this soon is easier than ever before.
 
-Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call](<{{ $page->discovery_call_url }}>) now.
+Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call](<({{ $page-discovery_call_url }})>) now.
