@@ -54,7 +54,7 @@ You can't just boldly assume that what you have built is useful or valuable beca
 
 Now, you have done everything in order. It's time for you to...
 
-### Iterate. Iterate. iterate
+### Iterate. Iterate. Iterate
 
 You have to acknowledge the shortcomings of your MVP and improve it by making adequate changes as per your userbase.
 
@@ -84,4 +84,4 @@ If you’ve already done your research, gotten feedback from users and investors
 
 Launch in 45 days or sooner! With BufferMint, launching this soon is easier than ever before.
 
-Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call](<({{ $page-discovery_call_url }})>) now.
+Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. \[Book a discovery call now]({{ $page->discovery_call_url }})
