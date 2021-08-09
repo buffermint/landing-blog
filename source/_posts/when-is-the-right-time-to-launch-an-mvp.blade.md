@@ -84,4 +84,8 @@ If you’ve already done your research, gotten feedback from users and investors
 
 Launch in 45 days or sooner! With BufferMint, launching this soon is easier than ever before.
 
-Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call now](<{{ $page->discovery_call_url }}>).
+Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [](<{{ $page->discovery_call_url }}>)
+
+
+
+.
