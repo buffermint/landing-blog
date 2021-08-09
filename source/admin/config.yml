@@ -24,14 +24,14 @@ collections:
       - {
           label: "Featured Image",
           name: "featured_image",
-          widget: "string",
+          widget: "file",
           required: true,
           hint: "Cover image for the Post - 1950 x 80",
         }
       - {
           label: "Featured Thumbnail",
           name: "featured_thumbnail",
-          widget: "string",
+          widget: "file",
           required: true,
           hint: "Thumbnail for the Post - 487 x 20",
         }
@@ -80,7 +80,7 @@ collections:
       - {
           label: "Hero Image",
           name: "hero_image",
-          widget: "string",
+          widget: "file",
           hint: "Hero Image for the post",
           required: false,
         }

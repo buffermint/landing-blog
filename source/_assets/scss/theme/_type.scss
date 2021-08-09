@@ -9,30 +9,45 @@
   font-family: "HKGroteskPro";
   font-weight: 400;
   src: url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Regular.woff2") format("woff2"),
-  url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Regular.woff") format("woff");
+    url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "HKGroteskPro";
   font-weight: 600;
   src: url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Medium.woff2") format("woff2"),
-  url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Medium.woff") format("woff");
+    url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Medium.woff") format("woff");
 }
 
+@font-face {
+  font-family: "HKGroteskPro";
+  font-weight: 900;
+  src: url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Bold.woff2") format("woff2"),
+    url("#{$path-to-fonts}/HKGroteskPro/HKGroteskPro-Bold.woff") format("woff");
+}
 
 // Headings
 
-h1, h2,
-.h1, .h2 {
+h1,
+h2,
+.h1,
+.h2 {
   margin-bottom: 1rem;
 }
 
-h1, h2, h3, h4,
-.h1, .h2, .h3, .h4 {
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
   letter-spacing: $headings-letter-spacing;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   line-height: $h1-line-height;
 
   @include media-breakpoint-down(md) {
@@ -40,7 +55,8 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   line-height: $h2-line-height;
 
   @include media-breakpoint-down(md) {
@@ -48,7 +64,8 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   line-height: $h3-line-height;
 
   @include media-breakpoint-down(md) {
@@ -56,7 +73,8 @@ h3, .h3 {
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   line-height: $h4-line-height;
 
   @include media-breakpoint-down(md) {
@@ -64,22 +82,26 @@ h4, .h4 {
   }
 }
 
-h5, .h5 {
+h5,
+.h5 {
   line-height: $h5-line-height;
 }
 
-h6, .h6 {
+h6,
+.h6 {
   line-height: $h6-line-height;
 
   &.text-uppercase {
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
   }
 }
 
-
 // Display
 
-.display-1, .display-2, .display-3, .display-4 {
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
   letter-spacing: $display-letter-spacing;
 }
 
@@ -115,16 +137,13 @@ h6, .h6 {
   }
 }
 
-
 // Lead
 
 .lead {
-
   @include media-breakpoint-down(md) {
     font-size: $lead-font-size-md;
   }
 }
-
 
 // Blockquote
 
@@ -135,12 +154,10 @@ h6, .h6 {
 }
 
 .blockquote-footer {
-
   &::before {
     display: none;
   }
 }
-
 
 // Social list
 
@@ -148,7 +165,6 @@ h6, .h6 {
   max-width: 1.25rem;
   height: auto;
 }
-
 
 // Dividers
 
@@ -161,7 +177,6 @@ h6, .h6 {
   width: 100px;
   border-top-width: $border-width * 2;
 }
-
 
 // Code
 
