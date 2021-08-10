@@ -1,6 +1,6 @@
 ---
-featured_image: assets/img/uploads/photo-1611162617213-7d7a39e9b1d7-1-.jpeg
-featured_thumbnail: assets/img/uploads/photo-1611162617213-7d7a39e9b1d7.jpeg
+featured_image: assets/img/uploads/story1.jpeg
+featured_thumbnail: assets/img/uploads/story2.jpeg
 title: 6 Amazing Startup Stories of successful idea validation
 excerpt: ""
 seo_description: If you have an idea that can help your customers or make them
