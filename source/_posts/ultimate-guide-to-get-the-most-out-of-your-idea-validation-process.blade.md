@@ -39,8 +39,6 @@ The process of validating an idea takes time - often up to 6 months; so, the ear
 
 During the process of validating an idea, you will get tons of feedback - both positive and negative - which is why it's important to have a thick skin when validating your idea. It's also more likely that there will be conflicting opinions about what should or shouldn't be done, so it's important to understand that validating an idea is all about finding out what's right and what's wrong for a particular product/service.
 
-
-
 ## Different methods of validating an idea
 
 The first step to validation is determining whether there is a problem that needs to be solved or not.
@@ -50,20 +48,12 @@ The process includes testing the viability of a business model through a variety
 A business model is modified based on feedback obtained during the process until it reaches a level where it can be launched in the market.
 
 1. Surveying potential customers
-
 2. Conducting focus group discussions with targeted customer segments
-
 3. Bringing your idea and goals for a project to prospective investors
-
 4. Analyzing competitors' products and services
-
 5. Thinking about who your target audience is
-
 6. Examining the strengths and weaknesses of your business model
-
 7. Being consistent throughout the process - no matter what feedback you get, don't give up!
-
-
 
 ## How to get the most out of validation
 
@@ -87,35 +77,19 @@ You may want to determine a direction while validating your idea, but that doesn
 
 The validation process requires that you be realistic about what information can be validated - for example, when validating an idea based on the market, you might want to use surveys or interviews to determine customer preferences. If the idea is complex, however, you will not be able to gather all of the necessary information in a short period of time.
 
-
-
 ## Tips for a successful validation process
 
 1. Define the parameters of the validation feedback
-
 2. Keep an open mind while doing research and understand that your idea may not work for others; be prepared to change course as needed
-
 3. Realize that time is limited when validating, but don't put all your eggs in one basket: if you're investing everything into the validation process without seeing any results, then it could hurt other opportunities and turn out to be a waste
-
 4. Test efficiently instead of making broad assumptions about what's going to happen - this increases accuracy in research because you can get better data faster
-
 5. Make sure to go through every step of the design process before launching anything or putting too much into development; and don't be afraid to scrap a design or start over if you need to
-
 6. Allow feedback from other people - these are your potential customers, so you want to use their opinions as part of the validation process; it's also important not to fall into the trap of groupthink and make sure that everyone is more than just trying to validate their own ideas
-
 7. Understand that validation isn't necessarily about receiving positive feedback; it's more about using valid information to move forward in a way that will work for your business model
-
 8. Don't be afraid of failure, but make sure you're ready and willing to take the necessary steps to avoid wasting resources when launching a business model
-
 9. Understand that it's okay to pivot as long as you're still keeping your end goal in mind; trust yourself when making decisions about how to move forward and allow yourself to make mistakes - but learn from them so you can avoid similar mistakes moving forward
-
 10. Always keep an open mind while validating - be prepared to change course if necessary, but also keep an eye on other opportunities
-
 11. Avoid groupthink as much as possible; this can lead to faulty conclusions and a flawed business model that doesn't work for your specific situation or demographic
-
-
-
-
 
 ## Example of Successful Idea Validation: Instagram
 
@@ -123,8 +97,6 @@ In order to validate the idea for Instagram, founders Kevin Systrom and Mike Kri
 
 They got feedback from their friends and colleagues who used the app. It turned out that people liked using it but found the design too complex. After simplifying the idea to only its most basic elements (a camera, photo filters, sharing capabilities, etc.), Systrom & Krieger were able to launch their product.
 
-You can find more successful idea validation stories that turned out to be billion-dollar businesses here. articles/6-amazing-startup-stories-of-successful-idea-validation
+You can find more successful idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation). 
 
-
-
-There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at BufferMint is available to help you find success with your own idea validation process. You can reach out to us by booking a discovery call.
+There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by [booking a discovery call](<{{ $page->discovery_call_url }}>).
