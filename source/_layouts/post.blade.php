@@ -5,7 +5,7 @@
 <div class="pb-6 mb-6">
     @if ($page->featured_image)
     <section data-jarallax data-speed=".8" class="py-12 py-md-15 bg-cover jarallax"
-        style="background-image: url({{ $page->featured_image }});"></section>
+        style="background-image: url(/{{ $page->featured_image }});"></section>
     @endif
 
     <section class="pt-8 pt-md-11 gradient-mint-to-white">

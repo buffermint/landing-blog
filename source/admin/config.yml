@@ -6,7 +6,7 @@ display_url: https://buffermint.com
 
 publish_mode: editorial_workflow
 media_folder: "source/assets/img/uploads"
-public_folder: "/assets/img/uploads"
+public_folder: "assets/img/uploads"
 
 collections:
   - name: "posts"
