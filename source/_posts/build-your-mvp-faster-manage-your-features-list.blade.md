@@ -1,23 +1,24 @@
 ---
 featured_image: assets/img/uploads/photo-1603899122361-e99b4f6fecf5.jpeg
-featured_thumbnail: https://unsplash.com/photos/sNvBTRQR7eE
+featured_thumbnail: assets/img/uploads/photo-1603899122361-e99b4f6fecf5-thumb.jpeg
 title: "Build your MVP faster: Manage Your Features List  "
-excerpt: "When you are building your MVP, it is critical to make sure that your
-  features list is manageable. When you are building your MVP, it is critical to
-  make sure that your features list is manageable.   The features list is
-  similar to the specification list.   A short definition of the specification
-  sheet.   Features list:  MVP Features list: Here are a few tips for managing
-  your features List :  - Put a time on the task  - Write down the tasks and
-  keep them organized   - Cut out unnecessary tasks"
+excerpt: ""
 seo_description: "When you are building your MVP, it is critical to make sure
-  that your features list is manageable. "
+  that your features list is manageable. When you are building your MVP, it is
+  critical to make sure that your features list is manageable. When you are
+  building your MVP, it is critical to make sure that your features list is
+  manageable.   The features list is similar to the specification list.   A
+  short definition of the specification sheet.   Features list:  MVP Features
+  list: Here are a few tips for managing your features List :  - Put a time on
+  the task  - Write down the tasks and keep them organized   - Cut out
+  unnecessary tasks"
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-11
 extends: _layouts.post
 section: postContent
 ---
-[({{ $page->discovery_call_url }})](<({{ $page->discovery_call_url }})>)An MVP features list is pretty similar to a specification list. Let's understand what is a specification list?
+An MVP features list is pretty similar to a specification list. Let's understand what is a specification list?
 
 The specification list/sheet is a document that lists the requirements of your product. It includes all the development tasks and their deadlines, bugs, and errors, future enhancements, etc.
 
@@ -25,14 +26,12 @@ With that being said, the important facet of this article is to smartly manage y
 
 \###Features list
 
-
 As the name suggests, the MVP features list is the list of basic tasks that must be completed before releasing a product. This is what an MVP features list should include: 
 The core features that MVP will have at the time of its launch starting with a general idea about what your MVP will do for users.
 
 There is so much that you can add to this list. It's plausible to say that the more detailed your MVP features list, the easier it'll be to manage.
 
 \###So, why are we focusing on the features list?
-
 
 There's a lot that goes into building an MVP on paper but for the end-user, the main thing is how it is going to solve their problem. Your users will interact with the features at the end of the day. 
 
@@ -45,15 +44,13 @@ Your features list is one of the best utility tools. The only condition is, you 
 
 \##Tips on how to manage the features list to build your MVP faster
 
-
-
 \###Go with the features that you can provide before the deadline
 
 Suppose you have 3 weeks to finish the product and launch it. So just go with the features that you can build in 3 weeks.
 
 Trying to build everything at once will push your launch date further. Choose a deadline that allows you to build features that must be completed before the launch. 
 
-###Write down the features you want to take out
+\###Write down the features you want to take out
 
 It’s not an everyday situation where a founder and their team lose sight of their goals. One of the reasons; frequent changes while building MVPs. 
 
@@ -74,7 +71,7 @@ Try your best to release as soon as possible. With your initial launch, you will
 The sooner you launch, the faster people will start using it and giving feedback. That's how you get the momentum.
 
 If this sounds like too much work and you want an agile plan to launch your MVP. Let us do the heavy lifting for you.
-At BufferMint, we will help you to lunch your MVP in 45 days or even sooner. [Book a discovery call](<(<({{ $page->discovery_call_url }})>)>)
+At BufferMint, we will help you to lunch your MVP in 45 days or even sooner. \[Book a discovery call]({{ $page->discovery_call_url }})
 
 \###Conclusion
 The features list for your MVP is going to be a critical decision you make. You need to have a manageable number of tasks that are achievable in the time frame you give yourself.
