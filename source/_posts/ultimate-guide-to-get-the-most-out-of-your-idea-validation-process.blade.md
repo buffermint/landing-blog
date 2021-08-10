@@ -29,7 +29,7 @@ To get the most out of validation, you should follow some strategic planning:  
 * Keep good records on everything
 * Watch for any changes in the industry around you and f) be consistent throughout the process.
 
-## What is Validation and why does it matter
+## What is Validation and why does it matter?
 
 Validation is the process of testing the feasibility of an idea or design; it's largely a trial-and-error process. It's important because it helps to reduce waste and improve product quality. If you don't validate your idea before investing in the idea, the validation might be necessary later on - and that could cost time and money.
 
@@ -55,7 +55,7 @@ A business model is modified based on feedback obtained during the process until
 6. Examining the strengths and weaknesses of your business model
 7. Being consistent throughout the process - no matter what feedback you get, don't give up!
 
-## How to get the most out of validation
+## How to get the most out of validation?
 
 If you want to get the most out of validation, it's important to have a realistic idea about what you're trying to validate.
 
