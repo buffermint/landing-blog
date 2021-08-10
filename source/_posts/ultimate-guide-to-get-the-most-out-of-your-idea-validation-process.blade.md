@@ -1,7 +1,7 @@
 ---
 featured_image: assets/img/uploads/image1.jpeg
 featured_thumbnail: assets/img/uploads/image2.jpg
-title: Ultimate Guide to Get the Most out of your Idea Validation Process
+title: "Get the Most out of your Idea Validation Process: An Ultimate Guide "
 excerpt: ""
 seo_description: An article about the validation of a startup idea. Validation
   is a process that can be quite difficult and time consuming, but it's
