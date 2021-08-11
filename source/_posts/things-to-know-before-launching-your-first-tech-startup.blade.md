@@ -1,8 +1,8 @@
 ---
+excerpt: ""
 featured_image: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
 featured_thumbnail: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
 title: Things to know before Launching your First Tech Startup
-excerpt: ""
 seo_description: What you need to know before launching your first tech startup
 author: "Vivek Dixit "
 show_meta: true
@@ -76,4 +76,4 @@ To improve your chances as a first-timer, we suggest taking some time to think a
 
 You will need a diverse skill set as well as consideration for the rapidly changing tech market space.
 
-If all sounds too daunting or intimidating at this point, don't worry! We at BufferMint, are determined to help startups just like yours. [Book a discovery]({{  $page->discovery_call_url  }}) call today!
+If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. \[Book a discovery call today!]({{  $page->discovery_call_url  }})
