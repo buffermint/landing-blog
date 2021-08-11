@@ -2,10 +2,7 @@
 featured_image: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
 featured_thumbnail: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
 title: Things to know before launching your first tech startup
-excerpt: How the process of launching a product in the tech industry is very
-  different from launching it in other industries. Tech is ever-changing
-  industry stuff that's new and cool right now will be considered archaic in 5
-  years. How do you keep up with that?
+excerpt: ""
 seo_description: What you need to know before launching your first tech startup
 author: "Vivek Dixit "
 show_meta: true
