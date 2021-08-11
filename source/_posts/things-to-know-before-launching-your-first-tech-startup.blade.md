@@ -72,8 +72,8 @@ It's easy to forget what made Facebook popular. Arguably, it was not the easy ac
 
 Launching a product into the tech industry is no easy task. There are many considerations to take before you launch your first product, and it’s important to understand other startups in your domain.
 
-To improve your chances as a first-timer, we suggest taking some time to think about your product and what you can offer to the market. A good starting point is observing what your users need and figure out how you can fulfill that need.
+To improve your chances as a first-timer, we suggest taking some time to think about your product and what you can offer to the market. A good starting point is observing what your users need and figuring out how you can fulfill that need.
 
 You will need a diverse skill set as well as consideration for the rapidly changing tech market space.
 
-If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. \[Book a discovery call today!]({{  $page->discovery_call_url  }})
+If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. [Book a discovery call today!](<{{ $page->discovery_call_url }}>)
