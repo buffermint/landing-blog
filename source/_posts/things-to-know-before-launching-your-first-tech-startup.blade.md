@@ -16,10 +16,9 @@ section: postContent
 It is no secret that launching a product in the tech industry is different from other industries. Tech is an ever-changing industry, and what’s new and cool right now will be considered archaic in 5 years. It is an industry for those who can see the future and build it.
 
 
-
 <x-quote credit="Dean Kamen">"Everybody has to be able to participate in the future that they want to live for. That’s what technology can do."</x-quote>
 
-\
+
 How do you keep up with that? In this article, we’ll explore how the tech industry is different, and things you should consider before launching your first product in tech.
 
 
