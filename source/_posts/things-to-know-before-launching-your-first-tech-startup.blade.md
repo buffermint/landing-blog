@@ -15,25 +15,19 @@ section: postContent
 ---
 It is no secret that launching a product in the tech industry is different from other industries. Tech is an ever-changing industry, and what’s new and cool right now will be considered archaic in 5 years. It is an industry for those who can see the future and build it.
 
-
 <x-quote credit="Dean Kamen">"Everybody has to be able to participate in the future that they want to live for. That’s what technology can do."</x-quote>
-
 
 How do you keep up with that? In this article, we’ll explore how the tech industry is different, and things you should consider before launching your first product in tech.
 
-
-
 ### 1. What is the difference between launching a product in tech vs other industries?
 
-One of the main differences between launching a product in tech vs other industries is the need for constant learning. In tech, new products and technologies are constantly being introduced and developed, which means that what you were using yesterday is not going to be useful tomorrow. 
+One of the main differences between launching a product in tech vs other industries is the need for constant learning. In tech, new products and technologies are constantly being introduced and developed, which means that what you were using yesterday may not be useful tomorrow. 
 
 This means that start-up founders have to be aware of the constant changes in technology and how it impacts their products, often making it difficult for them.
 
-One of the best ways to cope with this change is through being diversified about your skillset. Have at least one person on your team who knows how to use different software, has a background in marketing or sales, knows how startups work, etc. They can help relieve some stress off you by taking over some tasks.
+One of the best ways to cope with this change is through being diversified in your skillset. Have at least one person on your team who knows how to use different software, has a background in marketing or sales, knows how startups work, etc. They can help relieve some stress off you by taking over some tasks.
 
 Additionally, be well-informed about new technologies as possible. Join forums, attend meetups and conferences, read about trends on sites like TechCrunch or Hypebot, etc.
-
-
 
 ### 2. Things you should consider before launching your first product in the tech industry
 
@@ -55,7 +49,9 @@ When you enter the tech industry, it's crucial to understand that this is an eve
 >
 > And the first one now Will later be last 
 >
-> *The Times* They Are a-Changin’ - *Bob Dylan (1964)*
+> *The Times* They Are a-Changin’ 
+>
+> \- *Bob Dylan (1964)*
 
 You also need to be innovative with your ideas and services. Make sure that what you are offering is different than what others offer so that you can stand out from the pack.
 
@@ -83,4 +79,4 @@ To improve your chances as a first-timer, we suggest taking some time to think a
 
 You will need a diverse skill set as well as consideration for the rapidly changing tech market space.
 
-If all sounds too daunting or intimidating at this point, don't worry! We at BufferMint, are determined to help startups just like yours. [Book a discovery](<{{  $page->discovery_call_url  }}>) call today!
+If all sounds too daunting or intimidating at this point, don't worry! We at BufferMint, are determined to help startups just like yours. [Book a discovery]({{  $page->discovery_call_url  }}) call today!
