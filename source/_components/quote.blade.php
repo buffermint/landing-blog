@@ -1,6 +1,6 @@
 <hr class="hr-md my-7 text-secondary">
 
-<blockquote class="blockquote mb-7">
+<div class="blockquote mb-7">
   <p class="h2 mb-0 text-center">
     {{ $slot }}
   </p>
@@ -11,6 +11,6 @@
   </p>
   @endif
 
-</blockquote>
+</div>
 
 <hr class="hr-md my-7 text-secondary">

@@ -42,6 +42,12 @@
         color: $white;
         font-size: 1rem;
     }
+
+    blockquote {
+        margin: 0;
+        border-left: 2px solid #77a6ab;
+        padding-left: 20px;
+    }
 }
 
 #blog-scroll-position {
