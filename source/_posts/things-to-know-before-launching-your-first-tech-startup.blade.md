@@ -2,7 +2,7 @@
 excerpt: ""
 featured_image: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
 featured_thumbnail: assets/img/uploads/photo-1592496001020-d31bd830651f.jpeg
-title: Things to know before Launching your First Tech Startup
+title: Things to Know Before Launching Your First Tech Startup
 seo_description: What you need to know before launching your first tech startup
 author: "Vivek Dixit "
 show_meta: true
