@@ -48,7 +48,7 @@ Now, Google Brain is being put to work for enterprise-class machine learning tas
 
 AI will have an increasing impact on the SaaS industry in many ways.
 
-### 4) Micro SaaS is the future of SaaS companies
+### 4) Micro SaaS is the future of SaaS 
 
 Micro-SaaS is a new industry term for SaaS products that are delivered in low complexity and low cost, to niche markets. The service tiers and pricing models for Micro-SaaS are more akin to the "freemium" model than traditional SaaS offerings.
 
@@ -116,13 +116,9 @@ The niche apps may attract a smaller number of customers–the long tail–but t
 
 ### 10) We’ll see bigger companies partnering up and offer SaaS products and services
 
-Bigger companies will partner with smaller, more nimble SaaS providers to offer complementary products and services.
+Bigger companies will partner with smaller, more nimble SaaS providers to offer complementary products and services. For example, Oracle recently announced that it has partnered with HighJump Software to offer a hosted customer relationship management platform. 
 
-For example, Oracle recently announced that it has partnered with HighJump Software to offer a hosted customer relationship management platform. 
-
-It’s easier for larger corporations to acquire small companies and work with more specialized partners to improve other areas of the business.
-
-In this case, Oracle’s customers will be able to benefit from HighJump’s outstanding customer service, which is a frequent concern for large organizations.
+It’s easier for larger corporations to acquire small companies and work with more specialized partners to improve other areas of the business. In this case, Oracle’s customers will be able to benefit from HighJump’s outstanding customer service, which is a frequent concern for large organizations.
 
 Moreover, Oracle will benefit by pushing more customers towards its other offerings that were previously not as relevant to smaller businesses.
 
