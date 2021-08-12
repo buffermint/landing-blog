@@ -36,7 +36,7 @@ As a corollary to this trend, traditional software vendors have launched their o
 
 ### 3) The rise of AI
 
-![AI X SaaS](assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg)
+![](assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg)
 
 The rise of artificial intelligence will cause SaaS vendors to have a new and different approach for everything, be it product design, marketing, or sales.
 
