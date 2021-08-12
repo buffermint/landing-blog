@@ -1,6 +1,6 @@
 ---
-featured_image: assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg
-featured_thumbnail: assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg
+featured_image: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
+featured_thumbnail: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
 title: "10 Predictions for the SaaS Marketplace: Future Trends"
 seo_description: A look at what trends and predictions might lie ahead in the
   world of software as a service. Although it can be difficult to predict what
@@ -35,6 +35,8 @@ The balance of power in the SaaS market has been disrupted as other companies (w
 As a corollary to this trend, traditional software vendors have launched their own SaaS products to address new markets in which they may not have been traditionally active. But the marketplace will remain healthy and vibrant. 
 
 ### 3) The rise of AI
+
+![AI X SaaS](assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg)
 
 The rise of artificial intelligence will cause SaaS vendors to have a new and different approach for everything, be it product design, marketing, or sales.
 
