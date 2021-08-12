@@ -112,4 +112,4 @@ So, what makes a SaaS product good is the problem they solve for the users.
 
 Some of them cater to businesses, helping managers in their day-to-day tasks. Others focus on individuals, catering to the everyday user and making their lives easier. There's no cap on making things easy for users.
 
-If you are working on an idea to solve a particular problem, then why not speed up the with [BufferMint](https://buffermint.com/). We will change your idea into a SaaS product in about 45 days or less. \[Book a discovery call today!]({{ $page->discovery_call_url }})
+If you are working on an idea to solve a particular problem, then why not speed up the with [BufferMint](https://buffermint.com/). We will change your idea into a SaaS product in about 45 days or less. \[Book a discovery call today!] ({{ $page->discovery_call_url }})
