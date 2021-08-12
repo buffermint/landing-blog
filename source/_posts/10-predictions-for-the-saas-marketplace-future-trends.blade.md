@@ -14,8 +14,6 @@ section: postContent
 ---
 It’s hard to predict what lies ahead in the SaaS industry. But there are some current trends that can help us see where we're headed. Let's take a look at ten predictions for what might happen in the SaaS marketplace as well as a few thoughts on future trends.
 
-
-
 ### 1) The SaaS marketplace will continue to evolve
 
 New entrants into the SaaS space are a phenomenon that has been going on since long before Marc Benioff coined the term "software-as-a-service."
@@ -48,15 +46,19 @@ Now, Google Brain is being put to work for enterprise-class machine learning tas
 
 AI will have an increasing impact on the SaaS industry in many ways.
 
-### 4) A growth in enterprise AI will shorten the time from idea to trial for SaaS startups.
+### 4) Micro SaaS is the future of SaaS companies
 
-SaaS companies will use AI to accelerate the development and launch of a minimum viable product (MVP). The MVP will be used to test the market demand and receive feedback. SaaS startups powered by AI will be able to quickly learn the needs of their customers and incorporate them into a new product version.
+Micro-SaaS is a new industry term for SaaS products that are delivered in low complexity and low cost, to niche markets. The service tiers and pricing models for Micro-SaaS are more akin to the "freemium" model than traditional SaaS offerings.
 
-The cycle between idea, to launching an MVP, and further development could occur in as little as two weeks—with better and improved featured that we get initially today.
+With a prominent growth in the SaaS industry, Micro-Saas startups will be able to provide more generalized services with higher adoption rates as they continue to refine their offerings.
 
-"We're at a very exciting time, there are breakthroughs happening every day," said John Frankel, general partner at venture capital firm ff Venture Capital.
+This will allow for these micro-SaaS startups to become more viable companies in the SaaS marketplace as they grow their customer bases.
 
-"If you think about the SaaS model, one of the big advantages of that is having a recurring revenue stream," said Frankel. "You can now automate everything."
+There are a number of micro-SaaS products that you can use regularly. For example, Amazon Assistant offers product comparisons and Grammarly provides grammar checking in Google Docs and MS Office. Some of these tools come as small browser extensions but add a big value to your work.
+
+With the development of Micro-SaaS, we can see that there are ambitious goals for the United States. We see that by 2022, the market is predicted to grow to 6 million customers in the US which will amount to a 25% growth rate. It's projected that by 2020, this number will be at 3 million customers and it will be growing exponentially.
+
+Do you want to cut through the process of idea to launch your micro-SaaS in a matter of days? Then [booking a discovery call](https://calendly.com/buffermint/30min?month=2021-08) with [BufferMint](https://buffermint.com/) will make it happen. See you on the other side.
 
 ### 5) We are likely to see more growth software industry over hardware
 
@@ -112,8 +114,6 @@ The niche apps may attract a smaller number of customers–the long tail–but t
 
 ### 10) We’ll see bigger companies partnering up and offer SaaS products and services
 
-
-
 Bigger companies will partner with smaller, more nimble SaaS providers to offer complementary products and services.
 
 For example, Oracle recently announced that it has partnered with HighJump Software to offer a hosted customer relationship management platform. 
@@ -137,5 +137,3 @@ Although it can be difficult to predict what lies ahead in the SaaS industry. Bu
 The ten predictions above for what might happen in the SaaS marketplace as well as a few thoughts on future trends were just ideas accumulated through keen observation.
 
 Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap.
-
-If you want to cut through the process of idea to launch your SaaS in a matter of days, then \[Booking a discovery call] ({{ $page->discovery_call_url }}) with [BufferMint](https://buffermint.com/) will make it happen. See you on the other side.
