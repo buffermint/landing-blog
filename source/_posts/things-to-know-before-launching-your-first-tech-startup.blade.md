@@ -62,7 +62,7 @@ Branch out your skills as much as you can. It will assure that you have more tha
 
 Having a diverse skill set will make it easier for you to succeed because you won't be reliant on just one skill. Your product may not be relevant in just a few years- so the more skills and experience you have, the better off you will be.
 
-Look at Bill Gate's active stint at Microsoft. Starting a tech startup is more like agreeing on becoming a creator for life. 
+Look at Bill Gates' active stint at Microsoft. Starting a tech startup is more like agreeing on becoming a creator for life. 
 
 Make sure to learn new skills and gain experience in other areas, as well as focusing on your business ventures. Without these things, you would not have the necessary background that most tech startups need today.
 
@@ -76,4 +76,4 @@ To improve your chances as a first-timer, we suggest taking some time to think a
 
 You will need a diverse skill set as well as consideration for the rapidly changing tech market space.
 
-If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. [Book a discovery call today!](<{{ $page->discovery_call_url }}>)
+If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. \[Book a discovery call today!](<{{ $page->discovery_call_url }}>)
