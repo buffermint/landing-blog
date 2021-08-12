@@ -88,4 +88,4 @@ Use the techniques I described above to get your first 10 customers.
 
 Most importantly, never give up. Work hard and look closely to identify the right prospects you will succeed in finding paying users. If you have everything ready and are willing to launch a SaaS product, we can interest you with a quick to in-depth plan. 
 
-We, at BufferMint, can help you to launch your SaaS in about 45 days or even sooner. Yes, that's quick. So make sure you don't push your plans to launch your SaaS. \[Book a discovery call](<\[({{ $page->discovery_call_url }})] >).
+We, at [BufferMint](https://buffermint.com/), can help you to launch your SaaS in about 45 days or even sooner. Yes, that's quick. So make sure you don't push your plans to launch your SaaS. \[Book a discovery call](<\[({{ $page->discovery_call_url }})] >).
