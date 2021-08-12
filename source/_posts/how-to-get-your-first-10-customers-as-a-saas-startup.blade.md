@@ -1,11 +1,11 @@
 ---
-featured_image: assets/img/uploads/photo-1556740720-776b84291f8e.jpeg
-featured_thumbnail: assets/img/uploads/photo-1585915473635-d4e5c564eec3.jpeg
-title: How to get your first 10 customers as a SaaS startup
 excerpt: "Tips on how SaaS founders will be able to gain their first 10
   customers for their startup.   How to find them?  Approach like-minded
   people  Determine the good and bad prospects   How to talk to your
   customers   "
+featured_image: assets/img/uploads/photo-1556740720-776b84291f8e.jpeg
+featured_thumbnail: assets/img/uploads/photo-1585915473635-d4e5c564eec3.jpeg
+title: How to get your first 10 customers as a SaaS startup
 seo_description: "Tips on how SaaS founders will be able to gain their first 10
   customers for their startup.   How to find them?  Approach like-minded
   people  Determine the good and bad prospects   How to talk to your
@@ -22,7 +22,9 @@ It's important for you to know what your product does or in other words what's t
 
 **Why do you need just 10 customers at first?**
 
-Your first set of customers will have to be your core audience and no one else. This is one of your strongest points because unlike others you have a commanding authenticity. A small customer base will be easier to serve. That will be a great help to even refine the product as per the user's feedback.
+Your first set of customers will have to be your core audience and no one else. This is one of your strongest points because unlike your competition you will have a commanding authenticity. 
+
+A small customer base will be easier to serve. That will be a great help to even refine the product as per the user's feedback.
 
 We will walk you through the steps needed to find those people and sell them SaaS products. 
 
@@ -30,21 +32,21 @@ We will walk you through the steps needed to find those people and sell them Saa
 
 The ultimate goal is to create a community around your SaaS product, select a certain type of customer that will be the best fit for the product.
 
-Your first customers will always be people like yourself. But where to find them? It's easier than it seems. You need too many, just 10 people will be enough as a reliable customer base.
+Your first customers will always be people like yourself. But where to find them? It's easier than it seems. You do not need too many, just 10 people will be enough as a reliable customer base.
 
 The first group that comes to mind is other founders you know in person. It can even be someone from your family or friend list. You need like-minded people who would love to pay for what you're offering.
 
-The other groups that come to mind are people you met through community events like meetups and conferences.
-
 There's a low-hanging fruit that will connect you will almost anyone, that is social media platforms. Utilize social media to get in touch with some people who will become potential.
 
-
+The other group is the people you meet through community events like meetups and conferences because you have to rely on your gut feeling and not scrutinize your judgment. If you feel the connection you might as well approach them. 
 
 ## Determine the good and bad prospects 
 
+You will have to make conscious efforts in order to make the sale. That's why going to bad prospects will be a waste of time and effort. 
+
 Good prospects are the people who would use and pay for your product in the beginning. These are the people that you will not waste your time when you present your product to them. If they like it, they will buy it.
 
-Bad prospects are those who won't use or pay for your product even if you have presented it to them in person. They will not show interest in using what you have to offer, and they will not see the use of your product for themselves. You should not waste any time with them
+Bad prospects are those who would not use or pay for your product even if you have presented it to them in person. They will not show interest in using what you have to offer, and they will not see the use of your product for themselves. You should not waste any time with them
 
 How do you know someone is a good prospect?
 
@@ -70,9 +72,11 @@ The next step is to,
 
 ## Follow up with the customers
 
-Stay in touch with them. Don't give them your email id, instead give them a contact number where they can call you and discuss their problems with you.
+Stay in touch with them. In the initial stages, we are talking about 10 customers here, maybe a few more but you can manage to talk to them if you will take some time out. 
 
-This way you will be able to build a human rapport with your customers. Also, you would see the customer's interest level in your product. But first, take care of their problems. You do this right the next thing you see is that one of your customers might become a loyal customer. 
+Don't give them an email id, instead give them a contact number where they can call you and discuss their problems with you. This way you will be able to build a human rapport with your customers. Also, you would see the customer's interest level in your product. 
+
+If you do this right the next thing you see is that one of your customers might become a loyal customer. 
 
 **Conclusion:**
 
@@ -82,6 +86,6 @@ You should avoid wasting time with bad prospects or people who cannot afford you
 
 Use the techniques I described above to get your first 10 customers.
 
-Most importantly, never give up. Work hard and look closely to identify the right prospects you will succeed in finding paying users. If you have everything ready and willing to launch a SaaS product, we can interest you with a quick to in-depth plan. 
+Most importantly, never give up. Work hard and look closely to identify the right prospects you will succeed in finding paying users. If you have everything ready and are willing to launch a SaaS product, we can interest you with a quick to in-depth plan. 
 
-We, at BufferMint, can help you to launch your SaaS in about 45 days or even sooner. Yes, that's quick. So make sure you don't push your plans to launch your SaaS. [Book a discovery call](<[({{ $page->discovery_call_url }})] >).
+We, at BufferMint, can help you to launch your SaaS in about 45 days or even sooner. Yes, that's quick. So make sure you don't push your plans to launch your SaaS. \[Book a discovery call](<\[({{ $page->discovery_call_url }})] >).
