@@ -136,4 +136,4 @@ Although it can be difficult to predict what lies ahead in the SaaS industry. Bu
 
 The ten predictions above for what might happen in the SaaS marketplace as well as a few thoughts on future trends were just ideas accumulated through keen observation.
 
-Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap.
+Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap. In, case you need someone to talk it through, [book a discovery call with us](https://calendly.com/buffermint/30min?month=2021-08).
