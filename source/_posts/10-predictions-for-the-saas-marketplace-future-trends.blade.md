@@ -48,7 +48,7 @@ Now, Google Brain is being put to work for enterprise-class machine learning tas
 
 AI will have an increasing impact on the SaaS industry in many ways.
 
-### 4) Micro SaaS is the future of SaaS 
+### 4) Micro SaaS is the future of SaaS
 
 Micro-SaaS is a new industry term for SaaS products that are delivered in low complexity and low cost, to niche markets. The service tiers and pricing models for Micro-SaaS are more akin to the "freemium" model than traditional SaaS offerings.
 
@@ -124,14 +124,12 @@ Moreover, Oracle will benefit by pushing more customers towards its other offeri
 
 ### Conclusion
 
-To summarise everything: The SaaS marketplace will continue to evolve and the balance of power will be disrupted. The rise of AI, growth in enterprise AI, and more commoditization of software are all promising future trends for this industry.
+To summarise everything: The SaaS marketplace will continue to evolve and the balance of power will be disrupted. The rise of AI, growth in enterprise AI, and more commoditization of software are all promising future trends for this industry. These changes may make it easier for SaaS startups with new ideas to get their products out there as well as shorten the time from idea to trial.
 
-These changes may make it easier for SaaS startups with new ideas to get their products out there as well as shorten the time from idea to trial.
+We will also see bigger companies partnering up and offer SaaS products and services which is something that we haven’t seen before but could possibly lead to more innovation in both areas. Although it can be difficult to predict what lies ahead in the SaaS industry. But observing the current trends can help us see where we're headed.
 
-We will also see bigger companies partnering up and offer SaaS products and services which is something that we haven’t seen before but could possibly lead to more innovation in both areas.
+The ten predictions above for what might happen in the SaaS marketplace as well as a few thoughts on future trends were just ideas accumulated through keen observation. 
 
-Although it can be difficult to predict what lies ahead in the SaaS industry. But observing the current trends can help us see where we're headed.
+Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap.
 
-The ten predictions above for what might happen in the SaaS marketplace as well as a few thoughts on future trends were just ideas accumulated through keen observation.
-
-Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap. In, case you need someone to talk it through, [book a discovery call with us](https://calendly.com/buffermint/30min?month=2021-08).
+In, case you need someone to talk it through, [book a discovery call with us](https://calendly.com/buffermint/30min?month=2021-08).
