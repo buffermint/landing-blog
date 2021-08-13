@@ -48,13 +48,13 @@ Now, Google Brain is being put to work for enterprise-class machine learning tas
 
 AI will have an increasing impact on the SaaS industry in many ways.
 
-### 4) Micro SaaS is the future of SaaS
+### 4) [Micro SaaS is the future of SaaS](https://buffermint.com/articles/micro-saas-is-the-future)
 
 Micro-SaaS is a new industry term for SaaS products that are delivered in low complexity and low cost, to niche markets. The service tiers and pricing models for Micro-SaaS are more akin to the "freemium" model than traditional SaaS offerings.
 
 With a prominent growth in the SaaS industry, Micro-Saas startups will be able to provide more generalized services with higher adoption rates as they continue to refine their offerings.
 
-This will allow for these micro-SaaS startups to become more viable companies in the SaaS marketplace as they grow their customer bases.
+This will allow for these micro-SaaS startups to become more viable companies in the SaaS marketplace as they grow their customer bases. Check out [why micro-SaaS is the future in SaaS?](https://buffermint.com/articles/micro-saas-is-the-future)
 
 There are a number of micro-SaaS products that you can use regularly. For example, Amazon Assistant offers product comparisons and Grammarly provides grammar checking in Google Docs and MS Office. Some of these tools come as small browser extensions but add a big value to your work.
 
