@@ -1,8 +1,7 @@
 ---
 featured_image: assets/img/uploads/photo-1555580399-49e780f216b7.jpeg
 featured_thumbnail: assets/img/uploads/photo-1555580399-49e780f216b7-1-.jpeg
-title: How to be an excellent client and help your technical partners do their
-  best work?
+title: How to be an excellent client and help your partners do their best work?
 seo_description: A good client is one who is easy to work with, has realistic
   expectations, and communicates openly and honestly. The easier you make it for
   them to do their job, the better they'll be at doing it!
