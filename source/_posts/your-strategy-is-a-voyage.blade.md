@@ -1,12 +1,14 @@
 ---
-extends: _layouts.post
+featured_image: assets/img/uploads/rocket-launch-title-image-.jpeg
+featured_thumbnail: assets/img/uploads/rocket-launch-thumbnail-.jpeg
+title: Is your SaaS strategy like a Rocket Launch or a Ship Voyage?
+seo_description: "Change your business plan effectively. What is Pivoting? How to do it? "
+author: Rishabh Pandey
+show_meta: true
 section: postContent
-title: "Is your SaaS strategy like a Rocket Launch or a Ship Voyage?"
-author: "Rishabh Pandey"
-date: 2021-08-04
 published: true
-featured_image: https://images.unsplash.com/photo-1527685609591-44b0aef2400b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1450&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1527685609591-44b0aef2400b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
+date: 2021-08-04
+extends: _layouts.post
 ---
 
 Do you know how a rocket gets to the moon?
