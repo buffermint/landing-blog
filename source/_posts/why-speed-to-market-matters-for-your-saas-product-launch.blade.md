@@ -1,8 +1,8 @@
 ---
-featured_image: https://images.unsplash.com/photo-1506719040632-7d586470c936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1506719040632-7d586470c936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
-title: Why speed to market matters for your SaaS product launch?
 excerpt: ""
+featured_image: assets/img/uploads/why-speed-title-image-.jpeg
+featured_thumbnail: assets/img/uploads/why-speed-thumbnail-.jpeg
+title: Why speed to market matters for your SaaS product launch?
 seo_description: A speed-to-market strategy is a critical part of any SaaS
   product launch. This article will discuss how speed can impact your ability to
   bring your product to market quickly, as well as the various speed-to-market
