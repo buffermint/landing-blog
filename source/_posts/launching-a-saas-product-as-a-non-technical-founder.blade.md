@@ -1,13 +1,16 @@
 ---
-extends: _layouts.post
+featured_image: assets/img/uploads/essential-guide-title-image-.jpeg
+featured_thumbnail: assets/img/uploads/essential-guide-thumbnail-.jpeg
+title: An Essential Guide to Launching a SaaS Product as a Non-Technical Founder
+seo_description: This guide covers all the steps you'll need to launch a saas
+  product as a non-technical founder. We cover everything from saas terminology
+  and build process to hiring the right partner.
+author: Rishabh Pandey
+show_meta: true
 section: postContent
-title: "An Essential Guide to Launching a SaaS Product as a Non-Technical Founder"
-author: "Rishabh Pandey"
-seo_description: "This guide covers all the steps you'll need to launch a saas product as a non-technical founder. We cover everything from saas terminology and build process to hiring the right partner."
-featured_image: https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
-date: 2021-07-26
 published: true
+date: 2021-07-26
+extends: _layouts.post
 ---
 Do you have an amazing idea for a SaaS application? An idea that solves a real problem for your customers. An idea that has been validated properly and is ready to be carved into a kickass application. The next step is to build it.
 
