@@ -146,13 +146,13 @@ The best way to get feedback from SaaS users is by using a simple one-question s
 
 ### Make It Happen
 
-<x-list :list='\[
+<x-list :list='[
 "Find a problem to solve.",
 "Build a product that solves this problem.",
 "Determine the best way to reach your audience and get feedback on your SaaS idea - either through an app or website.",
 "Develop the saas product and launch it into the market.",
 "Collect feedback from customers, validate saas idea, iterate as needed, repeat steps 1-4 until you have found success in launching saas products."
-]'></x-list>
+]'/>
 
 <br/>
 
