@@ -1,7 +1,7 @@
 ---
 excerpt: ""
-featured_image: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGltZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGltZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
+featured_image: assets/img/uploads/when-is-the-time-title-image.jpeg
+featured_thumbnail: assets/img/uploads/when-is-the-time-thumbnail-.jpeg
 title: When is the right time to launch an MVP?
 seo_description: "When is the right time to launch an MVP? The answer is a quickly as you can. "
 author: "Vivek Dixit "
