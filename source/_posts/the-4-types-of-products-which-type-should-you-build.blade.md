@@ -1,8 +1,8 @@
 ---
-featured_image: https://images.unsplash.com/photo-1607949672221-8caafc54d97b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1607949672221-8caafc54d97b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
-title: "The 4 Types of Products: Which Type Should You Build?"
 excerpt: ""
+featured_image: assets/img/uploads/4-types-title-image-.jpeg
+featured_thumbnail: assets/img/uploads/4-types-thumbnail-.jpeg
+title: "The 4 Types of Products: Which Type Should You Build?"
 seo_description: There are 4 types of products based on the problem they
   solve,  Solves a big problem for a large number of people Solves a small
   problem for a large number of people Solves a small problem for a small number
