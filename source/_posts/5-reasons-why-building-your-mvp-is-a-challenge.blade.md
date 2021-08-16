@@ -1,8 +1,8 @@
 ---
-featured_image: https://images.unsplash.com/photo-1500933964569-522caa01ca2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1500933964569-522caa01ca2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
-title: 5 Reasons Why Building Your MVP is a Challenge
 excerpt: ""
+featured_image: assets/img/uploads/5-reasons-title-image.jpeg
+featured_thumbnail: assets/img/uploads/5-reasons-thumbnail-.jpeg
+title: 5 Reasons Why Building Your MVP is a Challenge
 seo_description: "Building an MVP can be challenging if you don't have enough
   time or resources. You'll need to plan well in advance and get the right
   people on board who are capable of both executing the project as well as
