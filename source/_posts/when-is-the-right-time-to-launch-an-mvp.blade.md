@@ -1,16 +1,16 @@
 ---
-featured_image: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGltZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80
-featured_thumbnail: https://images.unsplash.com/photo-1524678714210-9917a6c619c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dGltZXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
-title: When is the right time to launch an MVP?
 excerpt: ""
-seo_description: "When is the right time to launch an MVP? The answer is a quickly as you can. "
+featured_image: assets/img/uploads/when-is-the-time-title-image.jpeg
+featured_thumbnail: assets/img/uploads/when-is-the-time-thumbnail-.jpeg
+title: When is the right time to launch an MVP?
+seo_description: When is the right time to launch an MVP?
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-09
 extends: _layouts.post
 section: postContent
 ---
-The answer to that is, 'as soon as you can'. Not in months, but weeks after finalizing the earlier development stages. Make sure that you don't rush there.
+The answer to that is, 'as soon as you can'. Not in months, but weeks after finalizing the [earlier development stages](https://buffermint.com/articles/launch-your-micro-saas-product#:~:text=Communication%20is%20the%20most%20important%20skill%20for%20any%20entrepreneur.%20You%20need%20to%20ensure%20that%20you%27re%20developing%20a%20product%20or%20service%20to%20address%20something%20your%20target%20customer%20actually%20needs.). Make sure that you don't rush there.
 
 Once you have an idea and validated it, launch your MVP in a few weeks. Get your product into the market fast.
 
@@ -84,4 +84,4 @@ If you’ve already done your research, gotten feedback from users and investors
 
 Launch in 45 days or sooner! With BufferMint, launching this soon is easier than ever before.
 
-Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call now]({{$page->discovery_call_url}}).
+Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call now.]({{$page->discovery_call_url}})
