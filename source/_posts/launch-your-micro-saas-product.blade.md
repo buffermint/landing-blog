@@ -47,7 +47,7 @@ After you have the idea, you'll need startup capital in order to execute your id
 This list outlines the typical journey of an product from the idea to success.
 
 <x-list
-    :list='\[
+    :list='[
         "Get ideas for your product",
         "Validate your best idea by getting early feedback",
         "Build your MVP (Minimum Viable Product) with your favorite tech stack",
@@ -57,7 +57,7 @@ This list outlines the typical journey of an product from the idea to success.
         "Automate parts of your business",
         "Scale by hiring people or automating even more",
         "Sell your product and start over"
-    ]'
+    ]'/>
 
 You don't have to follow the same path and your journey can be different from this. Let's get started and talk about startup ideas.
 
@@ -146,13 +146,13 @@ The best way to get feedback from SaaS users is by using a simple one-question s
 
 ### Make It Happen
 
-<x-list :list='\[
+<x-list :list='[
 "Find a problem to solve.",
 "Build a product that solves this problem.",
 "Determine the best way to reach your audience and get feedback on your SaaS idea - either through an app or website.",
 "Develop the saas product and launch it into the market.",
 "Collect feedback from customers, validate saas idea, iterate as needed, repeat steps 1-4 until you have found success in launching saas products."
-]'></x-list>
+]'/>
 
 <br/>
 
