@@ -47,7 +47,7 @@ After you have the idea, you'll need startup capital in order to execute your id
 This list outlines the typical journey of an product from the idea to success.
 
 <x-list
-    :list='\[
+    :list='[
         "Get ideas for your product",
         "Validate your best idea by getting early feedback",
         "Build your MVP (Minimum Viable Product) with your favorite tech stack",
@@ -57,7 +57,7 @@ This list outlines the typical journey of an product from the idea to success.
         "Automate parts of your business",
         "Scale by hiring people or automating even more",
         "Sell your product and start over"
-    ]'
+    ]'/>
 
 You don't have to follow the same path and your journey can be different from this. Let's get started and talk about startup ideas.
 
