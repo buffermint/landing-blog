@@ -1,11 +1,14 @@
 ---
-extends: _layouts.post
+featured_image: assets/img/uploads/photo-1581404528764-2d2d2e39db02.jpeg
+featured_thumbnail: assets/img/uploads/tomorrow-world-smaal.jpeg
+title: Why Micro-SaaS is the future in SaaS?
+seo_description: "Explore why there will be more micro-SaaS products in the future. "
+author: Rishabh Pandey
+show_meta: true
 section: postContent
-title: "Why Micro-SaaS is the future in SaaS?"
-author: "Rishabh Pandey"
-date: 2021-07-10
 published: true
-featured_thumbnail: https://images.unsplash.com/photo-1581404528764-2d2d2e39db02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=487&q=20
+date: 2021-07-10
+extends: _layouts.post
 ---
 
 **Micro-SaaS is all the rage right now.**
