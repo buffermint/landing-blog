@@ -1,7 +1,7 @@
 ---
 featured_image: assets/img/uploads/photo-1507332194683-0ce90ffa318a.jpeg
 featured_thumbnail: assets/img/uploads/photo-1507332194683-0ce90ffa318a-1-.jpeg
-title: How to use Lean methodology to innovate faster?
+title: How to use Lean Methodology to Innovate Faster?
 seo_description: an article about how companies are increasingly using Lean
   methodology to build better products. This is a process that focuses on
   building the right product with the right features at the right time while
@@ -20,7 +20,7 @@ The principles were introduced in a book by James P. Womack, Daniel Roos, and Da
 
 The philosophy of Lean methodology is to eliminate waste. Waste in this case refers to any activity that doesn't directly add value to the end product. It can either be in form of material or time; for example, excessive inventory, defects, and rework are considered wastes as well as waiting time while your employees perform non-value-added tasks such as going to get materials or waiting for one part of the production line to finish so that you can continue with the next step. Lean methodology is based on the idea that any unnecessary waste means less throughput and therefore less efficiency in terms of profit.
 
-## 5 principles of Lean Methodology
+### 5 principles of Lean Methodology
 
 * **Respect** - The respect Lean has for all the people who are part of the production process plays a big role in making this principle work. It promotes the idea that everyone has value and contribution to make in their work.
 * **Genchi Genbutsu** - Genchi Genbutsu means "to go and see" in Japanese. This principle also stresses on going to where the problem is to identify and eliminate it.
@@ -40,9 +40,7 @@ Customer **pull** is the last component in Lean methodology that should be appli
 
 Lean methodology is a way to innovate faster and create better products for your customers. It has been applied in various industries with tremendous success and it doesn't have any limits when it comes to improving processes.
 
-
-
-## Examples of Successful Implementations of Lean
+### Examples of Successful Implementations of Lean
 
 The concepts of Lean methodology have been applied to multiple companies in the past to create great product innovation. Some exemplary examples are Toyota and GE. Toyota applied it as a manufacturing process while GE applied it as an idea management process.
 
@@ -52,9 +50,7 @@ GE used Lean methodology to get the best out of its employees. This was done by 
 
 Google is a great example of how Lean Methodology can be used to innovate faster. Google has been using this methodology for the development of Android OS where they use different parts of the company to create different components in an API that works together when it goes live.
 
-
-
-## Benefits of using Lean methodology for your company's bottom line
+### Benefits of using Lean methodology for your company's bottom line
 
 The first benefit of using Lean methodology for your company is the fact that it will allow for a lower risk. For example, if you want to develop a product, you can use this approach to explore what customers really want. You'll be able to actually get some feedback, and improve the final product before you release it and spend too much money on development.
 
@@ -66,21 +62,17 @@ Finally, with Lean methodology, you'll be able to speed up production time and i
 
 Overall, using Lean methodology will benefit you by lowering the risk of making a bad decision, allowing for greater innovation and quality control on released products. However, it's important to note that implementing this approach may require some changes in your current business model.
 
-
-
-## Tips to implement Lean into your company's workflow
+### Tips to implement Lean into your company's workflow
 
 A few tips on how to implement Lean into your company's workflow without disrupting operations and slowing down production time too much.
 
-* First of all, make sure that you have a good grasp on Lean methodology before implementing it. Lean is not something that you can do right off the bat.
+* First of all, make sure that you have a good grasp of Lean methodology before implementing it. Lean is not something that you can do right off the bat.
 * Second, show your team how they benefit from doing things in a more efficient manner. This means cutting down on the amount of inventory they have to deal with as well as cutting down on the amount of waste that they produce.
 * Third, be patient and allow for some trial and error with this new process. It's going to take some time before your team becomes more efficient at working in this new way.
 * Finally, make sure you start small and test it out with one of your smaller projects. This way, you can see if your team really benefits from this process before bringing it into full force to the rest of your projects.
-
-
 
 Lean methodology is a process that focuses on building the right product with the right features at the right time while minimizing waste and maximizing customer satisfaction.
 
 It's a methodology that can be applied to any industry-especially technology-to allow for better innovation, faster production, and higher quality of work. As you've seen from our tips above, implementing Lean into your company may require some changes in how things are done currently but it will almost always benefit your bottom line by cutting down on risk, speeding up production times, and increasing overall quality control.
 
-We at [BufferMint](https://buffermint.com) love working on amazing products. If you would like to get some help launching or scaling your own product, reach out to us by [booking a discovery call](<{{ $page->discovery_call_url }}>).
+We at [BufferMint](https://buffermint.com) love working on amazing products. If you would like to get some help launching or scaling your own product, reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}).
