@@ -4,7 +4,7 @@ featured_thumbnail: assets/img/uploads/rocket-launch-thumbnail-.jpeg
 title: Is your SaaS strategy like a Rocket Launch or a Ship Voyage?
 seo_description: "Change your business plan effectively. What is Pivoting? How to do it? "
 author: Rishabh Pandey
-show_meta: true
+show_meta: false
 section: postContent
 published: true
 date: 2021-08-04
