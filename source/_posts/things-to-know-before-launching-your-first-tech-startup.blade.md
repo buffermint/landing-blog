@@ -76,4 +76,4 @@ To improve your chances as a first-timer, we suggest taking some time to think a
 
 You will need a diverse skill set as well as consideration for the rapidly changing tech market space.
 
-If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. \[Book a discovery call today!](<{{ $page->discovery_call_url }}>)
+If all sounds too daunting or intimidating at this point, don't worry! We at [BufferMint](buffermint.com), are determined to help startups just like yours. [Book a discovery call today!]({{$page->discovery_call_url}})
