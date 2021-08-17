@@ -1,8 +1,8 @@
 ---
+excerpt: ""
 featured_image: assets/img/uploads/image1.jpeg
 featured_thumbnail: assets/img/uploads/image2.jpg
 title: "Get the Most out of your Idea Validation Process: An Ultimate Guide "
-excerpt: ""
 seo_description: An article about the validation of a startup idea. Validation
   is a process that can be quite difficult and time consuming, but it's
   necessary for anyone who has to convince investors to fund their business. In
@@ -25,9 +25,9 @@ To get the most out of validation, you should follow some strategic planning:  
 
 * Know who your customers are
 * Know what stage of development is appropriate
-* Eye open to the opportunities around you
+* An open eye for the opportunities around you
 * Keep good records on everything
-* Watch for any changes in the industry around you and f) be consistent throughout the process.
+* Watch for any changes in the industry around you and be consistent throughout the process.
 
 ## What is Validation and why does it matter?
 
@@ -61,7 +61,7 @@ If you want to get the most out of validation, it's important to have a realisti
 
 You need to set up standards for success and design experiments that are going to be able to create those standards. There are also a lot of different ways that you can do validation, so experiment with different methods until you find one that works for you.
 
-Along the way, keep good records and take note of any changes in the industry around me; if necessary, change your process or design.
+Along the way, keep good records and take note of any changes in your relavant industry; if necessary, change your process or design.
 
 When you're validating your idea, it's important to be open-minded and understand that what works for one business might not work for another. This is why it's so important to do research before beginning the validation process in order to ensure that you have a realistic idea about the feedback that you'll get along the way.
 
@@ -93,10 +93,10 @@ The validation process requires that you be realistic about what information can
 
 ## Example of Successful Idea Validation: Instagram
 
-In order to validate the idea for Instagram, founders Kevin Systrom and Mike Krieger set out to answer the question: "What's the simplest thing we can build that solves the problem?" They began by making a simple list of features they thought would be important for the app before settling on four basic functions then created a prototype of their possible idea.
+In order to validate the idea for [Instagram](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation#:~:text=Let%27s%20get%20started%20...-,Instagram,-Instagram%2C%20a%20simple), founders Kevin Systrom and Mike Krieger set out to answer the question: "What's the simplest thing we can build that solves the problem?" They began by making a simple list of features they thought would be important for the app before settling on four basic functions then created a prototype of their possible idea.
 
 They got feedback from their friends and colleagues who used the app. It turned out that people liked using it but found the design too complex. After simplifying the idea to only its most basic elements (a camera, photo filters, sharing capabilities, etc.), Systrom & Krieger were able to launch their product.
 
-You can find more successful idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation). 
+You can find more interesting idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation). 
 
-There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by [booking a discovery call](<{{ $page->discovery_call_url }}>).
+There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by \[booking a discovery call](<{{ $page->discovery_call_url }}>).
