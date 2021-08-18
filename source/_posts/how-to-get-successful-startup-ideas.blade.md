@@ -23,7 +23,7 @@ Instead of spending too much time trying to create a great idea, spend your time
 
 So, how to get successful startup ideas? 
 
-Turn the problems into ideas, take the idea further and you have something to start with. So let's dive in deep into the subject: how to get a successful startup. 
+Turn the problems into ideas, take the idea further and you have something to start with. So let's dive in deep into the subject: how to get a successful startup idea. 
 
 ### You need a problems
 
