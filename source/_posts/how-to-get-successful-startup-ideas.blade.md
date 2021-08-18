@@ -25,8 +25,7 @@ So, how to get successful startup ideas?
 
 Turn the problems into ideas, take the idea further and you have something to start with. So let's dive in deep into the subject: how to get a successful startup. 
 
-### \
-You need a problems
+### You need a problems
 
 Yes, as weird as it sounds, you need a problem. To have a better startup idea, you need a problem to solve. We've heard a lot of ideas and how badly founders want to monetize them. Unfortunately, they don't find a way to monetize.
 
@@ -42,7 +41,7 @@ People wonder about a successful startup idea: the answer is they need to find a
 
 You can’t think of any business idea. You need to look for problems first and then come up with a solution for them. Find out who else has this problem. If you find a few people, then congratulations. Or else, repeat the process.
 
-## How to look for the problems to solve?
+### How to look for the problems to solve?
 
 Think about what problems would be interesting to solve for other people? Now or let's say 20 years from now, what kind of problems do you think they would have? Usually, you can make a good prediction about these problems when you put yourselves in their position.
 
@@ -55,7 +54,7 @@ Scratch your own itch, the best way is to think what are the problems that you a
 >
 > – Michael Arrington, TechCrunch.
 
-## Recognizing a successful idea
+### Recognizing a successful idea
 
 A startup should have at least a handful of eager customers who truly depend on it, not just people who might use it if they had time. That's a starting point for your idea. Try to solve the problems for which you can get paid.
 
@@ -63,23 +62,13 @@ Most of the ideas may be general ideas because if you are solving problems that 
 
 This means you have to compromise on one front, you can either build something a large number of people want a small amount or something a small number of people want a large amount. Choose the latter. There are a lot of different types of startup ideas. Most good startup ideas fit into this specific type
 
-## The future aspect
-
-
-
-
-
-
+### The future aspect
 
 ![](assets/img/uploads/have-a-future-aspect.jpeg "The future aspect")
-
-
 
 > People at the leading edge of a rapidly changing field "live in the future." 
 >
 > \- Paul Buchheit
->
->
 
 That is the way many of the largest startups started. 
 
@@ -91,11 +80,11 @@ If you're really at the leading edge of a rapidly changing field as Paul Buchhei
 
 When you look from afar perspective, you see things that are missing. When you come closer, again, everything looks complete.
 
-The opposite approach to this is quiet common. Think of an idea and start building something and then wait for the people to buy it. 
+The opposite approach to this is quite common. Think of an idea and start building something and then wait for the people to buy it. 
 
 It requires more work doing it backward but is often more successful because you are the one who notices things that are missing when building. You're trying to sell your product to users, not the other way round. So, you know what they need before they even ask for it.
 
-If you are a futurist who want to launch a SaaS, we will help your in every step of the process. So, if you are a founder looking for perfect start, why not start with a [discovery call](<(<{{ $page->discovery_call_url }}>)>) with [BufferMint](https://buffermint.com/).
+If you are a futurist who wants to launch a SaaS, we will help you in every step of the process. So, if you are a founder looking for a perfect start, why not start with a \[discovery call](<(<{{ $page->discovery_call_url }}>)>) with [BufferMint](https://buffermint.com/).
 
 ## Conclusion
 
@@ -103,10 +92,10 @@ It doesn't work well simply to try to think of successful startup ideas. If you 
 
 You have to actively lookout for problems and find ways that you can help solve them, as well as figure out how feasible the market is for your idea.
 
-If you are looking in the right place, good ideas will seem obvious to you. It will take sometime. 
+If you are looking in the right place, good ideas will seem obvious to you. It will take some time. 
 
-The process of identifying a successful startup idea is largely determined by your ability to notice gaps (problems) and filling (fixing) them. 
+The process of identifying a successful startup idea is largely determined by your ability to notice gaps (problems) and fill (fix) them. 
 
-These gaps are not things that would seem to be startup ideas at first, just things that would be interesting to build. It's important to take a step back from the noise and look around for fun projects.
+These gaps are not things that would seem to be startup ideas at first, just things that would be interesting to build. It's important to take a step back from the noise and look around for interesting projects.
 
 Have an eye on the future and create fun projects. It might sound strange but that's how you get successful startup ideas.
