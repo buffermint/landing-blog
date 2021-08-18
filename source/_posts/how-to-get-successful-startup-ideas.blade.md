@@ -17,7 +17,7 @@ A startup idea is a crucial point for your start-up. It inspires you to start. I
 
 Founders try too hard to come up with a successful idea for their startups which usually lands them to an idea that exists already and has a tough competitive edge. 
 
-Also, a lot of founders struggle to come up with something unique and different. To make it worse, they use unique and different as filter to think of an idea that's never been thought of. Well, there are better methods than this.  
+Also, a lot of founders struggle to come up with something unique and different. To make it worse, they use unique and different as filters to think of an idea that's never been thought of. Well, there are better methods than this.  
 
 Instead of spending too much time trying to create a great idea, spend your time looking for problems that people want to be solved. 
 
