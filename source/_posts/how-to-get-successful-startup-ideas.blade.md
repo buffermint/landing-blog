@@ -7,7 +7,7 @@ seo_description: "All you need to know to have a successful startup ideas. With
   "
 author: "Vivek Dixit "
 show_meta: false
-date: 2021-08-18
+date: 2021-08-16
 extends: _layouts.post
 section: postContent
 ---
