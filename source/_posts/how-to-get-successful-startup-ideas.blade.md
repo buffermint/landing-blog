@@ -1,7 +1,7 @@
 ---
 featured_image: assets/img/uploads/how-to-have-a-successful-startup-idea-featured-image.jpeg
 featured_thumbnail: assets/img/uploads/how-to-have-a-successful-startup-idea-thumbnail.jpeg
-title: "How to get successful startup ideas "
+title: How to Get Successful Startup Ideas?
 seo_description: "All you need to know to have a successful startup ideas. With
   this blog we go deep into the subject of how to get successful startup ideas.
   "
