@@ -49,7 +49,9 @@ Look for the problems that you can solve with your special skills, knowledge, or
 
 Scratch your own itch, the best way is to think what are the problems that you are facing. Airbnb started this way, CodeAcademy has the same story to tell. 
 
-<x-quote credit="> Michael Arrington, TechCrunch." The best startups generally come from somebody needing to scratch an itch. </x-quote>
+> "The best startups generally come from somebody needing to scratch an itch."
+>
+> \- Michael Arrington, TechCrunch
 
 ### Recognizing a successful idea
 
@@ -63,7 +65,11 @@ This means you have to compromise on one front, you can either build something a
 
 ![](assets/img/uploads/have-a-future-aspect.jpeg "The future aspect")
 
-<x-quote credit="Paul Buchheit" People at the leading edge of a rapidly changing field "live in the future."</x-quote>
+> "People at the leading edge of a rapidly changing field "live in the future."
+>
+> \- Paul Buchheit
+
+
 
 That is the way many of the largest startups started. 
 
