@@ -49,11 +49,7 @@ Look for the problems that you can solve with your special skills, knowledge, or
 
 Scratch your own itch, the best way is to think what are the problems that you are facing. Airbnb started this way, CodeAcademy has the same story to tell. 
 
-
-
-<x-quote credit="> Michael Arrington, TechCrunch.">> The best startups generally come from somebody needing to scratch an itch. > ></x-quote>
-
-
+<x-quote credit="> Michael Arrington, TechCrunch." The best startups generally come from somebody needing to scratch an itch. </x-quote>
 
 ### Recognizing a successful idea
 
@@ -67,11 +63,7 @@ This means you have to compromise on one front, you can either build something a
 
 ![](assets/img/uploads/have-a-future-aspect.jpeg "The future aspect")
 
-<x-quote credit="Paul Buchheit">> People at the leading edge of a rapidly changing field "live in the future."</x-quote>
-
- 
-
-
+<x-quote credit="Paul Buchheit" People at the leading edge of a rapidly changing field "live in the future."</x-quote>
 
 That is the way many of the largest startups started. 
 
@@ -87,7 +79,7 @@ The opposite approach to this is quite common. Think of an idea and start buildi
 
 It requires more work doing it backward but is often more successful because you are the one who notices things that are missing when building. You're trying to sell your product to users, not the other way round. So, you know what they need before they even ask for it.
 
-If you are a futurist who wants to launch a SaaS, we will help you in every step of the process. So, if you are a founder looking for a perfect start, why not start with a \[discovery call](<(<{{ $page->discovery_call_url }}>)>) with [BufferMint](https://buffermint.com/).
+If you are a futurist who wants to launch a SaaS, we will help you in every step of the process. So, if you are a founder looking for a perfect start, why not start with booking a discovery call with [BufferMint](https://buffermint.com/).
 
 ## Conclusion
 
