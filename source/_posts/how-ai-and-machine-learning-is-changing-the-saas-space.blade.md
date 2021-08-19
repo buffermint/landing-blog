@@ -14,7 +14,7 @@ section: postContent
 ---
 The SaaS space is about to change forever. Artificial intelligence and machine learning are leading the way, and they’re going to revolutionize everything we know about SaaS, micro-SaaS, or software in general.
 
-It might sound like science fiction, but AI is already in use by some of the biggest companies in the industry: Microsoft, Google, Amazon, to name a few. Jump to see how AI is empowering SaaS companies.
+It might sound like science fiction, but AI is already in use by some of the biggest companies in the industry: Microsoft, Google, Amazon, to name a few. 
 
 It’s only a matter of time before every company has turned on their AI systems and let them take over part or all of their workload.
 
