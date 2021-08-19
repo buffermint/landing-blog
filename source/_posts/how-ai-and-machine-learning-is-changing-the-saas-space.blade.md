@@ -1,7 +1,7 @@
 ---
 featured_image: assets/img/uploads/how-ai-and-ml-can-change-the-saas-space.jpeg
 featured_thumbnail: assets/img/uploads/how-ai-and-machine-learning-is-changing-the-saas-space-thumbnail.jpeg
-title: How AI and Machine Learning is changing the SaaS space
+title: How AI and Machine Learning is Changing the SaaS space
 seo_description: Discover how Artificial Intelligence and Machine Learning are
   changing the SaaS space. AI is already disrupting how the software works. Some
   of its recent examples are Microsoft, Google, Amazon. Read this blog to
