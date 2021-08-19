@@ -54,8 +54,6 @@ An open-source tool is OpenNMT which provides you with a pre-trained model that 
 
 There are several tools to leverage AI without coding like IBM Watson, Spinnaker, and OpenNMT. Just do some research and pick the one that's best for your application.
 
-
-
 ### The benefits of using these services
 
 The benefits of the tools for leveraging AI without coding are plenty. You don't have to spend time writing code or training your models. You can just plug in the service and it will do all the work for you.
@@ -102,4 +100,4 @@ To get started with AI services, all you need to do is decide what application y
 
 Be sure to explore the benefits these services offer and consider them as part of your next project.
 
-Want to read more blogs like this? [Check out more articles](https://buffermint.com/articles).
+Want to read more blogs like this? [Check out more articles](https://buffermint.com/articles) by us.
