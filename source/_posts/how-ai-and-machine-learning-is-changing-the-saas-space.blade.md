@@ -20,9 +20,9 @@ It’s only a matter of time before every company has turned on their AI systems
 
 Here’s how it works, AI and ML – the basics
 
-Artificial Intelligence (AI) is a field of computer science that deals with intelligent behavior, learning, reasoning, and self-correction. It does not need to be programmed, it can learn on its own from experience. The system can study patterns in data and make inferences for new data.
+**Artificial Intelligence (AI)** is a field of computer science that deals with intelligent behavior, learning, reasoning, and self-correction. It does not need to be programmed, it can learn on its own from experience. The system can study patterns in data and make inferences for new data.
 
-Machine Learning (ML) is a subset of AI that uses statistical techniques to give computers the ability to ‘learn’. It does this by feeding information into the system, which then becomes more efficient at processing new data.
+**Machine Learning (ML)** is a subset of AI that uses statistical techniques to give computers the ability to ‘learn’. It does this by feeding information into the system, which then becomes more efficient at processing new data.
 
 Let’s take an example – imagine you’re in charge of your company’s sales process. You prefer to follow a strict procedure with your teams, so you have a set script that everybody follows, step by step. The steps are:
 
@@ -38,7 +38,7 @@ In that situation, if one person follows procedure A, but another follows proced
 
 Now imagine AI and ML coming in to play here – you’re no longer using your own judgment about how the sales team should work, but you’ve handed it over to an algorithm. It will take that data about each of those salespeople and then work out a way to put them all together into a single system that will produce the best results for your company.
 
-## The benefits of AI and ML in SaaS
+### The benefits of AI and ML in SaaS
 
 The benefits of AI and machine learning are profound in the SaaS space as they allow developers to code less and focus on other things while machines do a great deal of work.
 
@@ -64,7 +64,7 @@ Due to machine learning algorithms being able to process so much information in 
 
 As SaaS continues to mature, these innovative solutions will continue to make everyone's lives easier. Rapid advances in software research have led to the development of all kinds of new applications that are solving problems for people from all walks of life.
 
-## How it will change the SaaS space forever
+### How it will change the SaaS space forever
 
 AI and machine learning are changing the SaaS space since a lot of the heavy lifting is done by machines instead of programmers.
 
@@ -96,7 +96,7 @@ This ability is crucial for companies if they want to improve their efficiency a
 
 With the tremendous amount of work being done by AI and ML in SaaS, there is no doubt that AI will change the SaaS space forever.
 
-## How to prepare for this change
+### How to prepare for this change
 
 First, be sure to educate yourself about artificial intelligence so that you can keep up with the changing environment. The more information you have, the better.
 
@@ -110,7 +110,7 @@ If a task needs deep thinking or sophisticated analysis, hand over the work to a
 
 The more work you do, the more intelligent and advanced AI becomes. It gets efficient and accurate after the completion of each task.
 
-## Conclusion
+### Conclusion
 
 In this article, we explored how Artificial Intelligence and Machine Learning are changing the SaaS space for good. One of the benefits of AI is that it allows for hands-off activity with software, so you don't need to spend time coding and can instead give machine-specific instructions.
 
