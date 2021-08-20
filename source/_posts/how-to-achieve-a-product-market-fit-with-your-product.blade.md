@@ -95,15 +95,12 @@ When you're not getting the product-market fit, you need to figure out where you
 
 To achieve the product-market fit you must focus on your customers and pay close attention to what they want. 
 
-When you know what the customers want, then it will be easy to adapt your product accordingly. You can do this while figuring out ways to sell it for a higher price. 
+When you know what the customers want, then it will be easy to adapt your product accordingly. You can do this while figuring out ways to sell it for a higher price.
 
-\
 There are many ways to gather customer data like running research or even conducting surveys. The moment you find out what the customers want, adjust the product to meet that demand.
 
-\
-If it is not possible to make the product better for customers, then take a step back and think of other ways of finding potential customers. Remember that not every company will have an opportunity to experience product-market fit. 
+If it is not possible to make the product better for customers, then take a step back and think of other ways of finding potential customers. Remember that not every company will have an opportunity to experience product-market fit.
 
-\
 However, if your market research indicates that your product has potential, then congratulations! Improve on customer data and achieve the perfect product-market fit for your product.
 
 ### Conclusion
