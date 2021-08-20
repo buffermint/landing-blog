@@ -9,7 +9,7 @@ seo_description: "This article will help you to plan a product that will settle
   for your product or service. "
 author: "Vivek Dixit "
 show_meta: false
-date: 2021-08-21
+date: 2021-08-19
 extends: _layouts.post
 section: postContent
 ---
@@ -18,8 +18,6 @@ One of the most important concepts in [lean startup methodology](https://bufferm
 Product-market fit is a term coined by Marc Andreessen in 2007 when he wrote 
 
 > "Product market-fit means being in a good market with a product that can satisfy that market." 
->
->
 
 That's the idea, but how do you get there?
 
@@ -36,7 +34,7 @@ One way to think of this balance is: are people buying it faster than you can pr
 \
 And if this does not give you proper understanding, stick with me as we take a look at how to achieve a product-market fit with your product and what the benefits are if you succeed.
 
-## The impact of product-market fit
+### The impact of product-market fit
 
 It's important to establish product-market fit because it can really help your startup to gain more profit. It is impactful in the long run. 
 
@@ -54,13 +52,11 @@ By the time Apple launched the iPod, they had already found product-market fit a
 
 Finding product-market fit is crucial for a startup and it's important to find this before you launch, not after. If you're able to achieve this balance, your startup will grow organically and will be able to scale up with demand.
 
-## How to find your perfect balance
+### How to find your perfect balance
 
 The first step is to identify a basic idea for the product. Ideally, this should be done earlier in the ideation process. There are ways of testing the idea before investing in it, such as exploring if people will pay for it and at what price they would be willing to pay.
 
 Once you have a good idea, come up with a minimum viable product. An MVP is your initial offering, but without all the extra features that you know may be desired by others. It is a product/service stripped down to just basic functionalities. This should give you a rough idea of your product's potential. 
-
-
 
 Then do market research and see what customers think of this product. This will be represented in the form of an S-curve chart which will indicate when you have enough sales but not too many. 
 
@@ -75,8 +71,6 @@ Apple had not made too many changes to the device, but they had added enough for
 
 The company had found the "product-market fit", as they were now attracting a lot of customers with iPhone 4s. They continue to make improvements to it, while at the same time keep the price high enough that they are making a good profit on each one sold.
 
-
-
 Nike is another great example of a company that has achieved a product-to-market fit by selling athletic wear. 
 
 Their success can be attributed to the fact that Nike has been able to find a way of making footwear fashionable as well as functional. 
@@ -87,7 +81,7 @@ This has resulted in Nike creating some shoes that have been very innovative and
 
 By achieving a "product-market fit" with their athletic wear, Nike makes more money without having to lower its prices. They stand out by charging higher prices for their products than others who sell similar footwear.
 
-## What you can do if you're not there yet
+### What you can do if you're not there yet
 
 When you're not getting the product-market fit, you need to figure out where your potential customers would find your product, and how they might be able to buy it. For a new startup, this can require a significant investment in time and resources. 
 
