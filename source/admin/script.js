@@ -9,11 +9,12 @@ CMS.registerEditorComponent({
     { name: "credit", label: "Person", widget: "string", required: false },
   ],
   // Pattern to identify a block as being an instance of this component
-  pattern: /^x\-quote (\S+)$/,
+  pattern: /<x-quote(\s)*(credit="(.+?)")?>((.|\n)+?)<\/x-quote>/,
   // Function to extract data elements from the regexp match
   fromBlock: function(match) {
     return {
-      id: match[1],
+      credit: match[3] || '',
+      quote: match[4]
     };
   },
   // Function to create a text block from an instance of this component
@@ -27,7 +28,11 @@ CMS.registerEditorComponent({
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
   toPreview: function(obj) {
-    return "<p>" + obj.quote + "</p>";
+    let str = '';
+    str = "<p>" + obj.quote + "</p>";
+    if(obj.credit) str += "<strong>" + obj.credit + "</strong>"
+
+    return '<hr/><center>'+ str +'</center><hr/>'
   },
 });
 
@@ -39,32 +44,38 @@ CMS.registerEditorComponent({
   // Fields the user need to fill out when adding an instance of the component
   fields: [
     { name: "url", label: "Image URL", widget: "file" },
-    { name: "caption", label: "Caption", widget: "string" },
-    { name: "alt", label: "Alt", widget: "string" },
+    { name: "caption", label: "Caption", widget: "string", required: false },
+    { name: "alt", label: "Alt", widget: "string", required: false },
+    { name: "wide", label: "Full Width", widget: "boolean", default: true },
   ],
   // Pattern to identify a block as being an instance of this component
-  pattern: /^x\-image (\S+)$/,
+  pattern: /<x-image(\s)*(url="(.+?)")?(\s)*(caption="(.+?)")?(\s)*(alt="(.+?)")?(\s)*(wide="(.+?)")?><\/x-image>/,
   // Function to extract data elements from the regexp match
   fromBlock: function(match) {
+    console.log(match);
     return {
-      id: match[1],
+      url: match[3] || '',
+      caption: match[6] || '',
+      alt: match[9] || '',
+      wide: match[12] || ''
     };
   },
   // Function to create a text block from an instance of this component
   toBlock: function(obj) {
-    let string = "";
-    if (obj.url) string = `<x-image url="${obj.url}" />`;
-    if (obj.url && obj.caption)
-      string = `<x-image caption="${obj.caption}" url="${obj.url}" />`;
-
-    if (obj.url && obj.caption && obj.alt)
-      string = `<x-image alt="${obj.alt}" caption="${obj.caption}" url="${obj.url}" />`;
-
+    let string = "<x-image";
+    if (obj.url) string += ` url="${obj.url}"`;
+    if (obj.caption) string += ` caption="${obj.caption}"`;
+    if (obj.alt) string += ` alt="${obj.alt}"`;
+    if (obj.wide) string += ` wide="${obj.wide}"`;
+    string += `></x-image>`
     return string;
   },
   // Preview output for this component. Can either be a string or a React component
   // (component gives better render performance)
   toPreview: function(obj) {
-    return `<img src="${obj.url}" />`;
+    let str = '';
+    str = `<img src="${obj.url}" />`;
+    if(obj.caption) str += `<p>${obj.caption}</p>`;
+    return '<br/>' + str + '<br/>';
   },
 });
