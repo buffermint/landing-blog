@@ -7,7 +7,7 @@ seo_description: Discover how Artificial Intelligence and Machine Learning are
   of its recent examples are Microsoft, Google, Amazon. Read this blog to
   understand the entire impact of AI on the SaaS industry
 author: "Vivek Dixit "
-show_meta: false
+show_meta: true
 date: 2021-08-18
 extends: _layouts.post
 section: postContent
