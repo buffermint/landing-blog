@@ -29,9 +29,16 @@ So, what is product-market fit?
 
 Product-market fit is the point where your product (or service) has reached a level of desirability that makes it attractive to enough customers so that you're able to sell it at an appealing rate, but not too fast.
 
-One way to think of this balance is: are people buying it faster than you can produce it? If the answer to that question is yes, it's time to increase your production rate and find new customers. If the answer is no, you're producing more than you can sell (inventory) and need to find more people who want what you're selling.
+In a nutshell, the demand for your product needs to match the supply that you produce. 
 
-\
+This balance is more important during periods of high demand. If your customer base is demanding but you don't have enough inventory, you'll be forced to refuse new customers and lose some money on them. 
+
+One way to think of this balance is: are people buying it faster than you can produce it? If the answer to that question is yes, it's time to increase your production rate and find new customers. 
+
+If the answer is no, you're producing more than you can sell (inventory) and need to find more people who want what you're selling.
+
+Also, if your inventory is high and nobody wants what you are offering, you can't make any sales. 
+
 And if this does not give you proper understanding, stick with me as we take a look at how to achieve a product-market fit with your product and what the benefits are if you succeed.
 
 ### The impact of product-market fit
@@ -103,7 +110,7 @@ However, if your market research indicates that your product has potential, then
 
 Product-market fit is when a company has a product that meets both the needs of the customers and the company. The company sells enough to make money and also not too many products so they can make more money.
 
-In this article, we've discussed how you might find your own sweet spot and provided some helpful tips on how you could get there if you haven't yet. 
+In this article, we've discussed how you might find your own sweet spot and provided some helpful tips on how you could get there if you haven't yet.
 
 If you are starting out with ideas and aim to launch a tech startup up, we can help with our [Lean startup](https://buffermint.com/articles/how-to-use-lean-methodology-to-innovate-faster) approach.  
 
