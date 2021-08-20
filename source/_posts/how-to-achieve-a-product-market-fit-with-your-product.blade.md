@@ -8,7 +8,7 @@ seo_description: "This article will help you to plan a product that will settle
   you understand better. Hope you learn how to achieve the product to market fit
   for your product or service. "
 author: "Vivek Dixit "
-show_meta: false
+show_meta: true
 date: 2021-08-19
 extends: _layouts.post
 section: postContent
