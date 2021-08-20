@@ -83,9 +83,11 @@ Nike is another great example of a company that has achieved a product-to-market
 
 Their success can be attributed to the fact that Nike has been able to find a way of making footwear fashionable as well as functional. 
 
-To achieve this, they have engaged in plenty of research into their product and also how customers perceive it. This has helped them come up with new ideas for shoes while at the same time working out what customers want in their products. 
+To achieve this, they have engaged in plenty of research into their product and also how customers perceive it. T
 
-This has resulted in Nike creating some shoes that have been very innovative and different from the rest on the market. 
+his has helped them come up with new ideas for shoes while at the same time working out what customers want in their products. 
+
+The result: Nike brought shoes that have been remarkably innovative and unique from the rest on the market. 
 
 By achieving a "product-market fit" with their athletic wear, Nike makes more money without having to lower its prices. They stand out by charging higher prices for their products than others who sell similar footwear.
 
