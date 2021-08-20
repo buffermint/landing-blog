@@ -62,7 +62,8 @@ Then do market research and see what customers think of this product. This will 
 
 ![Product market fit - Scurve](assets/img/uploads/product-market-fit-buffermint.jpeg)
 
-\
+
+
 Apple achieved the perfect product-market fit balance with the iPhone 4s over earlier versions of the same product. People were more interested in purchasing their device at that time, this was partly due to an update over earlier versions.
 
 This was due to the better features and functionality that were included in this updated version of the phone. 
