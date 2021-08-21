@@ -60,7 +60,6 @@ collections:
           name: "show_meta",
           widget: "boolean",
           default: true,
-          required: true,
         }
       - {
           label: "Date",

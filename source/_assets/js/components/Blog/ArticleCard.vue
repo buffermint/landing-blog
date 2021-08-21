@@ -4,7 +4,7 @@
     <!-- Image -->
     <a class="card-img-top" :href="article.link">
       <!-- Image -->
-      <img :src="article.image" :alt="article.title" class="card-img-top" />
+      <img :src="'/'+article.image" :alt="article.title" class="card-img-top" />
     </a>
 
     <!-- Body -->
