@@ -13,7 +13,7 @@ return [
     'nav_menu' => [
         "About Us" => "/about-us",
         // "What we do?" => "/#what-we-do",
-        "Pricing" => "/#pricing",
+        // "Pricing" => "/#pricing",
         "Blog" => "/articles",
         "Careers" => "/careers",
         "Contact" => "/contact-us",

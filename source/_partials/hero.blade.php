@@ -3,7 +3,10 @@
 
     <!-- Heading -->
     <h1 class="display-1 fw-bold mb-0">
-      Launch your <br> <span class="text-primary">SaaS in 45 days</span> 
+      Launch your <br>
+       <strong class="text-primary" data-toggle="typed" data-options='{"strings": ["SaaS", "MVP", "CRM","Product", "Marketplace", "App", "Idea"]}'></strong>
+       <br>
+       <strong class="text-primary">in 45 days</strong>
     </h1>
 
     <div class="pt-4 mt-6 mb-0 ">

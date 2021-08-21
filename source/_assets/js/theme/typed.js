@@ -5,7 +5,7 @@
 
 'use strict';
 
-(function() {
+window.onload = function() {
 
   //
   // Variables
@@ -21,9 +21,9 @@
     var elementOptions = el.dataset.options;
     elementOptions = elementOptions ? JSON.parse(elementOptions) : {};
     var defaultOptions = {
-      typeSpeed: 40,
+      typeSpeed: 60,
       backSpeed: 40,
-      backDelay: 1000,
+      backDelay: 3000,
       loop: true
     }
     var options = Object.assign(defaultOptions, elementOptions);
@@ -42,4 +42,4 @@
     });
   }
 
-})();
+};
