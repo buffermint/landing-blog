@@ -1,6 +1,6 @@
 ---
-featured_image: assets/img/uploads/product-to-market-feature-.jpeg
-featured_thumbnail: assets/img/uploads/product-to-market-thumbnail.jpeg
+featured_image: assets/img/uploads/product-to-market-fit-feature-image.jpeg
+featured_thumbnail: assets/img/uploads/product-to-market-fit-thubnail.jpeg
 title: How to Achieve a Product-Market Fit with Your Product
 seo_description: "This article will help you to plan a product that will settle
   perfectly in the market. Here we talk about product-market fit and how to
@@ -67,9 +67,7 @@ Once you have a good idea, come up with a minimum viable product. An MVP is your
 
 Then do market research and see what customers think of this product. This will be represented in the form of an S-curve chart which will indicate when you have enough sales but not too many. 
 
-![Product market fit - Scurve](assets/img/uploads/product-market-fit-buffermint.jpeg)
-
-
+![](assets/img/uploads/product-market-fit-buffermint.jpeg "Product market fit - Scurve")
 
 Apple achieved the perfect product-market fit balance with the iPhone 4s over earlier versions of the same product. People were more interested in purchasing their device at that time, this was partly due to an update over earlier versions.
 
@@ -107,7 +105,7 @@ However, if your market research indicates that your product has potential, then
 
 ### Conclusion
 
-Product-market fit is when a company has a product that meets both the needs of the customers and the company. The company sells enough to make money and also not too many products so they can make more money.
+Product-market fit is when a company has a product that meets both the needs of the customers and the company. The company sells enough to make money while maintaining a fluid supply in the market.
 
 In this article, we've discussed how you might find your own sweet spot and provided some helpful tips on how you could get there if you haven't yet.
 
