@@ -13,6 +13,22 @@
 
 <title>@yield('page-title', $page_title) | BufferMint</title>
 <meta name="description" content="{{ $description }}">
+<meta name="keywords" content="{{ $keywords }}">
+<meta name=”robots” content="index, follow">
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ $page_title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:image" content="{{ $page->featured_image ?? mix('img/logos/logo_square.png', 'assets/build') }}" />
+<meta property="og:url" content="{{ $page->getUrl() ?? 'https://buffermint.com' }}" />
+<meta property="og:site_name" content="BufferMint" />
+
+
+<meta name="twitter:title" content="{{ $page_title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $page->featured_image ?? mix('img/logos/logo_square.png', 'assets/build') }}">
+<meta name="twitter:site" content="@buffermint">
+<meta name="twitter:creator" content="@buffermint">
 
 <link rel="apple-touch-icon" sizes="57x57" href="{{ mix('img/favicons/apple-icon-57x57.png', 'assets/build') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ mix('img/favicons/apple-icon-60x60.png', 'assets/build') }}">

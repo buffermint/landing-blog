@@ -4,6 +4,7 @@
     <!-- Heading -->
     <h1 class="display-1 fw-bold mb-0">
       Launch your <br>
+      <strong id="typed-hide-on-start" class="text-primary">Idea</strong>
        <strong class="text-primary" data-toggle="typed" data-options='{"strings": ["SaaS", "Web App", "MVP", "CRM","Product", "Marketplace", "Mobile App", "Idea"]}'></strong>
        <br>
        <strong class="text-primary">in 45 days</strong>

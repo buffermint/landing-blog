@@ -4,7 +4,8 @@
 <head>
   @include('_partials.head', [
   'page_title' => ($page_title ?? $page->title ?? 'Home'),
-  'description' => ($page->seo_description ?? $page->excerpt) ?? 'Launch your SaaS in 45 days'
+  'description' => $page->seo_description ?? ($page->excerpt ? $page->excerpt . ' - ' : '') . $page->excerpt,
+  'keywords' => $page->seo_keywords ?? $page->keywords
   ])
 </head>
 

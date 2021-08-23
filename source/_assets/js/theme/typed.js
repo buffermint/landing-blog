@@ -25,7 +25,10 @@ window.onload = function() {
       backSpeed: 40,
       backDelay: 3000,
       startDelay: 250,
-      loop: true
+      loop: true,
+      onBegin: function(arrayPos, self){
+        $('#typed-hide-on-start').hide();
+      },
     }
     var options = Object.assign(defaultOptions, elementOptions);
 

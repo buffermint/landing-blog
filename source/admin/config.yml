@@ -49,6 +49,19 @@ collections:
           required: true,
         }
       - {
+          label: "SEO Keywords",
+          name: "seo_keywords",
+          widget: "string",
+          required: true,
+          hint: "Comma separated keyword list",
+        }
+      - {
+          label: "Excerpt",
+          name: "excerpt",
+          widget: "string",
+          required: false,
+        }
+      - {
           label: "Author",
           name: "author",
           widget: "string",
