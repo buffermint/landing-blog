@@ -18,7 +18,7 @@ In simple terms, SaaS is a type of cloud computing.
 
 So what exactly is the difference between cloud-based software (SaaS) and all other types of cloud computing?
 
-Quite simply: Software as a service is designed primarily for business use. It’s a practical way to access business software and services from any Internet connection.
+Quite simply: Software as a service is designed primarily for business use. It’s a practical way to access business software and services from any internet connection.
 
 Cloud computing is the foundation for SaaS, so it too can be considered software as a service, but it's broader in scope than SaaS alone. Cloud technology covers all types of online software, not just those used by businesses.
 
@@ -54,7 +54,7 @@ A good example of SaaS would be Salesforce, Microsoft Office 365, and online mai
 
 Cloud computing has become very popular over the past decade, but did you know that it does not have to be connected to the internet?
 
-One can create their own private cloud by purchasing hardware from companies such as Dell, HP, or Lenovo and installing an operating system on top of that hardware.
+One can create their own private cloud by purchasing hardware from companies such as Dell, HP, or Lenovo and installing an operating system on top of that hardware. 
 
 The US currently spends more than $50 billion a year on cloud computing and it's projected to exceed $80 billion by the end of 2021.
 
@@ -68,11 +68,11 @@ Cloud computing is hosted on a network, whether it's the Internet or your own pr
 
 The main difference between SaaS and cloud computing lies in how you access the software. With cloud computing, everything is online, but in the case of SaaS, it depends on the service-level agreement (SLA), the customer's data for each model may be stored locally, in the cloud, or both locally and in the cloud.
 
-Companies can integrate SaaS applications with other software using application programming interfaces (APIs).
+You can also integrate SaaS applications with other software using application programming interfaces (APIs).
 
-There are so many advantages to SaaS. The main advantage is that it is cheaper overall, there are no maintenance fees and you don't need to worry about upgrading the software. 
+There are so many advantages to SaaS. The main advantage is that it is cheaper, there are no maintenance fees and you don't need to worry about upgrading the software. 
 
-The only disadvantage is that the data can be lost or stolen if a hacker attacks the server where your data is located. But there have been many significant improvements made in terms of security.
+The only disadvantage is that if your data is not highly protected then it can be lost or stolen. If a hacker attacks the server where your data is located. But there have been many significant improvements made in terms of security.
 
 With cloud computing, you have more control over the management and support of your data. You can upgrade or expand as needed. The main advantage is that if there is a problem with your system, it can be fixed more easily.
 
