@@ -24,6 +24,7 @@ window.onload = function() {
       typeSpeed: 60,
       backSpeed: 40,
       backDelay: 3000,
+      startDelay: 250,
       loop: true
     }
     var options = Object.assign(defaultOptions, elementOptions);

@@ -4,7 +4,7 @@ return [
     'production' => false,
     'baseUrl' => 'http://localhost:3000/',
     'title' => 'BufferMint',
-    'description' => 'Launch your SaaS in 45 days',
+    'description' => 'Launch your SaaS in 45 days. We turn your idea into an amazing MVP on a fixed budget and take your product to market ASAP.',
 
     'discovery_call_url' => 'https://calendly.com/buffermint/30min',
 

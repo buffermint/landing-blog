@@ -42,7 +42,7 @@
             <div class="col-4">
 
               <!-- Image -->
-              <div class="w-150 mt-9 p-1 bg-white shadow-lg" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-150 mt-9 p-1 bg-white shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1533901567451-7a6e68d6cd8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
                   class="img-fluid" alt="...">
@@ -52,7 +52,7 @@
             <div class="col-4">
 
               <!-- Image -->
-              <div class="w-150 p-1 bg-white shadow-lg" data-aos="fade-up">
+              <div class="w-150 p-1 bg-white shadow-lg">
                 <img src="{{ mix('img/photos/mac.jpg', 'assets/build') }}" class="img-fluid" alt="Mac">
               </div>
 
@@ -60,7 +60,7 @@
             <div class="col-4 position-relative">
 
               <!-- Image -->
-              <div class="w-150 mt-11 float-right p-1 bg-white shadow-lg" data-aos="fade-up" data-aos-delay="150">
+              <div class="w-150 mt-11 float-right p-1 bg-white shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2063&q=80"
                   class="img-fluid" alt="...">
@@ -79,7 +79,7 @@
   <section class="pt-8 pb-9 pt-md-11 pb-md-13">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4" data-aos-delay="50" data-aos="fade-left">
           <div class="row">
             <div class="col-auto col-md-12">
 
@@ -116,7 +116,7 @@
             </div>
           </div> <!-- / .row -->
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4" data-aos-delay="300" data-aos="fade-left">
           <div class="row">
             <div class="col-auto col-md-12">
 
@@ -153,7 +153,7 @@
             </div>
           </div> <!-- / .row -->
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4" data-aos-delay="600" data-aos="fade-left">
           <div class="row">
             <div class="col-auto col-md-12">
 
