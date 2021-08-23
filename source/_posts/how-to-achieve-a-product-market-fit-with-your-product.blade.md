@@ -1,6 +1,6 @@
 ---
-featured_image: assets/img/uploads/product-to-market-feature-.jpeg
-featured_thumbnail: assets/img/uploads/product-to-market-thumbnail.jpeg
+featured_image: assets/img/uploads/product-to-market-fit-feature-image.jpeg
+featured_thumbnail: assets/img/uploads/product-to-market-fit-thubnail.jpeg
 title: How to Achieve a Product-Market Fit with Your Product
 seo_description: "This article will help you to plan a product that will settle
   perfectly in the market. Here we talk about product-market fit and how to
