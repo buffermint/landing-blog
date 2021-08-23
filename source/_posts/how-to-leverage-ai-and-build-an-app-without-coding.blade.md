@@ -7,7 +7,7 @@ seo_description: Yes, you can build an app without knowing how to code. With a
   In this blog we explore how to leverage AI and build an app, even if do not
   know how to code.
 author: Vivek Dixit
-show_meta: false
+show_meta: true
 date: 2021-08-20
 extends: _layouts.post
 section: postContent
