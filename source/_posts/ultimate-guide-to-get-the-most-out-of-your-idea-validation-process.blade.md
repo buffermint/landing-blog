@@ -99,4 +99,4 @@ They got feedback from their friends and colleagues who used the app. It turned 
 
 You can find more interesting idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation). 
 
-There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by \[booking a discovery call](<{{ $page->discovery_call_url }}>).
+There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by [booking a discovery call](https://calendly.com/buffermint/30min?month=2021-08).
