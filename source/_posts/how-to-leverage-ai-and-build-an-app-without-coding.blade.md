@@ -8,7 +8,7 @@ seo_description: Yes, you can build an app without knowing how to code. With a
   know how to code.
 author: Vivek Dixit
 show_meta: false
-date: 2021-08-19
+date: 2021-08-20
 extends: _layouts.post
 section: postContent
 ---
