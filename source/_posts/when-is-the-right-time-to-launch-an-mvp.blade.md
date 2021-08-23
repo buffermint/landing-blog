@@ -82,6 +82,6 @@ So now you know when is the best time to launch an MVP. The answer might be surp
 
 If you’ve already done your research, gotten feedback from users and investors, then it’s probably a good idea to get started with building your product right away.
 
-Launch in 45 days or sooner! With BufferMint, launching this soon is easier than ever before.
+Launch in 45 days or sooner! With [BufferMint](https://buffermint.com/), launching this soon is easier than ever before.
 
 Our team of experts will guide you through every step of the process so that you can focus on what features should go into your MVP next. [Book a discovery call now.]({{$page->discovery_call_url}})
