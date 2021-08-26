@@ -3,14 +3,14 @@
     class="py-6 position-relative"
     :style="isInsidePost ? 'margin-left: -100%; margin-right: -100%' : ''"
   >
-    <div :class="newsletterClass">
+    <div :class="'container py-6 py-md-8 rounded ' + (darkMode ? 'bg-primary text-gray-300' : 'border-top border-bottom border-primary')">
       <div v-if="msg" class="py-5 text-center">{{ msg }}</div>
 
       <div class="row align-items-center" v-else>
         <div class="col-12 col-md text-left">
           <!-- Heading -->
           <h3
-            class="mb-1 fw-bold font-size-lg mt-0 text-black font-weight-normal"
+            class="mb-1 fw-bold font-size-lg mt-0 font-weight-normal"
           >
             Get our articles delivered
           </h3>
@@ -24,7 +24,7 @@
           <!-- Form -->
           <form @submit.prevent="submit">
             <div class="row">
-              <div class="col">
+              <div class="col-12 col-sm">
                 <!-- Input -->
                 <input
                   type="email"
@@ -34,9 +34,9 @@
                   v-model="email"
                 />
               </div>
-              <div class="col-auto ms-n5">
+              <div class="col-auto ms-n5 mt-4 mt-sm-0">
                 <!-- Button -->
-                <button class="btn btn-primary" type="submit">
+                <button :class="'btn '+ (darkMode ? 'btn-light' : 'btn-dark')" type="submit">
                   <span
                     v-if="loading"
                     class="spinner-border text-white mx-6"
@@ -61,17 +61,9 @@
 
 <script>
 export default {
-  props: { borderTop: { default: true }, borderBottom: { default: true } },
+  props:{'darkMode': {default: true}},
   data() {
     return { msg: null, email: "", isInsidePost: false, loading: false };
-  },
-  computed: {
-    newsletterClass() {
-      let c = "container py-6 py-md-8 border-gray-300";
-      if (this.borderTop) c += " border-top";
-      if (this.borderBottom) c += " border-bottom";
-      return c;
-    },
   },
   mounted() {
     this.isInsidePost = this.hasSomeParentTheID(this.$el, "post-content");

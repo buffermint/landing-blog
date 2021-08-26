@@ -5,7 +5,8 @@
 @section('content')
 <div class="gradient-mint-to-white min-vh-60">
   <div>
-    <blog></blog>
+      <Search></Search>
+      @include("_partials.articles.blog", ['posts' => $posts])
   </div>
 </div>
 @endsection

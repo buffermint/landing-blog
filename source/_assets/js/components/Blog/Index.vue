@@ -51,19 +51,19 @@
       <!-- / .container -->
     </section>
 
-    <newsletter :borderBottom="false"></newsletter>
+    <newsletter></newsletter>
   </div>
 </template>
 
 <script>
 import Fuse from "fuse.js";
 import ArticleCard from "./ArticleCard.vue";
-import Search from "./Search.vue";
+import Search from "./SearchBasic.vue";
 import Newsletter from "../Newsletter.vue";
 
 export default {
   components: { ArticleCard, Newsletter, Search },
-  props: { galleryMode: { default: false }, postCount: { default: null } },
+  props: { galleryMode: { default: false }, postCount: { default: null }, defaultPosts:{ default: null }},
   data() {
     return {
       recentPostCount: 6,
@@ -102,7 +102,9 @@ export default {
       console.log(currentCount + this.recentPostCount, this.posts);
     },
   },
-  created() {
+  mounted() {
+    console.log(this.defaultPosts);
+
     fetch("/index.json")
       .then((response) => {
         return response.json();

@@ -1,6 +1,6 @@
 <template>
   <section class="py-6">
-    <div class="container">
+    <div class="container search-container">
       <div class="row">
         <div class="col-12">
           <!-- Form -->
@@ -36,30 +36,86 @@
                     mr-5
                   "
                 >
-                  {{ count }} RESULTS
+                  {{ results.length }} RESULTS
                 </span>
               </span>
             </div>
           </div>
         </div>
       </div>
-      <!-- / .row -->
+
+      <div class="row">
+        <div
+          id="search-results"
+          v-if="results.length > 0"
+          class="search-results col-12"
+        >
+          <div class="search-result-list shadow-lg rounded-bottom py-3">
+            <div :key="index" v-for="(article, index) in results">
+              <a
+                :href="article.link"
+                class="text-decoration-none py-2 px-4 d-block"
+              >
+                <span>{{ article.title }}</span>
+                <small class="float-right text-muted">{{ article.date }}</small>
+                <div class="input-group-append" v-if="article.collection">
+                  <span class="input-group-text border-0 py-0 pl-1 pr-3">
+                    <span
+                      class="
+                        h6
+                        text-uppercase text-muted
+                        d-none d-md-block
+                        mb-0
+                        mr-5
+                      "
+                    >
+                      {{ article.collection }}
+                    </span>
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Fuse from "fuse.js";
+
 export default {
-  props: ["value", "count"],
   data() {
     return {
-      query: this.value,
+      query: "",
     };
   },
-  methods: {
-    handleInput(e) {
-      this.$emit("input", this.query);
+  computed: {
+    results() {
+      return this.query ? this.fuse.search(this.query).map((s) => s.item) : [];
     },
+  },
+  mounted() {
+    $(document).click(function (e) {
+      if (!$(e.target).closest("#search-results").length) {
+        $("#search-results").fadeToggle(200);
+      }
+    });
+
+    fetch("/index.json")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.fuse = new Fuse(data, {
+          minMatchCharLength: 4,
+          keys: ["title", "snippet", "categories"],
+        });
+      });
+  },
+  methods: {
+    handleInput(e) {},
     submitForm() {},
   },
 };

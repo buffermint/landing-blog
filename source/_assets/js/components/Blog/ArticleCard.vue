@@ -1,6 +1,6 @@
 <template>
   <!-- Card -->
-  <div class="card mb-6 shadow-light-lg lift lift-lg article-card">
+  <div class="card mb-6 shadow-light-lg article-card">
     <!-- Image -->
     <a class="card-img-top" :href="article.link">
       <!-- Image -->

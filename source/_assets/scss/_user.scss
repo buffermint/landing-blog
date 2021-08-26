@@ -64,6 +64,34 @@ footer .site-links {
     display: none;
 }
 
-.typed-cursor{
+.typed-cursor {
     position: absolute;
+}
+
+.article-card img.card-img-top {
+    height: 200px;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+        height: unset;
+    }
+}
+
+.search-container {
+    z-index: 10000 !important;
+    .form-control:focus{
+        background-color: #f7f9f9 !important;
+    }
+}
+.search-results {
+    position: absolute;
+    width: 100%;
+    top: 95%;
+    display: hidden;
+    .search-result-list{
+        background: #f7f9f9;
+    }
+    a{
+        background: #f7f9f9;
+    }
 }

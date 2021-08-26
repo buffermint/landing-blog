@@ -99,7 +99,7 @@
                 </div>
                 @endif
             </div> <!-- / .row -->
-            <newsletter></newsletter>
+            <newsletter :dark-mode="false"></newsletter>
 
         </div> <!-- / .container -->
     </section>
