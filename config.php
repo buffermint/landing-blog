@@ -23,9 +23,20 @@ return [
     // collections
     'collections' => [
         'posts' => [
+            'name' => null,
             'author' => 'Rishabh Pandey', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'articles/{filename}',
+            'filter' => function ($post) {
+                return ($post->published ?? true);
+            }
+        ],
+
+        'idea_generation' => [
+            'name' => "Idea Generation",
+            'author' => 'Rishabh Pandey', // Default author, if not provided in a post
+            'sort' => '-date',
+            'path' => 'idea-generation/{filename}',
             'filter' => function ($post) {
                 return ($post->published ?? true);
             }
@@ -79,5 +90,9 @@ return [
         $content = strip_tags($page->getContent());
         $word_count = str_word_count($content);
         return ceil($word_count / $wpm);
+    },
+
+    'getCollectionNames' => function(){
+        return ['posts', 'idea_generation'];
     }
 ];
