@@ -44,8 +44,6 @@ The list is long and each idea is growth-worthy and can be turned into a profita
 
 Here are 10 micro-SaaS ideas in 2021 to fuel your train of thought.
 
-
-
 ### Email Optimiser
 
 Yes, it’s 2021 and we’re still talking about cluttered email inbox. With so many emails being sent daily, it's hard to manage and organize all of them. This is where a micro-SaaS tool will come in handy.
@@ -54,8 +52,6 @@ With an email optimizer micro-SaaS tool, you will be able to organize, segregate
 
 Examples, Mailstrom, SMTP2GO
 
-
-
 ### Invoicing Client
 
 An effective and efficient way of tackling the invoicing and billing process is with a micro-SaaS tool. 
@@ -63,8 +59,6 @@ An effective and efficient way of tackling the invoicing and billing process is 
 You can use invoice templates, collect payments via invoice, import old data for billing purposes, send scheduled notifications to customers via email, and more.
 
 As an inexpensive option to the bigger software, a micro-SaaS billing solution is perfect for small businesses. Some of the existing examples of similar micro-SaaS services are InvoiceNinja, Elorus, Invoicy.
-
-
 
 ### Staff Management
 
@@ -124,7 +118,7 @@ In the case of Twitter, you need to be on a constant lookout and come with somet
 
 Create something for Twitter that gives you just the summary of what's trending because more than half of their audience is interested in just that. 
 
-### A Micro-SaaS around Notion
+### A Micro-SaaS Around Notion
 
 Notion is a document collaboration platform that provides many features like tables, wiki, task manager, notes, etc. Notion is positioned in the market as an "all-in-one workspace". 
 
@@ -133,8 +127,6 @@ Make a Micro-SaaS tool around Notion, that's a seemingly good market to tap. The
 There are plenty of no-code website services which turn Notion pages into a website or blog with no fuss.
 
 Examples: automate.io, Notelet.so, Newsletter OS.
-
-
 
 ### Conclusion
 
