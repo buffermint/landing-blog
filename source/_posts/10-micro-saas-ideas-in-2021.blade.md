@@ -14,7 +14,7 @@ excerpt: "Look into 10 overarching micro-SaaS ideas in 2021. The ideas are
   inspire you to find your unique idea and build a micro-SaaS MVP.  "
 author: "Vivek Dixit "
 show_meta: true
-date: 2021-08-26
+date: 2021-08-24
 extends: _layouts.post
 section: postContent
 ---
