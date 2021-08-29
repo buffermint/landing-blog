@@ -1,5 +1,5 @@
 @php
-     $category = $category ?? [];
+$category = $category ?? [];
 @endphp
 <section>
     <div class="container">
@@ -18,7 +18,8 @@
                     @foreach ($featuredPosts as $key => $post)
                     @include('_partials.articles.feature-card', [
                     'post' => $post,
-                    'is_left' => array_search($key ,array_keys($featuredPosts->toArray())) % 2 === 0
+                    'is_left' => array_search($key ,array_keys($featuredPosts->toArray())) % 2 === 0,
+                    'category' => $category
                     ])
                     @endforeach
                 </div>
@@ -38,7 +39,7 @@
             <div class="row">
                 @foreach ($recentPosts->take(6) as $article)
                 <div class="col-12 col-md-6 col-lg-4 d-flex">
-                    @include('_partials.articles.article-card', ['article' => $article])
+                    @include('_partials.articles.article-card', ['article' => $article, 'category' => $category])
                 </div>
                 @endforeach
             </div>
@@ -47,7 +48,7 @@
     </div>
 </section>
 
-<div class="mb-6">
+<div class="mb-6 container">
     <newsletter :borderBottom="false"></newsletter>
 </div>
 
@@ -60,7 +61,7 @@ $postsList = $recentPosts->skip(6)->take(6)
     <div class="row pb-8 pb-md-11">
         @foreach ($postsList as $article)
         <div class="col-12 col-md-6 col-lg-4 d-flex">
-            @include('_partials.articles.article-card', ['article' => $article])
+            @include('_partials.articles.article-card', ['article' => $article, 'category' => $category])
         </div>
         @endforeach
     </div>

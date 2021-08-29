@@ -430,7 +430,16 @@
     <h2 class="display-3 mb-7 mb-md-9 text-center">
       Latest Insights
     </h2>
-    <blog :post-count="3" :gallery-mode="true"></blog>
+    <div class="row">
+      @foreach ($posts->take(3) as $article)
+      <div class="col-12 col-md-6 col-lg-4 d-flex">
+        @include('_partials.articles.article-card', ['article' => $article, 'category' => []])
+      </div>
+      @endforeach
+      <div class="col-12">
+        <newsletter :borderBottom="false"></newsletter>
+      </div>
+    </div>
   </div>
 </section>
 

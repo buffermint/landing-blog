@@ -11,19 +11,26 @@
     <section class="pt-8 pt-md-11 gradient-mint-to-white">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+                <div class="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
 
                     <!-- Heading -->
-                    <h1 class="display-4 text-center">
+                    <h1 class="display-4">
                         {{ $page->title }}
                     </h1>
 
 
                     @if ($page->excerpt)
-                    <p class="lead mb-7 text-center text-gray-700">
+                    <p class="lead mb-0 text-gray-700">
                         {{ $page->excerpt }}
                     </p>
                     @endif
+
+
+                    <a class="pt-4 d-block" href="/">
+                        <span class="badge badge-pill badge-gray-600"><span class="h6">Idea Generation</span></span>
+                    </a>
+
+                    <div class="mb-7"></div>
 
                     <!-- Meta -->
                     @if ($page->show_meta ?? true)
@@ -51,7 +58,7 @@
                                 </time>
                             </div>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto d-flex flex-column">
                             <x-share-social url="{{ $page->getUrl() }}" title="{{ $page->title }}" />
                         </div>
                     </div>

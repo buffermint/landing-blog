@@ -4,7 +4,7 @@ $selectedCollection = $post->category ? $page->categories[$post->category] : nul
 <div class="card card-row shadow-light-lg mb-6">
     <div class="row no-gutters">
         <div class="col-12">
-            @if ($selectedCollection && $selectedCollection->name)
+            @if (count($category) === 0 && $selectedCollection && $selectedCollection->name)
             <a href="/{{ $selectedCollection['slug'] }}">
                 <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
                     <span class="h6">
