@@ -28,7 +28,7 @@ return !$post->featured;
       {{ $category->name }}
     </h1>
 
-    <p class="lead text-gray-700 px-4">
+    <p class="lead text-gray-700 px-sm-4">
         {{ $category->description }}
     </p>
   </div>
