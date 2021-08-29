@@ -6,7 +6,7 @@ $selectedCollection = $article->category ? $page->categories[$article->category]
   @if (count($category) === 0 && $selectedCollection && $selectedCollection->name)
   <a href="/{{ $selectedCollection['slug'] }}">
     <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
-      <span class="h6">
+      <span class="h6 text-uppercase category-pill">
         {{ $selectedCollection->name }}
       </span>
     </span>

@@ -26,9 +26,12 @@
                     @endif
 
 
-                    <a class="pt-4 d-block" href="/">
-                        <span class="badge badge-pill badge-gray-600"><span class="h6">Idea Generation</span></span>
+                    @if ($page->category)
+                    @php $category = $page->categories[$page->category]; @endphp
+                    <a class="pt-4 d-block" href="/{{ $category->slug }}">
+                        <span class="badge badge-pill badge-gray-600"><span class="h6 text-uppercase category-pill">{{ $category->name }}</span></span>
                     </a>
+                    @endif
 
                     <div class="mb-7"></div>
 
