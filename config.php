@@ -27,9 +27,10 @@ return [
     ],
 
     'categories' => [
-        'idea_generation' => [
-            'slug' => 'idea-generation',
-            'name' => "Idea Generation",
+        'idea_validation' => [
+            'slug' => 'idea-validation',
+            'name' => "Idea Validation",
+            'description' => "All about validating your startup ideas.",
             // 'recent_heading' => 'Recent Stuff',
             // 'recent_tagline' => 'Recent tagline',
             // 'featured_heading' => 'Featured Stuff',

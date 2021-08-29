@@ -5,7 +5,8 @@ title: How to Get Successful Startup Ideas?
 seo_description: "All you need to know to have a successful startup ideas. With
   this blog we go deep into the subject of how to get successful startup ideas.
   "
-author: "Vivek Dixit "
+author: "Vivek Dixit"
+category: idea_validation
 show_meta: false
 date: 2021-08-16
 extends: _layouts.post
@@ -15,15 +16,15 @@ section: postContent
 
 A startup idea is a crucial point for your start-up. It inspires you to start. It makes your business idea unique from others in the market. It is not just a business idea; it is an encouragement. It can be something that you always want to do.
 
-Founders try too hard to come up with a successful idea for their startups which usually lands them to an idea that exists already and has a tough competitive edge. 
+Founders try too hard to come up with a successful idea for their startups which usually lands them to an idea that exists already and has a tough competitive edge.
 
-Also, a lot of founders struggle to come up with something unique and different. To make it worse, they use unique and different as filters to think of an idea that's never been thought of. Well, there are better methods than this.  
+Also, a lot of founders struggle to come up with something unique and different. To make it worse, they use unique and different as filters to think of an idea that's never been thought of. Well, there are better methods than this.
 
-Instead of spending too much time trying to create a great idea, spend your time looking for problems that people want to be solved. 
+Instead of spending too much time trying to create a great idea, spend your time looking for problems that people want to be solved.
 
-So, how to get successful startup ideas? 
+So, how to get successful startup ideas?
 
-Turn the problems into ideas, take the idea further and you have something to start with. So let's dive in deep into the subject: how to get a successful startup idea. 
+Turn the problems into ideas, take the idea further and you have something to start with. So let's dive in deep into the subject: how to get a successful startup idea.
 
 ### You need a problems
 
@@ -71,13 +72,13 @@ This means you have to compromise on one front, you can either build something a
 
 
 
-That is the way many of the largest startups started. 
+That is the way many of the largest startups started.
 
 Companies like Apple, Yahoo, and Google are not created overnight. They became great companies from humble beginnings. They grew out of the founders' initial idea because there seemed to be a gap in the market and they capitalized on it. 
 
 Once you become a futurist in some aspect, you would start noticing startup ideas by looking for things that seem to be missing.
 
-If you're really at the leading edge of a rapidly changing field as Paul Buchheit puts it, then you will see things that are missing. You can use your experience and knowledge to predict what will be missing in the future. 
+If you're really at the leading edge of a rapidly changing field as Paul Buchheit puts it, then you will see things that are missing. You can use your experience and knowledge to predict what will be missing in the future.
 
 When you look from afar perspective, you see things that are missing. When you come closer, again, everything looks complete.
 
@@ -93,7 +94,7 @@ It doesn't work well simply to try to think of successful startup ideas. If you 
 
 You have to actively lookout for problems and find ways that you can help solve them, as well as figure out how feasible the market is for your idea.
 
-If you are looking in the right place, good ideas will seem obvious to you. It will take some time. 
+If you are looking in the right place, good ideas will seem obvious to you. It will take some time.
 
 The process of identifying a successful startup idea is largely determined by your ability to notice gaps (problems) and fill (fix) them. 
 

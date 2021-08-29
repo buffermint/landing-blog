@@ -9,6 +9,7 @@ seo_description: An article about the validation of a startup idea. Validation
   necessary for anyone who has to convince investors to fund their business. In
   this article, we'll explore some ways you can validate your startup idea.
 author: Rishabh Pandey
+category: idea_validation
 show_meta: true
 date: 2021-08-11
 extends: _layouts.post
@@ -98,6 +99,6 @@ In order to validate the idea for [Instagram](https://buffermint.com/articles/6-
 
 They got feedback from their friends and colleagues who used the app. It turned out that people liked using it but found the design too complex. After simplifying the idea to only its most basic elements (a camera, photo filters, sharing capabilities, etc.), Systrom & Krieger were able to launch their product.
 
-You can find more interesting idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation). 
+You can find more interesting idea validation stories that turned out to be billion-dollar businesses [here](https://buffermint.com/articles/6-amazing-startup-stories-of-successful-idea-validation).
 
 There are many strategies for idea validation, and it’s important to be mindful of the time constraints when doing research. Our team at [BufferMint](https://buffermint.com) is available to help you find success with your own idea validation process. You can reach out to us by [booking a discovery call](https://calendly.com/buffermint/30min?month=2021-08).

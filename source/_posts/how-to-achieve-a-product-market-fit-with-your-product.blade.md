@@ -15,7 +15,7 @@ section: postContent
 ---
 One of the most important concepts in [lean startup methodology](https://buffermint.com/articles/how-to-use-lean-methodology-to-innovate-faster) is product-market fit, but it is often poorly defined. 
 
-Product-market fit is a term coined by Marc Andreessen in 2007 when he wrote 
+Product-market fit is a term coined by Marc Andreessen in 2007 when he wrote
 
 > "Product market-fit means being in a good market with a product that can satisfy that market." 
 
@@ -43,7 +43,7 @@ And if this does not give you proper understanding, stick with me as we take a l
 
 ### The impact of product-market fit
 
-It's important to establish product-market fit because it can really help your startup to gain more profit. It is impactful in the long run. 
+It's important to establish product-market fit because it can really help your startup to gain more profit. It is impactful in the long run.
 
 To emphasize the impact of product-to-market fit, let's take the example of iPod and Microsoft Zune. 
 
@@ -51,7 +51,7 @@ Apple's first iPod had a very niche product-market fit, it only appealed to a sm
 
 Apple's second attempt at an iPod was much more successful. It reached product-market fit by including features such as video playback, games, and wireless access, which made it more appealing to many different consumers.
 
-But, Microsoft didn't quite get this right when they introduced their Zune back in 2006. The Zune was a failure because people perceived it as being just another mp3 player on the market. 
+But, Microsoft didn't quite get this right when they introduced their Zune back in 2006. The Zune was a failure because people perceived it as being just another mp3 player on the market.
 
 It failed to differentiate itself from others on the market and a lack of marketing made this even worse. Sales were poor - around 500,000 units - and it contributed to Microsoft's decision to sell its digital music business. 
 
@@ -93,7 +93,7 @@ By achieving a "product-market fit" with their athletic wear, Nike makes more mo
 
 When you're not getting the product-market fit, you need to figure out where your potential customers would find your product, and how they might be able to buy it. For a new startup, this can require a significant investment in time and resources. 
 
-To achieve the product-market fit you must focus on your customers and pay close attention to what they want. 
+To achieve the product-market fit you must focus on your customers and pay close attention to what they want.
 
 When you know what the customers want, then it will be easy to adapt your product accordingly. You can do this while figuring out ways to sell it for a higher price.
 

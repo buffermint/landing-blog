@@ -25,7 +25,9 @@ return !$post->featured;
     </div>
     @endforeach
 
-    @include("_partials.articles.blog", ['featuredPosts' => $featuredPosts, 'recentPosts' => $recentPosts])
+    <div class="pt-6">
+        @include("_partials.articles.blog", ['featuredPosts' => $featuredPosts, 'recentPosts' => $recentPosts])
+    </div>
 </div>
 </div>
 @endsection

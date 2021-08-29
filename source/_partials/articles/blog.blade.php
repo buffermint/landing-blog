@@ -2,7 +2,7 @@
      $category = $category ?? [];
 @endphp
 <section>
-    <div class="container pt-6">
+    <div class="container">
         @if ($featuredPosts && count($featuredPosts) > 0)
         <div class="pb-7 pb-md-10">
 
@@ -10,7 +10,7 @@
                 {{ $category['featured_heading'] ?? $page->default_featured_headline}}
             </h2>
             <p class="mb-5 text-muted">
-                {{ $category['featured_heading'] ?? $page->default_featured_tagline}}
+                {{ $category['featured_tagline'] ?? $page->default_featured_tagline}}
             </p>
 
             <div class="row">
@@ -33,7 +33,7 @@
                 {{ $category['recent_heading'] ?? $page->default_recent_headline}}
             </h2>
             <p class="mb-5 text-muted">
-                {{ $category['recent_heading'] ?? $page->default_recent_tagline}}
+                {{ $category['recent_tagline'] ?? $page->default_recent_tagline}}
             </p>
             <div class="row">
                 @foreach ($recentPosts->take(6) as $article)
