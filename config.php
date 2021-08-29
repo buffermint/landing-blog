@@ -11,6 +11,12 @@ return [
 
     'featured_posts_count' => 9,
 
+    'default_featured_headline' => 'Featured Articles',
+    'default_featured_tagline' => 'Not sure where to start? Here is the list of our best articles hand-picked for
+    you.',
+    'default_recent_headline' => 'Recent Articles',
+    'default_recent_tagline' => 'Our latest articles across all categories.',
+
     'nav_menu' => [
         "About Us" => "/about-us",
         // "What we do?" => "/#what-we-do",
@@ -20,8 +26,28 @@ return [
         "Contact" => "/contact-us",
     ],
 
+    'categories' => [
+        'idea_generation' => [
+            'slug' => 'idea-generation',
+            'name' => "Idea Generation",
+            // 'recent_heading' => 'Recent Stuff',
+            // 'recent_tagline' => 'Recent tagline',
+            // 'featured_heading' => 'Featured Stuff',
+            // 'featured_tagline' => 'Featured tagline',
+        ],
+    ],
+
     // collections
     'collections' => [
+        'pages' => [
+            'author' => 'Rishabh Pandey', // Default author, if not provided in a post
+            'show_meta' => false,
+            'sort' => '-date',
+            'path' => '/{filename}',
+            'filter' => function ($post) {
+                return ($post->published ?? true);
+            }
+        ],
         'posts' => [
             'name' => null,
             'author' => 'Rishabh Pandey', // Default author, if not provided in a post
@@ -31,26 +57,6 @@ return [
                 return ($post->published ?? true);
             }
         ],
-
-        'idea_generation' => [
-            'name' => "Idea Generation",
-            'author' => 'Rishabh Pandey', // Default author, if not provided in a post
-            'sort' => '-date',
-            'path' => 'idea-generation/{filename}',
-            'filter' => function ($post) {
-                return ($post->published ?? true);
-            }
-        ],
-
-       'about' => [
-           'author' => 'Rishabh Pandey', // Default author, if not provided in a post
-           'show_meta' => false,
-           'sort' => '-date',
-           'path' => '/{filename}',
-           'filter' => function ($post) {
-               return ($post->published ?? true);
-           }
-       ],
     ],
 
     // helpers

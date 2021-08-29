@@ -8,10 +8,7 @@ class GenerateIndex
 {
     public function handle(Jigsaw $jigsaw)
     {
-        $posts = $jigsaw->getCollection('posts') ?? collect([]);
-        $tutorials = $jigsaw->getCollection('tutorials') ?? collect([]);
-
-        $collection = $posts->concat($tutorials);
+        $collection = $jigsaw->getCollection('posts') ?? collect([]);
 
         $data = collect($collection->map(function ($page) use ($jigsaw) {
             return $this->mappedObject($page, $jigsaw);

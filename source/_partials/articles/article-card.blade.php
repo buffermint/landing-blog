@@ -1,17 +1,13 @@
 @php
-$collectionName = $article->getCollection();
-$selectedCollection = $article->collections[$collectionName];
-
-
-echo json_encode($selectedCollection);
+$selectedCollection = $article->category ? $page->categories[$article->category] : null;
 @endphp
 <!-- Card -->
 <div class="card mb-6 shadow-light-lg lift lift-lg article-card">
 
-  @if ($selectedCollection->name)
-  <a href="{{ $collection->url }}">
+  @if ($selectedCollection && $selectedCollection->name)
+  <a href="/{{ $selectedCollection['slug'] }}">
     <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
-      <span class="h6 text-uppercase text-">
+      <span class="h6">
         {{ $selectedCollection->name }}
       </span>
     </span>

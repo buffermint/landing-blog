@@ -1,12 +1,18 @@
+@php
+$selectedCollection = $post->category ? $page->categories[$post->category] : null;
+@endphp
 <div class="card card-row shadow-light-lg mb-6">
     <div class="row no-gutters">
         <div class="col-12">
-
-            <!-- Badge -->
-            <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
-                <span class="h6 text-uppercase">Featured</span>
-            </span>
-
+            @if ($selectedCollection && $selectedCollection->name)
+            <a href="/{{ $selectedCollection['slug'] }}">
+                <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
+                    <span class="h6">
+                    {{ $selectedCollection->name }}
+                    </span>
+                </span>
+            </a>
+            @endif
         </div>
         <a class="col-12 col-md-6 bg-cover {{ $is_left ? 'order-md-2 card-img-end' : 'order-md-1 card-img-start'  }}"
             style="background-image: url(/{{ $post['featured_image'] }});" href="{{ $post->getUrl() }}">

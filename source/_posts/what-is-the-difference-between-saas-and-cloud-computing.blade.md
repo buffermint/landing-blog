@@ -54,7 +54,7 @@ A good example of SaaS would be Salesforce, Microsoft Office 365, and online mai
 
 Cloud computing has become very popular over the past decade, but did you know that it does not have to be connected to the internet?
 
-One can create their own private cloud by purchasing hardware from companies such as Dell, HP, or Lenovo and installing an operating system on top of that hardware. 
+One can create their own private cloud by purchasing hardware from companies such as Dell, HP, or Lenovo and installing an operating system on top of that hardware.
 
 The US currently spends more than $50 billion a year on cloud computing and it's projected to exceed $80 billion by the end of 2021.
 
