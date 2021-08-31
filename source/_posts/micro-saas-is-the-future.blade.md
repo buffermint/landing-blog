@@ -2,7 +2,8 @@
 featured_image: assets/img/uploads/photo-1581404528764-2d2d2e39db02.jpeg
 featured_thumbnail: assets/img/uploads/tomorrow-world-smaal.jpeg
 title: Why Micro-SaaS is the future in SaaS?
-seo_description: "Explore why there will be more micro-SaaS products in the future. "
+seo_description: "Find out if you should be thinking about micro-saas. We're breaking down why it's a great idea to build small, niche products that solve problems for specific niches."
+seo_keywords: "saas trends, micro saas"
 author: Rishabh Pandey
 show_meta: true
 section: postContent

@@ -41,6 +41,7 @@ collections:
           widget: "boolean",
           default: false,
           hint: "Be aware of total number of featured posts",
+          required: false
         }
       - {
           label: "Category",
