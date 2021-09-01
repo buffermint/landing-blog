@@ -5,7 +5,6 @@ return [
     'baseUrl' => 'http://localhost:3000/',
     'title' => 'BufferMint',
     'description' => 'Launch your SaaS in 45 days. We turn your idea into an amazing MVP on a fixed budget and take your product to market ASAP.',
-    'keywords' => 'launch your mvp, need an mvp, idea to product, develop saas mvp',
 
     'discovery_call_url' => 'https://calendly.com/buffermint/30min',
 
@@ -35,6 +34,11 @@ return [
             // 'recent_tagline' => 'Recent tagline',
             // 'featured_heading' => 'Featured Stuff',
             // 'featured_tagline' => 'Featured tagline',
+        ],
+        'startup_ideas' => [
+            'slug' => 'startup-ideas',
+            'name' => "Startup Ideas",
+            'description' => "All about finding and generating your next startup idea.",
         ],
     ],
 
@@ -98,8 +102,4 @@ return [
         $word_count = str_word_count($content);
         return ceil($word_count / $wpm);
     },
-
-    'getCollectionNames' => function(){
-        return ['posts', 'idea_generation'];
-    }
 ];

@@ -47,7 +47,7 @@ collections:
           label: "Category",
           name: "category",
           widget: "select",
-          options: ["idea_generation"],
+          options: ["idea_validation", "startup_ideas"],
           required: false,
         }
       - {
@@ -62,13 +62,6 @@ collections:
           name: "seo_description",
           widget: "string",
           required: true,
-        }
-      - {
-          label: "SEO Keywords",
-          name: "seo_keywords",
-          widget: "string",
-          required: true,
-          hint: "Comma separated keyword list",
         }
       - {
           label: "Excerpt",

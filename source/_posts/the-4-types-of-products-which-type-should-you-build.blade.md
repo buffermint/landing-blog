@@ -13,6 +13,7 @@ author: Rishabh Pandey
 show_meta: true
 date: 2021-08-06
 extends: _layouts.post
+category: startup_ideas
 section: postContent
 ---
 **Finding real problems to solve can be difficult.**

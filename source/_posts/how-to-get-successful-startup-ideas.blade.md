@@ -6,7 +6,7 @@ seo_description: "All you need to know to have a successful startup ideas. With
   this blog we go deep into the subject of how to get successful startup ideas.
   "
 author: "Vivek Dixit"
-category: idea_validation
+category: startup_ideas
 show_meta: false
 date: 2021-08-16
 extends: _layouts.post

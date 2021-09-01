@@ -2,13 +2,11 @@
 featured_image: assets/img/uploads/10-microsass-.jpeg
 featured_thumbnail: assets/img/uploads/10-micro-saas-ideas.jpeg
 featured: true
-category: idea_generation
+category: startup_ideas
 title: 10 Micro-SaaS Ideas in 2021
 seo_description: Micro-SaaS is one of the most lucrative opportunities for small
   business entrepreneurs. Here are some great micro-SaaS ideas you can start
   with today.
-seo_keywords: micro-saas ideas in 2021,micro-saas,Finding micro SaaS ideas,micro
-  saas ideas reddit,Micro SaaS ideas 2020, simple micro saas, niche micro saas
 excerpt: Micro-SaaS is one of the most lucrative opportunities for small
   business entrepreneurs. Here are some great micro-SaaS ideas you can start
   with today.

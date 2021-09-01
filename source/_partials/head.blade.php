@@ -13,7 +13,6 @@
 
 <title>@yield('page-title', $page_title) | BufferMint</title>
 <meta name="description" content="{{ $description }}">
-<meta name="keywords" content="{{ $keywords }}">
 <meta name=”robots” content="index, follow">
 
 <meta property="og:type" content="article" />
