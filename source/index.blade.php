@@ -264,11 +264,11 @@
                 </div>
 
                 <!-- Price -->
-                <div class="d-flex justify-content-center">
+<!--                 <div class="d-flex justify-content-center">
                   <span class="h2 mb-0 mt-2">$</span>
                   <span class="price display-2 mb-0" data-annual="29" data-monthly="49">7500</span>
                   <span class="h2 align-self-start mb-1">*</span>
-                </div>
+                </div> -->
 
                 <!-- Features -->
                 <div class="d-flex">
