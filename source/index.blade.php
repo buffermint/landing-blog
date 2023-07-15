@@ -259,7 +259,7 @@
                 <!-- Badge -->
                 <div class="text-center mb-5">
                   <span class="badge badge-pill badge-primary-soft">
-                    <span class="h6 font-weight-bold text-uppercase">MVP</span>
+                    <span class="h6 font-weight-bold text-uppercase">Minimum Viable Product</span>
                   </span>
                 </div>
 
@@ -350,7 +350,7 @@
         <div class="card rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
 
           <!-- Body -->
-          <div class="card-body py-6 py-md-8">
+          <div class="card-body py-6">
             <div class="row justify-content-center">
               <div class="col-12 col-xl-10">
 
@@ -362,7 +362,7 @@
                 </p>
 
                 <!-- Text -->
-                <p class="lead text-center text-muted mb-0 mb-md-10">
+                <p class="lead text-center text-muted mb-0 mb-md-8">
                   Even though we don't recommend building a full feature-rich SaaS product without going to market for
                   everyone, you may have market research or insight that shows otherwise.
                   <br><br>
