@@ -1,6 +1,11 @@
 # buffermint.com landing + blog: audit and fix plan
 
 Audit date: 2026-10-20, the day the site moved from Netlify to the droplet (Caddy).
+**Hosting update (2026-10-20, later that day):** buffermint.com moved off the droplet to Cloudflare Pages
+(free). The droplet answered in 15–35 s because InvoiceShelf shares its single CPU; Pages answers in
+0.15–0.6 s. DNS is on Cloudflare now (nameservers moved from Squarespace), with the Google Workspace
+MX/SPF/DKIM records carried over. `deploy.sh` still builds here, then publishes through
+`../buffermint-pages/publish.sh`. Mentions of Caddy below describe the setup at audit time.
 Scope: this repo (buffermint/landing-blog), live at https://buffermint.com/ (every path except `/tools/`).
 **Status (2026-10-20):** items 1–8 are done in the commit after this plan (newsletter: option B).
 Hotjar is still loaded; that decision is open. For item 7, webpack is pinned to `~5.94.0` (newer 5.x
@@ -147,6 +152,7 @@ Effort **S**.
   "We turn your idea into reality. - We turn your idea into reality."
 - **No `<link rel="canonical">`** anywhere. Caddy serves both `/articles/slug` and `/articles/slug/` with
   200 (by design, see `buffermint-tools/deploy/buffermint.caddy`), so every page has a duplicate URL.
+  (On Cloudflare Pages, `/articles/slug/` now 308-redirects to `/articles/slug`, so the duplicate is gone.)
 - **og:image / twitter:image are not absolute URLs.** Posts emit `assets/img/uploads/….jpeg` (no slash, no
   host), and other pages emit `/assets/build/img/logos/logo_square.png?id=…`. Facebook, LinkedIn, X and
   Slack need an absolute `https://` URL, so shared links show no image today.

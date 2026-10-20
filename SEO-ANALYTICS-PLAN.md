@@ -1,6 +1,10 @@
 # SEO and analytics automation plan: buffermint.com (landing, blog and /tools/)
 
 Date: 2026-10-20. This is a plan only; nothing in it is implemented yet.
+**Hosting update (2026-10-20):** both sites are now served from Cloudflare Pages (`buffermint-pages/`), not
+from Caddy on the droplet. GoatCounter stays on the droplet behind `stats.buffermint.com`, and a Pages
+Function forwards `/stats/count` to it. Caddy access logs no longer see site traffic, so option A
+(GoAccess on Caddy logs) is out; Cloudflare Web Analytics (free, cookieless) replaces it as the baseline.
 It covers both sites behind buffermint.com:
 - the landing site and blog (this repo);
 - Buffermint Tools at `/tools/` (buffermint-tools repo, 822 URLs in its sitemap).
@@ -20,10 +24,10 @@ Effort sizes: **XS** < 30 min, **S** about 1 h, **M** half a day, **L** 1 day or
 | Analytics | GA4 `G-10GHKFV46D` + Hotjar, both cookie-setting | none; the footer promises "no tracking" |
 | Search Console | unknown: please check whether `buffermint.com` is verified | same property |
 | Sitemap | `/sitemap.xml` (29 URLs, fixed today) | `/tools/sitemap.xml` (822 URLs) |
-| robots.txt | served by Caddy, lists both sitemaps | same |
+| robots.txt | static file from `buffermint-pages/static/`, lists both sitemaps | same |
 | Pre-deploy checks | none | `check-pages.mjs`: JS errors, 360 px overflow, functional tests |
 | Structured data (JSON-LD) | none | none |
-| Server logs | `/var/log/caddy/buffermint.log` on the droplet | `buffermint-tools.log` (the old host) and `buffermint.log` |
+| Server logs | none: Cloudflare Pages has no raw logs; use Cloudflare Web Analytics | same |
 
 Droplet capacity: 458 MB RAM, 3.3 GB disk free. That is too small to self-host Plausible or Umami
 (Postgres/ClickHouse), but enough for GoAccess (a log analyser) or GoatCounter (one Go binary + SQLite).
@@ -84,8 +88,7 @@ It reuses the tools repo's static server from `check-pages.mjs`. It lives with t
 
 ## 5. Weekly monitoring job (automatic): **M**
 
-A scheduled job runs every Monday, either as a GitHub Actions cron in the brand/ops repo or on the
-droplet. It:
+A scheduled job runs every Monday as a GitHub Actions cron in the brand/ops repo. It:
 1. **Search data:** pulls the last 7 and 28 days from the Search Console API (clicks, impressions, CTR,
    position per page and per query) and stores them as dated CSV/JSON in an `seo-data/` folder, so trends
    are in git history.
@@ -113,10 +116,9 @@ loop from data to fix is automatic but nothing ships unreviewed.
 
 ## 7. Uptime and alerts: **S**
 
-- An UptimeRobot (free) or droplet cron check on `/`, `/tools/`, and both sitemaps, alerting you by email
-  (**You**: the account).
-- In the weekly job: TLS certificate expiry under 14 days, any 5xx in the logs, robots.txt or sitemap
-  changes.
+- An UptimeRobot (free) check on `/`, `/tools/`, both sitemaps and `stats.buffermint.com`, alerting you by
+  email (**You**: the account).
+- In the weekly job: robots.txt or sitemap changes. TLS is Cloudflare's Universal SSL, which renews itself.
 
 ## 8. Content SEO that the data will drive (ongoing)
 

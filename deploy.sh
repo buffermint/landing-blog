@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Build the landing site + blog and upload it to the droplet, where Caddy serves it at
-# https://buffermint.com/ (the /tools/ path is served from the buffermint-tools repo).
-# The Caddy config lives in buffermint-tools/deploy/buffermint.caddy.
+# Build the landing site + blog and publish it to https://buffermint.com/ on Cloudflare Pages
+# (../buffermint-pages/publish.sh, which adds the /tools/ build from the buffermint-tools repo).
+# A copy also goes to the droplet as a fallback and as the source publish.sh reads.
 # Needs PHP 8.2+, Composer, Node 20+ (see .nvmrc) and Yarn 1.
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -21,6 +21,8 @@ node brand/scripts/seo-check.mjs --dir build_production --site https://buffermin
 ssh "$HOST" "mkdir -p $DIR"
 rsync -az --delete build_production/ "$HOST:$DIR/"
 ssh "$HOST" "chown -R root:root $DIR && chmod -R u=rwX,go=rX $DIR"
-echo "Uploaded to $HOST:$DIR (served at https://buffermint.com/)"
+echo "Uploaded to $HOST:$DIR (fallback copy; also the source publish.sh reads when the tools deploy)"
+# buffermint.com is served by Cloudflare Pages: publish this build together with the live /tools/ build
+LANDING="$PWD/build_production" ../buffermint-pages/publish.sh
 # tell IndexNow search engines (Bing, Yandex, …) which pages changed; never fails the deploy
 node brand/scripts/indexnow.mjs --dir build_production --site https://buffermint.com || true

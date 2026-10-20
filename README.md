@@ -1,8 +1,8 @@
 # buffermint.com landing site + blog
 
 A [Jigsaw](https://jigsaw.tighten.com/) static site, built with laravel-mix and served at
-https://buffermint.com/ from the droplet by Caddy. `/tools/` is a separate site (the buffermint-tools
-repo, which also owns the Caddy config in `deploy/buffermint.caddy`).
+https://buffermint.com/ from Cloudflare Pages. `/tools/` is a separate site (the buffermint-tools repo);
+`../buffermint-pages/publish.sh` combines both builds into the one Pages project.
 
 ## Brand
 
@@ -37,7 +37,7 @@ PHP 8.4 prints `Deprecated:` lines from Jigsaw 1.3; they are harmless.
 ## Deploy
 
 ```bash
-./deploy.sh           # production build, then rsync to the droplet
+./deploy.sh           # production build, SEO check, then publish to Cloudflare Pages
 ```
 
 ## Writing a post
