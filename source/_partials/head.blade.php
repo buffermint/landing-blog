@@ -5,6 +5,8 @@
 <!-- shared brand: Hanken Grotesk + --bm-* colour tokens (git submodule brand/, published at /brand/) -->
 <link rel="preload" href="/brand/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/tokens.css?v={{ $page->brand_v('tokens.css') }}">
+<link rel="stylesheet" href="/brand/chrome.css?v={{ $page->brand_v('chrome.css') }}">
+<script src="/brand/chrome.js?v={{ $page->brand_v('chrome.js') }}"></script>
 <link rel="stylesheet" href="{{ mix('fonts/feather/feather.css', 'assets/build') }}">
 <link rel="stylesheet" href="{{ mix('css/vendor.css', 'assets/build') }}">
 <link rel="stylesheet" href="{{ mix('css/theme.css', 'assets/build') }}">
@@ -41,7 +43,8 @@
 <link rel="icon" href="/brand/logos/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/logos/mark-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/brand/logos/mark-180.png">
-<meta name="theme-color" content="{{ $page->brand->colors->light->bg }}">
+<meta name="theme-color" content="{{ $page->brand->colors->light->bg }}" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="{{ $page->brand->colors->dark->bg }}" media="(prefers-color-scheme: dark)">
 
 <link rel="alternate" type="application/atom+xml" title="{{ $page->brand->name }} blog" href="{{ rtrim($page->baseUrl, '/') }}/feed.xml">
 @if ($page->brand->verification->google ?? null)

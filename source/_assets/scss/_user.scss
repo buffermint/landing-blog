@@ -7,8 +7,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.navbar-brand-img,
-.footer-brand {
+.navbar-brand-img {
     width: auto;
     position: relative;
     top: -5px;
@@ -19,9 +18,6 @@ a:hover {
     }
 }
 
-.navbar.navbar-expand-lg.navbar-light {
-    background-color: $gray-300;
-}
 
 .pricing-cta .custom-card-btn {
     border-top-left-radius: 0;
@@ -43,14 +39,6 @@ a:hover {
     // border-bottom-left-radius: 0;
 }
 
-footer .site-links {
-    a:hover {
-        text-decoration: none;
-    }
-    h4:hover {
-        color: $white !important;
-    }
-}
 
 .hero-section {
     h3 {
@@ -100,11 +88,4 @@ footer .site-links {
     text-decoration: underline;
 }
 
-// the brand repo ships logo-on-dark.svg, so the theme's white-out filter is not needed
-.bg-dark .footer-brand {
-    filter: none;
-}
 
-footer .site-links h4 {
-    white-space: nowrap;
-}

@@ -2,7 +2,6 @@
 
 // name, copy, nav and links come from the shared brand repo (git submodule at brand/)
 $brand = json_decode(file_get_contents(__DIR__ . '/brand/dist/brand.json'), true);
-$links = fn ($items) => collect($items)->mapWithKeys(fn ($item) => [$item['label'] => $item['href']])->all();
 
 return [
     'production' => false,
@@ -24,8 +23,9 @@ return [
     'default_recent_headline' => 'Recent Articles',
     'default_recent_tagline' => 'Our latest articles across all categories.',
 
-    'nav_menu' => $links($brand['nav']),
-    'footer_menu' => $links($brand['footerNav']),
+    // shared header and footer markup from the brand repo (brand/dist/chrome/, published at /brand/)
+    'chrome' => fn ($page, $part) => str_replace(['{ASSETS}', '{YEAR}'], ['/brand', date('Y')],
+        file_get_contents(__DIR__ . '/brand/dist/chrome/' . $part . '.html')),
 
     'categories' => [
         'idea_validation' => [

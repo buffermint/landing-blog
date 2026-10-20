@@ -15,26 +15,26 @@
     h2,
     h3 {
         margin: 45px 0px 25px 0;
-        color: $gray-900;
+        color: var(--bm-heading); // brand token: follows dark mode
         font-weight: 700;
         line-height: 1.35;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: clamp(1.625rem, 1.2rem + 2vw, 2.5rem);
         margin: 60px 0px 25px 0;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
     }
 
     strong {
-        color: $gray-800;
+        color: var(--bm-heading);
     }
 
     hr {
-        border-color: $gray-400;
+        border-color: var(--bm-line);
     }
 
     .badge.bg-success-soft {
@@ -45,7 +45,7 @@
 
     blockquote {
         margin: 0;
-        border-left: 2px solid #77a6ab;
+        border-left: 2px solid var(--bm-line);
         padding-left: 20px;
     }
 }

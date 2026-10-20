@@ -4,7 +4,7 @@ namespace App\Listeners;
 
 use TightenCo\Jigsaw\Jigsaw;
 
-/** Publishes the shared brand files (brand/dist: tokens.css, analytics.js, fonts, logos) at /brand/. */
+/** Publishes the shared brand files (brand/dist: tokens.css, chrome.css/js, analytics.js, fonts, logos) at /brand/. */
 class CopyBrandAssets
 {
     public function handle(Jigsaw $jigsaw)
@@ -16,6 +16,8 @@ class CopyBrandAssets
         }
 
         $jigsaw->getFilesystem()->copyDirectory($source, $jigsaw->getDestinationPath() . '/brand');
+        // the shared header/footer partials are pasted into pages at build time; they are not pages
+        $jigsaw->getFilesystem()->deleteDirectory($jigsaw->getDestinationPath() . '/brand/chrome');
 
         // IndexNow key file: search engines fetch it from the site root (brand.json indexNow.key)
         $key = json_decode(file_get_contents($source . '/brand.json'), true)['indexNow']['key'];

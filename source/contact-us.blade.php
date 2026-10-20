@@ -1,68 +1,37 @@
 @extends('_layouts.main')
 
 @section('page-title', 'Contact Us')
-@section('page-description', 'Talk to BufferMint about your SaaS idea: book a discovery call, message us on WhatsApp or email sales@buffermint.com.')
+@section('page-description', 'Talk to BufferMint about your product idea: book a 30-minute call, message us on WhatsApp or email sales@buffermint.com.')
 
 @section('content')
 
-
-<section class="mt-n12 scroll-section gradient-mint-to-white" id="sectionOne">
-  <div class="container d-flex flex-column">
-    <div class="
-            row
-            align-items-center
-            justify-content-center
-            min-vh-100
-            py-8 py-md-11
-          ">
-      <div class="col-12 col-md-8 col-lg-7 mt-auto text-center">
-        <!-- Heading -->
-        <h1 class="display-2 mb-0 font-weight-bold">
-          Small Team, Big heart
-        </h1>
-
-        <p class="lead text-gray-800 mt-4">
-          We are a small team of remote developers and founders, each of us
-          seasoned in their own field. Our preferred means to start a
-          conversation is by
-          <a href="{{ $page->discovery_call_url }}" target="_blank"><strong>booking a discovery call</strong></a>.
-          <br /><br />
-          You can always reach us using the conventional means.
-        </p>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-4 text-center">
-          <!-- Heading -->
-          <h6 class="text-uppercase text-gray-800 mb-1">Message us</h6>
-
-          <!-- Link -->
-          <div class="mb-5 mb-md-0">
-            <a href="https://wa.me/917767074808" class="h4 text-primary">
-              Start a chat!
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 text-center border-left-md border-gray-300">
-          <!-- Heading -->
-          <h6 class="text-uppercase text-gray-800 mb-1">Call anytime</h6>
-
-          <!-- Link -->
-          <div class="mb-5 mb-md-0">
-            <a href="tel:917767074808" class="h4"> (91) 7767074808 </a>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 text-center border-left-md border-gray-300">
-          <!-- Heading -->
-          <h6 class="text-uppercase text-gray-800 mb-1">Email us</h6>
-
-          <!-- Link -->
-          <a href="mailto:sales@buffermint.com" class="h4"> sales@buffermint.com </a>
-        </div>
-      </div>
+<section class="site-hero">
+  <div class="bm-container">
+    <h1 class="site-display">Talk to us</h1>
+    <p class="site-lead">The quickest way to start is a 30-minute call about what you want to build. You can also message, call or email us.</p>
+    <div class="site-actions">
+      <a class="bm-btn bm-btn-primary bm-btn-lg" href="{{ $page->discovery_call_url }}" target="_blank" rel="noopener" data-cta="contact-call">Book a call</a>
     </div>
-    <!-- / .row -->
   </div>
-  <!-- / .container -->
+</section>
+
+<section class="site-section">
+  <div class="bm-container">
+    <div class="site-cards">
+      <a class="site-card" href="https://wa.me/917767074808">
+        <b>Message us</b>
+        <span>WhatsApp: start a chat</span>
+      </a>
+      <a class="site-card" href="tel:+917767074808">
+        <b>Call</b>
+        <span>+91 77670 74808</span>
+      </a>
+      <a class="site-card" href="mailto:{{ $page->brand->email }}">
+        <b>Email</b>
+        <span>{{ $page->brand->email }}</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 @endsection

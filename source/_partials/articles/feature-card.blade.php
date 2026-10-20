@@ -45,7 +45,7 @@ $selectedCollection = $post->category ? $page->categories[$post->category] : nul
 
                 <!-- Text -->
                 <p class="mb-0 text-muted">
-                    {{ $post->excerpt }}
+                    {{ $post->excerpt ?? '' }}
                 </p>
 
             </a>

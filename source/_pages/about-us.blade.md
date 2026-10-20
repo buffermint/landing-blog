@@ -1,53 +1,35 @@
 ---
 extends: _layouts.post
 section: postContent
-title: "About Us"
-excerpt: "We turn your idea into reality."
-seo_description: "BufferMint is a design and development studio that builds SaaS products for founders, and makes free tools for the browser."
+title: "About BufferMint"
+excerpt: "We build useful software: free tools anyone can use, and products we design and build for founders."
+seo_description: "BufferMint is a small software company. We make free tools that run in your browser and design, build and launch SaaS products for founders."
 ---
 
-**We are BufferMint.** We Design, Build & Launch SaaS products for founders. We are a unique design and development studio and our sole focus is building amazing SaaS products for founders.
+**BufferMint is a small software company.** We do two things: we make free tools that run in your browser, and we design, build and launch software products for founders.
 
-Say you have an amazing idea to improve how something is done right now. An idea that solves a real problem for a viable customer base.
+### What we make
 
-Founders get excited about their SaaS products and would love to take them from concept through to launch up themselves, but very few people have coding skills, experience in design, or time to do it.
+**Free tools.** [{{ $page->brand->toolCount }} tools]({{ '/tools/' }}) for PDFs, images, video, code, SEO and business. They run on your device, so you don't need an account and your files are never uploaded. We add tools when we see people searching for a better way to do a common task.
 
-This is where we come in…
+**Products for founders.** If you have a product idea, we help you plan it, design and build a focused first version on a fixed price, launch it and improve it from what real users do.
 
-<x-quote>
-We take your idea to market in 45 days or less on a fixed budget.
-</x-quote>
+### How we started
 
-### Why we started BufferMint?
+In 2019 we were a consulting team, building and supporting products and internal systems for clients around the world. Most of that work was short, one-off projects, and we rarely saw how the products did after we handed them over.
 
-In 2019, before the COVID pandemic hit we were working as a consulting team, helping clients all over the world to build and support their existing products and internal systems.
+We wanted to stay with products for longer: build them, launch them and keep improving them. That is what BufferMint does now, both for our own tools and for the founders we work with.
 
-Most of these products were one-off projects and our level of engagement was very limited. We loved the challenge and the opportunity, but as technical partners, we were working on products where we were not very invested in the projects.
+### Who we work with
 
-We wanted to do more.
+We work best with founders who know their industry first-hand and want to solve a problem they have seen up close. You bring that knowledge; we bring product design, engineering and launch experience.
 
-No, not just more, we wanted to build services and products that would help people like us and focus on what we do best, solve problems.
-
-<x-image :wide="true" alt="Buffermint is born" url="https://images.unsplash.com/photo-1584907797015-7554cd315667?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80" caption="So, BufferMint was born." />
-
-### What do we do?
-
-We look at services differently.
-
-We are not a services company, we do not only offer services to our clients; instead, we design, build and launch services for founders as their technology partners.
-
-<x-image url="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" caption="We help you turn your idea into a marketable product." />
-
-We do this from ideation to market. We get excited about services or products and put our blood, sweat, and tears into making them a reality. We are the partners you need, when you need them, with no bureaucracy and no crap!
-
-We do like working on X for Y types of projects, like a social network for pet owners or uber for florists. We work with people who are passionate about their idea and want to build something which solves a real problem. We only work with founders who have first-hand experience working in the industry in which they want to launch a product.
-
-**Our process looks something like this,**
+**Our process:**
 
 <x-list :list='[
-    "Brainstorm your MVP <br/> In this step, we map out a version of your product with just enough features to be loved by early customers who can then provide feedback for future iterations.",
-    "Design and Build <br/> After the MVP is planned and approved by you, we design and develop the product. We keep you in the loop and utilize your domain knowledge through everyday feedback.",
-    "Launch and Reiterate <br/> After launching the MVP, we help you to gain traction for the product using multiple channels. We work with you to collect user feedback and plan upcoming features and releases.",
+"Plan <br/> We agree on the smallest version of your product that early customers will pay for, and write it down: features, screens and a launch date.",
+"Design and build <br/> We design and develop it in short cycles. You see working software every week and tell us what to change.",
+"Launch and improve <br/> We launch with you, measure how people use the product, and plan the next release from what we learn.",
 ]' />
 
-If you think we are a good fit. Let us help you launch an exceptional product. [Book a discovery call now]({{ $page->discovery_call_url }}).
+If that sounds like a fit, [book a 30-minute call]({{ $page->discovery_call_url }}) or email <a href="mailto:{{ $page->brand->email }}">{{ $page->brand->email }}</a>.

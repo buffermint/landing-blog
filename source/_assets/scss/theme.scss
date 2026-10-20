@@ -24,4 +24,7 @@
 @import '_components';
 
 @import 'user';
+
+// brand-token sections and dark mode (after the theme, so it wins)
+@import 'site';
 // Custom core

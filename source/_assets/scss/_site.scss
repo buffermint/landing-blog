@@ -1,0 +1,111 @@
+//
+// site.scss: home page sections and brand alignment.
+// Everything here uses the brand's CSS custom properties (--bm-*, brand/dist/tokens.css and chrome.css),
+// so it follows light and dark mode. Header, footer, buttons and type scale live in the brand repo.
+//
+
+// ---------- base: the Bootstrap theme on brand tokens, in both colour schemes ----------
+:root { color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; } }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+body, body.bg-light { background: var(--bm-bg) !important; color: var(--bm-fg); }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4 { color: var(--bm-heading); }
+a { color: var(--bm-accent); }
+a:hover { color: var(--bm-accent-hover); }
+.lead, .text-muted, .text-gray-600, .text-gray-700, .text-gray-800 { color: var(--bm-muted) !important; }
+.text-body, .text-dark { color: var(--bm-fg) !important; }
+.text-primary { color: var(--bm-accent) !important; }
+.card, .bg-white, .bg-light, .dropdown-menu, .list-group-item { background-color: var(--bm-panel) !important; color: var(--bm-fg); }
+.card-meta, .border, .border-top, .border-bottom, .border-gray-300, .card-meta-divider, hr { border-color: var(--bm-line) !important; }
+.gradient-mint-to-white, .gradient-white-to-mint { background: var(--bm-bg) !important; }
+.form-control { background-color: var(--bm-panel); color: var(--bm-fg); border-color: var(--bm-line); }
+.form-control::placeholder { color: var(--bm-muted); }
+.badge-gray-600 { background: var(--bm-bg-alt); color: var(--bm-muted); }
+.btn-primary { background-color: var(--bm-accent); border-color: var(--bm-accent); color: var(--bm-accent-fg); }
+.btn-primary:hover { background-color: var(--bm-accent-hover); border-color: var(--bm-accent-hover); color: var(--bm-accent-fg); }
+blockquote, .blockquote { color: var(--bm-fg); }
+code, pre { background: var(--bm-bg-alt); color: var(--bm-fg); }
+
+// ---------- home page ----------
+.site-display { font-size: var(--bm-display); line-height: 1.05; letter-spacing: -.025em; font-weight: 700; margin: 0 0 1rem; }
+.site-lead { font-size: var(--bm-text-xl); line-height: 1.5; color: var(--bm-muted); max-width: 40ch; margin: 0 0 2rem; }
+.site-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.site-hero { padding: 4.5rem 0 4rem; border-bottom: 1px solid var(--bm-line); }
+
+.site-section { padding: 4rem 0; }
+.site-alt { background: var(--bm-bg-alt); border-top: 1px solid var(--bm-line); border-bottom: 1px solid var(--bm-line); }
+.site-head { max-width: 46rem; margin-bottom: 2rem; }
+.site-head h2, .site-final h2 { font-size: var(--bm-h2); line-height: 1.2; letter-spacing: -.015em; font-weight: 600; margin: 0 0 .75rem; }
+.site-head p, .site-final p { font-size: var(--bm-text-lg); color: var(--bm-muted); margin: 0; }
+.site-more { margin: 1.75rem 0 0; }
+
+.site-cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .site-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .site-cards { grid-template-columns: repeat(3, 1fr); } }
+.site-card {
+  display: flex; flex-direction: column; gap: .35rem; padding: 1.25rem; border: 1px solid var(--bm-line);
+  border-radius: var(--bm-radius-md); background: var(--bm-panel); color: var(--bm-fg); text-decoration: none !important;
+  transition: border-color .15s, box-shadow .15s;
+}
+.site-card:hover { border-color: var(--bm-accent); box-shadow: var(--bm-shadow-sm); color: var(--bm-fg); }
+.site-card svg { color: var(--bm-accent); margin-bottom: .35rem; }
+.site-card b { font-size: var(--bm-text-lg); font-weight: 600; color: var(--bm-heading); }
+.site-card span { color: var(--bm-muted); }
+
+.site-steps { list-style: none; counter-reset: step; display: grid; gap: 1.5rem; padding: 0; margin: 0; }
+@media (min-width: 860px) { .site-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.site-steps li { counter-increment: step; }
+.site-steps li::before {
+  content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem;
+  margin-bottom: .75rem; border-radius: var(--bm-radius-pill); background: var(--bm-accent); color: var(--bm-accent-fg); font-weight: 700;
+}
+.site-steps h3 { font-size: var(--bm-h3); font-weight: 600; margin: 0 0 .4rem; }
+.site-steps p { margin: 0; color: var(--bm-fg); }
+
+.site-quotes { display: grid; gap: 1.5rem; }
+@media (min-width: 860px) { .site-quotes { grid-template-columns: 1fr 1fr; } }
+.site-quote { margin: 0; padding: 1.5rem; border: 1px solid var(--bm-line); border-radius: var(--bm-radius-md); background: var(--bm-panel); display: flex; flex-direction: column; gap: 1rem; }
+.site-quote-logo img { height: 32px; width: auto; }
+.site-quote blockquote { margin: 0; font-size: var(--bm-text-lg); line-height: 1.55; color: var(--bm-fg); }
+.site-quote figcaption { display: flex; align-items: center; gap: .75rem; margin-top: auto; color: var(--bm-muted); }
+.site-quote figcaption img { border-radius: 50%; object-fit: cover; }
+.site-quote figcaption b { display: block; color: var(--bm-heading); }
+
+.site-plans { display: grid; gap: 1.5rem; }
+@media (min-width: 860px) { .site-plans { grid-template-columns: 1fr 1fr; } }
+.site-plan { padding: 1.5rem; border: 1px solid var(--bm-line); border-radius: var(--bm-radius-md); background: var(--bm-panel); display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.site-plan h3 { font-size: var(--bm-h3); font-weight: 600; margin: 0; }
+.site-plan p { margin: 0; color: var(--bm-fg); }
+.site-plan .bm-btn { margin-top: auto; }
+.site-checks { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.site-checks li { padding-left: 1.6rem; position: relative; }
+.site-checks li::before { content: "✓"; position: absolute; left: 0; color: var(--bm-ok); font-weight: 700; }
+
+.site-posts { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .site-posts { grid-template-columns: repeat(3, 1fr); } }
+.site-post { display: flex; flex-direction: column; border: 1px solid var(--bm-line); border-radius: var(--bm-radius-md); overflow: hidden; background: var(--bm-panel); color: var(--bm-heading); text-decoration: none !important; }
+.site-post:hover { border-color: var(--bm-accent); color: var(--bm-heading); }
+.site-post img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.site-post b { padding: 1rem; font-weight: 600; line-height: 1.35; }
+
+.site-final { text-align: center; }
+.site-final p { margin-bottom: 1.5rem; }
+
+// call-to-action box at the end of articles and category pages
+.site-cta-box {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--bm-line); border-radius: var(--bm-radius-md); background: var(--bm-bg-alt);
+}
+.site-cta-box h3 { font-size: var(--bm-h3); font-weight: 600; margin: 0 0 .25rem; }
+.site-cta-box p { margin: 0; color: var(--bm-fg); max-width: 60ch; }
+.site-cta-box p a { text-decoration: underline; }
+
+@media (max-width: 599px) {
+  .site-hero { padding: 3rem 0 2.5rem; }
+  .site-section { padding: 2.75rem 0; }
+  .site-actions .bm-btn { flex: 1 1 100%; }
+}
+
+// blog search box (Bootstrap input group)
+.input-group-text, .input-group-prepend .input-group-text { background-color: var(--bm-panel) !important; border-color: var(--bm-line) !important; color: var(--bm-muted); }
