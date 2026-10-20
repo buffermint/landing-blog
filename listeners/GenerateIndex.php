@@ -29,7 +29,9 @@ class GenerateIndex
     {
         return [
             'title' => $page->title,
-            'categories' => $page->categories,
+            // Fuse.js only indexes strings, so ship the post's own category as a
+            // list of {slug, name} rather than the site-wide map of category objects.
+            'categories' => $this->postCategories($page),
             'image' => $page->featured_thumbnail ?? $page->featured_image,
             'author' => $page->author,
             'link' => $page->getPath(),
@@ -39,6 +41,13 @@ class GenerateIndex
         ];
     }
 
+
+    private function postCategories($page)
+    {
+        $category = $page->category ? ($page->categories[$page->category] ?? null) : null;
+
+        return $category ? [['slug' => $category['slug'], 'name' => $category['name']]] : [];
+    }
 
     public function getFeaturedCollections($collection, $featuredCount)
     {

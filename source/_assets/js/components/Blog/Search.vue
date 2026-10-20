@@ -110,7 +110,7 @@ export default {
       .then((data) => {
         this.fuse = new Fuse(data, {
           minMatchCharLength: 4,
-          keys: ["title", "snippet", "categories"],
+          keys: ["title", "snippet", "categories.name"],
         });
       });
   },
