@@ -8,10 +8,10 @@
         </h3>
 
         <!-- Text -->
-        <p class="text-muted mb-6 mb-md-0 font-size-md">
+        <p class="text-gray-800 mb-6 mb-md-0 font-size-md">
           Talk it through with us on a free 30-minute call, email
-          <a href="mailto:sales@buffermint.com">sales@buffermint.com</a>,
-          or try our <a href="/tools/">free tools for founders</a>.
+          <a href="mailto:sales@buffermint.com" class="text-underline">sales@buffermint.com</a>,
+          or try our <a href="/tools/" class="text-underline">free tools for founders</a>.
         </p>
       </div>
       <div class="col-12 col-md-auto">
