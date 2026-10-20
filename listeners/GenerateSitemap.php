@@ -11,7 +11,8 @@ class GenerateSitemap
     protected $exclude = [
         '/assets/*',
         '*/favicon.ico',
-        '*/404*'
+        '*/404*',
+        '/admin*',
     ];
 
     public function handle(Jigsaw $jigsaw)
@@ -26,11 +27,16 @@ class GenerateSitemap
 
         $sitemap = new Sitemap($jigsaw->getDestinationPath() . '/sitemap.xml');
 
+        // posts get their publish date as lastmod; other pages have no meaningful date, so none
+        $postDates = collect($jigsaw->getCollection('posts'))->mapWithKeys(function ($post) {
+            return [trimPath($post->getPath()) => $post->date];
+        });
+
         collect($jigsaw->getOutputPaths())
             ->reject(function ($path) {
                 return $this->isExcluded($path);
-            })->each(function ($path) use ($baseUrl, $sitemap) {
-                $sitemap->addItem(rtrim($baseUrl, '/') . $path, time(), Sitemap::DAILY);
+            })->each(function ($path) use ($baseUrl, $sitemap, $postDates) {
+                $sitemap->addItem(rtrim($baseUrl, '/') . $path, $postDates->get(trimPath($path)));
             });
 
         $sitemap->write();

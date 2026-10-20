@@ -109,7 +109,7 @@
                 </div>
                 @endif
             </div> <!-- / .row -->
-            <newsletter :dark-mode="false"></newsletter>
+            @include('_partials.contact-cta')
 
             <div class="text-center">
                 <h2 class="mb-0 mt-2">

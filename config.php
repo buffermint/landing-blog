@@ -21,6 +21,7 @@ return [
         // "What we do?" => "/#what-we-do",
         // "Pricing" => "/#pricing",
         "Blog" => "/articles",
+        "Free tools" => "/tools/",
         "Careers" => "/careers",
         "Contact" => "/contact-us",
     ],

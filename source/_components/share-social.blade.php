@@ -6,20 +6,20 @@
 <!-- Icons -->
 <ul class="d-inline list-unstyled list-inline list-social">
     <li class="list-inline-item list-social-item mr-3">
-        <a href="https://www.facebook.com/sharer.php?u={{ $url }}" class="text-decoration-none">
+        <a href="https://www.facebook.com/sharer.php?u={{ rawurlencode($url) }}" class="text-decoration-none">
             <img src="{{ mix('img/social/facebook.svg', 'assets/build') }}" class="list-social-icon"
                 alt="Share on Facebook">
         </a>
     </li>
     <li class="list-inline-item list-social-item mr-3">
-        <a href="https://twitter.com/share?url={{ $url }}&text={{ $title }}&hashtags=buffermint"
+        <a href="https://x.com/intent/post?url={{ rawurlencode($url) }}&text={{ rawurlencode($title) }}"
             class="text-decoration-none">
             <img src="{{ mix('img/social/twitter.svg', 'assets/build') }}" class="list-social-icon"
-                alt="Share on Twitter">
+                alt="Share on X">
         </a>
     </li>
     <li class="list-inline-item list-social-item mr-3">
-        <a href="https://www.linkedin.com/shareArticle?url={{ $url }}&title={{ $title }}" class="text-decoration-none">
+        <a href="https://www.linkedin.com/shareArticle?url={{ rawurlencode($url) }}&title={{ rawurlencode($title) }}" class="text-decoration-none">
             <img src="{{ mix('img/social/linkedin.svg', 'assets/build') }}" class="list-social-icon"
                 alt="Share on LinkedIn">
         </a>

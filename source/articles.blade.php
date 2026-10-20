@@ -1,6 +1,7 @@
 @extends('_layouts.main')
 
 @section('page-title', 'Blog')
+@section('page-description', 'Articles for SaaS founders on idea validation, MVPs, micro-SaaS and launching a startup.')
 
 @section('content')
 
@@ -15,6 +16,7 @@ return !$post->featured;
 @endphp
 
 <div class="gradient-mint-to-white min-vh-60">
+    <h1 class="sr-only">BufferMint Blog</h1>
     <Search></Search>
 
     <div class="container">

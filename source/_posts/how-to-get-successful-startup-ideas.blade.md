@@ -64,7 +64,7 @@ This means you have to compromise on one front, you can either build something a
 
 ### The future aspect
 
-![](assets/img/uploads/have-a-future-aspect.jpeg "The future aspect")
+![](/assets/img/uploads/have-a-future-aspect.jpeg "The future aspect")
 
 > "People at the leading edge of a rapidly changing field "live in the future."
 >

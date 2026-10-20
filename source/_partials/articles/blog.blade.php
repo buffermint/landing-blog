@@ -49,7 +49,7 @@ $category = $category ?? [];
 </section>
 
 <div class="mb-6 container">
-    <newsletter :borderBottom="false"></newsletter>
+    @include('_partials.contact-cta')
 </div>
 
 @php

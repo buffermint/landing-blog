@@ -51,7 +51,6 @@
       <!-- / .container -->
     </section>
 
-    <newsletter></newsletter>
   </div>
 </template>
 
@@ -59,10 +58,9 @@
 import Fuse from "fuse.js";
 import ArticleCard from "./ArticleCard.vue";
 import Search from "./SearchBasic.vue";
-import Newsletter from "../Newsletter.vue";
 
 export default {
-  components: { ArticleCard, Newsletter, Search },
+  components: { ArticleCard, Search },
   props: { galleryMode: { default: false }, postCount: { default: null }, defaultPosts:{ default: null }},
   data() {
     return {

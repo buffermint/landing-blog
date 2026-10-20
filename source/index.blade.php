@@ -437,7 +437,7 @@
       </div>
       @endforeach
       <div class="col-12">
-        <newsletter :borderBottom="false"></newsletter>
+        @include('_partials.contact-cta')
       </div>
     </div>
   </div>

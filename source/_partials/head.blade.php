@@ -4,28 +4,34 @@
 
 <link rel="stylesheet" href="{{ mix('fonts/feather/feather.css', 'assets/build') }}">
 <link rel="stylesheet" href="{{ mix('css/vendor.css', 'assets/build') }}">
-
-
-<!-- Map -->
-<link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-
 <link rel="stylesheet" href="{{ mix('css/theme.css', 'assets/build') }}">
 
-<title>@yield('page-title', $page_title) | BufferMint</title>
-<meta name="description" content="{{ $description }}">
-<meta name=”robots” content="index, follow">
+@php
+  // pages set these with @section('page-title') / @section('page-description')
+  $page_title = trim($__env->yieldContent('page-title')) ?: $page_title;
+  $description = trim($__env->yieldContent('page-description')) ?: $description;
+  $share_image = $page->featured_image ?? mix('img/logos/logo_square.png', 'assets/build');
+  if (! preg_match('#^https?://#', $share_image)) {
+    $share_image = rtrim($page->baseUrl, '/') . '/' . ltrim($share_image, '/');
+  }
+  $is_post = str_starts_with($page->getPath(), '/articles/');
+@endphp
 
-<meta property="og:type" content="article" />
-<meta property="og:title" content="{{ $page_title }}" />
+<title>{{ $page_title }} | BufferMint</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ $page->getUrl() }}">
+
+<meta property="og:type" content="{{ $is_post ? 'article' : 'website' }}" />
+<meta property="og:title" content="{{ $page_title === 'Home' ? 'BufferMint' : $page_title }}" />
 <meta property="og:description" content="{{ $description }}" />
-<meta property="og:image" content="{{ $page->featured_image ?? mix('img/logos/logo_square.png', 'assets/build') }}" />
-<meta property="og:url" content="{{ $page->getUrl() ?? 'https://buffermint.com' }}" />
+<meta property="og:image" content="{{ $share_image }}" />
+<meta property="og:url" content="{{ $page->getUrl() }}" />
 <meta property="og:site_name" content="BufferMint" />
 
-
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ $page_title }}">
 <meta name="twitter:description" content="{{ $description }}">
-<meta name="twitter:image" content="{{ $page->featured_image ?? mix('img/logos/logo_square.png', 'assets/build') }}">
+<meta name="twitter:image" content="{{ $share_image }}">
 <meta name="twitter:site" content="@buffermint">
 <meta name="twitter:creator" content="@buffermint">
 
@@ -69,5 +75,3 @@
       a.appendChild(r);
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

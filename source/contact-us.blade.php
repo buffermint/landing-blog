@@ -1,6 +1,7 @@
 @extends('_layouts.main')
 
 @section('page-title', 'Contact Us')
+@section('page-description', 'Talk to BufferMint about your SaaS idea: book a discovery call, message us on WhatsApp or email sales@buffermint.com.')
 
 @section('content')
 

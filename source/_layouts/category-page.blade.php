@@ -5,6 +5,7 @@ $category = $page->categories[$category_key];
 @extends('_layouts.main')
 
 @section('page-title', $category['name'])
+@section('page-description', $category['description'])
 
 @section('content')
 

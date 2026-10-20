@@ -1,6 +1,7 @@
 @extends('_layouts.main')
 
 @section('page-title', 'Careers')
+@section('page-description', 'Work with BufferMint, a design and development studio that builds SaaS products for founders.')
 
 @section('content')
 
