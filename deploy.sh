@@ -7,6 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 HOST=${DEPLOY_HOST:-buffermint-droplet}
 DIR=/var/www/buffermint-landing
+[ -f brand/dist/brand.json ] || git submodule update --init brand
 [ -d vendor ] || composer install --no-dev --no-interaction -q
 [ -d node_modules ] || yarn install --silent
 yarn run prod >/dev/null

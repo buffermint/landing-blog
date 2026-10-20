@@ -9,6 +9,7 @@ a:hover {
 
 .navbar-brand-img,
 .footer-brand {
+    width: auto;
     position: relative;
     top: -5px;
     max-height: 1.4rem;
@@ -97,4 +98,13 @@ footer .site-links {
 }
 .text-underline {
     text-decoration: underline;
+}
+
+// the brand repo ships logo-on-dark.svg, so the theme's white-out filter is not needed
+.bg-dark .footer-brand {
+    filter: none;
+}
+
+footer .site-links h4 {
+    white-space: nowrap;
 }

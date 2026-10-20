@@ -1,6 +1,6 @@
 @extends('_layouts.main')
 
-@section('page-title', 'Home')
+@section('page-title', 'Free tools for the browser and SaaS for founders')
 
 @section('content')
 
@@ -12,6 +12,10 @@
   </div> <!-- / .container -->
 </section>
 
+<!-- FREE TOOLS
+    ================================================== -->
+@include('_partials.free-tools')
+
 <div class="gradient-white-to-mint">
   <!-- PROCESS
       ================================================== -->
@@ -21,9 +25,9 @@
         <div class="col-12 col-md-6">
 
           <!-- Preheading -->
-          <h6 class="text-uppercase text-primary font-weight-bold">
-            What we do?
-          </h6>
+          <p class="h6 text-uppercase text-primary font-weight-bold">
+            SaaS &amp; MVP studio
+          </p>
 
           <!-- Heading -->
           <h2>

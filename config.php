@@ -1,12 +1,18 @@
 <?php
 
+// name, copy, nav and links come from the shared brand repo (git submodule at brand/)
+$brand = json_decode(file_get_contents(__DIR__ . '/brand/dist/brand.json'), true);
+$links = fn ($items) => collect($items)->mapWithKeys(fn ($item) => [$item['label'] => $item['href']])->all();
+
 return [
     'production' => false,
     'baseUrl' => 'http://localhost:3000/',
-    'title' => 'BufferMint',
-    'description' => 'Launch your SaaS in 45 days. We turn your idea into an amazing MVP on a fixed budget and take your product to market ASAP.',
+    'brand' => $brand,
+    'organization_jsonld' => file_get_contents(__DIR__ . '/brand/dist/organization.jsonld'),
+    'title' => $brand['name'],
+    'description' => $brand['description'],
 
-    'discovery_call_url' => 'https://calendly.com/buffermint/30min',
+    'discovery_call_url' => $brand['discoveryCallUrl'],
 
     'featured_posts_count' => 9,
 
@@ -16,15 +22,8 @@ return [
     'default_recent_headline' => 'Recent Articles',
     'default_recent_tagline' => 'Our latest articles across all categories.',
 
-    'nav_menu' => [
-        "About Us" => "/about-us",
-        // "What we do?" => "/#what-we-do",
-        // "Pricing" => "/#pricing",
-        "Blog" => "/articles",
-        "Free tools" => "/tools/",
-        "Careers" => "/careers",
-        "Contact" => "/contact-us",
-    ],
+    'nav_menu' => $links($brand['nav']),
+    'footer_menu' => $links($brand['footerNav']),
 
     'categories' => [
         'idea_validation' => [

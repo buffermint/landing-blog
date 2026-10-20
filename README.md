@@ -4,6 +4,18 @@ A [Jigsaw](https://jigsaw.tighten.com/) static site, built with laravel-mix and 
 https://buffermint.com/ from the droplet by Caddy. `/tools/` is a separate site (the buffermint-tools
 repo, which also owns the Caddy config in `deploy/buffermint.caddy`).
 
+## Brand
+
+Name, tagline, copy, nav, colours, font and logos come from the shared brand repo
+(`buffermint/brand`), checked out as a git submodule at `brand/`:
+- `config.php` reads `brand/dist/brand.json` (nav, footer nav, CTA, description, Organization JSON-LD);
+- `_user-variables.scss` maps the Bootstrap/theme variables onto `brand/dist/_tokens.scss`;
+- `listeners/CopyBrandAssets.php` publishes `brand/dist/` at `/brand/` (`tokens.css`, the Hanken Grotesk
+  font, logos and favicons).
+
+Change the brand in that repo, never here. To pick up a new brand version:
+`git submodule update --remote brand`, rebuild, commit the submodule bump.
+
 ## Requirements
 
 PHP 8.2+, Composer, Node 20+ (`.nvmrc`) and Yarn 1.
@@ -14,6 +26,7 @@ output plugin) breaks on newer webpack releases, and older ones need `--openssl-
 ## Build and preview
 
 ```bash
+git submodule update --init   # brand/ (clone with --recurse-submodules to skip this)
 composer install
 yarn install
 yarn watch            # builds into build_local/ and serves it at http://localhost:3000

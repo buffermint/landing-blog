@@ -4,7 +4,7 @@
     <!-- Brand -->
     <a class="navbar-brand" href="/">
 
-      <img src="{{ mix('img/logos/brand.svg', 'assets/build') }}" class="navbar-brand-img" alt="...">
+      <img src="/brand/logos/logo.svg" class="navbar-brand-img" alt="{{ $page->brand->name }}" width="258" height="49">
     </a>
 
     <!-- Toggler -->
@@ -34,8 +34,8 @@
       </ul>
 
       <!-- Button -->
-      <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="{{ $page->discovery_call_url }}" target="_blank">
-        Book a discovery call
+      <a class="navbar-btn btn btn-sm btn-primary lift ml-auto" href="{{ $page->brand->cta->href }}" target="_blank" rel="noopener">
+        {{ $page->brand->cta->label }}
       </a>
 
     </div>

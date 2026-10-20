@@ -4,7 +4,6 @@ require("laravel-mix-jigsaw");
 mix.disableSuccessNotifications();
 mix
   .setPublicPath("source/assets/build")
-  .copy("source/_assets/img/favicons/*", "source/assets/build/img/favicons")
   .copy("source/_assets/img/photos/*", "source/assets/build/img/photos")
   .copy("source/_assets/img/logos/*", "source/assets/build/img/logos")
   .copy("source/_assets/img/masks/*", "source/assets/build/img/masks")
@@ -12,7 +11,6 @@ mix
   .copy("source/_assets/img/shapes/**/*", "source/assets/build/img/shapes")
   .copy("source/_assets/img/blog/**/*", "source/assets/build/img/blog")
 
-  .copy("source/_assets/fonts/HK Grotesk Pro/*", "source/assets/build/css/fonts/HKGroteskPro")
   .copy("source/_assets/fonts/Feather/fonts/", "source/assets/build/fonts/feather/fonts")
   .copy("source/_assets/fonts/Feather/*", "source/assets/build/fonts/feather")
   .combine('source/_assets/js/theme/*', 'source/assets/build/js/theme.js')
