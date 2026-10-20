@@ -9,6 +9,8 @@ return [
     'baseUrl' => 'http://localhost:3000/',
     'brand' => $brand,
     'organization_jsonld' => file_get_contents(__DIR__ . '/brand/dist/organization.jsonld'),
+    // cache-busting for /brand/ files: ?v=<content hash>, so a brand change reaches cached browsers
+    'brand_v' => fn ($page, $file) => substr(md5_file(__DIR__ . '/brand/dist/' . $file), 0, 10),
     'title' => $brand['name'],
     'description' => $brand['description'],
 

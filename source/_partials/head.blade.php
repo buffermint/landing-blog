@@ -4,7 +4,7 @@
 
 <!-- shared brand: Hanken Grotesk + --bm-* colour tokens (git submodule brand/, published at /brand/) -->
 <link rel="preload" href="/brand/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/brand/tokens.css">
+<link rel="stylesheet" href="/brand/tokens.css?v={{ $page->brand_v('tokens.css') }}">
 <link rel="stylesheet" href="{{ mix('fonts/feather/feather.css', 'assets/build') }}">
 <link rel="stylesheet" href="{{ mix('css/vendor.css', 'assets/build') }}">
 <link rel="stylesheet" href="{{ mix('css/theme.css', 'assets/build') }}">
@@ -93,4 +93,4 @@
 </script>
 
 <!-- cookie-free page views and CTA events (GoatCounter, shared with /tools/; brand repo analytics.js) -->
-<script defer src="/brand/analytics.js"></script>
+<script defer src="/brand/analytics.js?v={{ $page->brand_v('analytics.js') }}"></script>
