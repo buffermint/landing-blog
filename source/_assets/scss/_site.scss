@@ -109,3 +109,8 @@ code, pre { background: var(--bm-bg-alt); color: var(--bm-fg); }
 
 // blog search box (Bootstrap input group)
 .input-group-text, .input-group-prepend .input-group-text { background-color: var(--bm-panel) !important; border-color: var(--bm-line) !important; color: var(--bm-muted); }
+// above the article cards (for its results list) but below the shared header (z-index 50), so the
+// mobile menu opens over it; focus and results follow the colour scheme instead of a fixed light grey
+.search-container { z-index: 40 !important; }
+.search-container .form-control:focus { background-color: var(--bm-panel) !important; color: var(--bm-fg); }
+.search-results .search-result-list, .search-results a { background: var(--bm-panel); }
