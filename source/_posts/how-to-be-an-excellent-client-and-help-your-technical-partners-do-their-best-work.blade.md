@@ -2,9 +2,7 @@
 featured_image: assets/img/uploads/excellent-client-.jpeg
 featured_thumbnail: assets/img/uploads/excellent-client-thumbnail-.jpeg
 title: How to be an excellent client and help your partners do their best work?
-seo_description: A good client is one who is easy to work with, has realistic
-  expectations, and communicates openly and honestly. The easier you make it for
-  them to do their job, the better they'll be at doing it!
+seo_description: "How to be a great client: set realistic expectations, communicate openly and make it easy for your technical partner to do their best work."
 author: Rishabh Pandey
 show_meta: true
 date: 2021-08-14

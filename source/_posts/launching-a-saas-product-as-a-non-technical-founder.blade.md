@@ -2,9 +2,7 @@
 featured_image: assets/img/uploads/essential-guide-title-image-.jpeg
 featured_thumbnail: assets/img/uploads/essential-guide-thumbnail-.jpeg
 title: An Essential Guide to Launching a SaaS Product as a Non-Technical Founder
-seo_description: This guide covers all the steps you'll need to launch a saas
-  product as a non-technical founder. We cover everything from saas terminology
-  and build process to hiring the right partner.
+seo_description: "A step-by-step guide to launching a SaaS product as a non-technical founder: terminology, the build process and hiring the right partner."
 author: Rishabh Pandey
 show_meta: true
 section: postContent

@@ -3,12 +3,7 @@ excerpt: ""
 featured_image: assets/img/uploads/4-types-title-image-.jpeg
 featured_thumbnail: assets/img/uploads/4-types-thumbnail-.jpeg
 title: "The 4 Types of Products: Which Type Should You Build?"
-seo_description: There are 4 types of products based on the problem they
-  solve,  Solves a big problem for a large number of people Solves a small
-  problem for a large number of people Solves a small problem for a small number
-  of people. Solves a big problem for a small number of people  Almost all great
-  products lie in the fourth category. You have to solve a big problem for a
-  small number of people.
+seo_description: "Products solve big or small problems for many or few people. Why the best products solve a big problem for a small group, and how to find one."
 author: Rishabh Pandey
 show_meta: true
 date: 2021-08-06

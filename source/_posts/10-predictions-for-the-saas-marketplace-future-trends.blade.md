@@ -2,10 +2,7 @@
 featured_image: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
 featured_thumbnail: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
 title: "10 Predictions for the SaaS Marketplace: Future Trends"
-seo_description: A look at what trends and predictions might lie ahead in the
-  world of software as a service. Although it can be difficult to predict what
-  lies ahead in the SaaS industry, there are some current trends that can help
-  us see where we're headed
+seo_description: "Ten predictions for the SaaS market, from vertical and micro-SaaS to AI and usage-based pricing, based on the trends shaping it today."
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-13

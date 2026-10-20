@@ -4,10 +4,7 @@ featured_image: assets/img/uploads/image1.jpeg
 featured_thumbnail: assets/img/uploads/image2.jpg
 featured: true
 title: "Get the Most out of your Idea Validation Process: An Ultimate Guide "
-seo_description: An article about the validation of a startup idea. Validation
-  is a process that can be quite difficult and time consuming, but it's
-  necessary for anyone who has to convince investors to fund their business. In
-  this article, we'll explore some ways you can validate your startup idea.
+seo_description: "How to validate a startup idea before you build it or pitch investors: practical methods to test demand quickly and cheaply."
 author: Rishabh Pandey
 category: idea_validation
 show_meta: true

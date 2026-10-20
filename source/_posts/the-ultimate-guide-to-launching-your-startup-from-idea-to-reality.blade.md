@@ -3,14 +3,7 @@ featured_image: assets/img/uploads/photo-1589561253898-768105ca91a8.avif
 featured_thumbnail: assets/img/uploads/mika-baumeister-y_lgxwqex2c-unsplash.jpg
 featured: true
 title: "The Ultimate Guide to Launching Your Startup: From Idea to Reality"
-seo_description: Explore the ultimate guide to launching your startup, from
-  ideation to market success. This blog post delves into essential steps like
-  validating your idea, crafting an MVP, developing a go-to-market strategy, and
-  scaling your business. Perfect for entrepreneurs and startup founders seeking
-  practical advice and innovative strategies to navigate the startup journey.
-  Learn how to transform your vision into reality and set your venture on the
-  path to becoming a market leader with our expert insights and real-world
-  examples.
+seo_description: "A practical guide to launching a startup: validate the idea, build an MVP, plan your go-to-market and scale the business."
 author: Rishabh Pandey
 show_meta: true
 date: 2021-09-01

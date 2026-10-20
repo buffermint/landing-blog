@@ -2,10 +2,7 @@
 featured_image: assets/img/uploads/photo-1507332194683-0ce90ffa318a.jpeg
 featured_thumbnail: assets/img/uploads/photo-1507332194683-0ce90ffa318a-1-.jpeg
 title: How to use Lean Methodology to Innovate Faster?
-seo_description: an article about how companies are increasingly using Lean
-  methodology to build better products. This is a process that focuses on
-  building the right product with the right features at the right time while
-  minimizing waste and maximizing customer satisfaction.
+seo_description: "How companies use Lean methodology to build the right product with the right features at the right time, with less waste."
 author: Rishabh Pandey
 show_meta: true
 date: 2021-08-17

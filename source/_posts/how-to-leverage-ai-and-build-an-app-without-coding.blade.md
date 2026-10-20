@@ -2,10 +2,7 @@
 featured_image: assets/img/uploads/how-to-leverage-ai-and-build-an-app-without-coding-title.jpeg
 featured_thumbnail: assets/img/uploads/how-to-leverage-ai-and-build-an-app-without-coding-thumbnail.jpeg
 title: How to leverage AI and build an app without coding
-seo_description: Yes, you can build an app without knowing how to code. With a
-  number of AI services available to do all the heavy lifting at your disposal.
-  In this blog we explore how to leverage AI and build an app, even if do not
-  know how to code.
+seo_description: "Yes, you can build an app without coding. How to use AI and no-code services to do the heavy lifting, and when to bring in developers."
 author: Vivek Dixit
 show_meta: true
 date: 2021-08-20

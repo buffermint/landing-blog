@@ -3,12 +3,7 @@ excerpt: ""
 featured_image: assets/img/uploads/5-reasons-title-image.jpeg
 featured_thumbnail: assets/img/uploads/5-reasons-thumbnail-.jpeg
 title: 5 Reasons Why Building Your MVP is a Challenge
-seo_description: "Building an MVP can be challenging if you don't have enough
-  time or resources. You'll need to plan well in advance and get the right
-  people on board who are capable of both executing the project as well as
-  solving any issues that might arise. These problems are amplified if you're a
-  non-technical founder, so partnering with a technical partner is something
-  every founder should consider. "
+seo_description: "Time, budget, people and technical risk: five reasons building an MVP is hard, especially for non-technical founders, and how to handle each."
 author: Rishabh Pandey
 show_meta: true
 date: 2021-07-30

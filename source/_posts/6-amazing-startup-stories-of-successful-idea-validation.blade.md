@@ -4,15 +4,7 @@ featured_thumbnail: assets/img/uploads/story2.jpeg
 title: 6 Amazing Startup Stories of successful idea validation
 excerpt: "These startup stories show just how critical the validation process was
   for today's most popular platforms."
-seo_description: If you have an idea that can help your customers or make them
-  more successful, it's worth investing time into validating your product before
-  launching.   But how do you know if they want what you're selling?   The
-  easiest way is to ask questions about the problem you are trying to solve and
-  then use feedback from potential users as validation for moving ahead with
-  development. These 6 startup stories show just how critical this process was
-  for today's most popular platforms; but if all else fails, there are plenty of
-  other ways to validate your business ideas including social media advertising
-  or customer development.
+seo_description: "Six startups that validated their idea with real customers before building, and what founders can copy from how they did it."
 author: Rishabh Pandey
 category: idea_validation
 featured: true

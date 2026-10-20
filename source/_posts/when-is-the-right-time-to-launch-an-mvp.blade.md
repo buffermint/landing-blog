@@ -3,7 +3,7 @@ excerpt: ""
 featured_image: assets/img/uploads/when-is-the-time-title-image.jpeg
 featured_thumbnail: assets/img/uploads/when-is-the-time-thumbnail-.jpeg
 title: When is the right time to launch an MVP?
-seo_description: When is the right time to launch an MVP?
+seo_description: "When to launch your MVP: the signs it is ready, the risks of waiting too long and how to decide what goes into the first release."
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-09

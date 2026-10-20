@@ -3,6 +3,7 @@ extends: _layouts.post
 section: postContent
 title: "About Us"
 excerpt: "We turn your idea into reality."
+seo_description: "BufferMint is a design and development studio that builds SaaS products for founders, and makes free tools for the browser."
 ---
 
 **We are BufferMint.** We Design, Build & Launch SaaS products for founders. We are a unique design and development studio and our sole focus is building amazing SaaS products for founders.

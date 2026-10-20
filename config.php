@@ -29,7 +29,7 @@ return [
         'idea_validation' => [
             'slug' => 'idea-validation',
             'name' => "Idea Validation",
-            'description' => "All about validating your startup ideas.",
+            'description' => "How to validate a startup idea before you build: customer interviews, landing-page tests, MVPs and real examples.",
             // 'recent_heading' => 'Recent Stuff',
             // 'recent_tagline' => 'Recent tagline',
             // 'featured_heading' => 'Featured Stuff',
@@ -38,7 +38,7 @@ return [
         'startup_ideas' => [
             'slug' => 'startup-ideas',
             'name' => "Startup Ideas",
-            'description' => "All about finding and generating your next startup idea.",
+            'description' => "Where to find your next startup idea: micro-SaaS ideas, market trends and how to judge which ideas are worth building.",
         ],
     ],
 

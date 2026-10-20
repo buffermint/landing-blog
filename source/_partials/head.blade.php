@@ -20,7 +20,7 @@
   $is_post = str_starts_with($page->getPath(), '/articles/');
 @endphp
 
-<title>{{ $page_title }} | {{ $page->brand->name }}</title>
+<title>{{ mb_strlen($page_title) + mb_strlen($page->brand->name) + 3 > 65 ? $page_title : $page_title . ' | ' . $page->brand->name }}</title>
 <meta name="description" content="{{ $description }}">
 <link rel="canonical" href="{{ $page->getUrl() }}">
 
@@ -43,7 +43,44 @@
 <link rel="apple-touch-icon" href="/brand/logos/mark-180.png">
 <meta name="theme-color" content="{{ $page->brand->colors->light->bg }}">
 
+<link rel="alternate" type="application/atom+xml" title="{{ $page->brand->name }} blog" href="{{ rtrim($page->baseUrl, '/') }}/feed.xml">
+@if ($page->brand->verification->google ?? null)
+<meta name="google-site-verification" content="{{ $page->brand->verification->google }}">
+@endif
+@if ($page->brand->verification->bing ?? null)
+<meta name="msvalidate.01" content="{{ $page->brand->verification->bing }}">
+@endif
+
+@php
+  // structured data: Organization (brand repo) on every page, plus WebSite / Article / BreadcrumbList
+  $site = rtrim($page->baseUrl, '/');
+  $jsonld = [];
+  $crumbs = [['Home', $site . '/']];
+  if (trim($page->getPath(), '/') === '') {
+    $jsonld[] = ['@context' => 'https://schema.org', '@type' => 'WebSite', 'name' => $page->brand->name,
+      'url' => $site . '/', 'description' => $page->brand->description, 'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'url' => $site]];
+  } elseif ($is_post) {
+    $published = date('c', $page->date);
+    $jsonld[] = ['@context' => 'https://schema.org', '@type' => 'BlogPosting', 'headline' => $page->title,
+      'description' => $description, 'image' => $share_image, 'url' => $page->getUrl(),
+      'mainEntityOfPage' => $page->getUrl(), 'datePublished' => $published,
+      'dateModified' => $page->updated ? date('c', is_numeric($page->updated) ? $page->updated : strtotime($page->updated)) : $published,
+      'author' => ['@type' => 'Person', 'name' => $page->author],
+      'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'logo' => ['@type' => 'ImageObject', 'url' => $site . '/brand/logos/mark.png']]];
+    $crumbs[] = ['Blog', $site . '/articles'];
+    $crumbs[] = [$page->title, $page->getUrl()];
+  } else {
+    $crumbs[] = [$page_title, $page->getUrl()];
+  }
+  if (count($crumbs) > 1) {
+    $jsonld[] = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => array_map(
+      fn ($c, $i) => ['@type' => 'ListItem', 'position' => $i + 1, 'name' => $c[0], 'item' => $c[1]], $crumbs, array_keys($crumbs))];
+  }
+@endphp
 <script type="application/ld+json">{!! $page->organization_jsonld !!}</script>
+@foreach ($jsonld as $item)
+<script type="application/ld+json">{!! json_encode($item, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
+@endforeach
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-10GHKFV46D"></script>
@@ -55,14 +92,5 @@
   gtag('config', 'G-10GHKFV46D');
 </script>
 
-<!-- Hotjar Tracking Code for http://buffermint.com/ -->
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:2570179,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+<!-- cookie-free page views and CTA events (GoatCounter, shared with /tools/; brand repo analytics.js) -->
+<script defer src="/brand/analytics.js"></script>
