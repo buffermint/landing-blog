@@ -8,8 +8,8 @@ MX/SPF/DKIM records carried over. `deploy.sh` still builds here, then publishes 
 `../buffermint-pages/publish.sh`. Mentions of Caddy below describe the setup at audit time.
 Scope: this repo (buffermint/landing-blog), live at https://buffermint.com/ (every path except `/tools/`).
 **Status (2026-10-20):** items 1–8 are done in the commit after this plan (newsletter: option B).
-Hotjar is still loaded; that decision is open. For item 7, webpack is pinned to `~5.94.0` (newer 5.x
-releases break laravel-mix's webpackbar), with laravel-mix 6.0.49 and vue-loader 15.11.1. Items 9–14
+Hotjar is still loaded; that decision is open. For item 7, webpack is pinned to `~5.104.1` (5.112+
+breaks laravel-mix's build output plugin; see README), with laravel-mix 6.0.49 and vue-loader 15.11.1. Items 9–14
 are still open.
 
 How it was checked:

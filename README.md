@@ -20,8 +20,11 @@ Change the brand in that repo, never here. To pick up a new brand version:
 
 PHP 8.2+, Composer, Node 20+ (`.nvmrc`) and Yarn 1.
 
-`package.json` pins webpack to `~5.94.0` through `resolutions`: laravel-mix 6 (webpackbar and its build
-output plugin) breaks on newer webpack releases, and older ones need `--openssl-legacy-provider` on Node 17+.
+`package.json` pins webpack to `~5.104.1` through `resolutions`: laravel-mix 6 reaches into webpack
+internals (`webpack/lib/SizeFormatHelpers`) that 5.112 removed, and releases before 5.61 need
+`--openssl-legacy-provider` on Node 17+. The other `resolutions` lift security fixes past laravel-mix 6 and
+vue-loader 15 ranges (postcss 8, postcss-selector-parser 7, uuid 11, webpack-dev-server 5). With
+webpack-dev-server 5, `mix watch --hot` no longer starts; `yarn run dev` / `watch` / `prod` are unaffected.
 
 ## Build and preview
 
