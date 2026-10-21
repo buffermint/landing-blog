@@ -85,15 +85,5 @@
 <script type="application/ld+json">{!! json_encode($item, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
 @endforeach
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-10GHKFV46D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-10GHKFV46D');
-</script>
-
 <!-- cookie-free page views and CTA events (GoatCounter, shared with /tools/; brand repo analytics.js) -->
 <script defer src="/brand/analytics.js?v={{ $page->brand_v('analytics.js') }}"></script>
