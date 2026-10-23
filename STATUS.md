@@ -4,8 +4,9 @@ Last audited: 2026-10-23. The master plan is in `../PLAN.md`.
 
 ## State
 - Jigsaw site for buffermint.com, covering every path except /tools/. Publish it through `../buffermint-pages/publish.sh`.
-- `main` = origin, clean. Latest commit is cf7fd13 (2026-10-23).
+- `main` = origin, clean. Latest commit is d94798c (2026-10-23).
 - **Recent work:**
+  - 2026-10-23: live at 694 free tools (Pages 140b7a7f, deployed from buffermint-vps). The unused commercial HK Grotesk Pro files (54, gitignored `source/assets/build/css/fonts/HKGroteskPro`) are out of the build and now 404 live; the site font is Hanken Grotesk (OFL) from the brand repo. The files are archived on the VPS in `~agent/archive/landing-hkgroteskpro/`. Still open: the other assets in gitignored `source/assets/build/` (favicons, logos, theme images, Feather icons) aren't reproducible from git yet.
   - Removed GA4, so GoatCounter is the only analytics.
   - Fixed blog search and cleared Dependabot alerts (142 of 146).
   - New home, about and contact copy, with the shared brand chrome.
