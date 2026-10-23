@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Build the landing site + blog and publish it to https://buffermint.com/ on Cloudflare Pages
 # (../buffermint-pages/publish.sh, which adds the /tools/ build from the buffermint-tools repo).
-# A copy also goes to the droplet as a fallback and as the source publish.sh reads.
+# A copy also goes to the VPS (buffermint-vps) as a fallback and as the source publish.sh reads.
 # Needs PHP 8.2+, Composer, Node 20+ (see .nvmrc) and Yarn 1.
 set -euo pipefail
 cd "$(dirname "$0")"
-HOST=${DEPLOY_HOST:-buffermint-droplet}
+HOST=${DEPLOY_HOST:-root@buffermint-vps}
 DIR=/var/www/buffermint-landing
 # deploy only committed work (ALLOW_DIRTY=1 to override, e.g. while testing)
 if [ -z "${ALLOW_DIRTY:-}" ] && [ -n "$(git status --porcelain --ignore-submodules=none)" ]; then
