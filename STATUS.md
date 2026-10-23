@@ -18,6 +18,7 @@ Last audited: 2026-10-23. The master plan is in `../PLAN.md`.
 - **Owner's call:** HK Grotesk Pro is a commercial font and this repo is public. Options: commit the favicons and logos and keep the fonts out of git (copied per machine), or move the fonts to a private place such as the brand repo.
 
 ## Next steps
+0. **Check the security alerts (2026-10-23):** on push, GitHub reported 146 vulnerabilities on `buffermint/landing-blog` main (11 critical, 61 high, 54 moderate, 20 low), but the cleanup above says 142 of 146 were cleared. Find out which is true (`gh api repos/buffermint/landing-blog/dependabot/alerts`), fix what is real in the build toolchain (yarn/composer), rebuild, and confirm the SEO gate and the live site.
 1. Refresh the "Where things stand today" table in SEO-ANALYTICS-PLAN.md. It still lists GA4 and Hotjar.
 2. Work through PLAN items 9–12.
 
