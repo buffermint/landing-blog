@@ -8,6 +8,7 @@ cd "$(dirname "$0")"
 HOST=${DEPLOY_HOST:-root@buffermint-vps}
 # On buffermint-vps itself (the bm-publish wrapper exists) everything is local: no ssh, root-owned wrappers instead of root
 [ -x /usr/local/sbin/bm-publish ] && ON_VPS=1 || ON_VPS=
+[ -n "$ON_VPS" ] || [ "${ALLOW_MAC_DEPLOY:-}" = 1 ] || { echo "Deploys run on buffermint-vps since 2026-10-23: ssh buffermint-agent, then cd /srv/buffermint/buffermint-landing. (ALLOW_MAC_DEPLOY=1 overrides, for emergencies only.)"; exit 1; }
 DIR=/var/www/buffermint-landing
 # deploy only committed work (ALLOW_DIRTY=1 to override, e.g. while testing)
 if [ -z "${ALLOW_DIRTY:-}" ] && [ -n "$(git status --porcelain --ignore-submodules=none)" ]; then
@@ -26,7 +27,7 @@ ssh "$HOST" "mkdir -p $DIR"
 rsync -az --delete build_production/ "$HOST:$DIR/"
 ssh "$HOST" "chown -R root:root $DIR && chmod -R u=rwX,go=rX $DIR"
 fi
-echo "Uploaded to $HOST:$DIR (fallback copy; also the source publish.sh reads when the tools deploy)"
+echo "Uploaded to $([ -n "$ON_VPS" ] && echo "$DIR" || echo "$HOST:$DIR") (fallback copy; also the source publish.sh reads when the tools deploy)"
 # buffermint.com is served by Cloudflare Pages: publish this build together with the live /tools/ build
 LANDING="$PWD/build_production" ../buffermint-pages/publish.sh
 # tell IndexNow search engines (Bing, Yandex, …) which pages changed; never fails the deploy
