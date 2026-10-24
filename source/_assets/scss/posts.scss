@@ -10,6 +10,7 @@
         max-width: 100%;
         max-height: 450px;
         margin: 40px 0;
+        object-fit: contain; // width/height attributes + max-height must not stretch the image
     }
 
     h2,
@@ -25,8 +26,19 @@
         margin: 60px 0px 25px 0;
     }
 
-    h3 {
+    h3,
+    h2.h3 {
         font-size: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+    }
+
+    h2.h3 {
+        margin: 45px 0px 25px 0;
+    }
+
+    // links inside body text must not rely on colour alone (axe link-in-text-block)
+    p a,
+    li a {
+        text-decoration: underline;
     }
 
     strong {

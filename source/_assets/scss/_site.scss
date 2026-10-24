@@ -98,7 +98,7 @@ code, pre { background: var(--bm-bg-alt); color: var(--bm-fg); }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
   margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--bm-line); border-radius: var(--bm-radius-md); background: var(--bm-bg-alt);
 }
-.site-cta-box h3 { font-size: var(--bm-h3); font-weight: 600; margin: 0 0 .25rem; }
+.site-cta-box h2 { font-size: var(--bm-h3); font-weight: 600; margin: 0 0 .25rem; }
 .site-cta-box p { margin: 0; color: var(--bm-fg); max-width: 60ch; }
 .site-cta-box p a { text-decoration: underline; }
 
@@ -115,3 +115,6 @@ code, pre { background: var(--bm-bg-alt); color: var(--bm-fg); }
 .search-container { z-index: 40 !important; }
 .search-container .form-control:focus { background-color: var(--bm-panel) !important; color: var(--bm-fg); }
 .search-results .search-result-list, .search-results a { background: var(--bm-panel); }
+
+/* images given width/height by the build (listeners/PostProcessHtml.php): the attributes reserve space, CSS keeps the ratio */
+img[data-dim] { height: auto; }

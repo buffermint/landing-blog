@@ -21,3 +21,4 @@ error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
 $events->afterBuild(App\Listeners\CopyBrandAssets::class);
+$events->afterBuild(App\Listeners\PostProcessHtml::class);
