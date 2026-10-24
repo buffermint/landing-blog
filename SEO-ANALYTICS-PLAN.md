@@ -19,8 +19,23 @@ Effort sizes: **XS** < 30 min, **S** about 1 h, **M** half a day, **L** 1 day or
 
 ## Where things stand today
 
+Checked 2026-10-24. The sections after this table are the original 2026-10-20 plan.
+
 | | Landing + blog | Tools |
 |---|---|---|
+| Analytics | GoatCounter only: `/brand/analytics.js` (brand repo) sends cookie-free page views and CTA events to `/stats/count` (Pages Function proxy) → self-hosted GoatCounter on buffermint-vps, dashboard stats.buffermint.com. GA4 and Hotjar are gone (no `gtag`/Hotjar in the build or live) | same GoatCounter, from `/tools/assets/common.js` |
+| Search Console / Bing | not verified yet: `brand.json` `verification.google`/`bing` are empty (waiting on you, section 2) | same property |
+| Sitemap | `/sitemap.xml`, 29 URLs, generated at build | `/tools/sitemap.xml`, 192 URLs |
+| robots.txt | static file from `buffermint-pages/static/`, lists both sitemaps, welcomes AI crawlers | same |
+| Pre-deploy checks | `brand/scripts/seo-check.mjs` in `deploy.sh` (titles, descriptions, canonicals, OG, JSON-LD, links, sitemap): 0 errors, 4 long-title warnings | the same SEO gate plus `check-pages.mjs` |
+| Structured data (JSON-LD) | Organization on every page, WebSite on home, BlogPosting + BreadcrumbList on posts | yes (built by the tools repo) |
+| Deploy pings | IndexNow (`brand/scripts/indexnow.mjs`) after each deploy | same script |
+| Monitoring | `brand/scripts/weekly-report.mjs` and `gsc-report.mjs` exist; the GSC report needs verification first | same |
+| Server logs | none: Cloudflare Pages has no raw logs; GoatCounter covers page views | same |
+
+GoatCounter runs on buffermint-vps (OVH, 2026-10-23; the droplet is retired), next to Caddy.
+
+---|---|---|
 | Analytics | GA4 `G-10GHKFV46D` + Hotjar, both cookie-setting | none; the footer promises "no tracking" |
 | Search Console | unknown: please check whether `buffermint.com` is verified | same property |
 | Sitemap | `/sitemap.xml` (29 URLs, fixed today) | `/tools/sitemap.xml` (822 URLs) |
@@ -34,7 +49,10 @@ Droplet capacity: 458 MB RAM, 3.3 GB disk free. That is too small to self-host P
 
 ---
 
-## 1. Analytics: one cookieless source for both sites (decision needed)
+## 1. Analytics: one cookieless source for both sites (decided: B, done)
+
+**Done:** option B, self-hosted GoatCounter at stats.buffermint.com for both sites; GA4 and Hotjar were
+removed. The text below is the original comparison.
 
 The tools promise "no tracking", and GA4 plus Hotjar on the landing site set cookies and need a consent
 banner for EU visitors. I recommend one privacy-friendly setup for both sites, so the numbers live in one
