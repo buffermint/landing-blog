@@ -11,9 +11,9 @@
 <body class="bg-light home-page">
   @include('_partials.navbar')
 
-  <div id="app">
+  <main id="app">
     @yield('content')
-  </div>
+  </main>
 
 
   @include('_partials.footer')

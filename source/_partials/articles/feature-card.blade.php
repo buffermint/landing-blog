@@ -15,7 +15,7 @@ $selectedCollection = $post->category ? $page->categories[$post->category] : nul
             @endif
         </div>
         <a class="col-12 col-md-6 bg-cover {{ $is_left ? 'order-md-2 card-img-end' : 'order-md-1 card-img-start'  }}"
-            style="background-image: url(/{{ $post['featured_image'] }});" href="{{ $post->getUrl() }}">
+            style="background-image: url(/{{ $post['featured_image'] }});" href="{{ $post->getUrl() }}" aria-label="{{ $post->title }}">
 
             <!-- Image (placeholder) -->
             <img src="/{{ $post->featured_thumbnail ?? $post->featured_image }}" alt="{{ $post->title }}" class="img-fluid d-md-none invisible" loading="lazy" decoding="async">
