@@ -6,6 +6,9 @@ mix
   .setPublicPath("source/assets/build")
   .copy("source/_assets/img/photos/*", "source/assets/build/img/photos")
   .copy("source/_assets/img/logos/*", "source/assets/build/img/logos")
+  // legacy favicons: no page links them since the brand repo took over (/brand/logos/), but the old
+  // /assets/build/img/favicons/* URLs are still requested, so keep serving them
+  .copy("source/_assets/img/favicons/*", "source/assets/build/img/favicons")
   .copy("source/_assets/img/masks/*", "source/assets/build/img/masks")
   .copy("source/_assets/img/social/*", "source/assets/build/img/social")
   .copy("source/_assets/img/shapes/**/*", "source/assets/build/img/shapes")

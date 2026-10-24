@@ -13,12 +13,22 @@ Name, tagline, copy, nav, colours, font and logos come from the shared brand rep
 - `listeners/CopyBrandAssets.php` publishes `brand/dist/` at `/brand/` (`tokens.css`, the Hanken Grotesk
   font, logos and favicons).
 
+Fonts (decided 2026-10-24): the only text font is Hanken Grotesk, served by the brand repo at
+`/brand/fonts/`. The theme's HK Grotesk Pro (a paid font) is dropped for good and is not in git; don't add it
+back. The Feather icon font is in `source/_assets/fonts/Feather/` and is copied by `webpack.mix.js`.
+
+`source/assets/build/` is generated and stays gitignored: `yarn run prod` rebuilds every file in it from
+`source/_assets/` and `node_modules/`. The old favicons (`img/favicons/`) and logos (`brand.svg`,
+`logo_square.png`) are no longer linked from any page but are still requested at their old URLs, so they
+live in `source/_assets/img/` and are copied too.
+
 Change the brand in that repo, never here. To pick up a new brand version:
 `git submodule update --remote brand`, rebuild, commit the submodule bump.
 
 ## Requirements
 
-PHP 8.2+, Composer, Node 20+ (`.nvmrc`) and Yarn 1.
+PHP 8.2 to 8.5 (Jigsaw 1.3 is pinned; upgrading to 1.8 is PLAN item 12 option B), Composer, Node 20+
+(`.nvmrc`) and Yarn 1.
 
 `package.json` pins webpack to `~5.104.1` through `resolutions`: laravel-mix 6 reaches into webpack
 internals (`webpack/lib/SizeFormatHelpers`) that 5.112 removed, and releases before 5.61 need
@@ -35,7 +45,8 @@ yarn install
 yarn watch            # builds into build_local/ and serves it at http://localhost:3000
 ```
 
-PHP 8.4 prints `Deprecated:` lines from Jigsaw 1.3; they are harmless.
+PHP 8.4+ can print `Deprecated:` lines from Jigsaw 1.3; they are harmless. `deploy.sh` hides only
+those (`php -d error_reporting='E_ALL & ~E_DEPRECATED'`) and shows any other error.
 
 ## Deploy
 
