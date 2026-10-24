@@ -1,6 +1,6 @@
 # buffermint-landing — status
 
-Last audited: 2026-10-23. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-24. The master plan is in `../PLAN.md`.
 
 ## Security (2026-10-24)
 - GitHub's "146 vulnerabilities" (11 critical, 61 high, 54 moderate, 20 low) could not be read from the VPS: no `gh` or token there, and the deploy key can't call the Dependabot API. Local audits were used instead.
@@ -14,23 +14,24 @@ Last audited: 2026-10-23. The master plan is in `../PLAN.md`.
 
 ## State
 - Jigsaw site for buffermint.com, covering every path except /tools/. Publish it through `../buffermint-pages/publish.sh`.
-- `main` = origin, clean. Latest commit is d94798c (2026-10-23).
+- `main` = origin, clean. Live = `main` as of 2026-10-24 (Pages 43c96ee0, deployed from buffermint-vps).
 - **Recent work:**
+  - 2026-10-24: reproducible build, verified from a fresh GitHub clone (same 29 pages; only sitemap/feed/index.json order differs). The 29 files that existed only in gitignored `source/assets/build/` (27 legacy favicons, `brand.svg`, `logo_square.png`; unlinked but still requested, 200 live) now live in `source/_assets/img/` and are copied by `webpack.mix.js`. **Fonts decision (director):** Hanken Grotesk from the brand repo only; HK Grotesk Pro stays out for good (README). PLAN 12 option A (`php -d error_reporting`), PLAN 10 (ISO dates, heading order, alt text, figcaption contrast), PLAN 9 (uploads capped at 1600 px: 7.4 → 3.6 MB; card thumbnails, lazy loading, Feather `font-display: swap`, careers Unsplash at w=400), PLAN 11 mechanical (7 Calendly links use `discovery_call_url`). SEO-ANALYTICS table refreshed.
   - 2026-10-23: live at 694 free tools (Pages 140b7a7f, deployed from buffermint-vps). The unused commercial HK Grotesk Pro files (54, gitignored `source/assets/build/css/fonts/HKGroteskPro`) are out of the build and now 404 live; the site font is Hanken Grotesk (OFL) from the brand repo. The files are archived on the VPS in `~agent/archive/landing-hkgroteskpro/`. Still open: the other assets in gitignored `source/assets/build/` (favicons, logos, theme images, Feather icons) aren't reproducible from git yet.
   - Removed GA4, so GoatCounter is the only analytics.
   - Fixed blog search and cleared the critical Dependabot alerts (commit d3c2542 said "142 of 146"; see Security below).
   - New home, about and contact copy, with the shared brand chrome.
   - SEO automation, and the move to Cloudflare Pages.
-- **PLAN.md:** items 1–8 are done. Items 9–14 are open: images, accessibility, a content refresh, upgrading Jigsaw for PHP 8.4, the vendor bundle, and auto-deploy/CMS.
+- **PLAN.md:** items 1–8 and 10 are done; 9 is done except optional WebP; 11 is done where mechanical (the rest needs the owner); 12 option A is done. Open: 11 (owner), 12B, 13, 14.
 
-## Untracked build assets (found 2026-10-23)
-- 83 files under `source/assets/build/` exist only on disk: `css/fonts/HKGroteskPro/` (54), `img/favicons/` (27) and 2 logos in `img/logos/`. That folder is gitignored, and webpack.mix.js doesn't produce these files, so a fresh clone builds a site without its fonts and favicons. They were copied by hand to buffermint-vps.
-- **Owner's call:** HK Grotesk Pro is a commercial font and this repo is public. Options: commit the favicons and logos and keep the fonts out of git (copied per machine), or move the fonts to a private place such as the brand repo.
+## Build assets (resolved 2026-10-24)
+- `source/assets/build/` stays gitignored and is fully rebuilt by `yarn run prod`. The archived HK Grotesk Pro files stay in `~agent/archive/landing-hkgroteskpro/` on the VPS, unused.
 
 ## Next steps
-0. **Security alerts: done (2026-10-24).** See the Security section. Nothing more to fix without a Vue 3 migration; the owner can confirm the GitHub count after Dependabot recounts.
-1. Refresh the "Where things stand today" table in SEO-ANALYTICS-PLAN.md. It still lists GA4 and Hotjar.
-2. Work through PLAN items 9–12.
+1. PLAN 11, needs the owner: post dates (all 2021), the `-copy` slug (option a or b), the empty `/our-pricing` page (write or delete), the copy questions.
+2. PLAN 9 leftovers: WebP versions and `width`/`height` on post images (optional; Lighthouse re-run to measure).
+3. PLAN 12 option B (Jigsaw 1.8) when the templates are next touched; PLAN 13 (vendor bundle), 14 (optional).
+4. Footer: Twitter → X and Facebook links live in the brand repo chrome, not here.
 
 ## Waiting on you
 - Search Console and Bing verification.

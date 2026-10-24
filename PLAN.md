@@ -8,9 +8,10 @@ MX/SPF/DKIM records carried over. `deploy.sh` still builds here, then publishes 
 `../buffermint-pages/publish.sh`. Mentions of Caddy below describe the setup at audit time.
 Scope: this repo (buffermint/landing-blog), live at https://buffermint.com/ (every path except `/tools/`).
 **Status (2026-10-20):** items 1–8 are done in the commit after this plan (newsletter: option B).
-Hotjar was removed in 781501e (replaced by cookie-free GoatCounter); GA4 still loads. For item 7, webpack is pinned to `~5.104.1` (5.112+
-breaks laravel-mix's build output plugin; see README), with laravel-mix 6.0.49 and vue-loader 15.11.1. Items 9–14
-are still open.
+Hotjar was removed in 781501e (replaced by cookie-free GoatCounter); GA4 was removed later, so GoatCounter is the only analytics. For item 7, webpack is pinned to `~5.104.1` (5.112+
+breaks laravel-mix's build output plugin; see README), with laravel-mix 6.0.49 and vue-loader 15.11.1.
+**Status (2026-10-24):** 10 done; 9 done except optional WebP and `width`/`height` on post images; 11 done where
+mechanical (Calendly links), the rest needs your input; 12 option A done. Open: the rest of 11, 12B, 13, 14.
 
 How it was checked:
 - read every template, partial, Vue component and config file;
@@ -242,6 +243,12 @@ every template and SCSS file, for a blog that is not changing much. Revisit only
 
 ## 9. Images (P2)
 
+**Done 2026-10-24:** uploads over 1600 px resized in place (same names and formats, 7.4 → 3.6 MB, the 868 KB
+AVIF is 67 KB); article cards, home cards and the feature-card placeholder use `featured_thumbnail`
+(feature-card backgrounds keep the cover, since they show at about 550 px); `loading="lazy"` on card and
+`<x-image>` images; careers Unsplash at `w=400`; Feather `font-display: swap` (HK Grotesk is gone).
+Not done: WebP copies and `width`/`height` on post images (optional).
+
 **Findings**
 - `source/assets/img/uploads/` is 7.2 MB of unresized originals. The largest:
   `photo-1589561253898-768105ca91a8.avif` (868 KB, the newest post's cover, shown as a card on the home
@@ -273,6 +280,11 @@ follow-up.
 
 ## 10. Accessibility (P2)
 
+**Done 2026-10-24:** real ISO `datetime` everywhere (the Vue card reads `iso_date` from `index.json`);
+eyebrow and author `<h6>` → `<p class="h6">`; `alt=""` on decorative careers photos and the post avatar;
+`figcaption` uses the brand muted colour (other muted text already did, via `_site.scss`). The navbar,
+footer and hero findings no longer apply: those are the brand repo's chrome and the new hero now.
+
 Lighthouse accessibility: **89** home, **94** post.
 - `alt="..."` on the navbar logo (`navbar.blade.php:7`), the footer social icons (`footer.blade.php:21,27`),
   the testimonial avatars and the Unsplash photos (`index.blade.php:48,66,219`, `careers.blade.php:67,77,87`).
@@ -294,6 +306,9 @@ Effort **S**.
 ---
 
 ## 11. Content (P2, needs your input on the copy)
+
+**Done 2026-10-24 (mechanical part):** the 7 Calendly links use `{{ $page->discovery_call_url }}` (no
+`?month=2021-08`). Everything else below still needs your decision.
 
 - **All 21 posts are dated 10 Jul to 1 Sep 2021**, including the one added in March 2024
   (`the-ultimate-guide-…`, `date: 2021-09-01`). The home page and the blog show "01 Sep 2021" as the
@@ -339,6 +354,9 @@ into errors.
   `build_production` output with a diff.
 
 Recommendation: A now, B when you next touch the templates.
+
+**Done 2026-10-24:** option A in `deploy.sh`; README says PHP 8.2 to 8.5 (the VPS runs 8.5.4, which prints
+no deprecations with this setup).
 
 ---
 
