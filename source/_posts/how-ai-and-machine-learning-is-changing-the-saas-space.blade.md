@@ -117,4 +117,4 @@ To ensure your business remains competitive in today's environment, make sure to
 
 And if you are someone who is sleeping on the idea to launch a SaaS business, then why not give us a [call](https://buffermint.com/contact-us#:~:text=Start%20a%20chat!-,CALL%20ANYTIME,-(91)%207767074808). With [BufferMint](https://buffermint.com/) you will be able to launch your SaaS in 45 days or sooner. 
 
-Book a [discovery call](https://calendly.com/buffermint/30min?month=2021-08) today!
+Book a [discovery call]({{ $page->discovery_call_url }}) today!

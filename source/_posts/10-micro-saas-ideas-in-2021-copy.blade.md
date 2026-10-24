@@ -130,4 +130,4 @@ If you need help with any aspect of launching and scaling up your new business, 
 
 With [BufferMint](https://buffermint.com/), you will launch your SaaS in just 45 days. It's an attractive option for founders who want to start a SaaS business with less risk and without sacrificing quality.
 
-We partner with founders who are committed to creating quality SaaS products but don't have the time or resources required to do it all themselves. Reach out to us by**[booking a discovery call today](https://calendly.com/buffermint/30min?month=2021-08)!**
+We partner with founders who are committed to creating quality SaaS products but don't have the time or resources required to do it all themselves. Reach out to us by**[booking a discovery call today]({{ $page->discovery_call_url }})!**

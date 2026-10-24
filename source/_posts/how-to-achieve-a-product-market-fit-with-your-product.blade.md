@@ -109,4 +109,4 @@ If you are starting out with ideas and aim to launch a tech startup up, we can h
 
 The team of experts at [BufferMint](https://buffermint.com/) will help you every step of the way to make sure your SaaS product gets a perfect launch from its initial development. 
 
-Book a [discovery call](https://calendly.com/buffermint/30min?month=2021-08) today!
+Book a [discovery call]({{ $page->discovery_call_url }}) today!

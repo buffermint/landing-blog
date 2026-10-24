@@ -102,4 +102,4 @@ And if you are making a switch then it may take time getting used to all the cha
 
 Also, if you are sleeping on an idea to launch a SaaS startup, then you'll be thankful to have landed here. We at [BufferMint](https://buffermint.com/) help founders like you to change their idea into a business.
 
-We will be there with you every step of the way. [Book a discovery call today](https://calendly.com/buffermint/30min?month=2021-08)!
+We will be there with you every step of the way. [Book a discovery call today]({{ $page->discovery_call_url }})!

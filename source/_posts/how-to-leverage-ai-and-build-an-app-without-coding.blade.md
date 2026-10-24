@@ -61,7 +61,7 @@ The process can still be a little more involved than using other general-purpose
 
 After all, you are building an app without having to invest lots of time in code. Isn't that something?
 
-Or if you still looking to save some cost and the best agency experience, you can simply book a [discovery call](https://calendly.com/buffermint/30min?month=2021-08) with [BufferMint](https://buffermint.com/). We take your idea to market in 45 days or less on a fixed budget.
+Or if you still looking to save some cost and the best agency experience, you can simply book a [discovery call]({{ $page->discovery_call_url }}) with [BufferMint](https://buffermint.com/). We take your idea to market in 45 days or less on a fixed budget.
 
 ### Why you should use them for your next project
 

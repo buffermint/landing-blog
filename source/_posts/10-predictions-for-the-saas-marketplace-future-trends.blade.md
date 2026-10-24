@@ -57,7 +57,7 @@ There are a number of micro-SaaS products that you can use regularly. For exampl
 
 With the development of Micro-SaaS, we can see that there are ambitious goals for the United States. We see that by 2022, the market is predicted to grow to 6 million customers in the US which will amount to a 25% growth rate. It's projected that by 2020, this number will be at 3 million customers and it will be growing exponentially.
 
-Do you want to cut through the process of idea to launch your micro-SaaS in a matter of days? Then [booking a discovery call](https://calendly.com/buffermint/30min?month=2021-08) with [BufferMint](https://buffermint.com/) will make it happen. See you on the other side.
+Do you want to cut through the process of idea to launch your micro-SaaS in a matter of days? Then [booking a discovery call]({{ $page->discovery_call_url }}) with [BufferMint](https://buffermint.com/) will make it happen. See you on the other side.
 
 ### 5) We are likely to see more growth software industry over hardware
 
@@ -129,4 +129,4 @@ The ten predictions above for what might happen in the SaaS marketplace as well 
 
 Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap.
 
-In, case you need someone to talk it through, [book a discovery call with us](https://calendly.com/buffermint/30min?month=2021-08).
+In, case you need someone to talk it through, [book a discovery call with us]({{ $page->discovery_call_url }}).
