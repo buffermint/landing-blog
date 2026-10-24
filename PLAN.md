@@ -247,7 +247,7 @@ every template and SCSS file, for a blog that is not changing much. Revisit only
 AVIF is 67 KB); article cards, home cards and the feature-card placeholder use `featured_thumbnail`
 (feature-card backgrounds keep the cover, since they show at about 550 px); `loading="lazy"` on card and
 `<x-image>` images; careers Unsplash at `w=400`; Feather `font-display: swap` (HK Grotesk is gone).
-Not done: WebP copies and `width`/`height` on post images (optional).
+**Done 2026-10-25:** WebP copies of the uploads, served through `<picture>` with the JPEG/PNG fallback, and `width`/`height` on every upload `<img>` (afterBuild listener `listeners/PostProcessHtml.php`).
 
 **Findings**
 - `source/assets/img/uploads/` is 7.2 MB of unresized originals. The largest:
@@ -279,6 +279,8 @@ follow-up.
 ---
 
 ## 10. Accessibility (P2)
+
+**Done 2026-10-25:** the axe leftovers (headings skipping a level in post content, the CTA `<aside>` inside `<main>`, links in text not underlined): axe-core light+dark on all 29 pages shows 0 violations.
 
 **Done 2026-10-24:** real ISO `datetime` everywhere (the Vue card reads `iso_date` from `index.json`);
 eyebrow and author `<h6>` → `<p class="h6">`; `alt=""` on decorative careers photos and the post avatar;
@@ -369,6 +371,9 @@ also includes `quill.core.css` four times, and the highlight.js CSS. Feather shi
 WOFF alone is enough.
 **Fix:** drop the unused libraries, the duplicate CSS and the extra font formats. Effort **M**, because each
 removal needs a visual check of all pages.
+
+**Done 2026-10-25:** `vendor.js` 479 → 104 KB (jQuery + jarallax), `vendor.css` jarallax only, `theme.js` polyfills
+only, Feather WOFF only. Screenshots of 7 pages (desktop + phone) match before/after; no new console errors.
 
 ---
 
