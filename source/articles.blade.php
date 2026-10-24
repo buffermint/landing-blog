@@ -25,9 +25,9 @@ return !$post->featured;
             <div class="col-auto">
 
                 <!-- Heading -->
-                <h6 class="fw-bold text-uppercase text-muted mb-0">
+                <p class="h6 fw-bold text-uppercase text-muted mb-0">
                     Tags:
-                </h6>
+                </p>
 
             </div>
             <div class="col ms-n5">

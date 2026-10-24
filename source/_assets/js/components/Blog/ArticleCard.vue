@@ -4,7 +4,7 @@
     <!-- Image -->
     <a class="card-img-top" :href="article.link">
       <!-- Image -->
-      <img :src="'/'+article.image" :alt="article.title" class="card-img-top" />
+      <img :src="'/'+article.image" :alt="article.title" class="card-img-top" loading="lazy" decoding="async" />
     </a>
 
     <!-- Body -->
@@ -24,11 +24,11 @@
       <hr class="card-meta-divider" />
 
       <!-- Author -->
-      <h6 class="text-uppercase text-muted mr-2 mb-0">{{ article.author }}</h6>
+      <p class="h6 text-uppercase text-muted mr-2 mb-0">{{ article.author }}</p>
 
       <!-- Date -->
       <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-        <time datetime="2019-05-02">{{ article.date }}</time>
+        <time :datetime="article.iso_date">{{ article.date }}</time>
       </p>
     </a>
   </div>

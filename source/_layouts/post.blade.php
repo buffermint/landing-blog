@@ -44,19 +44,19 @@
                             @if ($page->author_image)
                             <div class="mr-4">
                                 <div class="avatar avatar-lg">
-                                    <img src="{{ $page->author_image }}" alt="..." class="avatar-img rounded-circle">
+                                    <img src="{{ $page->author_image }}" alt="" class="avatar-img rounded-circle">
                                 </div>
                             </div>
                             @endif
 
                             <!-- Name -->
                             <div>
-                                <h6 class="text-uppercase mb-0">
+                                <p class="h6 text-uppercase mb-0">
                                     {{ $page->author }}
-                                </h6>
+                                </p>
 
                                 <!-- Date -->
-                                <time class="font-size-sm text-muted" datetime="2019-05-20">
+                                <time class="font-size-sm text-muted" datetime="{{ date('Y-m-d', $page->date) }}">
                                     Published on {{ date('F j, Y', $page->date) }}
                                 </time>
                             </div>

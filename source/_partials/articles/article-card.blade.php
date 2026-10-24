@@ -18,7 +18,7 @@ $selectedCollection = $article->category ? $page->categories[$article->category]
   <!-- Image -->
   <a class="card-img-top" href="{{ $article->getUrl() }}">
     <!-- Image -->
-    <img src="{{ '/' . $article['featured_image'] }}" alt="{{ $article['title'] }}" class="card-img-top" />
+    <img src="{{ '/' . ($article->featured_thumbnail ?? $article->featured_image) }}" alt="{{ $article['title'] }}" class="card-img-top" loading="lazy" decoding="async" />
   </a>
 
   <!-- Body -->
@@ -32,11 +32,11 @@ $selectedCollection = $article->category ? $page->categories[$article->category]
     <hr class="card-meta-divider" />
 
     <!-- Author -->
-    <h6 class="text-uppercase text-muted mr-2 mb-0">{{ $article['author'] }}</h6>
+    <p class="h6 text-uppercase text-muted mr-2 mb-0">{{ $article['author'] }}</p>
 
     <!-- Date -->
     <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-      <time datetime="2019-05-02">{{ gmdate("d M Y", $article['date']) }}</time>
+      <time datetime="{{ gmdate('Y-m-d', $article['date']) }}">{{ gmdate("d M Y", $article['date']) }}</time>
     </p>
   </a>
 </div>

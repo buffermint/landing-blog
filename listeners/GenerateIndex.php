@@ -37,7 +37,8 @@ class GenerateIndex
             'link' => $page->getPath(),
             'snippet' => $page->getSnippet(),
             'excerpt' => $page->excerpt,
-            'date' => gmdate("d M Y", $page->date)
+            'date' => gmdate("d M Y", $page->date),
+            'iso_date' => gmdate('Y-m-d', $page->date),
         ];
     }
 

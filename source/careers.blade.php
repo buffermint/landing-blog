@@ -33,9 +33,9 @@
       <div class="col-12 col-md-6">
 
         <!-- Badge -->
-        <h6 class="text-uppercase text-primary font-weight-bold">
+        <p class="h6 text-uppercase text-primary font-weight-bold">
           Values
-        </h6>
+        </p>
 
         <!-- Heading -->
         <h2>
@@ -64,8 +64,8 @@
             <!-- Image -->
             <div class="w-150 mt-9 p-1 bg-white shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80"
-                class="img-fluid" alt="...">
+                src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
+                class="img-fluid" alt="">
             </div>
 
           </div>
@@ -74,8 +74,8 @@
             <!-- Image -->
             <div class="w-150 p-1 bg-white shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
-                class="img-fluid" alt="...">
+                src="https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                class="img-fluid" alt="">
             </div>
 
           </div>
@@ -84,8 +84,8 @@
             <!-- Image -->
             <div class="w-150 mt-11 float-right p-1 bg-white shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                class="img-fluid" alt="...">
+                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                class="img-fluid" alt="">
             </div>
 
           </div>

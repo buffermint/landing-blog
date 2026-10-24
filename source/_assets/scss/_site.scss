@@ -22,6 +22,7 @@ a:hover { color: var(--bm-accent-hover); }
 .form-control { background-color: var(--bm-panel); color: var(--bm-fg); border-color: var(--bm-line); }
 .form-control::placeholder { color: var(--bm-muted); }
 .badge-gray-600 { background: var(--bm-bg-alt); color: var(--bm-muted); }
+.figure-caption, figcaption { color: var(--bm-muted); }
 .btn-primary { background-color: var(--bm-accent); border-color: var(--bm-accent); color: var(--bm-accent-fg); }
 .btn-primary:hover { background-color: var(--bm-accent-hover); border-color: var(--bm-accent-hover); color: var(--bm-accent-fg); }
 blockquote, .blockquote { color: var(--bm-fg); }

@@ -88,7 +88,7 @@
     <div class="site-posts">
       @foreach ($posts->take(3) as $article)
       <a class="site-post" href="{{ $article->getUrl() }}">
-        <img src="{{ '/' . $article['featured_image'] }}" alt="" loading="lazy">
+        <img src="{{ '/' . ($article->featured_thumbnail ?? $article->featured_image) }}" alt="" loading="lazy" decoding="async">
         <b>{{ $article['title'] }}</b>
       </a>
       @endforeach

@@ -18,7 +18,7 @@ $selectedCollection = $post->category ? $page->categories[$post->category] : nul
             style="background-image: url(/{{ $post['featured_image'] }});" href="{{ $post->getUrl() }}">
 
             <!-- Image (placeholder) -->
-            <img src="/{{ $post['featured_image'] }}" alt="{{ $post->title }}" class="img-fluid d-md-none invisible">
+            <img src="/{{ $post->featured_thumbnail ?? $post->featured_image }}" alt="{{ $post->title }}" class="img-fluid d-md-none invisible" loading="lazy" decoding="async">
 
             @if ($is_left)
             <div class="shape shape-left shape-fluid-y svg-shim text-white d-none d-md-block">
@@ -57,13 +57,13 @@ $selectedCollection = $post->category ? $page->categories[$post->category] : nul
                 <hr class="card-meta-divider">
 
                 <!-- Author -->
-                <h6 class="text-uppercase text-muted mr-2 mb-0">
+                <p class="h6 text-uppercase text-muted mr-2 mb-0">
                     {{ $post->author }}
-                </h6>
+                </p>
 
                 <!-- Date -->
                 <p class="h6 text-uppercase text-muted mb-0 ml-auto">
-                    <time datetime="2019-05-31">
+                    <time datetime="{{ gmdate('Y-m-d', $post->date) }}">
                         {{ gmdate("d M Y", $post->date) }}
                     </time>
                 </p>
