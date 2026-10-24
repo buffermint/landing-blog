@@ -14,48 +14,22 @@ mix
   .copy("source/_assets/img/shapes/**/*", "source/assets/build/img/shapes")
   .copy("source/_assets/img/blog/**/*", "source/assets/build/img/blog")
 
-  .copy("source/_assets/fonts/Feather/fonts/", "source/assets/build/fonts/feather/fonts")
+  // Feather icons (fe-check in lists): WOFF is enough for every browser we support
+  .copy("source/_assets/fonts/Feather/fonts/Feather.woff", "source/assets/build/fonts/feather/fonts")
   .copy("source/_assets/fonts/Feather/*", "source/assets/build/fonts/feather")
-  .combine('source/_assets/js/theme/*', 'source/assets/build/js/theme.js')
+  // only the theme scripts a page still uses (svg-shim colours); the rest drove libraries no page uses
+  .combine(["source/_assets/js/theme/polyfills.js"], "source/assets/build/js/theme.js")
+  // PLAN 13: only what the pages use. jQuery (blog search), jarallax (post cover parallax, data-jarallax).
+  // Dropped: Bootstrap JS, fancybox, AOS, choices, flickity, imagesloaded, isotope, smooth-scroll, typed
+  // (no page has their data-* hooks; the header/footer come from the brand chrome).
   .combine(
     [
       "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
-      "node_modules/aos/dist/aos.js",
-      "node_modules/choices.js/public/assets/scripts/choices.min.js",
-      // "node_modules/countup.js/dist/countUp.min.js",
-      // "node_modules/dropzone/dist/min/dropzone.min.js",
-      "node_modules/flickity/dist/flickity.pkgd.min.js",
-      "node_modules/flickity-fade/flickity-fade.js",
-      // "node_modules/highlightjs/highlight.pack.min.js",
-      "node_modules/imagesloaded/imagesloaded.pkgd.min.js",
-      "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
       "node_modules/jarallax/dist/jarallax.min.js",
-      "node_modules/jarallax/dist/jarallax-video.min.js",
-      "node_modules/jarallax/dist/jarallax-element.min.js",
-      // "node_modules/quill/dist/quill.min.js",
-      "node_modules/smooth-scroll/dist/smooth-scroll.min.js",
-      "node_modules/typed.js/lib/typed.min.js",
     ],
     "source/assets/build/js/vendor.js"
   )
-  .combine(
-    [
-      "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css",
-      "node_modules/aos/dist/aos.css",
-      "node_modules/choices.js/public/assets/styles/choices.min.css",
-      "node_modules/flickity-fade/flickity-fade.css",
-      "node_modules/flickity/dist/flickity.min.css",
-      "node_modules/highlightjs/styles/vs2015.css",
-      "node_modules/jarallax/dist/jarallax.css",
-      "node_modules/quill/dist/quill.core.css",
-      "node_modules/quill/dist/quill.core.css",
-      "node_modules/quill/dist/quill.core.css",
-      "node_modules/quill/dist/quill.core.css",
-    ],
-    "source/assets/build/css/vendor.css"
-  )
+  .combine(["node_modules/jarallax/dist/jarallax.css"], "source/assets/build/css/vendor.css")
   .js('source/_assets/js/main.js', 'js/main.js').vue()
   .js('source/_assets/js/posts.js', 'js/posts.js')
   .sass("source/_assets/scss/theme.scss", "css/theme.css")
