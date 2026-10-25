@@ -360,6 +360,9 @@ Recommendation: A now, B when you next touch the templates.
 **Done 2026-10-24:** option A in `deploy.sh`; README says PHP 8.2 to 8.5 (the VPS runs 8.5.4, which prints
 no deprecations with this setup).
 
+**Done 2026-10-25 (branch `jigsaw-1.8`, not deployed):** option B, Jigsaw 1.8.8. Build output equal to 1.3.37
+except whitespace after the share-social component and the sitemap's URL order; option A's workarounds removed.
+
 ---
 
 ## 13. Vendor bundle (P3)
