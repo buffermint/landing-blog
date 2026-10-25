@@ -2,7 +2,7 @@
 # Build the landing site + blog and publish it to https://buffermint.com/ on Cloudflare Pages
 # (../buffermint-pages/publish.sh, which adds the /tools/ build from the buffermint-tools repo).
 # A copy also goes to the VPS (buffermint-vps) as a fallback and as the source publish.sh reads.
-# Needs PHP 8.2 to 8.5 (Jigsaw 1.3), Composer, Node 20+ (see .nvmrc) and Yarn 1.
+# Needs PHP 8.2+ (Jigsaw 1.8), Composer, Node 20+ (see .nvmrc) and Yarn 1.
 set -euo pipefail
 cd "$(dirname "$0")"
 HOST=${DEPLOY_HOST:-root@buffermint-vps}
@@ -18,8 +18,7 @@ fi
 [ -d vendor ] || composer install --no-dev --no-interaction -q
 [ -d node_modules ] || yarn install --silent
 yarn run prod >/dev/null
-# Jigsaw 1.3 prints PHP 8.4+ deprecations: hide only those, keep real errors and warnings visible
-php -d error_reporting='E_ALL & ~E_DEPRECATED' vendor/bin/jigsaw build production | tail -1
+vendor/bin/jigsaw build production | tail -1
 # SEO gate (shared with the tools site): titles, descriptions, canonicals, OG, JSON-LD, links, sitemap
 node brand/scripts/seo-check.mjs --dir build_production --site https://buffermint.com --skip /tools/,/stats/
 if [ -n "$ON_VPS" ]; then
