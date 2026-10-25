@@ -22,7 +22,10 @@ yarn run prod >/dev/null
 php -d error_reporting='E_ALL & ~E_DEPRECATED' vendor/bin/jigsaw build production | tail -1
 # SEO gate (shared with the tools site): titles, descriptions, canonicals, OG, JSON-LD, links, sitemap
 node brand/scripts/seo-check.mjs --dir build_production --site https://buffermint.com --skip /tools/,/stats/
-if [ -n "$ON_VPS" ]; then rsync -a --delete build_production/ "$DIR/" && chmod -R u=rwX,go=rX "$DIR"
+if [ -n "$ON_VPS" ]; then
+  # bm-www copies into the root-owned web root (no links); before the owner installs it, the old agent copy
+  if [ -x /usr/local/sbin/bm-www ]; then sudo -n /usr/local/sbin/bm-www landing "$PWD/build_production"
+  else rsync -a --delete build_production/ "$DIR/" && chmod -R u=rwX,go=rX "$DIR"; fi
 else
 ssh "$HOST" "mkdir -p $DIR"
 rsync -az --delete build_production/ "$HOST:$DIR/"
