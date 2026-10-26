@@ -35,7 +35,10 @@ Checked 2026-10-24. The sections after this table are the original 2026-10-20 pl
 
 GoatCounter runs on buffermint-vps (OVH, 2026-10-23; the droplet is retired), next to Caddy.
 
----|---|---|
+**Historical (2026-10-20, superseded by the table above):** the state when this plan was written.
+
+| | Landing + blog | Tools |
+|---|---|---|
 | Analytics | GA4 `G-10GHKFV46D` + Hotjar, both cookie-setting | none; the footer promises "no tracking" |
 | Search Console | unknown: please check whether `buffermint.com` is verified | same property |
 | Sitemap | `/sitemap.xml` (29 URLs, fixed today) | `/tools/sitemap.xml` (822 URLs) |
@@ -44,7 +47,7 @@ GoatCounter runs on buffermint-vps (OVH, 2026-10-23; the droplet is retired), ne
 | Structured data (JSON-LD) | none | none |
 | Server logs | none: Cloudflare Pages has no raw logs; use Cloudflare Web Analytics | same |
 
-Droplet capacity: 458 MB RAM, 3.3 GB disk free. That is too small to self-host Plausible or Umami
+Droplet capacity then (the droplet is retired): 458 MB RAM, 3.3 GB disk free. That is too small to self-host Plausible or Umami
 (Postgres/ClickHouse), but enough for GoAccess (a log analyser) or GoatCounter (one Go binary + SQLite).
 
 ---
