@@ -36,7 +36,7 @@ Last updated: 2026-10-26. The master plan is in `../PLAN.md`.
 
 ## Waiting on you
 - Merging `jigsaw-1.8` (PLAN 12B, ready).
-- OWNER-TODO 30: `deploy.sh` still defaults to `root@buffermint-vps` (`DEPLOY_HOST`) for Mac runs.
+- 2026-10-26 (BM-189): `deploy.sh` no longer defaults to a root login; Mac emergency path uses `agent@buffermint-vps` + `sudo bm-www` (OWNER-TODO 30 unblocked).
 - Search Console and Bing verification.
 - The 3 unanswered questions in `../COPY-REVIEW.md`: the "45 days" claim, the testimonial, and the Work-with-us target.
 

@@ -5,7 +5,9 @@
 # Needs PHP 8.2 to 8.5 (Jigsaw 1.3), Composer, Node 20+ (see .nvmrc) and Yarn 1.
 set -euo pipefail
 cd "$(dirname "$0")"
-HOST=${DEPLOY_HOST:-root@buffermint-vps}
+# Mac emergency path logs in as agent (never root) and runs the same root-owned wrappers with sudo
+HOST=${DEPLOY_HOST:-agent@buffermint-vps}
+STAGE=/srv/buffermint/.mac-stage
 # On buffermint-vps itself (the bm-publish wrapper exists) everything is local: no ssh, root-owned wrappers instead of root
 [ -x /usr/local/sbin/bm-publish ] && ON_VPS=1 || ON_VPS=
 [ -n "$ON_VPS" ] || [ "${ALLOW_MAC_DEPLOY:-}" = 1 ] || { echo "Deploys run on buffermint-vps since 2026-10-23: ssh buffermint-agent, then cd /srv/buffermint/buffermint-landing. (ALLOW_MAC_DEPLOY=1 overrides, for emergencies only.)"; exit 1; }
@@ -27,9 +29,9 @@ if [ -n "$ON_VPS" ]; then
   if [ -x /usr/local/sbin/bm-www ]; then sudo -n /usr/local/sbin/bm-www landing "$PWD/build_production"
   else rsync -a --delete build_production/ "$DIR/" && chmod -R u=rwX,go=rX "$DIR"; fi
 else
-ssh "$HOST" "mkdir -p $DIR"
-rsync -az --delete build_production/ "$HOST:$DIR/"
-ssh "$HOST" "chown -R root:root $DIR && chmod -R u=rwX,go=rX $DIR"
+ssh "$HOST" "mkdir -p $STAGE/landing"
+rsync -az --delete build_production/ "$HOST:$STAGE/landing/"
+ssh "$HOST" "sudo -n /usr/local/sbin/bm-www landing $STAGE/landing"
 fi
 echo "Uploaded to $([ -n "$ON_VPS" ] && echo "$DIR" || echo "$HOST:$DIR") (fallback copy; also the source publish.sh reads when the tools deploy)"
 # buffermint.com is served by Cloudflare Pages: publish this build together with the live /tools/ build
