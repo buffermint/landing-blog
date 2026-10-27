@@ -27,12 +27,16 @@ class GenerateIndex
 
     private function mappedObject($page, $jigsaw)
     {
+        $image = $page->featured_thumbnail ?? $page->featured_image;
+
         return [
             'title' => $page->title,
             // Fuse.js only indexes strings, so ship the post's own category as a
             // list of {slug, name} rather than the site-wide map of category objects.
             'categories' => $this->postCategories($page),
-            'image' => $page->featured_thumbnail ?? $page->featured_image,
+            'image' => $image,
+            // the smaller WebP copy next to the image, if there is one (the card offers it in a <picture>)
+            'webp' => $this->webpCopy($image, $jigsaw->getDestinationPath()),
             'author' => $page->author,
             'link' => $page->getPath(),
             'snippet' => $page->getSnippet(),
@@ -42,6 +46,15 @@ class GenerateIndex
         ];
     }
 
+    private function webpCopy($image, $dest)
+    {
+        if (! $image || ! preg_match('~\.(jpe?g|png)$~i', $image)) {
+            return null;
+        }
+        $webp = preg_replace('~\.(jpe?g|png)$~i', '.webp', $image);
+
+        return is_file($dest . '/' . ltrim(rawurldecode($webp), '/')) ? $webp : null;
+    }
 
     private function postCategories($page)
     {

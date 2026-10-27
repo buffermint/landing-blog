@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "mix",
         "watch": "mix watch",
-        "prod": "mix --production"
+        "prod": "mix --production",
+        "test": "node --test tests/"
     },
     "resolutions": {
         "webpack": "~5.104.1",
