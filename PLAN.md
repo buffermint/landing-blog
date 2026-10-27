@@ -380,8 +380,10 @@ only, Feather WOFF only. Screenshots of 7 pages (desktop + phone) match before/a
 ## 14. Optional: deploy automation / CMS (P3)
 
 - A GitHub Action on push to `main` that runs `composer install`, `yarn install`, `yarn prod` and
-  `jigsaw build production`, then rsyncs to `/var/www/buffermint-landing`. It needs a dedicated deploy SSH
-  key on the droplet, restricted to that directory. You would add the key and the secret. Effort **M**.
+  `jigsaw build production`, then hands the build to buffermint-vps, which publishes it with `sudo bm-publish`
+  (the Cloudflare token stays root-only in `/etc/buffermint/secrets/cloudflare.env`; the Action never holds it).
+  It needs a dedicated deploy SSH key on buffermint-vps, restricted to that step. You would add the key and the
+  secret. Effort **M**. (The droplet is retired since 2026-10-23.)
 - A local Decap CMS, as described in item 3. Effort **S**.
 
 ---

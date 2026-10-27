@@ -3,8 +3,11 @@
   <div class="card mb-6 shadow-light-lg article-card">
     <!-- Image -->
     <a class="card-img-top" :href="article.link">
-      <!-- Image -->
-      <img :src="'/'+article.image" :alt="article.title" class="card-img-top" loading="lazy" decoding="async" />
+      <!-- Image: the WebP copy where there is one, the original as the fallback -->
+      <picture>
+        <source v-if="article.webp" type="image/webp" :srcset="'/'+article.webp" />
+        <img :src="'/'+article.image" :alt="article.title" class="card-img-top" loading="lazy" decoding="async" />
+      </picture>
     </a>
 
     <!-- Body -->

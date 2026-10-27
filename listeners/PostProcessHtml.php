@@ -8,6 +8,9 @@ use TightenCo\Jigsaw\Jigsaw;
  * Rewrites the built HTML (every page):
  * - images from /assets/img/uploads/ get width/height (from the file) and, when a smaller .webp copy sits next
  *   to the file, a <picture> with a WebP <source> and the original as the fallback;
+ * - post covers (inline `background-image: url(/assets/img/uploads/…)`, read by jarallax) get a second
+ *   declaration with image-set() that offers the WebP copy; browsers without image-set() or WebP keep the
+ *   first url();
  * - headings inside #post-content are renumbered so they never skip a level after the page <h1>
  *   (older posts start at ###). A renumbered heading keeps its look through a class (e.g. <h2 class="h3">).
  */
@@ -22,7 +25,7 @@ class PostProcessHtml
                 continue;
             }
             $html = file_get_contents($file->getPathname());
-            $out = $this->headings($this->images($html, $dest));
+            $out = $this->headings($this->covers($this->images($html, $dest), $dest));
             if ($out !== $html) {
                 file_put_contents($file->getPathname(), $out);
             }
@@ -48,6 +51,18 @@ class PostProcessHtml
                 $img = '<picture><source type="image/webp" srcset="' . $webp . '">' . $img . '</picture>';
             }
             return $img;
+        }, $html);
+    }
+
+    private function covers(string $html, string $dest): string
+    {
+        return preg_replace_callback('~background-image:\s*url\((["\']?)(/assets/img/uploads/[^"\')]+\.(?:jpe?g|png))\1\);?+(?!\s*background-image:\s*image-set)~i', function ($m) use ($dest) {
+            $webp = preg_replace('~\.(jpe?g|png)$~i', '.webp', $m[2]);
+            if (! is_file($dest . rawurldecode($webp))) {
+                return $m[0];
+            }
+            $type = preg_match('~\.png$~i', $m[2]) ? 'image/png' : 'image/jpeg';
+            return 'background-image: url(' . $m[2] . '); background-image: image-set(url(' . $webp . ') type(\'image/webp\'), url(' . $m[2] . ') type(\'' . $type . '\'));';
         }, $html);
     }
 

@@ -1,6 +1,6 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-26. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-27. The master plan is in `../PLAN.md`.
 
 ## Security (2026-10-24)
 - GitHub's "146 vulnerabilities" (11 critical, 61 high, 54 moderate, 20 low) could not be read from the VPS: no `gh` or token there, and the deploy key can't call the Dependabot API. Local audits were used instead.
@@ -16,6 +16,7 @@ Last updated: 2026-10-26. The master plan is in `../PLAN.md`.
 - Jigsaw site for buffermint.com, covering every path except /tools/. Publish it through `../buffermint-pages/publish.sh`.
 - `main` = origin, clean. Live = `main` as of 2026-10-26 (Pages 443cf329, deployed from buffermint-vps through `sudo bm-www`; before that d4b2bff1).
 - **Recent work:**
+  - 2026-10-27 (lane `lane/t-20261027-landing-small-fixes`, not merged or deployed yet): **BM-46** post covers get `image-set()` with the WebP copy after a plain `url()` fallback (`listeners/PostProcessHtml.php`), and the Vue blog cards render `<picture>` with a WebP `<source>` from a new `webp` field in `index.json`/`featured.json` (`listeners/GenerateIndex.php`, `ArticleCard.vue`). **BM-47** `posts.js` no longer throws on pages without `#blog-scroll-position`. **BM-45** PLAN 14 now names buffermint-vps and `sudo bm-publish` instead of the droplet. First test suite: `tests/*.test.mjs` (`node:test` over `build_production/`; `npm test`, Node 20 and 22).
   - 2026-10-26: `deploy.sh` copies into the web root through `sudo bm-www` (5017371; root-owned web root, no links; security audit 2026-10-25). Redeployed from `main` 2026-10-26 14:50: Pages 443cf329, `/var/www/buffermint-landing` root-owned. The brand submodule now points at `rishpandey/buffermint-brand` (92136d8; repo moved and renamed). PLAN 12B is done on branch `jigsaw-1.8` (43b978f, 6400df1: Jigsaw 1.3.37 → 1.8.8); not merged or deployed (owner call).
   - 2026-10-25 (landing leftovers, fd33e24 + 2368247): **PLAN 9 finished:** 39 WebP copies next to the uploads (3.0 → 1.8 MB for those files; originals kept as the fallback). A new afterBuild listener, `listeners/PostProcessHtml.php`, wraps every `/assets/img/uploads/` `<img>` in `<picture>` with a WebP `<source>` and adds `width`/`height` from the file (`img[data-dim] { height: auto }` keeps the ratio). **axe leftovers fixed:** the same listener renumbers headings inside `#post-content` so they never skip a level (a renumbered heading keeps its look, e.g. `<h2 class="h3">`); the post CTA is a `<section aria-label>` with an `<h2>` instead of an `<aside>`; links in post/About text are underlined. **PLAN 13:** `vendor.js` 479 → 104 KB (jQuery for blog search + jarallax for post covers; Bootstrap JS, fancybox, AOS, choices, flickity, imagesloaded, isotope, smooth-scroll, typed dropped: no page uses them), `vendor.css` 92 KB → jarallax only (no more quill ×4, hljs), `theme.js` polyfills only, Feather WOFF only. Checks (local build, same tooling before/after): axe-core 4.14 light+dark on all 29 pages **76 → 0** violations; Lighthouse 12.2.1 mobile median home 65 → 67 (LCP 10.3 → 7.0 s, 1742 → 1105 KB), post 63 → 68 (LCP 8.5 → 5.0 s, 1350 → 714 KB, a11y 98 → 100), About 66 → 76 (a11y 94 → 100). Screenshots before/after match (desktop + phone, 7 pages). Live check: 10 pages 200, WebP and JPEG fallbacks 200 with the right types.
   - 2026-10-24: reproducible build, verified from a fresh GitHub clone (same 29 pages; only sitemap/feed/index.json order differs). The 29 files that existed only in gitignored `source/assets/build/` (27 legacy favicons, `brand.svg`, `logo_square.png`; unlinked but still requested, 200 live) now live in `source/_assets/img/` and are copied by `webpack.mix.js`. **Fonts decision (director):** Hanken Grotesk from the brand repo only; HK Grotesk Pro stays out for good (README). PLAN 12 option A (`php -d error_reporting`), PLAN 10 (ISO dates, heading order, alt text, figcaption contrast, `<main>` landmark; axe-core light+dark on 6 pages: no contrast issues, only in-post heading order, an aside in main and one underlined-link nit left), PLAN 9 (uploads capped at 1600 px: 7.4 → 3.6 MB; card thumbnails, lazy loading, Feather `font-display: swap`, careers Unsplash at w=400), PLAN 11 mechanical (7 Calendly links use `discovery_call_url`). SEO-ANALYTICS table refreshed.
@@ -31,7 +32,7 @@ Last updated: 2026-10-26. The master plan is in `../PLAN.md`.
 
 ## Next steps
 1. PLAN 11, needs the owner: post dates (all 2021), the `-copy` slug (option a or b), the empty `/our-pricing` page (write or delete), the copy questions.
-2. PLAN 12B: merge `jigsaw-1.8` once the owner says so, then deploy; 14 (optional). Possible later: the post cover (CSS `background-image` in the jarallax hero) and the Vue blog cards still use JPEG only; the `pageerror` "reading 'style'" from posts.js on pages without `#blog-scroll-position` (old, harmless).
+2. PLAN 12B: merge `jigsaw-1.8` once the owner says so, then deploy; 14 (optional). Ship the 2026-10-27 lane (BM-45/46/47) after review.
 3. Footer: Twitter → X and Facebook links live in the brand repo chrome, not here.
 
 ## Waiting on you
@@ -39,6 +40,9 @@ Last updated: 2026-10-26. The master plan is in `../PLAN.md`.
 - 2026-10-26 (BM-189): `deploy.sh` no longer defaults to a root login; Mac emergency path uses `agent@buffermint-vps` + `sudo bm-www` (OWNER-TODO 30 unblocked).
 - Search Console and Bing verification.
 - The 3 unanswered questions in `../COPY-REVIEW.md`: the "45 days" claim, the testimonial, and the Work-with-us target.
+
+## Tests
+- `npm run prod && ./vendor/bin/jigsaw build production && npm test` (node:test over the built site).
 
 ## Read first
 1. PLAN.md
