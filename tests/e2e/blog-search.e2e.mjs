@@ -1,5 +1,6 @@
 // BM-48: the blog search box on /articles/ in headless Chromium, desktop and phone. Run through bin/one-chrome
 // (tests/blog-search.test.mjs does that). Serves build_production/ on a local port; every other host is blocked.
+// LANDING_BUILD=<dir> ALLOW_VUE=1 runs the same behaviour checks on an older (Vue) build for comparison.
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync } from 'node:fs';
@@ -52,7 +53,7 @@ try {
     await indexLoaded;
 
     // no Vue on the page; the server-rendered cards are all still there
-    assert.equal(await page.evaluate(() => typeof window.Vue === 'undefined' && !document.querySelector('main').__vue__), true, at('no Vue'));
+    if (!process.env.ALLOW_VUE) assert.equal(await page.evaluate(() => typeof window.Vue === 'undefined' && !document.querySelector('main').__vue__), true, at('no Vue'));
     const html = readFileSync(join(build, 'articles/index.html'), 'utf8');
     const cards = (html.match(/class="card /g) || []).length;
     assert.ok(cards > 0);
