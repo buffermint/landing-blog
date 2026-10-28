@@ -2,6 +2,11 @@
 
 Last updated: 2026-10-27. The master plan is in `../PLAN.md`.
 
+## Security (2026-10-28, BM-48)
+- **Vue 2 is gone** (lane `lane/t-20261028-landing-drop-vue2`, not merged or deployed yet): `vue`, `vue-loader` and `vue-template-compiler` are out of package.json and yarn.lock. The one Vue part in use, the blog search box on /articles/, is now plain JS (`source/_assets/js/blog-search.js` + `_partials/articles/search.blade.php`, fuse.js as before); the unused Index/ArticleCard/SearchBasic components are deleted. `main.js` 123,549 → 18,741 B (43.2 → 6.6 KB gzip). Correction to the 2026-10-24 note: main.js shipped the *full* Vue build (template compiler included) and compiled every page's `<main id="app">` at runtime, which also dropped `<style>`/`<script>` tags inside `<main>` (the careers page's Workable list style now applies again).
+- `yarn audit` before → after: 6 (4 low, 1 moderate, 1 high; 914 packages) → **4** (3 low, 1 high; 899). Left, all build-time or unused: `body-parser` (high, laravel-mix > webpack-dev-server > express; dev server only, new since 2026-10-24), `elliptic` (low, no patch), `quill` (low, CSS only), `deepmerge` (low, via choices.js, new; nothing ships it). `composer audit` unchanged.
+- Test: `tests/blog-search.test.mjs` (no Vue in package/lock/bundle, plus `tests/e2e/blog-search.e2e.mjs` in headless Chromium at desktop and phone through `bin/one-chrome`; needs `playwright-core` 1.64.1 and its cached Chromium).
+
 ## Security (2026-10-24)
 - GitHub's "146 vulnerabilities" (11 critical, 61 high, 54 moderate, 20 low) could not be read from the VPS: no `gh` or token there, and the deploy key can't call the Dependabot API. Local audits were used instead.
 - Local audit on `main` (d94798c): `composer audit` clean (0). `yarn audit` (914 packages): **4 open** (3 low, 1 moderate), 0 high or critical. Before this check it was the same 4, so no change was made and the build output is unchanged. The 146 is most likely a stale count from before d3c2542; Dependabot recounts after the next push.

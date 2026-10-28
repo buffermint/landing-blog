@@ -30,7 +30,8 @@ mix
     "source/assets/build/js/vendor.js"
   )
   .combine(["node_modules/jarallax/dist/jarallax.css"], "source/assets/build/css/vendor.css")
-  .js('source/_assets/js/main.js', 'js/main.js').vue()
+  // BM-48: plain JS (the blog search box); Vue 2 is gone
+  .js('source/_assets/js/main.js', 'js/main.js')
   .js('source/_assets/js/posts.js', 'js/posts.js')
   .sass("source/_assets/scss/theme.scss", "css/theme.css")
   .sass("source/_assets/scss/posts.scss", "css/posts.css")

@@ -1,12 +1,3 @@
-import Vue from "vue";
-import Blog from "./components/Blog/Index.vue";
-import Search from "./components/Blog/Search.vue";
+import { mountBlogSearch } from "./blog-search";
 
-Vue.config.productionTip = false;
-
-new Vue({
-  components: {
-    Search,
-    Blog,
-  },
-}).$mount("#app");
+document.querySelectorAll("[data-blog-search]").forEach(mountBlogSearch);

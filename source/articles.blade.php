@@ -17,7 +17,7 @@ return !$post->featured;
 
 <div class="gradient-mint-to-white min-vh-60">
     <h1 class="sr-only">BufferMint Blog</h1>
-    <Search></Search>
+    @include("_partials.articles.search")
 
     <div class="container">
 
