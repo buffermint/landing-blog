@@ -97,6 +97,12 @@ try {
     await page.waitForTimeout(400);
     assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click in the box'));
 
+    // a click on the search icon is part of the box, not outside
+    const icon = page.locator('.search-container .input-group-prepend');
+    await icon.click();
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click on the icon'));
+
     // hidden again, then typing more shows the new matches (never a counter with no list)
     await outside();
     await hidden();

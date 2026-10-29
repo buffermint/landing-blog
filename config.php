@@ -96,10 +96,11 @@ return [
             : $cleaned;
     },
 
-    // "Suggested Articles" under a post: its own category's posts first, topped up with the newest others
+    // "Suggested Articles" under a post: its own category's posts first (uncategorised posts count as one
+    // group, as before), topped up with the newest others
     'suggestedPosts' => function ($page, $posts, $count = 3) {
         $others = $posts->filter(fn ($post) => $post->getPath() !== $page->getPath());
-        $same = $page->category ? $others->where('category', $page->category) : collect();
+        $same = $others->where('category', $page->category);
 
         return $same->concat($others->diffKeys($same))->take($count)->values();
     },

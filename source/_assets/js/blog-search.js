@@ -73,16 +73,18 @@ export function mountBlogSearch(root) {
   }
 
   input.addEventListener("input", render);
-  // Back in the box (focus or a click): the current matches show again
-  input.addEventListener("focus", () => {
+  // Back in the box (focus, or a click while it already has focus): the current matches show again
+  const reshow = () => {
     const box = document.getElementById("search-results");
     if (box) show(box);
-  });
+  };
+  input.addEventListener("focus", reshow);
+  input.addEventListener("click", reshow);
 
-  // A click outside both the list and the box hides the list
+  // A click outside both the list and the search box (input, icon, counter) hides the list
   document.addEventListener("click", (e) => {
     const box = document.getElementById("search-results");
-    if (box && e.target !== input && !e.target.closest("#search-results")) hide(box);
+    if (box && !group.contains(e.target) && !e.target.closest("#search-results")) hide(box);
   });
 
   fetch("/index.json")
