@@ -20,6 +20,7 @@
     $share_image = rtrim($page->baseUrl, '/') . '/' . ltrim($share_image, '/');
   }
   $is_post = str_starts_with($page->getPath(), '/articles/');
+  $modified = $is_post ? ($page->updatedAt() ?? $page->date) : null;
 @endphp
 
 <title>{{ mb_strlen($page_title) + mb_strlen($page->brand->name) + 3 > 65 ? $page_title : $page_title . ' | ' . $page->brand->name }}</title>
@@ -32,6 +33,10 @@
 <meta property="og:image" content="{{ $share_image }}" />
 <meta property="og:url" content="{{ $page->getUrl() }}" />
 <meta property="og:site_name" content="{{ $page->brand->name }}" />
+@if ($is_post)
+<meta property="article:published_time" content="{{ date('c', $page->date) }}" />
+<meta property="article:modified_time" content="{{ date('c', $modified) }}" />
+@endif
 
 <meta name="twitter:card" content="{{ $page->featured_image ? 'summary_large_image' : 'summary' }}">
 <meta name="twitter:title" content="{{ $page_title }}">
@@ -64,12 +69,13 @@
       'url' => $site . '/', 'description' => $page->brand->description, 'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'url' => $site]];
   } elseif ($is_post) {
     $published = date('c', $page->date);
-    $jsonld[] = ['@context' => 'https://schema.org', '@type' => 'BlogPosting', 'headline' => $page->title,
+    $jsonld[] = array_filter(['@context' => 'https://schema.org', '@type' => 'BlogPosting', 'headline' => $page->title,
       'description' => $description, 'image' => $share_image, 'url' => $page->getUrl(),
       'mainEntityOfPage' => $page->getUrl(), 'datePublished' => $published,
-      'dateModified' => $page->updated ? date('c', is_numeric($page->updated) ? $page->updated : strtotime($page->updated)) : $published,
+      'dateModified' => date('c', $modified),
       'author' => ['@type' => 'Person', 'name' => $page->author],
-      'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'logo' => ['@type' => 'ImageObject', 'url' => $site . '/brand/logos/mark.png']]];
+      'keywords' => $page->keyword ?: null,
+      'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'logo' => ['@type' => 'ImageObject', 'url' => $site . '/brand/logos/mark.png']]], fn ($v) => $v !== null);
     $crumbs[] = ['Blog', $site . '/articles'];
     $crumbs[] = [$page->title, $page->getUrl()];
   } else {

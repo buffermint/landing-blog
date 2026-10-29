@@ -71,6 +71,30 @@ return [
         return Datetime::createFromFormat('U', $page->date);
     },
 
+    // `updated:` front matter (a refreshed post) as a Unix timestamp, or null. YAML turns a bare date into a
+    // timestamp; a quoted string such as "2026-11-02" is parsed too. Never earlier than the publish date.
+    'updatedAt' => function ($page) {
+        $updated = $page->updated;
+        if (! $updated) {
+            return null;
+        }
+        // a bare date is UTC midnight, like date:; a quoted one must be YYYY-MM-DD and is read as UTC too (strtotime
+        // would take "tomorrow", a date that moves with every build, or roll 2026-02-30 into March). A number that
+        // isn't a plausible timestamp (e.g. 20261105) is a typo, not 1970.
+        $time = false;
+        if (is_int($updated)) {
+            $time = $updated;
+        } elseif (preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) $updated)) {
+            $parsed = \DateTime::createFromFormat('!Y-m-d', (string) $updated, new \DateTimeZone('UTC'));
+            $time = $parsed && $parsed->format('Y-m-d') === (string) $updated ? $parsed->getTimestamp() : false;
+        }
+        if ($time === false || $time < 946684800 /* 2000-01-01 */) {
+            throw new \InvalidArgumentException("{$page->getFilename()}: updated: \"{$updated}\" is not a date");
+        }
+
+        return $time > $page->date ? $time : null;
+    },
+
     'getSnippet' => function ($page, $length = 255) {
         $content = preg_split('/<!-- more -->/m', $page->getContent(), 2);
         $cleaned = trim(
