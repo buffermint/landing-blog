@@ -1,6 +1,6 @@
 ---
 title: "Remove a background in the browser: 6 open models measured"
-seo_description: "We measured six open background-removal models on 8 ground-truth cut-outs: edge quality, size, speed, memory and the licences that decide what you can ship."
+seo_description: "We measured six open background-removal models on 8 ground-truth cut-outs: edge quality, size, speed, memory and the licenses that decide what you can ship."
 keyword: remove background from image
 featured_image: assets/img/uploads/remove-background-browser-models-cover.jpeg
 featured_thumbnail: assets/img/uploads/remove-background-browser-models-cover.jpeg
@@ -14,11 +14,11 @@ extends: _layouts.post
 
 Removing the background from a photo used to mean uploading it to a service. Today an open model can do it inside the browser tab, so the photo never leaves your device. We built our [background remover](/tools/photo/background-remover/) that way, and to choose its model we measured six open models on the same test images, with exact ground truth.
 
-This post shares those measurements: which models get hair and fur right, how big they are, how fast they run, how much memory they take, and the licence detail that rules out the best-scoring model for most products. It's for anyone choosing a background remover, and for founders adding cut-outs to an app.
+This post shares those measurements: which models get hair and fur right, how big they are, how fast they run, how much memory they take, and the license detail that rules out the best-scoring model for most products. It's for anyone choosing a background remover, and for founders adding cut-outs to an app.
 
 ## How we measured
 
-Our test set is 8 photos with a free licence (CC0 or CC-BY): a person in a dress, a headshot, a dog, a cat, a kiwi fruit, a clover flower, plastic flowers and a camera. Each cut-out was composited onto a plain, a busy or a similar-colored background, so we know the exact correct transparency of every pixel. The images are 0.5 to 1.6 megapixels.
+Our test set is 8 photos with a free license (CC0 or CC-BY): a person in a dress, a headshot, a dog, a cat, a kiwi fruit, a clover flower, plastic flowers and a camera. Each cut-out was composited onto a plain, a busy or a similar-colored background, so we know the exact correct transparency of every pixel. The images are 0.5 to 1.6 megapixels.
 
 We report three numbers:
 
@@ -30,7 +30,7 @@ We ran the models two ways. First through [rembg](https://github.com/danielgatis
 
 ## Results: the reference run (rembg, CPU)
 
-| Model | Mask IoU | Boundary F | Edge-band error | Seconds per image (CPU) | Licence |
+| Model | Mask IoU | Boundary F | Edge-band error | Seconds per image (CPU) | License |
 |---|---|---|---|---|---|
 | U²-Net (u2net) | 0.872 | 0.834 | 0.136 | 0.32 | [Apache-2.0](https://github.com/xuebinqin/U-2-Net) |
 | IS-Net (isnet-general-use) | 0.987 | 0.947 | 0.057 | 0.71 | [Apache-2.0](https://github.com/xuebinqin/DIS) |
@@ -50,13 +50,15 @@ Two things stand out.
 
 The reference run is on a desktop CPU with no download size limit. In a browser tab, the model has to be downloaded first and must fit in the tab's memory. That changes the ranking.
 
-| Model, as served | Download | Boundary F | Edge-band error | Speed (warm) | Peak tab memory | Licence |
-|---|---|---|---|---|---|---|
-| BiRefNet_lite, our int8 build (WebGPU) | 68 MB | 0.988 | 0.044 | 2.0 s per 12 MP photo | 1.04 GB | MIT |
-| BiRefNet_lite, original fp32 | – | 0.987 | 0.044 | – | – | MIT |
-| BiRefNet full, int8 | 269 MB | 0.989 | 0.044 | about 4× the compute of lite | – | MIT |
-| BEN2 base, fp16 | 219 MB | 0.977 | 0.068 | – | – | [MIT](https://huggingface.co/PramaLLC/BEN2) (base model only) |
-| ORMBG, int8 (WebAssembly) | 44 MB | 0.952 | 0.066 | 6.5 s at 1 MP, 8.1 s at 12 MP | 1.47 GB | [Apache-2.0](https://huggingface.co/onnx-community/ormbg-ONNX) |
+| Model, as served | Download | Edges: F / error | Speed (warm) | Peak memory |
+|---|---|---|---|---|
+| BiRefNet_lite, our int8 build (WebGPU) | 68 MB | 0.988 / 0.044 | 2.0 s per 12 MP | 1.04 GB |
+| BiRefNet_lite, original fp32 | – | 0.987 / 0.044 | – | – |
+| BiRefNet full, int8 | 269 MB | 0.989 / 0.044 | ~4× lite's compute | – |
+| BEN2 base, fp16 | 219 MB | 0.977 / 0.068 | – | – |
+| ORMBG, int8 (WebAssembly) | 44 MB | 0.952 / 0.066 | 6.5 s at 1 MP, 8.1 s at 12 MP | 1.47 GB |
+
+Licenses: BiRefNet [MIT](https://github.com/ZhengPeng7/BiRefNet); BEN2 [MIT](https://huggingface.co/PramaLLC/BEN2) for the base model only; ORMBG [Apache-2.0](https://huggingface.co/onnx-community/ormbg-ONNX).
 
 *Our measurements, same 8 images, same pipeline as the tool page, 22 October 2026. A dash means we didn't time that build in the browser.*
 
@@ -75,11 +77,11 @@ If you're putting one of these models into your own web app, two problems cost u
 
 **Standard quantization didn't shrink it enough.** ONNX Runtime's dynamic int8 quantizer left the model at 202 MB, because it skipped some weight tables, and WebGPU has no kernels for the integer convolution it produces. We wrote a weight-only int8 conversion instead, which stores weights as int8 and converts them back before each layer. That got the model to 68 MB with the same edge quality as the fp32 original.
 
-## The licence trap
+## The license trap
 
-The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA licence with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licences. So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
+The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA license with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licenses. So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
 
-BEN2 is similar in a different way: its base model is MIT, but the page describes the stronger full model as available only through the company's own demo and API. BiRefNet (MIT), IS-Net and U²-Net (Apache-2.0) and ORMBG (Apache-2.0) are free to ship commercially, as long as you keep their licence notices.
+BEN2 is similar in a different way: its base model is MIT, but the page describes the stronger full model as available only through the company's own demo and API. BiRefNet (MIT), IS-Net and U²-Net (Apache-2.0) and ORMBG (Apache-2.0) are free to ship commercially, as long as you keep their license notices.
 
 We checked the projects' upkeep too, on 29 October 2026: BiRefNet's repository was last updated on 25 October 2026 and rembg's on 21 October 2026, while the IS-Net and U²-Net repositories were last updated in 2024. The older models still work, but nobody is improving them.
 
@@ -92,14 +94,14 @@ What the services still do better: batch processing of hundreds of images, very 
 ## Which to use
 
 - **For a one-off photo:** our [background remover](/tools/photo/background-remover/) runs BiRefNet_lite on WebGPU and ORMBG otherwise. For a logo or a product on white, the simpler [white background remover](/tools/photo/remove-white-background/) is faster and keeps letter holes. For marketplace listings, the [product photo studio](/tools/photo/product-photo-studio/) adds a white background and padding. Compress the result before you upload it with the [image compressor](/tools/photo/image-compress/).
-- **For your own app:** start with BiRefNet_lite (MIT) on WebGPU with an ORMBG fallback, check the licence of every weight file you load, and test on your users' hardest photos, not on a leaderboard.
+- **For your own app:** start with BiRefNet_lite (MIT) on WebGPU with an ORMBG fallback, check the license of every weight file you load, and test on your users' hardest photos, not on a leaderboard.
 
 ## Sources
 
-- Peng Zheng et al., [BiRefNet](https://github.com/ZhengPeng7/BiRefNet), "Bilateral Reference for High-Resolution Dichotomous Image Segmentation", CAAI Artificial Intelligence Research, 2024 (MIT licence).
+- Peng Zheng et al., [BiRefNet](https://github.com/ZhengPeng7/BiRefNet), "Bilateral Reference for High-Resolution Dichotomous Image Segmentation", CAAI Artificial Intelligence Research, 2024 (MIT license).
 - BRIA AI, [RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0) (CC BY-NC 4.0).
 - PramaLLC, [BEN2 model card](https://huggingface.co/PramaLLC/BEN2); onnx-community, [ORMBG ONNX model card](https://huggingface.co/onnx-community/ormbg-ONNX).
-- Xuebin Qin et al., [U²-Net](https://github.com/xuebinqin/U-2-Net) and [IS-Net (DIS)](https://github.com/xuebinqin/DIS) repositories; Daniel Gatis, [rembg](https://github.com/danielgatis/rembg) (README, model list and default model). Licences and last-commit dates from the GitHub API, 29 October 2026.
+- Xuebin Qin et al., [U²-Net](https://github.com/xuebinqin/U-2-Net) and [IS-Net (DIS)](https://github.com/xuebinqin/DIS) repositories; Daniel Gatis, [rembg](https://github.com/danielgatis/rembg) (README, model list and default model). Licenses and last-commit dates from the GitHub API, 29 October 2026.
 - Hugging Face, [Transformers.js: running models on WebGPU](https://huggingface.co/docs/transformers.js/guides/webgpu); Microsoft, [ONNX Runtime Web WebGPU execution provider](https://onnxruntime.ai/docs/tutorials/web/ep-webgpu.html).
 - remove.bg, [maximum image resolution](https://www.remove.bg/help/a/what-is-the-maximum-image-resolution-file-size).
 - Our benchmark: 8 CC0/CC-BY ground-truth cut-outs, rembg reference run and our browser pipeline (Chrome, WebGPU on an Apple M5 Mac), measured 22 October 2026.
