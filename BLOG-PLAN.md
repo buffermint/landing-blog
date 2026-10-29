@@ -75,7 +75,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** our own benchmark (`buffermint-tools/QUALITY-DOCUMENTS.md`): to 100 KB, an 8-page photo PDF came out at 90 KB with SSIM 0.761, against Ghostscript's best of 100 KB at 0.676. A 10-page text report reached 97 KB with every word still extractable, where Ghostscript couldn't get under 150 KB. Show the trade-off (dpi vs. image quality vs. text) with before/after crops, and say which kinds of PDF can't reach 100 KB at all (scans with many pages).
 - **Sources:** Ghostscript pdfwrite docs (ghostscript.com/docs), Adobe Acrobat help on reducing PDF size (helpx.adobe.com), the PDF Association on image compression in PDF (pdfa.org), qpdf manual (qpdf.readthedocs.io), and 2+ official portals that state a 100 KB limit in their instructions (e.g. Indian exam/visa portals; cite the page itself).
 - **Internal links:** /tools/pdf/compress-pdf-to-100kb/, /tools/pdf/compress-pdf-to-size/, /tools/pdf/compress-pdf/, /tools/photo/compress-image-to-100kb/, /tools/pdf/grayscale-pdf/.
-- **Status:** todo
+- **Status:** writing
 
 ### 2. Are online PDF converters safe? We watched where the file goes · `now`
 - **Keyword:** `are online pdf converters safe`. Level 4 (suggested after "are online pdf" on Google and Bing).
