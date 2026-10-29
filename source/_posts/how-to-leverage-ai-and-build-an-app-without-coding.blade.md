@@ -1,100 +1,90 @@
 ---
 featured_image: assets/img/uploads/how-to-leverage-ai-and-build-an-app-without-coding-title.jpeg
 featured_thumbnail: assets/img/uploads/how-to-leverage-ai-and-build-an-app-without-coding-thumbnail.jpeg
-title: How to leverage AI and build an app without coding
-seo_description: "Yes, you can build an app without coding. How to use AI and no-code services to do the heavy lifting, and when to bring in developers."
+title: "Build an app without coding in 2026: Lovable, Bolt and Replit"
+seo_description: "Lovable, Bolt and Replit compared by plan, credits and what a typical build burns, as of October 2026, plus the security checks every no-code app needs."
+keyword: build an app without coding
 author: Vivek Dixit
 show_meta: true
 date: 2021-08-20
+updated: 2026-10-29
 extends: _layouts.post
 section: postContent
 ---
-It's never been easier to leverage artificial intelligence to build an app. In fact, there are tons of AI services out there that can do it for you.
+In 2021 this post said you could build an app without code by wiring together AI services such as IBM Watson and Clarifai. That advice is out of date. In 2026 "building without code" means something more direct: you describe the app in plain English to an AI app builder, and it writes, runs and publishes the code for you.
 
-Some of the best services are IBM Watson, Spinnaker, and Clarifai. They make it possible for anyone to build AI applications with just a few clicks.
+The three builders founders ask us about most are Lovable, Bolt and Replit. All three can produce a working web app with sign-in and a database in an afternoon. They differ in how they charge, what you own at the end, and how much of the result you'll need to check. This post compares them on the numbers each company publishes, as of October 2026, and ends with the checks every app built this way needs before it holds real customer data.
 
-You don't need any coding experience or expensive software - all you have to do is sign up and start using these services.
+## What each plan costs and includes
 
-Check out this article that goes over everything you need to know about leveraging AI without having to code.
+| | Lovable | Bolt | Replit |
+|---|---|---|---|
+| Free plan | 5 build credits a day, capped at 30 a month | 1M tokens a month, 300K a day | Starter: 1 published app, for 30 days |
+| Entry paid plan | Pro, $25/month ($21 billed yearly) | Pro, $25/month | Core, $20/month ($18 billed yearly) |
+| What the entry plan includes | 100 credits a month plus 5 a day | 10M tokens a month, no daily cap | $20 of usage credits a month |
+| Unit of billing | Credits per message, by effort | Tokens processed | Effort-based, per checkpoint |
+| Next plan | Business, $50/month | Teams, $30 per member | Pro, $100/month |
+| Code export | Edit and download code on Pro | Own domain on Pro | Full code in the workspace |
 
-### What is artificial intelligence?
+Sources for the table: Lovable's plan documentation ([plans](https://docs.lovable.dev/introduction/subscription-plans), [credits](https://docs.lovable.dev/introduction/plans-and-credits)), Bolt's [pricing page](https://bolt.new/pricing), and Replit's [pricing page](https://replit.com/pricing) and [billing docs](https://docs.replit.com/billing/ai-billing), all read on 29 October 2026. Prices change often in this market; check the pages before you commit.
 
-Artificial intelligence is a field of science and engineering that focuses on the automation of tasks through intelligent machines.
+## What a typical build burns
 
-Computers are capable of performing tasks that would otherwise require human intelligence, such as visual perception, vocal recognition, decision-making, and translation between languages.
+The plans are easy to compare. The hard question is how far the allowance goes, because none of the three charges a fixed amount per change.
 
-AI research projects typically involve using various techniques to allow computers to perceive their environment and take actions that maximize some goal, such as solving a maze or driving a vehicle.
+**Lovable** publishes illustrative costs per request in its credits documentation: changing a button's style about 0.5 credits, removing a footer about 0.9, adding sign-in about 1.2, and building a landing page with generated images about 2 ([Lovable docs](https://docs.lovable.dev/introduction/plans-and-credits)). Planning messages cost 1 credit each.
 
-Some AI projects create systems that simulate aspects of human intelligence, such as speech recognition or visual perception. They even cut-short the process for which people generally need in-depth knowledge.
+Our arithmetic from those figures: Pro gives 100 monthly credits plus 5 a day, so about 250 credits in a 30-day month. That's roughly 200 changes the size of "add sign-in", or 500 small style tweaks. A first version of a simple SaaS (sign-in, three or four screens, a database, a settings page) typically takes dozens of requests plus many rounds of fixes, so one month of Pro is enough for a first version if your requests are clear. Vague requests ("make it better") cost the most, because they produce changes you then pay to undo.
 
-For instance, building an app with AI is becoming much more achievable, thanks to the abundance of services available.
+**Bolt** bills by tokens, the units of text the AI model reads and writes. The Pro plan's 10 million tokens a month has no daily cap, and unused tokens roll over ([Bolt](https://bolt.new/pricing)). Bolt doesn't publish a per-change figure. Each request re-reads part of your project, so the same change usually costs more as the app grows. Watch the token meter during your first week to learn your own rate.
 
-### How to take advantage of AI without coding
+**Replit** uses effort-based pricing: simple requests such as small fixes cost less than complex builds, and each request ends in one checkpoint ([Replit docs](https://docs.replit.com/billing/ai-billing)). Replit asks for confirmation before a paid action starts. Core includes $20 of credits a month; Pro includes $100, and Pro credits roll over for two months.
 
-To call it a perfect world would be too early at this point but be glad that you can take advantage of artificial intelligence to build an app. For that, you do not need any coding skills.
+**What this means in practice:** for a first version, all three cost about the same, $20–25 a month, if you plan your requests. The bill grows with the size of the app and the number of fix-up rounds, not with your number of users. Hosting, the database and AI features used inside your app are billed separately on all three, so add them before you set prices. Our [LLM cost calculator](/tools/ai/llm-cost/) helps if your app itself calls an AI model.
 
-You can either use services that have pre-built, ready-to-use AI solutions like IBM Watson, Spinnaker, and Clarifai. Or you can use open-source software to build your applications.
+## How the three differ in use
 
-IBM Watson is one of the best AI services in the world. It offers a pre-built application that you can use to implement several AI features in your app.
+- **Lovable** is aimed at founders who don't want to see code. It connects to a Supabase database for sign-in and storage, and its paid plans let you edit and download the code. It's the most common choice for a first SaaS prototype.
+- **Bolt** runs the development environment in your browser, and lets you choose the database provider on Pro. It suits people who want to look at the code now and then.
+- **Replit** is a full online development environment with an AI agent on top. It's the most flexible of the three and the closest to a normal developer workflow, which also makes it the one where a non-technical founder is most likely to get lost.
 
-It will do speech to text, image recognition, translation, and connect to other services. All that is needed here is for you to plug the features into your app.
+If you don't read code at all, start with the one whose output you can most easily explain to a developer later. That developer review is not optional, for the reason below.
 
-You can also use IBM Watson Studio which allows you to code using Python or R. Using this tool, you can build and deploy your own custom-made AI for your business.
+## The security checks every no-code app needs
 
-Spinnaker is a service that has prebuilt AI features that you simply plug into your application. It comes with speech recognition, image recognition, text to speech, and translation and it's very easy to use.
+AI builders write code that works; they don't always write code that keeps data private. Two independent reports show the pattern:
 
-To get started just enter your SaaS information into a form and download the plugin for it.
+- Escape's October 2025 scan of more than 5,600 public apps built with AI builders found more than 2,000 vulnerabilities, more than 400 exposed secrets and 175 cases of exposed personal data. More than 4,000 of the apps were built with Lovable, with smaller samples from Bolt and others ([Escape](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding)).
+- In February 2026, a researcher found 16 vulnerabilities, six critical, in one app featured on Lovable's Discover page. It exposed 18,697 user records, because a sign-in check let anonymous visitors in and kept signed-in users out ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said its pre-publish scan is free but acting on it is the owner's job.
 
-Spinnaker is great for those who have programming skills but don't want to write thousands of lines of code for their application.
+Before your app holds customer data, check at least these:
 
-An open-source tool is OpenNMT which provides you with a pre-trained model that is ready to use in your app. You can build a machine translation system, chatbot, or image recognition/detection system using this tool. The best part of it is that it's free and doesn't require you to install anything because it works online.
+1. **Access rules on every table.** Open the app in a private browser window without signing in and try the addresses of pages that show data. You should see nothing private.
+2. **No secret keys in the page.** Payment and email keys belong on a server. Our [JSON formatter](/tools/dev/json-formatter/) makes it easier to read the settings your app loads in the browser.
+3. **Run the builder's own security scan** and fix everything it reports, not just the first page.
+4. **Pay a developer for a short review** before you charge money. A day of review costs far less than an incident.
 
-There are several tools to leverage AI without coding like IBM Watson, Spinnaker, and OpenNMT. Just do some research and pick the one that's best for your application.
+Our post on [the holes every scan of vibe-coded apps keeps finding](/articles/vibe-coded-app-security-scans) goes through these in more depth, with a 15-minute self-check.
 
-### The benefits of using these services
+## When to stop using a builder
 
-The benefits of the tools for leveraging AI without coding are plenty. You don't have to spend time writing code or training your models. You can just plug in the service and it will do all the work for you.
+The builder is the right tool while you're finding out whether anyone wants the product. Signs you've outgrown it:
 
-The tools mentioned above offer pre-built models that take care of the heavy lifting for you. Some of them even provide development tools that give you the ability to customize them to your liking.
+- each change breaks something else, and fixing it costs more credits than the change did;
+- you need a feature the builder can't do well, such as background jobs, complex permissions or a specific payment flow;
+- you're handling sensitive data (health, finance, children) and need someone accountable for it.
 
-The process can still be a little more involved than using other general-purpose programming tools like Excel or PowerPoint, but it's well worth the effort.
+At that point, export the code and hand it to a developer, or rebuild with one using what you learned. Our guide for [non-technical founders launching a SaaS](/articles/launching-a-saas-product-as-a-non-technical-founder) compares the routes and their costs.
 
-After all, you are building an app without having to invest lots of time in code. Isn't that something?
+## What changed since 2021
 
-Or if you still looking to save some cost and the best agency experience, you can simply book a [discovery call]({{ $page->discovery_call_url }}) with [BufferMint](https://buffermint.com/). We take your idea to market in 45 days or less on a fixed budget.
+The 2021 version of this post listed AI services you could connect without code. The idea was right, but the tools were for adding one AI feature to an app someone else built. The builders above build the whole app. What hasn't changed is that the tool doesn't take responsibility for what it builds: someone still has to check that the app does what customers think it does with their data.
 
-### Why you should use them for your next project
+## Sources
 
-The best reason to use AI for your next project is that it will save you time and money. Save time by avoiding lengthy coding processes. It's true when they say that time is money.
-
-The more time you spend coding, the less time you have to do other things.
-
-Another good reason to use AI is that it's making technology more accessible for everyone. The AI-powered coding services provide the tools necessary for turning just an idea into a fully functioning application in just a few minutes!
-
-With AI it does not matter whether you know to code or not, you will be able to build an app like a professional.
-
-AI platforms automate a lot of the repetitive tasks involved in building an app, so you don't have to do anything from scratch.
-
-You can launch a business with only one person or hire someone who knows how to use AI services instead of hiring a team.
-
-Let's say you want to create an application that helps people find their lost pets. The pet store database is updated manually by the team of workers, but with AI, it's done automatically and instantly.
-
-This technology can be used to scan and find the pets that are missing. If someone sees the pet, they can click on a link with a description or photo of the pet, and the app will connect them with the owner of the pet.
-
-The process is also simple.
-
-You just need to create an account on the AI service website and use their intuitive dashboard, where you can choose from any of their ready-made templates or request help from the developer community.
-
-They provide every step of the process from the point you sign up to the moment your app is live and ready for download.
-
-### Conclusion
-
-In this article, we hope to have given you a better understanding of what AI is and how it can be used without coding.
-
-Whether you're looking to build an app for your business, create a new website or automate tasks in your office, there are many options available that will help get the job done with minimal work on your end.
-
-To get started with AI services, all you need to do is decide what application you want to create and choose the right platform that best fits your needs.
-
-Be sure to explore the benefits these services offer and consider them as part of your next project.
-
-Want to read more blogs like this? [Check out more articles](https://buffermint.com/articles) by us.
+- Lovable: [Subscription plans](https://docs.lovable.dev/introduction/subscription-plans) and [Plans and credits](https://docs.lovable.dev/introduction/plans-and-credits) (read 29 October 2026).
+- Bolt: [Pricing](https://bolt.new/pricing) (read 29 October 2026).
+- Replit: [Pricing](https://replit.com/pricing) and [AI billing documentation](https://docs.replit.com/billing/ai-billing) (read 29 October 2026).
+- Escape: [How we discovered vulnerabilities in apps built with vibe coding](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding) (29 October 2025).
+- The Register: [Lovable app vulnerabilities](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/) (27 February 2026).
+- Our calculation: Lovable Pro's monthly allowance (100 credits plus 5 a day for 30 days) divided by the illustrative per-request costs in its documentation.
