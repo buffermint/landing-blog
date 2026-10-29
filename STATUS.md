@@ -1,6 +1,11 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-29. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-29. The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+
+## Blog research and SEO (2026-10-29, lane `lane/t-20261029-blog-research-seo`, not merged or deployed yet)
+- **`BLOG-PLAN.md`:** the editorial rules, voice notes, our traffic (GoatCounter log, 23–29 Oct: 530 pageviews), and 32 ranked topics (10 `now`). Each topic has keyword demand from product-planner's keyless tooling (autosuggest level, HN, Wikipedia), a new angle (often our own benchmarks or build data), 4+ sources, internal links to /tools, and a status. It also covers the decisions for the 21 old posts (9 refresh, 9 merge with 301s, 3 leave) and the SEO audit with what's still open. The article and refresh lanes work from it.
+- **`updated:` front matter** (`updatedAt` helper in config.php): "Updated on …" on the post, BlogPosting `dateModified`, `article:modified_time`, the feed `<updated>` and the sitemap `lastmod`. Also new: `article:published_time`/`article:author`, `twitter:image:alt`, BlogPosting `keywords` from `keyword:`, and a hero alt fallback to the title.
+- **Tests:** `tests/posts.test.mjs` is the post-quality bar for posts dated 2026-10-29+ or with `updated:` (title ≤65, description 70–160, 1,200+ words, `## Sources` with 4+ sites, 2+ internal links, alt text, no placeholders, unique title and `keyword:`); it shows a thin sample post failing every rule. `tests/seo.test.mjs` covers tags on every built post, plus `updated:` in a throwaway build with fixture posts. The old BM-47 posts.js test moved to `tests/posts-js.test.mjs`.
 
 ## Code-review fixes (2026-10-29, lane `lane/t-20261029-cr-fix-buffermint-landing-1`, not merged or deployed yet)
 The 4 Medium findings of the baseline review (`company/reviews/baseline-buffermint-landing.md`):
