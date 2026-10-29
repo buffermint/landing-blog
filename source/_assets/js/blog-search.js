@@ -73,13 +73,13 @@ export function mountBlogSearch(root) {
   }
 
   input.addEventListener("input", render);
-  // Back in the box (focus, or a click while it already has focus): the current matches show again
+  // Back in the box (focus, or a click on the input, icon or counter): the current matches show again
   const reshow = () => {
     const box = document.getElementById("search-results");
     if (box) show(box);
   };
   input.addEventListener("focus", reshow);
-  input.addEventListener("click", reshow);
+  group.addEventListener("click", reshow);
 
   // A click outside both the list and the search box (input, icon, counter) hides the list
   document.addEventListener("click", (e) => {

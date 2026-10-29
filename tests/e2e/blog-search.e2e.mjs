@@ -103,11 +103,17 @@ try {
     await page.waitForTimeout(400);
     assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click on the icon'));
 
-    // hidden again, then typing more shows the new matches (never a counter with no list)
+    // hidden, then a click on the icon shows the list again
     await outside();
     await hidden();
-    await input.press('End');
-    await input.pressSequentially('s');
+    await icon.click();
+    await shown();
+
+    // hidden again, then new input shows the new matches (never a counter with no list). The input event is
+    // sent without focusing the box, so only render() can bring the list back
+    await outside();
+    await hidden();
+    await input.evaluate((el) => { el.value += 's'; el.dispatchEvent(new Event('input')); });
     await shown();
     const more = expected(`${query}s`);
     assert.ok(more.length > 0);
