@@ -1,6 +1,9 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-29 (articles 1–5). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-29 (articles 6–10). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+
+## Blog articles 6–10 (2026-10-29, lane `lane/t-20261029-blog-articles-2`, not merged or deployed yet)
+- Five new posts, BLOG-PLAN topics 6–10 (each about 1,450–1,900 words, 4+ publishers in `## Sources`, our own data): `ai-feature-cost-per-user` (measured token counts priced on three providers' pages), `ai-overviews-zero-click-studies` (seven measurements compared + our GoatCounter week), `vibe-coded-app-security-scans` (four scans by hole type + our PostgreSQL RLS reproduction), `credit-based-pricing-12-tools` (12 pricing pages read on one day), `remove-background-browser-models` (our background-removal benchmark). Covers are generated text cards (ours). Checked at 1280 px and 390 px (no sideways overflow, tables fit, `tests/e2e/post-tables.e2e.mjs` 22 tables in 10 posts).
 
 ## Blog articles 1–5 (2026-10-29, lane `lane/t-20261029-blog-articles-1`, not merged or deployed yet)
 - Five new posts, BLOG-PLAN topics 1–5 (each 1,400–1,750 words, 5+ publishers in `## Sources`, our own data or calculation): `compress-pdf-to-100kb` (our Ghostscript resolution sweep + font-hinting measurement), `are-online-pdf-converters-safe` (our network test of six PDF sites), `eu-ai-act-small-saas-llm-api` (Omnibus proposal vs. final text), `european-accessibility-act-small-saas` (decision tree from the directive + our axe fix log), `merchant-of-record-fees` (six pricing pages worked out at $9/$29/$99). Covers are our own: a render of a public-domain NASA test page, and generated text cards with centred titles so the phone crop of the jarallax cover keeps them.

@@ -115,7 +115,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** three common feature shapes (summarize a 10-page PDF, answer a support ticket with 5 help articles as context, classify 1,000 short texts). Count the tokens with our token counter, price them from the official pages of 3 providers (input, output, cached input, batch), and show cost per user at light/median/heavy use against a $19 plan. Then show what prompt caching and a smaller model change. Nobody publishes this per-feature with measured tokens.
 - **Sources:** anthropic.com/pricing, openai.com/api/pricing, ai.google.dev/pricing (all dated), the GitHub blog post on Copilot's 1 June 2026 move to usage billing (found 2026-10-29), Monetizely or PricingSaaS on AI pricing models (found 2026-10-29).
 - **Internal links:** /tools/ai/llm-cost/, /tools/ai/token-counter/, /tools/ai/context-planner/, /tools/business/unit-economics-calculator/, /articles/how-ai-and-machine-learning-is-changing-the-saas-space.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/ai-feature-cost-per-user` (o200k token counts on a 10-page report, the W-9, five help pages and 752 catalogue descriptions; priced from the Anthropic/OpenAI/Google pages read 29 Oct 2026; cost per user at light/median/heavy vs a $19 plan; Gemini's 4,096-token caching minimum; Argon doubling 1 Dec)
 
 ### 7. AI Overviews and zero-click search: why the studies disagree, and what still gets clicks · `now`
 - **Keyword:** `ai overviews` (level 2: a one/two-word head term; HN 501; Wikipedia "AI Overviews" 9,129 views/mo), `zero click searches` (level 2; Wikipedia "Zero-click result" 1,289/mo).
@@ -130,7 +130,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
   Then list which query types still send clicks (transactional, tool, brand, local), with our own split: in our first counted week, tool pages got far more views than articles (GoatCounter).
 - **Sources:** ahrefs.com/blog/ai-overviews-reduce-clicks *(read 2026-10-29)* and its 2026 rerun, seerinteractive.com, pewresearch.org, the SSRN paper, sparktoro.com (via searchengineland.com/google-zero-click-searches-2026-study-479717, found 2026-10-29), Google Search Central blog on AI features.
 - **Internal links:** /tools/seo/serp-preview/, /tools/seo/title-length-checker/, /tools/seo/meta-tag-generator/, topic 24.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/ai-overviews-zero-click-studies` (seven measurements side by side; Seer's Feb 2026 AIO gap equals the Agarwal & Sen RCT's 38%; our GoatCounter week 23–29 Oct: 518 views, 84% tools, all 37 search-referred views on tool pages)
 
 ### 8. Vibe-coded SaaS security: the holes every scan keeps finding · `now`
 - **Keyword:** `supabase row level security` (level 4; HN 8), `vibe coding security` (level 2; HN 13; Wikipedia "Vibe coding" 42,898/mo).
@@ -138,7 +138,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** six scans with different methods (Symbiotic: 1,072 apps; Escape: 2k vulnerabilities; CVE-2025-48757 with 170+ apps; The Register's 18k-user case; smaller audits), normalized into one table by hole type (RLS off, keys in client code, missing auth on functions, open storage buckets). Then a self-check with exact commands: query a table with the public anon key and see what comes back. Explain why scan numbers differ (definitions, samples).
 - **Sources:** symbioticsec.ai/blog/we-scanned-1-072-vibe-coded-apps-98-had-security-flaws (found 2026-10-29), escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding (found 2026-10-29), theregister.com/2026/02/27/lovable_app_vulnerabilities (found 2026-10-29), nvd.nist.gov CVE-2025-48757, supabase.com/docs/guides/database/postgres/row-level-security, OWASP Top 10.
 - **Internal links:** /tools/dev/jwt-decoder/, /tools/privacy/password-generator/, /tools/dev/hash/, /articles/launching-a-saas-product-as-a-non-technical-founder, topic 28.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/vibe-coded-app-security-scans` (Palmer, Escape, The Register case, Symbiotic by hole type; our PostgreSQL 18.6 reproduction: anon that can read 0 rows can still blind-update/delete with `using (true)` policies; 15-minute self-check)
 
 ### 9. Credits, seats or usage: how 12 SaaS tools define a "credit" · `now`
 - **Keyword:** `credit based pricing` (level 2; HN 18), `saas pricing` (level 2; HN 48). Weak autosuggest but a live trend (GitHub Copilot moved to usage billing on 1 June 2026; one index counts 79 credit-priced companies, +126% year over year, *found 2026-10-29*, check at the source).
@@ -146,7 +146,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** read the public pricing pages of 12 tools small founders use (e.g. GitHub Copilot, Cursor, Lovable, Bolt, Replit, Notion AI, Zapier, Intercom Fin, Clay, ElevenLabs, Midjourney, Canva), all on the same date. Tabulate how a credit is defined, its price, and how many one typical task burns. Close with what we'd copy and what confuses buyers.
 - **Sources:** the 12 pricing pages (dated), PricingSaaS (pricingsaas.com), the GitHub blog / docs on Copilot billing, Growth Unhinged (Kyle Poyar) on credit pricing, dev.to/heysash/credit-based-vs-classic-saas-pricing… (found 2026-10-29).
 - **Internal links:** /tools/business/pricing-tier-calculator/, /tools/business/price-increase-calculator/, /tools/business/mrr-calculator/, topics 5 and 6.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/credit-based-pricing-12-tools` (12 pricing pages read 29 Oct 2026: Copilot, v0, Replit, Lovable, Bolt, Cursor, Notion, Zapier, Intercom Fin, Clay, ElevenLabs, HeyGen; Canva and Midjourney refused our fetcher; 6 of 12 + Clay in part let a buyer price a task; four kinds of credit)
 
 ### 10. Remove a background in the browser: 6 open models measured · `now`
 - **Keyword:** `remove background from image` (level 4; suggested after "remove" on Google and Bing), `background remover` (level 3; HN 63).
@@ -158,7 +158,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
   - the licence trap: RMBG-1.4/2.0 are non-commercial.
 - **Sources:** BiRefNet paper and GitHub repo, the Hugging Face model cards (ORMBG, BEN2, briaai RMBG licence), transformers.js docs (huggingface.co/docs/transformers.js), ONNX Runtime Web WebGPU docs (onnxruntime.ai), remove.bg pricing page.
 - **Internal links:** /tools/photo/background-remover/, /tools/photo/remove-white-background/, /tools/photo/product-photo-studio/, /tools/photo/image-compress/.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/remove-background-browser-models` (our bench: rembg CPU reference + browser pipeline, 8 ground-truth cut-outs; IoU hides edge differences; rembg's default model is the non-commercial RMBG-2.0; WebGPU/quantization lessons)
 
 ### 11. HEIC to JPG: when to convert and what you lose · `next`
 - **Keyword:** `heic to jpg` (level 5, the strongest in this set; HN 11).
