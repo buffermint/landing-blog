@@ -27,14 +27,14 @@ An upload shows up as a POST or PUT request about the size of the file (310,000 
 
 ## What we saw
 
-| Service | Did the file leave the computer? | When the upload started | Where it went | Servers contacted during the visit |
+| Service | File uploaded? | Upload started | Where it went | Servers contacted |
 |---|---|---|---|---|
-| iLovePDF | Yes | 1.0 s after picking the file | `api99.ilovepdf.com` | 23 |
-| Smallpdf | Yes | 2.5 s after picking the file | a Cloudflare R2 storage bucket named for Smallpdf's production files | 25 |
-| PDF24 | Yes | 0.9 s after picking the file | `filetools20.pdf24.org` | 13 |
-| Sejda | Yes | 0.8 s after picking the file | `www.sejda.com` | 2 |
+| iLovePDF | Yes | 1.0 s after choosing the file | `api99.ilovepdf.com` | 23 |
+| Smallpdf | Yes | 2.5 s after choosing the file | a Cloudflare R2 storage bucket for Smallpdf's production files | 25 |
+| PDF24 | Yes | 0.9 s after choosing the file | `filetools20.pdf24.org` | 13 |
+| Sejda | Yes | 0.8 s after choosing the file | `www.sejda.com` | 2 |
 | FreeConvert | Yes | after pressing Compress (14.3 s) | `s42-hzfi.freeconvert.com` | 224 |
-| Adobe Acrobat online | Couldn't test: the site refused our automated browser ("Access Denied") | – | Adobe says files are handled on its servers | – |
+| Adobe Acrobat online | Not tested: the site refused our automated browser | – | its servers, per Adobe | – |
 | BufferMint (ours) | No | no upload | – | 2 |
 
 *Measured 29 October 2026, headless Chromium, desktop, no consent given, one run per site. "Servers contacted" counts distinct host names over about 40 seconds.*

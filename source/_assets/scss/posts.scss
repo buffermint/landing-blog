@@ -55,6 +55,47 @@
         font-size: 1rem;
     }
 
+    // data tables in posts must fit a phone instead of being cut off: words wrap whole, and only code (host names,
+    // paths) may break anywhere, so the table can shrink to the column; no scroll box, which would need a focusable
+    // region (axe)
+    table {
+        width: 100%;
+        margin: 0 0 1.5rem;
+        border-collapse: collapse;
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 0.6rem;
+        border-bottom: 1px solid var(--bm-line);
+        text-align: left;
+        vertical-align: top;
+        overflow-wrap: break-word;
+        hyphens: auto;
+
+        code {
+            overflow-wrap: anywhere;
+        }
+    }
+
+    th {
+        color: var(--bm-heading);
+        font-weight: 700;
+    }
+
+    @media (max-width: 575.98px) {
+        table {
+            font-size: 0.8125rem;
+        }
+
+        th,
+        td {
+            padding: 0.4rem 0.3rem;
+        }
+    }
+
     blockquote {
         margin: 0;
         border-left: 2px solid var(--bm-line);
