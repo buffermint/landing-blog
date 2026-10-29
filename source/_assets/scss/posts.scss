@@ -37,7 +37,9 @@
 
     // links inside body text must not rely on colour alone (axe link-in-text-block)
     p a,
-    li a {
+    li a,
+    td a,
+    th a {
         text-decoration: underline;
     }
 
@@ -56,8 +58,9 @@
     }
 
     // data tables in posts must fit a phone instead of being cut off: words wrap whole, and only code (host names,
-    // paths) may break anywhere, so the table can shrink to the column; no scroll box, which would need a focusable
-    // region (axe)
+    // paths) may break anywhere. A long unbreakable token outside code still widens the table, so put URLs and IDs
+    // in backticks; tests/e2e/post-tables.e2e.mjs fails on any table that runs past the column. No scroll box, which
+    // would need a focusable region (axe)
     table {
         width: 100%;
         margin: 0 0 1.5rem;

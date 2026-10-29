@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
-import { join, extname } from 'node:path';
+import { join, extname, sep } from 'node:path';
 import { chromium } from 'playwright-core';
 import { build } from '../helpers.mjs';
 
@@ -13,7 +13,9 @@ const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
   '.woff': 'font/woff', '.woff2': 'font/woff2' };
 
 const server = createServer((req, res) => {
-  let path = join(build, decodeURIComponent(new URL(req.url, 'http://x').pathname));
+  let path;
+  try { path = join(build, decodeURIComponent(new URL(req.url, 'http://x').pathname)); } catch { res.writeHead(400); return res.end(); }
+  if (path !== build && !path.startsWith(build + sep)) { res.writeHead(403); return res.end(); }
   if (existsSync(path) && statSync(path).isDirectory()) path = join(path, 'index.html');
   if (!existsSync(path)) { res.writeHead(404); return res.end(); }
   res.writeHead(200, { 'content-type': types[extname(path)] || 'application/octet-stream' });
@@ -37,32 +39,35 @@ const browser = await chromium.launch();
 try {
   for (const [name, options] of Object.entries(sizes)) {
     const context = await browser.newContext(options);
-    await context.route(/^https?:\/\/(?!127\.0\.0\.1)/, (r) => r.abort());
+    await context.route('**/*', (r) => (r.request().url().startsWith(origin) ? r.continue() : r.abort()));
     const page = await context.newPage();
     let tables = 0;
     for (const slug of posts) {
       await page.goto(`${origin}/articles/${slug}/`, { waitUntil: 'load' });
       const res = await page.evaluate(() => {
-        const col = document.querySelector('#post-content');
-        const c = col.getBoundingClientRect();
-        return {
-          pageWidth: document.documentElement.scrollWidth,
-          tables: [...col.querySelectorAll('table')].map((t) => {
-            const r = t.getBoundingClientRect();
-            const cell = t.querySelector('td, th');
-            return { left: r.left, right: r.right, colLeft: c.left, colRight: c.right, scrollW: t.scrollWidth, clientW: t.clientWidth, padding: cell ? parseFloat(getComputedStyle(cell).paddingLeft) : 0 };
-          }),
-        };
+        const c = document.querySelector('#post-content').getBoundingClientRect();
+        return [...document.querySelectorAll('#post-content table')].map((t) => {
+          const r = t.getBoundingClientRect();
+          const cells = [...t.querySelectorAll('td, th')];
+          return {
+            left: r.left, right: r.right, colLeft: c.left, colRight: c.right,
+            // html/body clip sideways overflow (overflow-x: hidden), so check each cell, not the page width
+            overflowingCells: cells.filter((td) => td.scrollWidth > td.clientWidth + 1).map((td) => td.textContent.trim().slice(0, 40)),
+            padding: cells.length ? parseFloat(getComputedStyle(cells[0]).paddingLeft) : 0,
+            linksNotUnderlined: [...t.querySelectorAll('a')].filter((a) => !getComputedStyle(a).textDecorationLine.includes('underline')).length,
+          };
+        });
       });
-      assert.ok(res.pageWidth <= options.viewport.width, `${name} ${slug}: page scrolls sideways (${res.pageWidth}px)`);
-      res.tables.forEach((t, i) => {
+      res.forEach((t, i) => {
         const at = `${name} ${slug} table ${i + 1}`;
         assert.ok(t.left >= t.colLeft - 1 && t.right <= t.colRight + 1, `${at}: ${Math.round(t.left)}–${Math.round(t.right)} outside the column ${Math.round(t.colLeft)}–${Math.round(t.colRight)}`);
-        assert.ok(t.scrollW <= t.clientW + 1, `${at}: content wider than the table`);
+        assert.deepEqual(t.overflowingCells, [], `${at}: cell content wider than its cell`);
         assert.ok(t.padding > 0, `${at}: cells have no padding (table styles missing)`);
+        assert.equal(t.linksNotUnderlined, 0, `${at}: links in cells must be underlined (axe link-in-text-block)`);
       });
-      tables += res.tables.length;
+      tables += res.length;
     }
+    assert.ok(tables > 0, `${name}: no table measured inside #post-content`);
     console.log(`ok ${name}: ${tables} tables in ${posts.length} posts fit`);
     await context.close();
   }

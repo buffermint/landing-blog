@@ -7,10 +7,14 @@ import { spawnSync } from 'node:child_process';
 import { join } from 'node:path';
 import { root, asset } from './helpers.mjs';
 
-test('posts.css styles tables in post content and lets code in cells break', () => {
-  const css = readFileSync(asset('/css/posts.css'), 'utf8');
-  assert.match(css, /#post-content table\{[^}]*width:100%/);
-  assert.match(css, /#post-content td code,#post-content th code\{[^}]*overflow-wrap:anywhere/);
+test('posts.css styles post tables: full width, code may break, smaller on phones, links underlined', () => {
+  const css = readFileSync(asset('/css/posts.css'), 'utf8').replace(/\s+/g, ' ');
+  const rule = (selector) => [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter((m) => m[1].split(',').map((x) => x.trim()).includes(selector)).map((m) => m[2]).join(';');
+  assert.match(rule('#post-content table'), /width: ?100%/);
+  assert.match(rule('#post-content td code'), /overflow-wrap: ?anywhere/);
+  assert.match(rule('#post-content td'), /padding/);
+  assert.match(rule('#post-content td a'), /text-decoration: ?underline/);
+  assert.match(css, /@media \(max-width: ?575\.98px\) ?\{[^@]*#post-content table ?\{[^}]*font-size/);
 });
 
 test('post tables fit the column in headless Chromium, desktop and phone', { timeout: 30 * 60 * 1000 }, () => {
