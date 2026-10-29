@@ -1,210 +1,105 @@
 ---
 featured_image: assets/img/uploads/essential-guide-title-image-.jpeg
 featured_thumbnail: assets/img/uploads/essential-guide-thumbnail-.jpeg
-title: An Essential Guide to Launching a SaaS Product as a Non-Technical Founder
-seo_description: "A step-by-step guide to launching a SaaS product as a non-technical founder: terminology, the build process and hiring the right partner."
+featured: true
+title: "Launching a SaaS as a non-technical founder in 2026"
+seo_description: "Three ways a non-technical founder can build a SaaS in 2026: an AI app builder, a freelancer or a partner, with real costs and the security checks each needs."
+keyword: non technical founder
 author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
 date: 2021-07-26
+updated: 2026-10-29
 extends: _layouts.post
 ---
-Do you have an amazing idea for a SaaS application? An idea that solves a real problem for your customers. An idea that has been validated properly and is ready to be carved into a kickass application. The next step is to build it.
+When we wrote this guide in 2021, a non-technical founder had two routes to a first product: hire freelancers or hire an agency. In 2026 there is a third, and it's the one most founders try first: describe the app to an AI builder such as Lovable, Bolt or Replit and let it write the code. This rewrite compares the three routes on cost and risk, gives the security checks that every route needs, and keeps the part of the old guide that aged best: how to be a client that developers do good work for.
 
+It also replaces three of our older posts, on launching a startup from idea to reality, on things to know before a first tech startup, and on being an excellent client. The useful parts of each are below.
 
-<x-quote>Build it and they will come.</x-quote>
+## The three routes, side by side
 
+| | AI app builder | Freelancer | Partner or agency |
+|---|---|---|---|
+| Typical cost to a first version | $25–100 a month in plans and credits | Thousands of dollars (see below) | More than a freelancer, usually as a fixed price |
+| Time to something clickable | Days | Weeks | Weeks |
+| Who checks security | You | The freelancer, if you ask | The partner, if it's in the contract |
+| Who you call when it breaks | Nobody; the AI and you | The freelancer, if they're available | The partner, under a support agreement |
+| Best for | Testing an idea with real users | A defined MVP with clear scope | Regulated data, payments, deadlines |
 
+The prices are as of October 2026. Lovable's Pro plan is $25 a month for 100 credits, and its Business plan $50 ([Lovable docs](https://docs.lovable.dev/introduction/subscription-plans)). Bolt's Pro plan is $25 a month for 10 million tokens ([Bolt](https://bolt.new/pricing)). Replit's Core plan is $20 a month and Pro $100, each including that amount in usage credits ([Replit](https://replit.com/pricing)). We compare the builders in detail, with what a typical build burns, in [building an app without coding in 2026](/articles/how-to-leverage-ai-and-build-an-app-without-coding).
 
-In the US, 23% of SaaS businesses are founded by non-technical executives and 20% of angel investors invest in non-technical entrepreneurs. *(Source: TechCrunch)*
+## Route 1: an AI app builder
 
+This is now the cheapest way to test an idea with real people. You describe the screens and data, the builder writes a working app with a database and sign-in, and you publish it. For a founder who has [validated the idea](/articles/ultimate-guide-to-get-the-most-out-of-your-idea-validation-process) and wants something to show customers, it can replace weeks of developer time.
 
+The catch is that the builder writes code you can't read, and some of it guards your customers' data. Two independent findings from the last year show what goes wrong:
 
-Non-technical founders are in no way excluded from being able to create a SaaS product. There is no need for technical skills in order to launch an application and non-tech founders have the advantages of understanding their target audience, knowing what problem they want to solve, and how people actually use their products.
+- Escape, a security company, scanned more than 5,600 public apps made with AI builders in October 2025. It found more than 2,000 vulnerabilities, more than 400 exposed secrets such as API keys, and 175 cases of exposed personal data, including medical records and bank account numbers ([Escape](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding)).
+- In February 2026 The Register reported a single app, showcased on Lovable's own Discover page, that exposed 18,697 user records, including students at UC Berkeley and UC Davis. A sign-in check had been written backwards: it blocked logged-in users and let anonymous ones in ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said every project gets a free security scan before publishing, but acting on its findings is up to the owner.
 
+That last sentence is the important one for a non-technical founder: the builder's scan finds problems, but you have to understand and fix them. Our post on [the holes every scan of vibe-coded apps keeps finding](/articles/vibe-coded-app-security-scans) has a 15-minute self-check you can run without reading code.
 
+**Use a builder when:** you need something real to test demand, the data isn't sensitive, and you're willing to rebuild or pay a developer to review before you take money at scale.
 
-This article is for non-technical founders who want to build a SaaS product and are looking into the basics of what is needed. We will cover basic terminology, how to hire freelancers or work with agencies, and what to keep in mind when building a product.
+## Route 2: a freelancer
 
+A good freelancer turns a clear specification into working software and, unlike a builder, can explain what they built. The cost is the main barrier. For a sense of scale: the US median pay for web developers was $47.85 an hour in May 2025 ([US Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm)). That's what employees earn; freelancers usually charge more, because the rate also covers their own taxes, tools and the gaps between projects, while rates in other countries can be much lower.
 
+Our arithmetic at that median: a small SaaS first version of 200 to 400 hours (sign-in, a few screens, a database, payments, an admin page) comes to roughly $9,600 to $19,100. Your quote will differ, but it shows why a clear scope matters more than an hourly rate.
 
-This guide assumes that you already have an idea that you've validated with your target audience.
+What still works from the 2021 version of this guide:
 
+- **Prefer fixed prices per milestone.** Hourly billing is hard to predict when you can't judge the work. Pay on milestones you can see and test: "users can sign up and reset their password", not "backend 50% done".
+- **Ask about past projects like yours,** and talk to one of their past clients.
+- **Own everything from day one.** The code repository, the hosting account, the domain and the database should be in your name, with the freelancer invited. This is the clause founders most often regret leaving out.
+- **Ask for the security basics in writing:** access rules on every table, no secret keys in the browser, and a list of what was tested.
 
+Freelancers are a poor fit if you have no time to manage the project, if the product handles health or financial data, or if you can't say what you want built. In those cases a partner, or a builder prototype first, is the better route.
 
-Before we get into the technical specifics, non-technical founders need to know what a SaaS product is and how it differs from other types of products.
+## Route 3: a partner or agency
 
+A partner is a team that takes responsibility for design, building and often hosting. You pay more than for a freelancer, and get project management, a second pair of eyes on security and someone accountable when things break. For regulated data or a fixed launch date, this is usually the safer route. Judge a partner by the products they've shipped that are still running, not by their portfolio screenshots, and ask who will maintain the product after launch and at what cost.
 
+## The security baseline, on any route
 
-### What is SaaS?
+Whichever route you choose, these are the checks we'd want before real customers sign up. You don't need to code to ask for them, and you should get a yes or a demonstration for each:
 
-Software as a service (or SaaS) is a way of delivering applications over the Internet—as a service. Instead of installing and maintaining software, users simply access it via the Internet. It is a software application that resides in the cloud.
+1. **Every database table has access rules.** A signed-in user can see only their own records, and an anonymous visitor sees nothing private.
+2. **No secret keys in the web page.** Payment and email keys live on a server, never in the browser's code.
+3. **Sign-in and password reset work, and fail safely.** Try a wrong password, an expired reset link and someone else's record address.
+4. **Backups exist and someone has restored one.**
+5. **You know where the data is stored,** which matters if you have EU customers.
 
-There are different types of applications, but when founders like us think about building an app they're probably thinking about web apps. Web applications make up approximately 93% of all SaaS businesses (source: TechCrunch 2017).
+The OWASP Top 10, the industry's standard list of web application risks, puts broken access control first ([OWASP](https://top10.owasp.org/2025)). It's the same problem as the backwards sign-in check above, and it is the first thing to ask about.
 
+## How to be a client developers do good work for
 
+This section comes from our 2021 post on being an excellent client, and it applies to freelancers, partners and, surprisingly, AI builders too, because all three do better with a clear brief.
 
-### Basic Terminology of Web Applications:
+- **Write the job, not the features.** "A dog groomer books a client in under a minute from their phone" tells a developer what matters. A list of 40 features doesn't.
+- **Give feedback within a day.** Slow answers are the most common reason small projects slip. Batch your comments, and test on a real phone.
+- **Be clear about budget and dates,** and say which one you'd move if you had to.
+- **Separate bugs from changes.** A bug is something that doesn't work as agreed; a change is something you now want differently. Both are fine, but only one is free.
+- **Say what's working.** Developers who know which parts you like protect them when they change other parts.
+- **Show up.** A weekly 30-minute call where you click through the latest version beats any status report.
 
-Being a non-technical founder you will still need to know some basic terminology of web applications.
+## What changed since 2021, and what didn't
 
-- **Branding** -  This is the brand identity of your app. This includes logo, color scheme, fonts, and so on.
+The old guide spent many paragraphs explaining servers, databases and front ends. You can now ask any AI assistant for that, so we've cut it. Two things haven't changed:
 
-- **UI/UX** - User interface (or UI) refers to how a user interacts with an application. User experience (or UX) also relates to this as it encompasses everything from performance to design for non-technical founders.
+- **The idea still has to be tested before the build.** No route makes up for building something nobody wants. Our guide on [when to launch an MVP](/articles/when-is-the-right-time-to-launch-an-mvp) covers how small the first version can be.
+- **Someone still has to be responsible for the data.** A builder makes the first version cheap, but it doesn't take responsibility for your customers' records. Either you learn enough to check the baseline above, or you pay someone who does.
 
-- **Programming language** - A programming language is a set of instructions for computers to follow.  You can't do anything in the digital world without it! There are many different kinds, but HTML and JavaScript (jQuery) are two languages that non-technical founders will need to use when building web applications.
+If you're working out how long your savings last while you build, our [startup runway calculator](/tools/business/startup-runway-calculator/) does the arithmetic, and the [freelance rate calculator](/tools/business/freelance-rate-calculator/) shows what a freelancer must charge to earn a given salary, which helps when you compare quotes.
 
-- **Server** - A server is the computer system where your application will reside (e.g., web servers).  Servers store data and provide it to users when they need it.
+## Sources
 
-- **Database** - A database is a place where all your data can be stored. Think of this as an excel sheet with a predefined structure.
-
-- **Front-end** - The visible part of a website that users interact with, like pages and buttons.  The front end is what's seen by visitors to your site. Web developers create them using HTML, CSS, or JavaScript (more on this below).
-
-- **Back-end** - The non-visible part of a website that handles the business logic, databases, and storage.  The back end is where developers create all the code to make your app work properly (e.g., writing purchases into a database or checking if an email address already exists in order to prevent duplicates).
-
-- **Cloud** -  A synonym for the Internet. This refers to the storage, servers, and other services that allow us to create an application without having their own server or expensive data center.
-
-
-Every web application works something like this,
-
-- The browser (front-end) sends a request to the server.
-
-- The Server (back-end) runs an application that provides the requested service like data storage, manipulation, etc.
-
-- After processing, the Server returns some kind of response back to the Browser. It may be an updated copy of the same page, an error page, a response page, or just another blank data-entry form.
-
-
-There is so much more to know, but this should be enough to get started.
-
-
-
-### What do you need to build a SaaS product?
-
-You need to create an MVP (Minimum Viable Product) before you can start marketing it because this is the only way that a founder will know if their idea has potential or not. Think of the MVP as the first version of your product stripped down to its core functionality.
-
-A SaaS application just like most web applications needs a front-end, back-end, and database. If non-technical founders want to launch a web application, they're going to need some external help for everything from design and development to marketing and customer success.
-
-- You need a designer to make the front-end look good and consistent with your branding.
-
-- A front-end developer to create the web pages and make the front-end interactive and work with your business logic.
-
-- A back-end developer to write the back end of the application (which includes database, storage, server).
-
-- A project manager to manage the project timeline and close-out work.
-
-- (Optional) A founder will also need a copywriter for SEO content, customer success managers to answer questions from customers after you launch your product into beta or live.
-
-
-You need to convert your idea into a set of features. Then convert these features into actionable steps, with whom, what, when, and how.
-
-To build a product you will need to find the right people for each job, and then manage them. Freelancers can be a great way for non-technical founders to build their products. You need to know what skills you want your freelancer or agency to have, and then find out if they're available at the right price and location.
-
-Another way to go about it is partnering up with an agency like us. An agency offers a better return on investment than hiring freelancers one by one. You have more time on your hand to manage core operations and generate traction while your agency builds the product for you.
-
-At this point, you should have an idea of how you want to invest the capital and budget accordingly. Do you want to spend it all on a huge marketing campaign? Spend nothing on marketing and launch the product quietly with just your close friends as customers? Spend more money to get your product in front of a large audience of potential customers?
-
-
-
-### How to hire the right freelancer for you?
-
-You can find freelancers on freelancing platforms like Upwork, Guru, and Freelancer. Use keywords to filter down the results so you can find someone with the skills that match your needs.
-
-You want to find freelancers with the right skills for your project. To make sure you're hiring someone who can deliver, ask these questions:
-
-- What do they charge? Hourly or fixed price?
-
-- Which type of projects have they done in the past and what were their results?
-
-- What tools are required to complete this project?
-
-- What are their qualifications such as education, certifications, or experience in this field of work?
-
-We strongly recommend fixed pricing over hourly. Hourly pricing can be confusing for founders, as it is difficult to estimate how long a project will take. Fixed pricing is clear for both parties upfront and there are no surprises at the end of the project.
-
-Set up milestones in your contract with the freelancer and make sure they get paid upon hitting the milestones.
-
-You may include a non-compete clause in the contract. For example, this might state that for six months after completion of work on your project, the freelancer cannot do any development projects for other people or start their own company and compete with yours.
-
-
-
-### When is hiring a freelancer not a great idea?
-
-Hiring freelancers is a great tool to have in your arsenal. But it may not be the best choice for every founder. Managing freelancers is at least a part-time job in and of itself, it can be even more difficult to manage freelancers that don't have the same cultural, geographical, or timezone as you do.
-
-The following list includes specific examples of founders who should not hire freelancers.
-
-- Founders with a very limited amount of time.
-
-- Founders who don't want to be responsible for project management.
-
-- Founders that are aiming for a target market like healthcare or finance and need specialists in those fields.
-
-- Founders that have a strict deadline and can't afford to have delays.
-
-- Founders that don't have an idea of what kind of talent they need.
-
-
-
-If you fall into any of these categories, you may want to look into hiring an agency to build your product instead of freelancers.
-
-With agencies, you are hiring a team of professionals with expertise in the field you need. This will significantly decrease your chance for failure and increase the chances that the agency can deliver on time. And you have complete control over how much you want to be involved in the process.
-
-
-
-### How to partner with an agency to build your product?
-
-Going with an agency to build your product can be a great way to get your product up and running quickly.
-
-The first step is finding agencies that specialize in SaaS products. You will want to find someone who has experience working with MVPs. After finding the right agencies, you will need to do some research and find out how long it takes them on average to build an MVP or web application. This is important as this information helps with planning your budget for hiring help from an agency versus freelancers.
-
-
-
-There are a few other things to keep in mind:
-
-You need an agency that is experienced enough in designing SaaS products with non technical founders.
-You need to find the agency with the right size and resources for your project. A small to medium agency should be favored for developing an MVP.
-Do your own research: find out what agencies have the right experience for your product.
-Agencies charge different fees for different services - you need to find out what their fees are. Fixed pricing should be favored.
-
-
-When you work with an agency, it's important to remember that they are there to serve as more than just a resource for building out your product; they should also provide support services like creating customer acquisition strategies and targeting specific verticals or audiences.
-
-
-
-We build MVPs for clients all over the world. We love to work with first-time founders and with at least 3 years of experience in their industry. Reach out by [booking a discovery call]({{ $page->discovery_call_url }}) and let us help you launch an amazing product.
-
-<br/>
-
-Once, you've found the freelancer or agency you want to hire. You need to communicate with your tech partners for next steps. You will need to work with them to create a project plan.
-
-Keep the following things in mind:
-
-- Create a project brief - this should include the scope of work, timeline for completion and your budget expectations.
-
-- Remember to set clear goals - this will help avoid any misunderstandings down the road about what is expected of them in terms of time and deliverables.
-
-- It's important to have an open dialogue throughout the project. This should include regular check-ins to make sure that your goals are being met.
-
-- It is also a good idea to set up milestones or checkpoints in the development process - this will help avoid any surprises as it'll give you more insight into what stage they're at and what it looks like.
-
-- The agency or freelancer will need to be completely transparent in the process, which means he has to share all of their work with you and show how they're progressing on your project.
-
-
-You should also do your best to be an excellent client and help your technical partners do their best work.
-
-- **Communication** -  this is key. You need to be open and honest about your expectations, needs, goals and challenges.
-
-- **Participation** -  be sure to participate in the process. This includes testing out your product before you launch it, and being active in conversations about what changes need to be made throughout the development cycle.
-
-- **Humility** - do not be afraid to ask for help. If you don't know how something works, it's okay to say so and reach out for advice.
-
-- **Patience** - remember that this process takes time.
-
-- **Commitment** - show up and work with your technical partner on a regular basis, even if it's just for an hour at a time.
-
-- **Kindness** -  remember that the freelancer or agency you're working with are human beings, and treat them as such.
-
-<br/>
-
-I hope this guide helps you launch an amazing product. You can always reach out to us by [booking a discovery call]({{ $page->discovery_call_url }}) to discuss your idea.
+- Lovable: [Subscription plans](https://docs.lovable.dev/introduction/subscription-plans) (read 29 October 2026).
+- Bolt: [Pricing](https://bolt.new/pricing) (read 29 October 2026).
+- Replit: [Pricing](https://replit.com/pricing) (read 29 October 2026).
+- Escape: [How we discovered vulnerabilities in apps built with vibe coding](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding) (29 October 2025).
+- The Register: [Lovable app vulnerabilities](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/) (27 February 2026).
+- US Bureau of Labor Statistics: [Occupational Outlook Handbook, Web developers and digital designers](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm) (median pay, May 2025).
+- OWASP: [Top 10:2025](https://top10.owasp.org/2025).
+- Our calculation: 200 to 400 hours at the BLS median hourly pay of $47.85.
