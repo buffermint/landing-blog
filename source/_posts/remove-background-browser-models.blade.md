@@ -60,7 +60,7 @@ The reference run is on a desktop CPU with no download size limit. In a browser 
 
 Licenses: BiRefNet [MIT](https://github.com/ZhengPeng7/BiRefNet); BEN2 [MIT](https://huggingface.co/PramaLLC/BEN2) for the base model only; ORMBG [Apache-2.0](https://huggingface.co/onnx-community/ormbg-ONNX).
 
-*Our measurements, same 8 images, same pipeline as the tool page, 22 October 2026. A dash means we didn't time that build in the browser.*
+*Our measurements, same 8 images, same pipeline as the tool page, 22 October 2026. A dash means we didn't measure that value for that build.*
 
 What we took from this:
 
@@ -79,7 +79,7 @@ If you're putting one of these models into your own web app, two problems cost u
 
 ## The license trap
 
-The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA license with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licenses. So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
+The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA license with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licenses. Its code agrees: on 29 October 2026, `remove()` without a session loads `bria-rmbg` ([rembg source](https://github.com/danielgatis/rembg/blob/main/rembg/bg.py)). So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
 
 BEN2 is similar in a different way: its base model is MIT, but the page describes the stronger full model as available only through the company's own demo and API. BiRefNet (MIT), IS-Net and U²-Net (Apache-2.0) and ORMBG (Apache-2.0) are free to ship commercially, as long as you keep their license notices.
 

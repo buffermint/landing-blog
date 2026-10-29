@@ -35,7 +35,7 @@ The clearest recent example is GitHub. On 1 June 2026, Copilot replaced "premium
 | [Notion](https://www.notion.com/pricing) | Notion credits (for Custom Agents and Workers) | $10 per 1,000 credits; core AI is in the $20 Business seat | Not published | No |
 | [Zapier](https://zapier.com/pricing) | Tasks: one successful action step (an MCP tool call is 2) | Pro, 750 tasks: $19.99/mo billed yearly (2.7¢ a task) | A 3-step Zap run: 3 tasks = 8¢ | Yes |
 | [Intercom Fin](https://www.intercom.com/pricing) | Outcomes: a resolved or handed-off conversation | $0.99 per outcome | One resolved ticket: $0.99 | Yes |
-| [Clay](https://www.clay.com/pricing) | Two currencies: Actions (platform work) and Data Credits (bought data) | Launch: 2,500 Data Credits for $125 (5¢ each); 15,000 Actions for $60 (0.4¢) | One run with your own AI key: 1 Action, about 0.4¢; marketplace data: priced per provider in the app | Partly |
+| [Clay](https://www.clay.com/pricing) | Two currencies: Actions (platform work) and Data Credits (bought data) | Launch: 2,500 Data Credits for $125 (5¢ each); 15,000 Actions for $60 (0.4¢) | One run with your own AI key: 1 Action, about 0.4¢; its "variable" AI models bill tokens at cost; marketplace data: priced per provider in the app | Partly |
 | [ElevenLabs](https://elevenlabs.io/pricing) | Credits = characters of text (1 per character on standard models) | Creator $22/mo for 121,000 credits | Narrating a 1,000-word article (about 6,000 characters, our estimate): about $1.09 | Yes |
 | [HeyGen](https://www.heygen.com/pricing) | Credits | Creator $29/mo for 600 credits | Not published; "varies by model, duration and complexity" | No |
 
@@ -54,7 +54,7 @@ The clearest recent example is GitHub. On 1 June 2026, Copilot replaced "premium
 
 **The same plan can mean very different amounts of work.** A $25 Lovable Pro plan buys about 83 "add sign-up and login" changes at 1.20 credits each. A $25 Bolt Pro plan buys 10 million tokens, which could be a lot of messages on a small project and far fewer on a large one. A buyer comparing the two at "$25 a month" is comparing different things.
 
-**Expiry rules differ as much as the units.** Lovable's monthly credits expire two months after they're issued; Replit Pro credits roll over for two months; Zapier's tasks reset monthly even on yearly plans; Cursor's pool refreshes weekly; Clay's own page gives two different rollover rules. A heavy month followed by a light one costs differently on each.
+**Expiry rules differ as much as the units.** Lovable's monthly credits expire two months after they're issued; Replit's Pro plan ($100 a month) rolls credits over for two months; Zapier's tasks reset monthly even on yearly plans; Cursor's pool refreshes weekly; Clay's own page gives two different rollover rules. A heavy month followed by a light one costs differently on each.
 
 ## What we'd copy if we were pricing an AI feature
 

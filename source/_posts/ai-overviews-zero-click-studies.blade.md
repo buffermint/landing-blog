@@ -1,6 +1,6 @@
 ---
 title: "AI Overviews and zero-click search: why the studies disagree"
-seo_description: "AI Overviews studies report click losses from 34% to 58% and 68% zero-click searches. We lined up their methods to see why, and what still gets clicks."
+seo_description: "Studies put the AI Overviews click loss at 34% to 58%, and zero-click searches at 68%. We lined up their methods to see why, and what still gets clicks."
 keyword: ai overviews
 featured_image: assets/img/uploads/ai-overviews-zero-click-studies-cover.jpeg
 featured_thumbnail: assets/img/uploads/ai-overviews-zero-click-studies-cover.jpeg
@@ -51,7 +51,7 @@ The Agarwal and Sen experiment avoids the problem. A Chrome extension randomly h
 
 ### 3. The effect changes with time
 
-Ahrefs' drop grew from 34.5% to 58% between its two runs. Its rerun had to compare December 2023 with December 2025, a two-year gap, because December 2024 was already after the rollout, and it notes that AI Overviews spread to more countries and languages in between. Seer's 2026 update then shows something the earlier studies couldn't: a partial **rebound**. CTR on AIO queries in its data fell from 3.19% in January 2025 to 1.31% in December 2025, then rose to 2.36% by February 2026. Seer links the rebound to a change in Google's results pages early in 2026 and warns that two months isn't a trend.
+Ahrefs' drop grew from 34.5% to 58% between its two runs. Its rerun had to compare December 2023 with December 2025, a two-year gap, because December 2024 was already after the rollout, and it notes that AI Overviews spread to more countries and languages in between. Seer's 2026 update, on a much larger sample (5.47 million queries from 53 brands, so its levels differ from the September 2025 study's 3,119 queries), then shows something the earlier studies couldn't: a partial **rebound**. CTR on AIO queries in its data fell from 3.19% in January 2025 to 1.31% in December 2025, then rose to 2.36% by February 2026. Seer links the rebound to a change in Google's results pages early in 2026 and warns that two months isn't a trend.
 
 Here is the detail we found most useful. In Seer's February 2026 numbers, AIO queries got 2.36% against 3.82% for non-AIO queries: a gap of **38%** (our calculation). That's the same size as the randomized experiment's effect, measured on a different sample in the same months. Two very different methods landing on the same number is the closest thing this debate has to a settled figure.
 

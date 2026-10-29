@@ -27,7 +27,7 @@ If you built your app with Lovable, Bolt, v0 or Replit on a Supabase backend, yo
 
 Why do the headline rates range from 10% to 98%? Three reasons.
 
-**What counts as a flaw.** Symbiotic's 98% counts every finding, down to "informational". Its most common findings are missing HTTP headers: no Content Security Policy on 96.9% of sites, no Permissions Policy on 97.6%. Those are worth fixing, but they don't leak anyone's data. Its **critical** rate, the share of apps where data could be read or changed without logging in, is 16%. Palmer counted only that kind of hole and found 10.3%. Those two numbers are close, a year apart, on different samples.
+**What counts as a flaw.** Symbiotic's 98% counts every finding, down to "informational". Its most common findings are missing HTTP headers: no Content Security Policy on 96.9% of sites, no Permissions Policy on 97.6%. Those are worth fixing, but they don't leak anyone's data. Its **critical** rate, the share of apps where data could be read, changed or deleted without logging in, is 16%. Palmer counted tables that could be read or written without logging in and found 10.3%. The two aren't identical measures (most of Symbiotic's 16% is writes and deletes, see below), but they describe the same kind of hole, a year apart, on different samples, and both land between one app in six and one in ten.
 
 **How the apps were found.** Palmer and the Register case started from apps the platform itself promoted. Symbiotic searched the open web for any site talking to Supabase. Escape mixed launch directories with Reddit posts. Showcased apps tend to be more finished; random sites found by search include abandoned weekend projects. Neither sample is "all vibe-coded apps".
 
