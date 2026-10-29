@@ -71,6 +71,21 @@ return [
         return Datetime::createFromFormat('U', $page->date);
     },
 
+    // `updated:` front matter (a refreshed post) as a Unix timestamp, or null. YAML turns a bare date into a
+    // timestamp; a quoted string such as "2026-11-02" is parsed too. Never earlier than the publish date.
+    'updatedAt' => function ($page) {
+        $updated = $page->updated;
+        if (! $updated) {
+            return null;
+        }
+        $time = is_numeric($updated) ? (int) $updated : strtotime((string) $updated);
+        if ($time === false) {
+            throw new \InvalidArgumentException("{$page->getFilename()}: updated: \"{$updated}\" is not a date");
+        }
+
+        return $time > $page->date ? $time : null;
+    },
+
     'getSnippet' => function ($page, $length = 255) {
         $content = preg_split('/<!-- more -->/m', $page->getContent(), 2);
         $cleaned = trim(

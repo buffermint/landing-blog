@@ -59,6 +59,12 @@
                                 <time class="font-size-sm text-muted" datetime="{{ date('Y-m-d', $page->date) }}">
                                     Published on {{ date('F j, Y', $page->date) }}
                                 </time>
+                                @if ($page->updatedAt())
+                                <span class="font-size-sm text-muted">&middot;</span>
+                                <time class="font-size-sm text-muted post-updated" datetime="{{ date('Y-m-d', $page->updatedAt()) }}">
+                                    Updated on {{ date('F j, Y', $page->updatedAt()) }}
+                                </time>
+                                @endif
                             </div>
                         </div>
                         <div class="col-auto d-flex flex-column">
@@ -81,7 +87,7 @@
                 <div class="col-12 col-md-10 col-lg-9 col-xl-8">
                     <figure class="figure mb-7">
                         <img class="figure-img img-fluid rounded lift lift-lg" src="{{ $page->hero_image }}"
-                            alt="{{ $page->hero_image_caption ?? 'Hero Image' }}">
+                            alt="{{ $page->hero_image_alt ?? $page->hero_image_caption ?? $page->title }}">
 
                         @if ($page->hero_image_caption)
                         <figcaption class="figure-caption text-center">

@@ -28,9 +28,10 @@ class GenerateSitemap
 
         $sitemap = new Sitemap($jigsaw->getDestinationPath() . '/sitemap.xml');
 
-        // posts get their publish date as lastmod; other pages have no meaningful date, so none
+        // posts get their last change as lastmod (`updated:` when refreshed, else the publish date); other pages
+        // have no meaningful date, so none
         $postDates = collect($jigsaw->getCollection('posts'))->mapWithKeys(function ($post) {
-            return [trimPath($post->getPath()) => $post->date];
+            return [trimPath($post->getPath()) => $post->updatedAt() ?? $post->date];
         });
 
         collect($jigsaw->getOutputPaths())

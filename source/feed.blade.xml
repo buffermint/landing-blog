@@ -13,7 +13,7 @@
   <link rel="self" type="application/atom+xml" href="{{ $site }}/feed.xml" />
   <id>{{ $site }}/feed.xml</id>
   <icon>{{ $site }}/brand/logos/mark.png</icon>
-  <updated>{{ date(DATE_ATOM, $latest->max(fn ($p) => $p->updated ?? $p->date)) }}</updated>
+  <updated>{{ date(DATE_ATOM, $latest->max(fn ($p) => $p->updatedAt() ?? $p->date)) }}</updated>
   <author><name>{{ $page->brand->name }}</name><uri>{{ $site }}</uri></author>
 @foreach ($latest as $post)
   <entry>
@@ -21,7 +21,7 @@
     <link href="{{ $post->getUrl() }}" />
     <id>{{ $post->getUrl() }}</id>
     <published>{{ date(DATE_ATOM, $post->date) }}</published>
-    <updated>{{ date(DATE_ATOM, $post->updated ?? $post->date) }}</updated>
+    <updated>{{ date(DATE_ATOM, $post->updatedAt() ?? $post->date) }}</updated>
     <author><name>{{ $post->author }}</name></author>
     <summary>{{ $post->seo_description ?? $post->excerpt }}</summary>
 @if ($post->featured_image)
