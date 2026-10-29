@@ -84,8 +84,41 @@ try {
     assert.match(want[0].link, /^\//);
 
     // a click outside the list fades it out
-    await page.mouse.click(5, options.viewport.height - 5);
-    await page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display === 'none');
+    const shown = () => page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display !== 'none' && getComputedStyle(document.getElementById('search-results')).opacity === '1');
+    const hidden = () => page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display === 'none');
+    const outside = () => page.mouse.click(5, options.viewport.height - 5);
+    await outside();
+    await hidden();
+
+    // clicking back into the box shows the list again; another click in it keeps it shown
+    await input.click();
+    await shown();
+    await input.click();
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click in the box'));
+
+    // a click on the search icon is part of the box, not outside
+    const icon = page.locator('.search-container .input-group-prepend');
+    await icon.click();
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click on the icon'));
+
+    // hidden, then a click on the icon shows the list again
+    await outside();
+    await hidden();
+    await icon.click();
+    await shown();
+
+    // hidden again, then new input shows the new matches (never a counter with no list). The input event is
+    // sent without focusing the box, so only render() can bring the list back
+    await outside();
+    await hidden();
+    await input.evaluate((el) => { el.value += 's'; el.dispatchEvent(new Event('input')); });
+    await shown();
+    const more = expected(`${query}s`);
+    assert.ok(more.length > 0);
+    assert.equal(await page.locator('#search-results .search-result-list a').count(), more.length, at('list for the longer query'));
+    assert.equal((await counter.textContent()).trim(), `${more.length} RESULTS`, at('counter for the longer query'));
 
     // no match: a 0 counter and no list; clearing removes both
     await input.fill('zzqqxxjj');

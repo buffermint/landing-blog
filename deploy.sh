@@ -17,8 +17,9 @@ if [ -z "${ALLOW_DIRTY:-}" ] && [ -n "$(git status --porcelain --ignore-submodul
   echo "Uncommitted changes: commit them first (or ALLOW_DIRTY=1 ./deploy.sh)."; exit 1
 fi
 [ -f brand/dist/brand.json ] || git submodule update --init brand
-[ -d vendor ] || composer install --no-dev --no-interaction -q
-[ -d node_modules ] || yarn install --silent
+# every deploy, so a lockfile change pulled into an existing checkout is installed (no-ops when nothing changed)
+composer install --no-dev --no-interaction -q
+yarn install --frozen-lockfile --silent
 yarn run prod >/dev/null
 # Jigsaw 1.3 prints PHP 8.4+ deprecations: hide only those, keep real errors and warnings visible
 php -d error_reporting='E_ALL & ~E_DEPRECATED' vendor/bin/jigsaw build production | tail -1

@@ -119,16 +119,7 @@
                     Here are a few more articles you might like.
                 </p>
                 <div class="row">
-                    @php
-                        $related = $posts->filter(function($post) use($page){
-                            return $post->title !== $page->title;
-                        });
-                        $catPosts = $related->where('category', $page->category);
-                        if($catPosts->count() < 3){
-                            $related = $catPosts->merge($related);
-                        }
-                    @endphp
-                    @foreach ($related->take(3) as $article)
+                    @foreach ($page->suggestedPosts($posts) as $article)
                     <div class="col-12 col-md-6 col-lg-4 d-flex">
                         @include('_partials.articles.article-card', ['article' => $article, 'category' => []])
                     </div>

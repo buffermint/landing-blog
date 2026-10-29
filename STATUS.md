@@ -1,6 +1,13 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-28. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-29. The master plan is in `../PLAN.md`.
+
+## Code-review fixes (2026-10-29, lane `lane/t-20261029-cr-fix-buffermint-landing-1`, not merged or deployed yet)
+The 4 Medium findings of the baseline review (`company/reviews/baseline-buffermint-landing.md`):
+- `getSnippet` (config.php) cuts by characters (`mb_substr`/`mb_strlen`), so an em dash at char 255 no longer makes `json_encode` return false; `GenerateIndex` uses `JSON_THROW_ON_ERROR` and fails the build instead of writing an empty `index.json`/`featured.json`. Test: `tests/snippet.test.mjs`.
+- `deploy.sh` runs `composer install --no-dev` and `yarn install --frozen-lockfile` on every deploy (a lockfile change pulled into an existing checkout is now installed). Test: `tests/deploy.test.mjs` (static).
+- "Suggested Articles" uses a new `suggestedPosts` helper (config.php): the post's own category first in every case (uncategorised posts are one group, as before), topped up with the newest others, no duplicates, never itself. Test: `tests/suggested.test.mjs` (helper + built pages).
+- Blog search: a click outside the list and the search box (input, icon, counter) hides it (no more `fadeToggle`); focusing or clicking the box, or typing with matches, shows it again, so the counter never shows N RESULTS over a hidden list. `tests/e2e/blog-search.e2e.mjs` covers it at desktop and phone.
 
 ## Security (2026-10-28, BM-48)
 - **Vue 2 is gone** (lane `lane/t-20261028-landing-drop-vue2`, reviewed and merged 2026-10-28, **deployed 2026-10-28 ~18:00 IST**, Pages fda24dad, live main.js 18,741 B with no Vue): `vue`, `vue-loader` and `vue-template-compiler` are out of package.json and yarn.lock. The one Vue part in use, the blog search box on /articles/, is now plain JS (`source/_assets/js/blog-search.js` + `_partials/articles/search.blade.php`, fuse.js as before); the unused Index/ArticleCard/SearchBasic components are deleted (BM-46's WebP `<picture>` lived in that never-mounted ArticleCard; the visible cards are Blade, and `tests/cards.test.mjs` keeps only the index.json/featured.json checks). `main.js` 123,549 → 18,741 B (43.2 → 6.6 KB gzip). Correction to the 2026-10-24 note: main.js shipped the *full* Vue build (template compiler included) and compiled every page's `<main id="app">` at runtime, which also dropped `<style>`/`<script>` tags inside `<main>` (the careers page's Workable list style now applies again).
