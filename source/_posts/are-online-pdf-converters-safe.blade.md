@@ -62,7 +62,7 @@ These are reasonable policies, and we have no evidence that any of these service
 
 ## When the promise fails
 
-In July 2024, researchers at Cybernews found two online PDF tools, PDF Pro and Help PDF, apparently run by the same UK company, with their cloud storage open to anyone. **89,062 uploaded files** were exposed, 87,818 of them from PDF Pro. The documents included passports, driving licences, certificates and contracts. Cybernews said the operators didn't respond to repeated contact, and the files were still exposed when the story ran ([BGR, 11 July 2024](https://bgr.com/tech/online-pdf-converters-leaked-thousands-of-user-uploaded-documents/); [Cybernews](https://cybernews.com/security/online-pdf-maker-leaks-user-documents/)).
+In July 2024, researchers at Cybernews found two online PDF tools, PDF Pro and Help PDF, apparently run by the same UK company, with their cloud storage open to anyone. **89,062 uploaded files** were exposed, 87,818 of them from PDF Pro. The documents included passports, driving licenses, certificates and contracts. Cybernews said the operators didn't respond to repeated contact, and the files were still exposed when the story ran ([BGR, 11 July 2024](https://bgr.com/tech/online-pdf-converters-leaked-thousands-of-user-uploaded-documents/); [Cybernews](https://cybernews.com/security/online-pdf-maker-leaks-user-documents/)).
 
 Those weren't the big names in our table. But they looked like any other converter, ranked in search, and had a privacy page. A user had no way to tell the difference before uploading.
 
@@ -76,7 +76,7 @@ This is how our [PDF tools](/tools/pdf/) work. In the test above, our compress p
 
 ## The two-minute check you can run on any tool
 
-You don't need to trust our table, or any site's promise. Here's how to check a tool yourself in Chrome, Edge or any Chromium browser (Firefox has the same panel).
+You don't need to trust our table, or any site's promise. Here's how to check a tool yourself in Chrome, Edge or any Chromium browser. Firefox has the same Network panel, with slightly different labels (its filter is "XHR" and the upload body is under "Request").
 
 **Check 1: watch the network.**
 1. Open the tool's page and press F12 (or right-click → Inspect). Go to the **Network** tab.

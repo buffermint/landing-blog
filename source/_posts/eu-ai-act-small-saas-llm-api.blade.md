@@ -12,7 +12,7 @@ date: 2026-10-29
 extends: _layouts.post
 ---
 
-If you run a small SaaS with an AI feature built on someone else's model (a chat assistant, a "summarise this" button, a draft generator), you've probably read three different versions of when the EU AI Act applies to you. That's because three versions existed. The Commission proposed changes in November 2025, Parliament and Council changed them again, and the final amending regulation only appeared in the Official Journal in July 2026. Articles written at each stage are still ranking in search.
+If you run a small SaaS with an AI feature built on someone else's model (a chat assistant, a "summarize this" button, a draft generator), you've probably read three different versions of when the EU AI Act applies to you. That's because three versions existed. The Commission proposed changes in November 2025, Parliament and Council changed them again, and the final amending regulation only appeared in the Official Journal in July 2026. Articles written at each stage are still ranking in search.
 
 We read the AI Act's text and the law-firm summaries of each stage side by side. Below is what changed between the proposal and the final law, why some sources now say the wrong thing, and a dated checklist for the case most small SaaS teams are in. This isn't legal advice. It's a map for deciding what to do and what to ask a lawyer.
 
@@ -63,13 +63,13 @@ You're very unlikely to be building any of these, but check the list once in [Ar
 
 Under Article 50(1), a provider of a system meant to interact directly with people must make sure they're told it's an AI, unless that's obvious to a reasonably well-informed person. The information has to be clear and given at the latest at the first interaction ([AI Act, Article 50](https://artificialintelligenceact.eu/article/50/)).
 
-In practice: a support bot on your site or in your app needs a visible line such as "You're chatting with an AI assistant" before or at the first message. "Obvious" is a judgment call. A clearly labelled "AI draft" button probably is. A chat window with a human name and photo isn't.
+In practice: a support bot on your site or in your app needs a visible line such as "You're chatting with an AI assistant" before or at the first message. "Obvious" is a judgment call. A clearly labeled "AI draft" button probably is. A chat window with a human name and photo isn't.
 
 ### 2 August 2026, or 2 December 2026 for older features: mark AI output
 
 Article 50(2) asks providers of systems that generate synthetic audio, images, video or text to mark the output in a machine-readable way, so it can be detected as AI-generated, as far as technically feasible. Plain editing help that doesn't substantially change the input is exempt (Article 50(2)).
 
-If your feature was on the market before 2 August 2026, you have until **2 December 2026** ([Jones Walker](https://www.joneswalker.com/en/insights/blogs/ai-law-blog/yes-august-2-still-matters-the-eu-approved-a-high-risk-ai-delay-but-most-trans.html)). The Commission published a voluntary Code of Practice on marking and labelling on 10 June 2026. It points to metadata and watermarks, and to at least two layers of marking where necessary ([Jones Day](https://www.jonesday.com/en/insights/2026/06/european-commission-publishes-final-code-of-practice-on-marking-and-labelling-aigenerated-content)).
+If your feature was on the market before 2 August 2026, you have until **2 December 2026** ([Jones Walker](https://www.joneswalker.com/en/insights/blogs/ai-law-blog/yes-august-2-still-matters-the-eu-approved-a-high-risk-ai-delay-but-most-trans.html)). The Commission published a voluntary Code of Practice on marking and labeling on 10 June 2026. It points to metadata and watermarks, and to at least two layers of marking where necessary ([Jones Day](https://www.jonesday.com/en/insights/2026/06/european-commission-publishes-final-code-of-practice-on-marking-and-labeling-aigenerated-content)).
 
 This is the duty most small teams haven't looked at, and it's where the "downstream provider" label bites. The law names the provider of the system, and for your feature that's you. What's "technically feasible" for text from a third-party API is still unsettled. A defensible starting point:
 
@@ -118,4 +118,4 @@ If you're also working out whether the feature pays for itself, our [LLM cost ca
 - Jones Walker, [Yes, August 2 still matters](https://www.joneswalker.com/en/insights/blogs/ai-law-blog/yes-august-2-still-matters-the-eu-approved-a-high-risk-ai-delay-but-most-trans.html) (16 July 2026): which Article 50 duties apply from 2 August 2026.
 - Gibson Dunn, [EU AI Act Omnibus agreement](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/): Article 4 AI literacy wording.
 - Orrick, [Digital Omnibus finalizes 8 compliance changes](https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes) (29 July 2026): new bans, small mid-caps, high-risk dates.
-- Jones Day, [Commission publishes final Code of Practice on marking and labelling AI-generated content](https://www.jonesday.com/en/insights/2026/06/european-commission-publishes-final-code-of-practice-on-marking-and-labelling-aigenerated-content) (June 2026).
+- Jones Day, [Commission publishes final Code of Practice on marking and labeling AI-generated content](https://www.jonesday.com/en/insights/2026/06/european-commission-publishes-final-code-of-practice-on-marking-and-labeling-aigenerated-content) (June 2026).

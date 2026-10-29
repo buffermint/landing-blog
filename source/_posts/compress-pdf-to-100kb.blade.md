@@ -44,14 +44,14 @@ We downsampled every image to a fixed resolution with Ghostscript 10.06 (`pdfwri
 
 Three things stand out.
 
-**Photo pages scale with the square of the resolution.** Halving the dpi cuts the pixels by four, and the bytes fell by about the same: 155 KB a page at 150 dpi, 45 KB at 72 dpi, 14 KB at 36 dpi. So you can budget before you start. Divide 100 KB by the per-page cost at the lowest resolution you'd accept:
+**Photo pages shrink with the square of the resolution, a little less in practice.** Halving the dpi cuts the pixels by four, and the bytes fell by a bit more than three: 155 KB a page at 150 dpi, 45 KB at 72 dpi, 14 KB at 36 dpi. So measure one page at the resolution you want rather than scaling from another. Then you can budget before you start. Divide 100 KB by the per-page cost at the lowest resolution you'd accept:
 
 - at 100 dpi (still sharp on screen), about **1 page** fits;
 - at 72 dpi (fine on screen, soft in print), about **2 pages**;
 - at 50 dpi, about **4 pages**, and small print in a photographed document stops being readable here;
-- 8 photo pages need about 36 dpi, and at that point the page is a blur.
+- 8 photo pages don't fit even at 36 dpi (113 KB in our table), and at that resolution the page is already a blur.
 
-The cover image of this post shows the same crop at the original quality, at 72 dpi and at 36 dpi.
+The image below shows the same crop at the original quality, at 72 dpi and at 36 dpi.
 
 ![The same NASA photo crop from a PDF page at original quality, at 72 dpi and at 36 dpi: the 36 dpi version is visibly blurred](/assets/img/uploads/compress-pdf-to-100kb-dpi-compare.jpeg)
 
@@ -78,14 +78,14 @@ An SSIM of 0.76 is not a good-looking photo. It means that 8 photo pages at 100 
 
 ## Grayscale saved less than we expected
 
-"Convert to black and white" is the second most common tip. On our files it barely helped, and on the photos the grayscale output was slightly larger (380 KB against 361 KB at 72 dpi). Our photo pages were mostly grey moon dust to begin with, so there was little colour to remove. On a colourful document grayscale will save more. Still, the measured result is a reminder that resolution is the setting that moves the size. Colour is a second-order knob. Try [Grayscale PDF](/tools/pdf/grayscale-pdf/) after you've picked the resolution, not instead.
+"Convert to black and white" is the second most common tip. On our files it barely helped, and on the photos the grayscale output was slightly larger (380 KB against 361 KB at 72 dpi). Our photo pages were mostly gray moon dust to begin with, so there was little color to remove. On a colorful document grayscale will save more. Still, the measured result is a reminder that resolution is the setting that moves the size. Color is a second-order knob. Try [Grayscale PDF](/tools/pdf/grayscale-pdf/) after you've picked the resolution, not instead.
 
 ## A decision list for a 100 KB limit
 
 1. **Count the pages the form actually needs.** A mark sheet, an ID or a certificate is usually one page. If your PDF has a blank back side or a cover sheet, remove those pages first with [Organize PDF](/tools/pdf/organize-pdf/). Every photo page you drop frees 45 KB at 72 dpi.
 2. **Know what kind of PDF you have.** Try to select a word in it. If you can, it's a text PDF, and the fonts are the problem, not the pictures. If you can't, it's a scan or a photo, and resolution is everything.
 3. **For a scan or a photo of a document, aim for 72 dpi.** One or two pages fit. If there are more pages, ask yourself whether the form wants them all.
-4. **For a text PDF, use a tool that keeps the text as text.** Rasterising a text page (turning it into a picture) is the worst option. It makes the file bigger at readable quality, and the words can no longer be searched or copied. We learned this the hard way: an earlier version of our own tool rasterised text pages under a tight target, and on the 10-page report it produced 546 KB, missed the target and lost all the text. That's why it now shrinks images and fonts first.
+4. **For a text PDF, use a tool that keeps the text as text.** Rasterizing a text page (turning it into a picture) is the worst option. It makes the file bigger at readable quality, and the words can no longer be searched or copied. We learned this the hard way: an earlier version of our own tool rasterized text pages under a tight target, and on the 10-page report it produced 546 KB, missed the target and lost all the text. That's why it now shrinks images and fonts first.
 5. **Check the result at 100% zoom before you upload.** Read the smallest print on the page: dates, registration numbers, signatures. If you can't read it, neither can the person checking your application.
 6. **Check the byte count, not the rounded size.** Aim for under 100,000 bytes (see the first section).
 

@@ -52,13 +52,13 @@ Answer in order:
 4. **Would full compliance be a disproportionate burden?** You can rely on that only after a written assessment against the directive's criteria. You keep it for five years, renew it at least every five years and whenever the service changes, and notify the authority. Microenterprises are spared the notification. You lose this route if someone else (public or private) funded your accessibility work ([Article 14](https://www.legislation.gov.uk/eudr/2019/882/article/14)).
 5. **Otherwise: comply.** In practice that means WCAG 2.1 level AA for your website and app, and publishing a statement on how your service meets the rules, including how it works with assistive technology. The ACM says it expects WCAG 2.2 AA to become the standard during 2026 and recommends starting now ([ACM](https://www.acm.nl/en/accessibility/accessibility-e-commerce-services-and-electronic-communications-services)). The harmonised European standard, EN 301 549, includes WCAG 2.1 AA unchanged for web content ([W3C WAI, EU policies](https://www.w3.org/WAI/policies/european-union/)).
 
-One trap in step 2: the threshold is a cliff. A 9-person company that hires its tenth person, or crosses €2 million in turnover while also passing €2 million on its balance sheet, loses the exemption at once. The directive gives no grace period. Neither the directive nor the Irish guidance says how to count staff (headcount or full-time equivalents), so ask your national authority if you're near 10.
+One trap in step 2: growing past the thresholds ends the exemption, and the articles of the directive say nothing about when or how to count. Its recital 53 ties microenterprises to the EU's general SME definition, [Commission Recommendation 2003/361/EC](https://eur-lex.europa.eu/eli/reco/2003/361/oj). That definition counts staff in annual work units (a part-timer counts as a fraction), and a company only loses its status once it has exceeded the thresholds in two consecutive financial years (Annex, Articles 4 and 5). How each member state applies that in its own EAA law can differ, so if you're near 10 people or €2 million, write down your count and ask your national authority.
 
 ## Is anyone enforcing it?
 
 Yes, starting with the big shops. In March 2026 the Dutch ACM tested about 100 of the largest Dutch online stores, plus the sites of the largest telecom and energy providers. It found that on **61%** of them a customer using assistive technology couldn't place an order, and another **33%** had serious problems that made ordering much harder. Its examples were an order button that couldn't be reached with a keyboard and a CAPTCHA that blocked access. The ACM said it would contact the worst offenders first and that companies that don't improve risk enforcement ([ACM, 24 March 2026](https://www.acm.nl/en/publications/acm-majority-large-online-stores-are-not-accessible-customers-disabilities)).
 
-We found no confirmed EAA fine on a small company as of October 2026. Fine levels vary by country, and many figures quoted online come from vendor blogs we couldn't trace to a law, so we've left them out. The pattern so far is "fix it first, sanctions later". That favours anyone who starts now.
+We found no confirmed EAA fine on a small company as of October 2026. Fine levels vary by country, and many figures quoted online come from vendor blogs we couldn't trace to a law, so we've left them out. The pattern so far is "fix it first, sanctions later". That favors anyone who starts now.
 
 ## What fixing it took us: 76 violations to 0
 
@@ -71,15 +71,15 @@ We did this on our own site, buffermint.com, in two rounds in October 2026, usin
 | Content outside any landmark; no `<main>` | Screen reader users can't jump to the main content | Wrapped page content in `<main>` |
 | Linked card images with no accessible name | A screen reader announces "link" and nothing else | Gave each linked image a name |
 | Images without alt text | The image is silent, or read out as a file name | Wrote alt text |
-| Low-contrast caption text | Hard to read for low-vision users | Darkened the caption colour |
+| Low-contrast caption text | Hard to read for low-vision users | Darkened the caption color |
 
 **Round 2, 25 October, on all 29 pages.** The full run still found **76 violations**, and they came from only three problems repeated across pages:
 
 | Problem axe reported | What it means for a user | Our fix |
 |---|---|---|
 | Heading levels skipping (h1 → h3) inside posts | The outline screen reader users navigate by is broken | A build step renumbers post headings, keeping their look |
-| A call-to-action `<aside>` nested inside `<main>` | A landmark announced in the wrong place | Turned it into a labelled `<section>` with its own heading |
-| Links in text marked by colour only | People who can't see the colour difference can't find the links | Underlined links in body text |
+| A call-to-action `<aside>` nested inside `<main>` | A landmark announced in the wrong place | Turned it into a labeled `<section>` with its own heading |
+| Links in text marked by color only | People who can't see the color difference can't find the links | Underlined links in body text |
 
 After round 2, axe reported **0 violations** on all 29 pages in both themes. Lighthouse's accessibility score went from 98 to 100 on a post and from 94 to 100 on the About page (Lighthouse 12.2.1, mobile). Each round took one working session and about a dozen small changes to templates and styles.
 
@@ -91,7 +91,7 @@ Two lessons for a small SaaS:
 ## Where to start this week
 
 1. **Run the decision tree** above and write the answer down with today's numbers.
-2. **Check your colours.** Text needs a contrast ratio of at least 4.5:1 against its background under WCAG AA, or 3:1 for large text ([W3C, contrast minimum](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)). Test your brand palette in our [contrast checker](/tools/design/contrast-checker/), and see how it looks to colour-blind users with the [colour blindness simulator](/tools/design/color-blindness/).
+2. **Check your colors.** Text needs a contrast ratio of at least 4.5:1 against its background under WCAG AA, or 3:1 for large text ([W3C, contrast minimum](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)). Test your brand palette in our [contrast checker](/tools/design/contrast-checker/), and see how it looks to color-blind users with the [color blindness simulator](/tools/design/color-blindness/).
 3. **Check your headings** on your three busiest pages with the [heading structure checker](/tools/seo/heading-checker/). One h1, and no skipped levels.
 4. **Do the keyboard test** on sign-up, checkout and cancellation.
 5. **Publish an accessibility statement**: what you meet, what you don't yet, and how to reach you.
@@ -103,6 +103,7 @@ If your SaaS also has an AI feature, the [EU AI Act](/articles/eu-ai-act-small-s
 - Directive (EU) 2019/882 (European Accessibility Act), adopted text as published on legislation.gov.uk: [Article 2, scope](https://www.legislation.gov.uk/eudr/2019/882/article/2), [Article 3, definitions](https://www.legislation.gov.uk/eudr/2019/882/article/3), [Article 4, requirements and the microenterprise exemption](https://www.legislation.gov.uk/eudr/2019/882/article/4), [Article 14, disproportionate burden](https://www.legislation.gov.uk/eudr/2019/882/article/14), [Article 32, transitional measures](https://www.legislation.gov.uk/eudr/2019/882/article/32).
 - Competition and Consumer Protection Commission (Ireland): [European Accessibility Act guidelines for microenterprises](https://www.ccpc.ie/business/enforcement/accessibility/european-accessibility-act-guidelines-for-microenterprises/).
 - Authority for Consumers and Markets (Netherlands): [Accessibility of e-commerce services and electronic communications services](https://www.acm.nl/en/accessibility/accessibility-e-commerce-services-and-electronic-communications-services) and [ACM: majority of large online stores are not accessible for customers with disabilities](https://www.acm.nl/en/publications/acm-majority-large-online-stores-are-not-accessible-customers-disabilities) (24 March 2026).
+- European Commission: [Recommendation 2003/361/EC on the definition of micro, small and medium-sized enterprises](https://eur-lex.europa.eu/eli/reco/2003/361/oj) (staff counted in annual work units; status lost after two consecutive years over the thresholds).
 - W3C Web Accessibility Initiative: [EU web accessibility laws and policies](https://www.w3.org/WAI/policies/european-union/).
 - European Commission: [European Accessibility Act](https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en).
 - W3C: [Understanding WCAG 2.1, contrast (minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).

@@ -48,7 +48,7 @@ We applied each price list to one monthly subscription payment. Percentages are 
 | Provider | $9 sale | $29 sale | $99 sale |
 |---|---|---|---|
 | Paddle | $0.95 (10.6%) | $1.95 (6.7%) | $5.45 (5.5%) |
-| Lemon Squeezy | $0.99 (11.1%) | $2.09 (7.2%) | $5.95 (6.0%) |
+| Lemon Squeezy | $1.00 (11.1%) | $2.10 (7.2%) | $5.95 (6.0%) |
 | Polar Starter | $0.95 (10.6%) | $1.95 (6.7%) | $5.45 (5.5%) |
 | Polar Pro (+$20/month) | $0.74 (8.2%) | $1.50 (5.2%) | $4.16 (4.2%) |
 | Dodo Payments | $0.81 (8.9%) | $1.71 (5.9%) | $4.86 (4.9%) |
@@ -61,7 +61,7 @@ We applied each price list to one monthly subscription payment. Percentages are 
 |---|---|---|---|
 | Paddle | $0.95 (10.6%) | $1.95 (6.7%) | $5.45 (5.5%) |
 | Lemon Squeezy | $1.13 (12.6%) | $2.53 (8.7%) | $7.43 (7.5%) |
-| Polar Starter | $1.08 (12.1%) | $2.38 (8.2%) | $6.93 (7.0%) |
+| Polar Starter | $1.09 (12.1%) | $2.39 (8.2%) | $6.94 (7.0%) |
 | Polar Pro (+$20/month) | $0.88 (9.7%) | $1.94 (6.7%) | $5.65 (5.7%) |
 | Dodo Payments | $0.94 (10.4%) | $2.14 (7.4%) | $6.34 (6.4%) |
 | Creem | $0.75 (8.3%) | $1.53 (5.3%) | $4.26 (4.3%) |
@@ -75,7 +75,7 @@ What the tables say:
 
 ## A worked example: $2,900 a month
 
-Take a SaaS at $29 a month with 100 paying customers ($2,900 MRR), 60% of them with non-US cards. That's typical for a product sold worldwide from a website. Monthly fees:
+Take a SaaS at $29 a month with 100 paying customers ($2,900 MRR), and assume 60% of them pay with non-US cards, as a product sold worldwide from a website might. That share is our assumption, not a measured average: put in your own from your payment dashboard, because it moves the ranking. Monthly fees:
 
 | Provider | Fees per month | Share of revenue | Per year |
 |---|---|---|---|
@@ -93,7 +93,7 @@ The last row is the one most comparisons leave out. Once you pay Stripe to handl
 Two break-even points from the same numbers:
 
 - **Polar Pro vs Polar Starter:** the $20 plan saves 1.2% + 10¢ per sale. On $29 sales that's about 45¢ a sale, so Pro pays off from about **45 sales a month**.
-- **Stripe with Tax Complete vs Paddle,** on this 60/40 customer mix at $29: Stripe saves about 20¢ per sale, so it takes about **450 sales a month (roughly $13,000 MRR)** to cover the $90 plan. Below that, the MoR is cheaper even before you count your own time.
+- **Stripe with Tax Complete vs Paddle,** on this 60/40 customer mix at $29: Stripe saves about 20¢ per sale, so it takes about **450 sales a month (roughly $13,000 MRR)** to cover the $90 plan. Below that, Paddle is cheaper even before you count your own time. The cheaper MoRs move the point much further out: against Dodo about 420 sales, against Polar Pro about 5,500, and Creem stays cheaper than Stripe with Tax Complete at any volume on this mix.
 
 ## The costs that aren't in the headline rate
 
@@ -104,10 +104,10 @@ Two break-even points from the same numbers:
 
 ## How we'd choose
 
-1. **Below roughly $13,000 MRR, or if you don't want to think about tax:** use an MoR. In our $2,900 example the cheapest and the dearest MoR are about $85 a month apart, and every one of them is cheaper than Stripe with paid tax filing.
+1. **At small revenue, or if you don't want to think about tax:** use an MoR. In our $2,900 example the cheapest and the most expensive MoR are about $85 a month apart, and every one of them is cheaper than Stripe with paid tax filing.
 2. **Look at your own customer mix,** not a US-card example. If most buyers are outside the US, a flat-rate provider (Paddle, or Creem's "no international card fees") beats one with a 1.5% surcharge.
 3. **Raise prices that sit under $10, or offer yearly billing.** Fixed fees make small prices expensive everywhere.
-4. **Revisit at about $10,000–15,000 MRR.** That's where Stripe plus paid tax filing starts to cost less than an MoR, if you're ready to be the seller of record.
+4. **Revisit at about $10,000–15,000 MRR if you're on a 5% + 50¢ MoR such as Paddle.** That's where Stripe plus paid tax filing starts to cost less, if you're ready to be the seller of record. On a cheaper MoR such as Creem or Polar Pro, the fees alone don't justify switching at that size.
 
 To run these numbers on your own prices, our [profit margin calculator](/tools/business/profit-margin-calculator/) shows what's left of each sale, and the [MRR calculator](/tools/business/mrr-calculator/) works out monthly recurring revenue from your plans. If you sell in the EU and want to check a VAT-inclusive price, use the [VAT calculator](/tools/business/vat-calculator/). The [pricing tier calculator](/tools/business/pricing-tier-calculator/) helps when you're deciding between a $9 and a $12 entry plan.
 
