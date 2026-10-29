@@ -356,7 +356,7 @@ Result: 21 posts → 12 kept (9 refreshed, 3 left as they are) and 9 merged with
 
 **Fixed in this lane** (lane `lane/t-20261029-blog-research-seo`; tests `tests/seo.test.mjs`, `tests/posts.test.mjs`):
 - `updated:` front matter (`updatedAt` helper in config.php) now shows "Updated on …" on the post, and drives the BlogPosting `dateModified`, `article:modified_time`, the Atom feed's `<updated>` and the sitemap `lastmod`. An `updated:` earlier than `date:` is ignored, and a non-date fails the build.
-- Open Graph `article:published_time`, `article:modified_time` and `article:author` are on every post; `twitter:image:alt` is on every page.
+- Open Graph `article:published_time` and `article:modified_time` are on every post. (`article:author` wants a profile URL and `twitter:image:alt` a real image description; both are left out until posts have an author page and cover alt text.)
 - BlogPosting gets `keywords` from `keyword:`, and drops null fields.
 - The hero image alt falls back to the post title instead of "Hero Image".
 

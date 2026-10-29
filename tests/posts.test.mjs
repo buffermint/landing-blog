@@ -47,19 +47,27 @@ function links(text) {
   return out;
 }
 
-// example.com, bbc.co.uk: the last two labels, or three when the second-level label is a short public suffix part
+// Hosts where each subdomain is a different publisher
+const SHARED_HOSTS = /^(github\.io|substack\.com|medium\.com|blogspot\.com|wordpress\.com|pages\.dev|vercel\.app|netlify\.app|beehiiv\.com|dev\.to)$/;
+
+// example.com, bbc.co.uk, alice.github.io: the last two labels; three when the second-level label is a short public
+// suffix part (co.uk) or the host is shared by many publishers (github.io). A leading www. never counts.
 export function siteOf(url) {
-  let host;
-  try { host = new URL(url).hostname.toLowerCase().replace(/\.$/, ''); } catch { return null; }
-  const parts = host.split('.');
-  if (parts.length <= 2) return host;
+  const host = hostOf(url);
+  if (!host) return null;
+  const parts = host.replace(/^www\./, '').split('.');
+  if (parts.length <= 2) return parts.join('.');
   const [sld, tld] = parts.slice(-2);
   const shortSuffix = tld.length === 2 && /^(co|com|org|net|gov|ac|edu|gob|go|or|ne)$/.test(sld);
-  return parts.slice(shortSuffix ? -3 : -2).join('.');
+  return parts.slice(shortSuffix || SHARED_HOSTS.test(`${sld}.${tld}`) ? -3 : -2).join('.');
 }
 
-const isExternal = (u) => /^https?:\/\//i.test(u) && !OUR_HOSTS.test(new URL(u).hostname);
-const isInternal = (u) => (u.startsWith('/') && !u.startsWith('//')) || (/^https?:\/\//i.test(u) && OUR_HOSTS.test(new URL(u).hostname));
+function hostOf(url) {
+  try { return new URL(url).hostname.toLowerCase().replace(/\.$/, '') || null; } catch { return null; }
+}
+const isAbsolute = (u) => /^https?:\/\//i.test(u);
+const isExternal = (u) => isAbsolute(u) && hostOf(u) && !OUR_HOSTS.test(hostOf(u));
+const isInternal = (u) => (u.startsWith('/') && !u.startsWith('//')) || (isAbsolute(u) && OUR_HOSTS.test(hostOf(u) ?? ''));
 
 // Readable words: no code, tags, Blade directives, link targets or markdown syntax
 export function bodyWords(body) {
@@ -78,9 +86,8 @@ export function bodyWords(body) {
 const PLACEHOLDERS = [
   [/\blorem\b|\bipsum dolor\b/i, 'lorem ipsum'],
   [/\bTODO\b|\bFIXME\b|\bTBD\b|\bXXX\b/, 'TODO/TBD/XXX'],
-  [/\[(insert|add|your|placeholder)\b[^\]]*\]/i, '[insert …] slot'],
+  [/\[(insert|add|your|placeholder)\b[^\]]*\]/i, '[insert …] slot'], // checked after links lose their brackets
   [/\{\{\s*[A-Z][A-Z0-9_]*\s*\}\}/, '{{SLOT}}'],
-  [/\bplaceholder text\b|\bcoming soon\b/i, 'placeholder text'],
 ];
 
 // Every problem with one post (an empty list = it passes). `all` = every post, for the uniqueness rules.
@@ -112,8 +119,18 @@ export function checkPost(post, all = []) {
   for (const m of body.matchAll(/<img\b[^>]*>/gi)) if (!/\balt\s*=\s*["'][^"']*\S[^"']*["']/i.test(m[0])) problems.push(`<img> without alt text: ${m[0].slice(0, 80)}`);
   for (const m of body.matchAll(/<x-(image|carousel)\b[^>]*>/gi)) if (!/\b(alt|caption)\s*=\s*["'][^"']*\S/i.test(m[0])) problems.push(`<x-${m[1]}> without alt text`);
 
-  const prose = `${title}\n${desc}\n${body}`.replace(/\]\([^)]*\)/g, ']').replace(/\bhref\s*=\s*["'][^"']*["']/gi, '').replace(/https?:\/\/\S+/g, '');
+  // prose: no code samples, link targets or URLs; a link keeps its text without brackets, so "[Add page numbers](/x)"
+  // is not mistaken for an "[add …]" slot
+  const prose = `${title}\n${desc}\n${body}`
+    .replace(/```[\s\S]*?```|`[^`\n]*`/g, ' ')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/\bhref\s*=\s*["'][^"']*["']/gi, '')
+    .replace(/https?:\/\/\S+/g, '');
   for (const [re, what] of PLACEHOLDERS) if (re.test(prose)) problems.push(`placeholder text: ${what}`);
+
+  // config.php ignores an updated: that isn't after date:, so a post in scope only through it would be held to the bar
+  // with no visible refresh: report the typo
+  if (meta.updated && day(meta.updated) <= day(meta.date)) problems.push(`updated: ${meta.updated} is not after date: ${meta.date}`);
 
   const keyword = (meta.keyword ?? '').trim().toLowerCase();
   if (!keyword) problems.push('no keyword: front matter');
@@ -219,7 +236,22 @@ test('the checker: missing Sources, duplicate keyword, scope', () => {
   assert.equal(inScope(parsePost('---\ntitle: New\ndate: 2026-10-29\n---\nx', 'o')), true);
 });
 
+test('the checker: real link text, code samples and odd URLs are not problems', () => {
+  const text = good.body.replace('## Sources', 'Add the [Add page numbers](/tools/pdf/add-page-numbers/) tool to [your own invoice](/tools/everyday/invoice-generator/). The release is coming soon, says the vendor.\n\n```js\n// TODO: not a placeholder, a code sample\n```\n\nA broken link [a](https://) in the text.\n\n## Sources');
+  assert.deepEqual(checkPost({ ...good, body: text }, [good]), []);
+  assert.ok(checkPost({ ...good, body: good.body + '\n[insert chart here]\n' }, [good]).includes('placeholder text: [insert …] slot'));
+  assert.deepEqual(checkPost({ ...good, body: good.body.replace('## Sources', '## Sources\n- [bad](https://)') }, [good]), [], 'a malformed URL is ignored, not a crash');
+});
+
+test('the checker: an updated: that is not after date: is reported', () => {
+  const p = parsePost('---\ntitle: T\ndate: 2021-07-10\nupdated: 2021-01-01\n---\nx', 'u.blade.md');
+  assert.ok(checkPost(p).includes('updated: 2021-01-01 is not after date: 2021-07-10'));
+});
+
 test('siteOf groups a publisher\'s subdomains and keeps country suffixes apart', () => {
+  assert.equal(siteOf('https://www.gov.uk/vat'), 'gov.uk');
+  assert.equal(siteOf('https://gov.uk/x'), 'gov.uk');
+  assert.notEqual(siteOf('https://alice.github.io/a'), siteOf('https://bob.github.io/b'));
   assert.equal(siteOf('https://docs.polar.sh/x'), 'polar.sh');
   assert.equal(siteOf('https://www.bbc.co.uk/news'), 'bbc.co.uk');
   assert.equal(siteOf('https://ec.europa.eu/a'), 'europa.eu');

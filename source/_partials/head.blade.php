@@ -20,6 +20,7 @@
     $share_image = rtrim($page->baseUrl, '/') . '/' . ltrim($share_image, '/');
   }
   $is_post = str_starts_with($page->getPath(), '/articles/');
+  $modified = $is_post ? ($page->updatedAt() ?? $page->date) : null;
 @endphp
 
 <title>{{ mb_strlen($page_title) + mb_strlen($page->brand->name) + 3 > 65 ? $page_title : $page_title . ' | ' . $page->brand->name }}</title>
@@ -34,15 +35,13 @@
 <meta property="og:site_name" content="{{ $page->brand->name }}" />
 @if ($is_post)
 <meta property="article:published_time" content="{{ date('c', $page->date) }}" />
-<meta property="article:modified_time" content="{{ date('c', $page->updatedAt() ?? $page->date) }}" />
-<meta property="article:author" content="{{ $page->author }}" />
+<meta property="article:modified_time" content="{{ date('c', $modified) }}" />
 @endif
 
 <meta name="twitter:card" content="{{ $page->featured_image ? 'summary_large_image' : 'summary' }}">
 <meta name="twitter:title" content="{{ $page_title }}">
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $share_image }}">
-<meta name="twitter:image:alt" content="{{ $page_title }}">
 <meta name="twitter:site" content="@buffermint">
 <meta name="twitter:creator" content="@buffermint">
 
@@ -73,7 +72,7 @@
     $jsonld[] = array_filter(['@context' => 'https://schema.org', '@type' => 'BlogPosting', 'headline' => $page->title,
       'description' => $description, 'image' => $share_image, 'url' => $page->getUrl(),
       'mainEntityOfPage' => $page->getUrl(), 'datePublished' => $published,
-      'dateModified' => date('c', $page->updatedAt() ?? $page->date),
+      'dateModified' => date('c', $modified),
       'author' => ['@type' => 'Person', 'name' => $page->author],
       'keywords' => $page->keyword ?: null,
       'publisher' => ['@type' => 'Organization', 'name' => $page->brand->name, 'logo' => ['@type' => 'ImageObject', 'url' => $site . '/brand/logos/mark.png']]], fn ($v) => $v !== null);

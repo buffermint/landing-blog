@@ -13,7 +13,10 @@ const jsonld = (html) => [...html.matchAll(/<script type="application\/ld\+json"
 const meta = (html, attr, name) => html.match(new RegExp(`<meta ${attr}="${name}" content="([^"]*)"`))?.[1];
 const lastmods = (xml) => Object.fromEntries([...xml.matchAll(/<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>)?/g)].map((m) => [m[1], m[2]]));
 
-const slugs = readdirSync(join(root, 'source/_posts')).filter((f) => f.endsWith('.blade.md')).map((f) => f.replace(/\.blade\.md$/, ''));
+// drafts (published: false) have no page
+const slugs = readdirSync(join(root, 'source/_posts')).filter((f) => f.endsWith('.blade.md'))
+  .filter((f) => !/^published:\s*false\s*$/m.test(readFileSync(join(root, 'source/_posts', f), 'utf8').split(/^---\s*$/m)[1] ?? ''))
+  .map((f) => f.replace(/\.blade\.md$/, ''));
 
 test('every built post has BlogPosting JSON-LD, article Open Graph tags, a Twitter card and a sitemap lastmod', () => {
   const sitemap = lastmods(readFileSync(join(build, 'sitemap.xml'), 'utf8'));
@@ -30,7 +33,6 @@ test('every built post has BlogPosting JSON-LD, article Open Graph tags, a Twitt
     assert.equal(meta(html, 'property', 'article:published_time'), post.datePublished);
     assert.equal(meta(html, 'property', 'article:modified_time'), post.dateModified);
     assert.ok(meta(html, 'name', 'twitter:card'), `${slug}: twitter:card`);
-    assert.ok(meta(html, 'name', 'twitter:image:alt'), `${slug}: twitter:image:alt`);
     assert.ok(sitemap[url], `${slug}: no sitemap lastmod`);
     assert.equal(sitemap[url].slice(0, 10), post.dateModified.slice(0, 10), `${slug}: sitemap lastmod = dateModified`);
   }
@@ -88,8 +90,10 @@ test('updated: shows on the page and drives dateModified, article:modified_time,
   assert.match(feed, /<id>https:\/\/buffermint\.com\/articles\/zz-refreshed<\/id>\s*<published>2026-10-30T[^<]*<\/published>\s*<updated>2026-11-05T/);
 });
 
-test('an updated: that is not a date fails the build instead of writing a wrong date', () => {
-  const site = buildCopy({ 'zz-bad': fixture('title: Fixture bad date\ndate: 2021-07-10\nupdated: "next week-ish"') });
-  copies.push(site);
-  assert.throws(site.run, /zz-bad.*is not a date/s);
-});
+for (const [name, value] of [['words', '"next week-ish"'], ['number', '20261105']]) {
+  test(`an updated: that is not a date (${name}) fails the build instead of writing a wrong date`, () => {
+    const site = buildCopy({ 'zz-bad': fixture(`title: Fixture bad date\ndate: 2021-07-10\nupdated: ${value}`) });
+    copies.push(site);
+    assert.throws(site.run, /zz-bad.*is not a date/s);
+  });
+}

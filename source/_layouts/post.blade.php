@@ -59,10 +59,11 @@
                                 <time class="font-size-sm text-muted" datetime="{{ date('Y-m-d', $page->date) }}">
                                     Published on {{ date('F j, Y', $page->date) }}
                                 </time>
-                                @if ($page->updatedAt())
+                                @php $updated = $page->updatedAt(); @endphp
+                                @if ($updated)
                                 <span class="font-size-sm text-muted">&middot;</span>
-                                <time class="font-size-sm text-muted post-updated" datetime="{{ date('Y-m-d', $page->updatedAt()) }}">
-                                    Updated on {{ date('F j, Y', $page->updatedAt()) }}
+                                <time class="font-size-sm text-muted post-updated" datetime="{{ date('Y-m-d', $updated) }}">
+                                    Updated on {{ date('F j, Y', $updated) }}
                                 </time>
                                 @endif
                             </div>
