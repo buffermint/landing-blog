@@ -75,7 +75,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** our own benchmark (`buffermint-tools/QUALITY-DOCUMENTS.md`): to 100 KB, an 8-page photo PDF came out at 90 KB with SSIM 0.761, against Ghostscript's best of 100 KB at 0.676. A 10-page text report reached 97 KB with every word still extractable, where Ghostscript couldn't get under 150 KB. Show the trade-off (dpi vs. image quality vs. text) with before/after crops, and say which kinds of PDF can't reach 100 KB at all (scans with many pages).
 - **Sources:** Ghostscript pdfwrite docs (ghostscript.com/docs), Adobe Acrobat help on reducing PDF size (helpx.adobe.com), the PDF Association on image compression in PDF (pdfa.org), qpdf manual (qpdf.readthedocs.io), and 2+ official portals that state a 100 KB limit in their instructions (e.g. Indian exam/visa portals; cite the page itself).
 - **Internal links:** /tools/pdf/compress-pdf-to-100kb/, /tools/pdf/compress-pdf-to-size/, /tools/pdf/compress-pdf/, /tools/photo/compress-image-to-100kb/, /tools/pdf/grayscale-pdf/.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/compress-pdf-to-100kb` (own Ghostscript 10.06 resolution sweep on the benchmark corpus, KB per page at 36–150 dpi; font hinting measured at 81% of the report's font bytes)
 
 ### 2. Are online PDF converters safe? We watched where the file goes · `now`
 - **Keyword:** `are online pdf converters safe`. Level 4 (suggested after "are online pdf" on Google and Bing).
@@ -83,7 +83,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** a repeatable test. Open DevTools → Network on 6 popular PDF sites and on ours, run the same task, and record whether the file is uploaded (request size), to which host, and what each privacy policy says about retention. Put the findings next to the documented incident: Cybernews found 89,062 user files exposed by two PDF services in 2024 (check the original report). Readers get a 2-minute check they can run on any tool.
 - **Sources:** the Cybernews research article (cybernews.com; find the original), TechRadar coverage (techradar.com/pro/security/two-top-pdf-tools-have-been-found-leaking-user-documents-and-data-online, found 2026-10-29), BGR (bgr.com/tech/online-pdf-converters-leaked-thousands-of-user-uploaded-documents, found 2026-10-29), each tested site's privacy policy (dated), MDN on the File API (developer.mozilla.org), the UK NCSC or CISA guidance on handling sensitive documents.
 - **Internal links:** /tools/pdf/, /tools/pdf/redact-pdf/, /tools/pdf/protect-pdf/, /tools/photo/exif-stripper/, post 2 ↔ topic 12.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/are-online-pdf-converters-safe` (own Playwright run 29 Oct 2026, one per site: iLovePDF, Smallpdf, PDF24 and Sejda uploaded 0.8–2.5 s after the file was chosen; FreeConvert after Compress, 224 hosts contacted; Adobe refused the headless browser; ours no upload)
 
 ### 3. The EU AI Act for a small SaaS that calls an LLM API · `now`
 - **Keyword:** `eu ai act` (level 4; HN 349 mentions/24 mo; Wikipedia "Artificial Intelligence Act" 10,986 views/mo), `eu ai act small business` (level 3).
@@ -91,7 +91,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** the sources disagree. Early-2026 commentary says the 2 August 2026 transparency duties hold; later reports say the omnibus (adopted June 2026) moved Annex III high-risk duties to 2 December 2027 and gave systems already on the market until 2 December 2026 for marking. Reconcile them from the Official Journal text, then give a dated checklist for the "deployer of a general-purpose model" case: Art. 4 AI literacy (in force since Feb 2025), Art. 50 disclosure, what does *not* apply. Show which sources were right and why the others went wrong (they predate the final text).
 - **Sources:** Regulation (EU) 2024/1689 on EUR-Lex, the omnibus amending act in the Official Journal (eur-lex.europa.eu), the European Commission AI Act Service Desk / FAQ (digital-strategy.ec.europa.eu), DLA Piper (knowledge.dlapiper.com, found 2026-10-29), Stephenson Harwood (perspectives.stephensonharwood.com/post/102msaw, found 2026-10-29), JD Supra (jdsupra.com/legalnews/eu-legislators-agree-to-delay-for-high-5617765, found 2026-10-29).
 - **Internal links:** /tools/ai/pii-redactor/, /tools/ai/llm-cost/, /articles/how-ai-and-machine-learning-is-changing-the-saas-space, topic 6.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/eu-ai-act-small-saas-llm-api` (proposal vs. final Regulation (EU) 2026/1744 table, dated checklist, SME fine table)
 
 ### 4. Does the European Accessibility Act apply to your small SaaS? · `now`
 - **Keyword:** `european accessibility act` (level 4; Wikipedia 1,080 views/mo; HN 20). The longer `european accessibility act saas` has no autosuggest trace (level 1), so target the head term and answer the SaaS question in the H2s.
@@ -99,7 +99,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** (a) a decision tree built from the directive text. Sources disagree on which article holds the microenterprise exemption (Art. 4(5) vs. Art. 22 in different guides) and on whether both tests (<10 staff *and* ≤€2M) apply, so settle it from EUR-Lex. (b) Our own fix log: axe-core on buffermint.com went from 76 to 0 violations across 29 pages (light and dark), plus what the violations were (heading order, contrast, landmarks, an aside in main) and what each fix took (`buffermint-landing/STATUS.md`, 2026-10-25).
 - **Sources:** Directive (EU) 2019/882 on EUR-Lex; Ireland's CCPC microenterprise guidelines (ccpc.ie, found 2026-10-29); the European Commission EAA page; W3C WAI on WCAG 2.1 and EN 301 549 (w3.org/WAI); Level Access on 2026 enforcement (levelaccess.com/blog/eaa-compliance-in-2026…, found 2026-10-29). Treat fine figures from vendor blogs as unverified.
 - **Internal links:** /tools/design/contrast-checker/, /tools/design/color-blindness/, /tools/seo/heading-checker/, /tools/health/color-blind-test/, topic 26.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/european-accessibility-act-small-saas` (decision tree from Art. 2, 3(23), 3(30), 4(5), 14, 32; the exemption is Art. 4(5) with the definition in 3(23), both tests apply; ACM's 61% webshop finding; our axe fix log)
 
 ### 5. Merchant of record fees at $9, $29 and $99 a month, worked out · `now`
 - **Keyword:** `merchant of record` (level 4; HN 84), `paddle vs stripe` (level 4).
@@ -107,7 +107,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** most comparisons online are written by one of the competitors (Dodo's blog writes most of the search results). We work out a neutral table from each provider's own pricing page: fee per sale and per $1,000 of revenue at $9, $29 and $99. It includes the small-ticket penalty (Paddle's 5% + 50¢ is 10.6% of a $9 sale; Paddle asks under-$10 sellers to contact them for pricing, *read 2026-10-29*), tax filing coverage, payouts to India, and when plain Stripe + Stripe Tax is cheaper.
 - **Sources:** paddle.com/pricing *(read 2026-10-29)*, lemonsqueezy.com/pricing, polar.sh docs on fees, dodopayments.com/pricing, creem.io pricing, stripe.com/pricing and Stripe Tax pricing, flaviocopes.com/payment-provider-fees (found 2026-10-29; an independent calculation to compare with). Date every price "as of <month year>".
 - **Internal links:** /tools/business/mrr-calculator/, /tools/business/profit-margin-calculator/, /tools/business/vat-calculator/, /tools/business/pricing-tier-calculator/, topic 18.
-- **Status:** todo
+- **Status:** published 2026-10-29 → `/articles/merchant-of-record-fees` (six pricing pages read 29 Oct 2026; fee per sale at $9/$29/$99 for US and non-US cards; $2,900 MRR example incl. Stripe Tax Complete; break-evens)
 
 ### 6. What an AI feature really costs per user · `now`
 - **Keyword:** `llm cost calculator` (level 4), `llm api pricing` (level 3; HN 7), `token counter` (level 3; HN 37).

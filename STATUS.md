@@ -1,6 +1,10 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-29. The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-29 (articles 1–5). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+
+## Blog articles 1–5 (2026-10-29, lane `lane/t-20261029-blog-articles-1`, not merged or deployed yet)
+- Five new posts, BLOG-PLAN topics 1–5 (each 1,400–1,750 words, 5+ publishers in `## Sources`, our own data or calculation): `compress-pdf-to-100kb` (our Ghostscript resolution sweep + font-hinting measurement), `are-online-pdf-converters-safe` (our network test of six PDF sites), `eu-ai-act-small-saas-llm-api` (Omnibus proposal vs. final text), `european-accessibility-act-small-saas` (decision tree from the directive + our axe fix log), `merchant-of-record-fees` (six pricing pages worked out at $9/$29/$99). Covers are our own: a render of a public-domain NASA test page, and generated text cards with centred titles so the phone crop of the jarallax cover keeps them.
+- **Post tables:** the site had no table styles, so a 5-column table ran past a 390 px phone and was cut off. `posts.scss` now styles `#post-content` tables (full width, padded cells, words wrap whole, only `code` may break anywhere, smaller type under 576 px). Test: `tests/post-tables.test.mjs` (built CSS) + `tests/e2e/post-tables.e2e.mjs` (every table in every post fits the column at desktop and phone, through `bin/one-chrome`).
 
 ## Blog research and SEO (2026-10-29, lane `lane/t-20261029-blog-research-seo`, not merged or deployed yet)
 - **`BLOG-PLAN.md`:** the editorial rules, voice notes, our traffic (GoatCounter log, 23–29 Oct: 530 pageviews), and 32 ranked topics (10 `now`). Each topic has keyword demand from the workspace's keyless tooling (autosuggest level, HN, Wikipedia), a new angle (often our own benchmarks or build data), 4+ sources, internal links to /tools, and a status. It also covers the decisions for the 21 old posts (9 refresh, 9 merge with 301s, 3 leave) and the SEO audit with what's still open. The article and refresh lanes work from it.

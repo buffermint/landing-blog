@@ -37,7 +37,9 @@
 
     // links inside body text must not rely on colour alone (axe link-in-text-block)
     p a,
-    li a {
+    li a,
+    td a,
+    th a {
         text-decoration: underline;
     }
 
@@ -53,6 +55,48 @@
         background-color: $logo-secondary;
         color: $white;
         font-size: 1rem;
+    }
+
+    // data tables in posts must fit a phone instead of being cut off: words wrap whole, and only code (host names,
+    // paths) may break anywhere. A long unbreakable token outside code still widens the table, so put URLs and IDs
+    // in backticks; tests/e2e/post-tables.e2e.mjs fails on any table that runs past the column. No scroll box, which
+    // would need a focusable region (axe)
+    table {
+        width: 100%;
+        margin: 0 0 1.5rem;
+        border-collapse: collapse;
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    th,
+    td {
+        padding: 0.5rem 0.6rem;
+        border-bottom: 1px solid var(--bm-line);
+        text-align: left;
+        vertical-align: top;
+        overflow-wrap: break-word;
+        hyphens: auto;
+
+        code {
+            overflow-wrap: anywhere;
+        }
+    }
+
+    th {
+        color: var(--bm-heading);
+        font-weight: 700;
+    }
+
+    @media (max-width: 575.98px) {
+        table {
+            font-size: 0.8125rem;
+        }
+
+        th,
+        td {
+            padding: 0.4rem 0.3rem;
+        }
     }
 
     blockquote {
