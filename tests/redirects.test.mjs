@@ -5,10 +5,11 @@
 // /articles/ URL that is neither a built post nor redirected.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { execFileSync } from 'node:child_process';
 import { join, relative } from 'node:path';
 import { root, build, htmlFiles } from './helpers.mjs';
-import { parsePost, inScope } from './posts.test.mjs';
 
 export const MERGED = {
   'micro-saas-is-the-future': 'launch-your-micro-saas-product',
@@ -22,13 +23,32 @@ export const MERGED = {
   'your-strategy-is-a-voyage': 'how-to-achieve-a-product-market-fit-with-your-product',
 };
 
-const PAGES_REDIRECTS = join(root, '../buffermint-pages/static/_redirects');
+const PAGES = join(root, '../buffermint-pages');
+const PAGES_REDIRECTS = join(PAGES, 'static/_redirects');
 const isPost = (slug) => existsSync(join(build, 'articles', slug, 'index.html')) || existsSync(join(build, 'articles', `${slug}.html`));
+const git = (dir, ...args) => execFileSync('git', ['-C', dir, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+
+// Which pages rules this landing commit will be published with. bin/landing-autopublish publishes landing main once
+// it's verified, through whatever the pages checkout holds, so landing main (or a detached release checkout) is held to
+// the rules on pages origin/main: verify fails until the pages side is merged, and the deletions can't go live as 404s.
+// A lane branch is checked against the pages working tree (the same lane branch there).
+export function pagesRulesText(landingDir = root, pagesDir = PAGES) {
+  let branch;
+  try { branch = git(landingDir, 'rev-parse', '--abbrev-ref', 'HEAD').trim(); } catch { branch = 'HEAD'; }
+  if (branch === 'main' || branch === 'HEAD') {
+    try { return { from: 'buffermint-pages origin/main', text: git(pagesDir, 'show', 'origin/main:static/_redirects') }; }
+    catch { return { from: 'buffermint-pages origin/main', text: '' }; }
+  }
+  const file = join(pagesDir, 'static/_redirects');
+  return { from: 'the buffermint-pages checkout', text: existsSync(file) ? readFileSync(file, 'utf8') : '' };
+}
 
 function pagesRules() {
-  if (!existsSync(PAGES_REDIRECTS)) return null;
+  if (!existsSync(join(PAGES, '.git'))) return null;
+  const { from, text } = pagesRulesText();
   const rules = new Map();
-  for (const line of readFileSync(PAGES_REDIRECTS, 'utf8').split('\n')) {
+  rules.from = from;
+  for (const line of text.split('\n')) {
     const l = line.trim();
     if (!l || l.startsWith('#')) continue;
     const [from, to, code] = l.split(/\s+/);
@@ -43,7 +63,7 @@ test('a merged post is gone from the build, the sitemap and the feed; its target
   for (const [from, to] of Object.entries(MERGED)) {
     assert.ok(!existsSync(join(root, 'source/_posts', `${from}.blade.md`)), `source/_posts/${from}.blade.md still exists`);
     assert.ok(!isPost(from), `articles/${from} is still built`);
-    assert.ok(!sitemap.includes(`/articles/${from}<`), `${from} is still in sitemap.xml`);
+    assert.ok(!new RegExp(`/articles/${from}/?<`).test(sitemap), `${from} is still in sitemap.xml`);
     assert.ok(!feed.includes(`/articles/${from}`), `${from} is still in feed.xml`);
     assert.ok(isPost(to), `the merge target articles/${to} isn't built`);
   }
@@ -51,10 +71,10 @@ test('a merged post is gone from the build, the sitemap and the feed; its target
 
 test('buffermint-pages answers 301 from each merged post to its target', (t) => {
   const rules = pagesRules();
-  if (!rules) return t.skip(`${PAGES_REDIRECTS} is not checked out next to this repo`);
+  if (!rules) return t.skip(`${PAGES} is not checked out next to this repo`);
   for (const [from, to] of Object.entries(MERGED)) {
     for (const path of [`/articles/${from}`, `/articles/${from}/`]) {
-      assert.deepEqual(rules.get(path), { to: `/articles/${to}`, code: '301' }, `${path} in buffermint-pages/static/_redirects`);
+      assert.deepEqual(rules.get(path), { to: `/articles/${to}`, code: '301' }, `${path} in static/_redirects of ${rules.from} (merge the pages side first)`);
     }
   }
 });
@@ -64,7 +84,8 @@ test('every /articles/ link in the built site is a built post or a redirect (no 
   const missing = [];
   for (const file of htmlFiles()) {
     const html = readFileSync(file, 'utf8');
-    for (const m of html.matchAll(/href=["'](?:https?:\/\/(?:www\.)?buffermint\.com)?\/articles\/([^"'#?/]+)\/?(?:[#?][^"']*)?["']/g)) {
+    // absolute, root-relative and relative (articles/x, ../articles/x) links to a post
+    for (const m of html.matchAll(/href=["'](?:https?:\/\/(?:www\.)?buffermint\.com\/|\/|(?:\.\.\/)*)articles\/([^"'#?/]+)\/?(?:[#?][^"']*)?["']/g)) {
       const slug = decodeURIComponent(m[1]);
       if (!isPost(slug) && !redirected.has(slug)) missing.push(`${relative(build, file)} → /articles/${slug}`);
     }
@@ -75,10 +96,37 @@ test('every /articles/ link in the built site is a built post or a redirect (no 
 test('refreshed and new posts link straight to the merged target, not through a redirect', () => {
   const dir = join(root, 'source/_posts');
   for (const name of readdirSync(dir).filter((n) => n.endsWith('.md'))) {
-    const post = parsePost(readFileSync(join(dir, name), 'utf8'), name);
-    if (!inScope(post)) continue; // posts left as they are keep their old links; the redirect covers them
+    const text = readFileSync(join(dir, name), 'utf8');
+    const meta = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+    const date = meta.match(/^date:\s*['"]?(\d{4}-\d{2}-\d{2})/m)?.[1] ?? '';
+    // the posts.test.mjs scope (refreshed, or dated from its cutoff on); posts left as they are keep their old links,
+    // which the redirects cover. (Importing posts.test.mjs would run its tests a second time.)
+    if (!/^updated:\s*\S/m.test(meta) && date && date < '2026-10-29') continue;
     for (const from of Object.keys(MERGED)) {
-      assert.doesNotMatch(post.body, new RegExp(`/articles/${from}(?![\\w-])`), `${name} links to the merged ${from}`);
+      assert.doesNotMatch(text, new RegExp(`/articles/${from}(?![\\w-])`), `${name} links to the merged ${from}`);
     }
   }
+});
+
+// pagesRulesText in throwaway repos: landing main is held to pages origin/main, a lane branch to the pages checkout
+test('landing main is checked against pages origin/main; a lane branch against the pages checkout', (t) => {
+  const tmp = mkdtempSync(join(tmpdir(), 'bm-redirects-'));
+  t.after(() => rmSync(tmp, { recursive: true, force: true }));
+  const sh = (dir, ...args) => execFileSync('git', ['-C', dir, '-c', 'user.name=t', '-c', 'user.email=t@t', ...args], { stdio: 'ignore' });
+  const landing = join(tmp, 'landing'), pages = join(tmp, 'pages');
+  for (const d of [landing, pages]) { mkdirSync(d); sh(d, 'init', '-q', '-b', 'main'); }
+  writeFileSync(join(landing, 'a'), 'a'); sh(landing, 'add', 'a'); sh(landing, 'commit', '-qm', 'a');
+  mkdirSync(join(pages, 'static'));
+  writeFileSync(join(pages, 'static/_redirects'), '/old /on-main 301\n'); sh(pages, 'add', '-A'); sh(pages, 'commit', '-qm', 'main');
+  sh(pages, 'update-ref', 'refs/remotes/origin/main', 'HEAD');
+  writeFileSync(join(pages, 'static/_redirects'), '/old /on-lane 301\n'); // the lane's uncommitted or branch state
+
+  assert.match(pagesRulesText(landing, pages).text, /on-main/, 'landing on main reads pages origin/main');
+  sh(landing, 'checkout', '-q', '--detach');
+  assert.match(pagesRulesText(landing, pages).text, /on-main/, 'a detached release checkout reads pages origin/main');
+  sh(landing, 'checkout', '-q', '-b', 'lane/x');
+  assert.match(pagesRulesText(landing, pages).text, /on-lane/, 'a lane branch reads the pages checkout');
+  sh(pages, 'update-ref', '-d', 'refs/remotes/origin/main');
+  sh(landing, 'checkout', '-q', 'main');
+  assert.equal(pagesRulesText(landing, pages).text, '', 'no pages origin/main: no rules, so the 301 test fails');
 });

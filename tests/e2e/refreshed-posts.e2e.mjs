@@ -28,7 +28,10 @@ const origin = `http://127.0.0.1:${server.address().port}`;
 // every post whose source carries updated:
 const dir = join(root, 'source/_posts');
 const posts = readdirSync(dir)
-  .filter((f) => /^updated:\s*\S/m.test(readFileSync(join(dir, f), 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? ''))
+  .filter((f) => {
+    const meta = readFileSync(join(dir, f), 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+    return /^updated:\s*\S/m.test(meta) && !/^published:\s*false\s*$/m.test(meta); // drafts aren't built
+  })
   .map((f) => f.replace(/\.blade\.md$|\.md$/, ''));
 assert.ok(posts.length >= 3, `at least 3 refreshed posts (found ${posts.length})`);
 
@@ -37,6 +40,7 @@ const sizes = {
   phone: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 },
 };
 
+const linksChecked = new Set(); // each post link once, not once per viewport
 const browser = await chromium.launch();
 try {
   for (const [name, options] of Object.entries(sizes)) {
@@ -74,8 +78,10 @@ try {
         assert.ok(img.ok, `${at}: image didn't load ${img.src}`);
       }
       // links to other posts answer (the tools live in another build, so /tools/ links aren't checked here)
-      for (const href of new Set(r.links.filter((h) => h.startsWith('/articles/')))) {
-        const st = await page.request.get(`${origin}${href.replace(/[#?].*$/, '')}/`);
+      for (const href of new Set(r.links.filter((h) => h.startsWith('/articles/')).map((h) => h.replace(/[#?].*$/, '')))) {
+        if (linksChecked.has(href)) continue;
+        linksChecked.add(href);
+        const st = await page.request.get(`${origin}${href}/`);
         assert.equal(st.status(), 200, `${at}: ${href} answers ${st.status()}`);
       }
       if (process.env.SHOTS) await page.screenshot({ path: join(process.env.SHOTS, `${slug}-${name}.png`), fullPage: false });
