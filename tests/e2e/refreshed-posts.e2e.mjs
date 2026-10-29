@@ -30,7 +30,7 @@ const dir = join(root, 'source/_posts');
 const posts = readdirSync(dir)
   .filter((f) => {
     const meta = readFileSync(join(dir, f), 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
-    return /^updated:\s*\S/m.test(meta) && !/^published:\s*false\s*$/m.test(meta); // drafts aren't built
+    return /^updated:\s*\S/m.test(meta) && !/^published:\s*['"]?false\b/m.test(meta); // drafts aren't built
   })
   .map((f) => f.replace(/\.blade\.md$|\.md$/, ''));
 assert.ok(posts.length >= 3, `at least 3 refreshed posts (found ${posts.length})`);
