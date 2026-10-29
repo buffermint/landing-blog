@@ -1,6 +1,12 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-29 (articles 6–10). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-29 (old posts refreshed and merged). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+
+## Old posts refreshed and merged (2026-10-29, lane `lane/t-20261029-blog-refresh-old-posts`, not merged or deployed yet)
+- The 21 posts from 2021, per BLOG-PLAN.md "Old posts": **9 refreshed** (rewritten to the editorial rules, slug and `date:` kept, `updated: 2026-10-29`, 4–8 publishers in Sources each, our own calculations or measurements), **9 merged** into a stronger post and deleted, **3 left** as they are (the `-copy` post waits on PLAN 11). The table of what each became is in BLOG-PLAN.md.
+- **Redirects:** the 9 merged URLs answer 301 (with and without a trailing slash) from `buffermint-pages/static/_redirects`, on the same lane branch in that repo. **Merge the pages lane first:** on landing main, `tests/redirects.test.mjs` reads the rules from pages `origin/main`, so `bin/lane verify` (and so `bin/landing-autopublish`) waits until they are there. Tests: `tests/redirects.test.mjs` (merged posts gone from build, sitemap and feed; pages rules present; no dead `/articles/` links in the built site) and `buffermint-pages/test/redirects.test.mjs`.
+- **Checked at 1280 and 390 px:** `tests/e2e/refreshed-posts.e2e.mjs` (through `bin/one-chrome`) loads every refreshed post at both sizes: "Updated on" shows, Sources heading present, nothing wider than the text column, every image has alt and loads, links to other posts answer. Screenshots of three posts looked right.
+- Agency and discovery-call pitches are gone from the refreshed text (public copy: "we build useful software").
 
 ## Blog articles 6–10 (2026-10-29, lane `lane/t-20261029-blog-articles-2`, not merged or deployed yet)
 - Five new posts, BLOG-PLAN topics 6–10 (each about 1,450–1,900 words, 4+ publishers in `## Sources`, our own data): `ai-feature-cost-per-user` (measured token counts priced on three providers' pages), `ai-overviews-zero-click-studies` (seven measurements compared + our GoatCounter week), `vibe-coded-app-security-scans` (four scans by hole type + our PostgreSQL RLS reproduction), `credit-based-pricing-12-tools` (12 pricing pages read on one day), `remove-background-browser-models` (our background-removal benchmark). Covers are generated text cards (ours). Checked at 1280 px and 390 px (no sideways overflow, tables fit, `tests/e2e/post-tables.e2e.mjs` 22 tables in 10 posts).

@@ -285,7 +285,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** a dated table of plans, credits and what a typical build burns, plus the security baseline from topic 8. This is the **refresh of** `how-to-leverage-ai-and-build-an-app-without-coding` (keep its URL; see old posts).
 - **Sources:** the three pricing pages, their docs on deployment/export, a 2026 hands-on review from an independent publisher, The Next Web on the Lovable exposure (found 2026-10-29).
 - **Internal links:** /articles/launching-a-saas-product-as-a-non-technical-founder, topic 8, /tools/dev/json-formatter/.
-- **Status:** todo (refresh lane)
+- **Status:** published 2026-10-29 (refresh lane) → `/articles/how-to-leverage-ai-and-build-an-app-without-coding` (dated plan table from the Lovable docs, Bolt and Replit pages; Lovable credits per change worked out from its documented examples; Escape and The Register on the security side). No independent hands-on review was used; the security sources stand in for it.
 
 ### 29. Testing file upload limits with dummy files: the real limits of 12 services · `later`
 - **Keyword:** `dummy file generator` (level 4). Our most-visited tool page in the first counted week (13 views).
@@ -352,6 +352,22 @@ None of the old posts has a `## Sources` section or an external citation, except
 
 Result: 21 posts → 12 kept (9 refreshed, 3 left as they are) and 9 merged with 301s.
 
+**Carried out 2026-10-29 (lane `t-20261029-blog-refresh-old-posts`, not merged or deployed yet).** Each refreshed post keeps its slug and `date:`, has `updated: 2026-10-29`, a `keyword:`, a category where one fits, and passes `tests/posts.test.mjs`. Discovery-call and agency pitches were dropped from the refreshed text. Merged posts are deleted (so the sitemap and feed drop them) and 301 to their target from `buffermint-pages/static/_redirects` (with and without a trailing slash; Pages applies redirects even where a file exists). Tests: `tests/redirects.test.mjs` here (merged posts gone from build, sitemap and feed; targets built; the pages rules present; no `/articles/` link in the built site that is neither a post nor redirected; refreshed and new posts link straight to the target) and `buffermint-pages/test/redirects.test.mjs` (format, the expected 301s, carried into `dist/_redirects` by publish.sh). `tests/e2e/refreshed-posts.e2e.mjs` checks every refreshed post at 1280 and 390 px. **Merge the pages lane first**: on landing main the redirect test reads pages `origin/main`, so verify (and autopublish) wait for the 301s; otherwise the merged URLs would 404.
+
+| Post | Done | New angle |
+|---|---|---|
+| launch-your-micro-saas-product | Refreshed, absorbed micro-saas-is-the-future | Storemapper, Plausible and Bannerbear numbers from their own pages; ChartMogul 2025 odds; customers needed for $5k MRR at $9/$29/$99; Acquire.com multiples |
+| when-is-the-right-time-to-launch-an-mvp | Refreshed, absorbed the two MVP posts | What Ries, Seibel (YC), Hoffman and Superhuman actually said, where they disagree, a five-question launch test, CB Insights 2026 |
+| launching-a-saas-product-as-a-non-technical-founder | Refreshed, absorbed the three launch posts (now `featured`) | AI builder vs freelancer vs partner with October 2026 prices, BLS pay, the security baseline (Escape, The Register, OWASP), the "good client" section |
+| how-to-leverage-ai-and-build-an-app-without-coding | Refreshed as topic 28 | See topic 28 |
+| how-ai-and-machine-learning-is-changing-the-saas-space | Merged → ai-feature-cost-per-user | Nothing worth moving (unsourced 2021 quotes); links from two new posts repointed |
+| 10-predictions-for-the-saas-marketplace-future-trends | Refreshed as a scorecard | 2 right, 2 partly right, 1 past, 5 ungradeable; Census 2026 AI use, Postman 2025, GitHub usage billing; how to write a gradeable prediction |
+| ultimate-guide-to-get-the-most-out-of-your-idea-validation-process | Refreshed | Ladder of evidence; our 29 Oct autosuggest/HN measurements and what they can't show; Buffer's two-page test; small-sample intervals |
+| 6-amazing-startup-stories-of-successful-idea-validation | Refreshed as a fact-check | Each story checked against first-hand sources; corrected Dropbox (never sold to Microsoft), WhatsApp (no sourced video; 450M users), Instagram (27M), Airbnb, Dollar Shave Club (12,000 orders); unsourced parts removed |
+| how-to-get-successful-startup-ideas | Refreshed, absorbed the-4-types-of-products | Graham's 2012 essay credited; the four types; dated rules (Gmail sender rules, ViDA, EAA, AI Act) as an idea source; a five-question filter |
+| how-to-achieve-a-product-market-fit-with-your-product | Refreshed, absorbed your-strategy-is-a-voyage | Four tests (Ellis survey, Rachleff, retention, payment) and where they disagree; margin of error of the 40% test at 20–250 answers; pivot rules with Slack |
+| 10-micro-saas-ideas-in-2021-copy, how-to-use-lean-methodology-to-innovate-faster, what-is-the-difference-between-saas-and-cloud-computing | Left unchanged | As decided (PLAN 11 for the `-copy` post) |
+
 ## SEO audit (2026-10-29: the built site and the live headers)
 
 **Fixed in this lane** (lane `lane/t-20261029-blog-research-seo`; tests `tests/seo.test.mjs`, `tests/posts.test.mjs`):
@@ -374,8 +390,8 @@ Result: 21 posts → 12 kept (9 refreshed, 3 left as they are) and 9 merged with
    - 4 titles are over 65 characters (`launching-a-saas-product…` 73, `how-to-be-an-excellent-client…` 72, `ultimate-guide-to-get-the-most…` 68, `the-ultimate-guide-to-launching…` 66).
 
    The refresh lane fixes them as it refreshes, and the test enforces it once `updated:` is set.
-2. **Redirects for merges:** `buffermint-pages/static/_redirects` (not in this repo).
-3. **Category pages** (`/idea-validation`, `/startup-ideas`) have no lastmod and thin intros. Only 6 posts carry a category, so assign categories during the refresh, or add a "SaaS operations" category for the new topics (config.php `categories`).
+2. **Redirects for merges:** done in `buffermint-pages/static/_redirects` (refresh lane, 2026-10-29; deploy with this repo).
+3. **Category pages** (`/idea-validation`, `/startup-ideas`) have no lastmod and thin intros. Only 6 posts carried a category; the refresh lane added `idea_validation` to the MVP and PMF posts and `startup_ideas` to the micro-SaaS guide. Assign the rest during later refreshes, or add a "SaaS operations" category for the new topics (config.php `categories`).
 4. **`/our-pricing`** is empty and in the sitemap (PLAN 11, owner).
 5. **Search Console / Bing verification** (owner; brand.json `verification`): without them there's no query data, and Bing's keyword API stays closed.
 6. **Author entity:** posts name "Rishabh Pandey" with no author page or `sameAs`. An author page with a short bio would support E-E-A-T. Needs the owner's OK on public bio copy.

@@ -1,163 +1,107 @@
 ---
 featured_image: assets/img/uploads/how-to-start-micro-saas-title-image.jpeg
 featured_thumbnail: assets/img/uploads/how-to-start-a-micro-saas-thumbnail-.jpeg
-title: How to Start a Micro-SaaS Company and Launch a Kickass Product?
-seo_description: This guide covers all the steps you'll need to take from coming
-  up with your idea for a product, launching that product, and marketing it
-  successfully.
+title: "How to start a micro-SaaS: what the revenue data says"
+seo_description: "How long micro-SaaS products take to earn, how many customers $5,000 MRR needs at $9, $29 and $99, and what three public examples teach. Updated for 2026."
+keyword: how to start a micro saas
 author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
 date: 2021-07-20
+updated: 2026-10-29
+category: startup_ideas
 extends: _layouts.post
 ---
 
-The SaaS industry has seen exponential growth in recent years. The Micro-SaaS market is one of the most lucrative and fastest-growing segments of this industry. With so many entrepreneurs wanting to get started on their own, it can be hard to know where to start.
+We first wrote this guide in 2021. It said the micro-SaaS market was growing fast and that now was the time to start. Both were true and neither helped anyone decide anything. This version replaces the cheerleading with numbers: what a micro-SaaS is, how long the public examples took to earn real money, how many customers a target needs at common prices, and what the large data sets say about the odds. We've also folded in our short 2021 piece on why micro-SaaS is the future, which made the same argument with less evidence.
 
-In this guide, we will cover all the steps you need to take from coming up with your idea for a product, launching that product, and marketing it successfully. We'll also answer some questions about what makes Micro-SaaS different than regular SaaS and how you can validate your ideas before investing too much time or money into them!
+## What "micro-SaaS" means
 
-### What is Micro-SaaS?
+The term is usually credited to Tyler Tringas, who built the store-locator app Storemapper. In his own words, a micro-SaaS is "a software as a service business owned and operated by one person or a small team" ([Tringas](https://tylertringas.com/micro-saas-ebook/)). He lists what makes the model attractive: it can run from anywhere, margins are high, risk is low and revenue repeats every month.
 
-Micro-SaaS is a type of SaaS business where you solve one problem by offering a single solution. Instead of offering SaaS, which is an all-inclusive product that customers use for any number of tasks and projects, Micro-SaaS focuses on a single product or solution.
+Two things in that definition matter more than the size of the market:
 
-Micro-SaaS has seen exponential growth in recent years due to the fact that it's so much easier to focus on a single problem and to solve it for a specific customer avatar. It also comes with far less risks as you don't have to invest in all the infrastructure a SaaS product requires.
-
-### How Micro-SaaS is different from SaaS?
-
-A SaaS company is usually an all-in-one service. A SaaS customer will typically use the software a business offers for any number of tasks and projects, whereas Micro-SaaS is fairly specific in what it can do.
+- **The team stays tiny.** Every decision below follows from having one to five people. You can't run ten marketing channels, support three customer types or build a platform.
+- **The product does one job for one group.** The 2021 version of this post put it as "solve one problem with a single solution". That still holds, but "one group" is the part people skip. A scheduling tool is not a micro-SaaS idea. A scheduling tool for dog groomers in the UK, which knows about breed-based appointment lengths, is.
 
 <x-image
     :url="mix('img/blog/saas-vs-micro-saas.png', 'assets/build')"
-    alt="SaaS vs Micro-SaaS"
+    alt="Diagram showing micro-SaaS as a small, focused subset of the wider SaaS market"
     caption="Micro-SaaS is a subset of SaaS"
 />
 
-### What do you need to start a Micro-SaaS product?
+## Three public examples, and how long they took
 
-To start a Micro-SaaS product, you need an idea for what type of problem or solution your business will offer.
+Most micro-SaaS success stories online are screenshots of a dashboard. We looked for examples where the founder or company published the numbers themselves, with dates, so you can check them.
 
-You also need to find out if there is enough demand in the market for the service or product before moving forward with developing it any further. This can be done by talking to potential customers and asking them about their pain points.
+**Storemapper.** Tringas started it in 2012 with no outside money. By 2017 it was making about $50,000 a month in recurring revenue with a team of five, and he sold it that year ([Built to Sell](https://builttosell.com/?p=717)). The product let small brands show shoppers which nearby stores carried their goods: one job, for one kind of customer. That is roughly five years from start to a sale.
 
-<x-quote>Communication is the most important skill for any entrepreneur. You need to ensure that you're developing a product or service to address something your target customer actually needs. </x-quote>
+**Plausible Analytics.** Uku Taht started Plausible in December 2018, and paid plans launched in 2019 ([Plausible](https://plausible.io/about)). The company's own post on its $1 million ARR milestone says it reached $83,637 MRR on 2 June 2022, with more than 7,000 paying subscribers and a team of four ([Plausible blog](https://plausible.io/blog/open-source-saas)). Its About page now lists more than 22,000 paying subscribers and a team of ten, says it has never paid for advertising, and that it is self-funded and profitable.
 
-Let's say you are building a CRM for realtors. The first thing you should do is talk to real estate agents and firms about their issues with their CRM and discover pain points.
+Our arithmetic on those 2022 numbers: $83,637 ÷ 7,000 is about $12 a subscriber a month. Plausible did not get to $1 million with big contracts. It got there with thousands of small ones, about three years after paid plans launched.
 
-After you have the idea, you'll need startup capital in order to execute your idea and launch it as well. This can be done by bootstrapping with personal funds or raising funding through investors or crowdfunding campaigns.
+**Bannerbear.** The image-generation API ran as an "open startup" with public metrics and wrote about growing to $50K MRR in a July 2023 post. Its open page now says it shares only selected metrics ([Bannerbear](https://www.bannerbear.com/open/)). That is worth knowing too: public revenue pages are self-reported and often stop being updated, so treat any number without a date as a story, not data.
 
-This list outlines the typical journey of an product from the idea to success.
+What the three have in common: a narrow job, no outside funding, and years, not months, between the first sale and a business that could pay a team.
 
-<x-list
-    :list='[
-        "Get ideas for your product",
-        "Validate your best idea by getting early feedback",
-        "Build your MVP (Minimum Viable Product) with your favorite tech stack",
-        "Launch to your niche and to popular websites",
-        "Grow organically",
-        "Monetize with recurring subscription plans",
-        "Automate parts of your business",
-        "Scale by hiring people or automating even more",
-        "Sell your product and start over"
-    ]'/>
+## The odds, from a large data set
 
-You don't have to follow the same path and your journey can be different from this. Let's get started and talk about startup ideas.
+Three examples are survivors by definition. For the base rate, the best public data we found is ChartMogul's study with Kyle Poyar of 6,525 software companies, published in October 2025 ([ChartMogul](https://chartmogul.com/reports/saas-growth-the-odds-of-making-it/)). Counting from the first revenue:
 
-<x-image
-    url="https://images.unsplash.com/photo-1594377157609-5c996118ac7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80"
-    alt="Generating good ideas is hard."
-    caption="Generating good ideas is hard."
-/>
+- 3.3% reached $1 million ARR within a year;
+- 13.4% within three years, and 25.1% within five;
+- almost half got there within ten years, and about one in ten reached $10 million.
 
-### How to generate Micro-SaaS ideas?
+Two caveats before you read too much into it. The companies in the study use a subscription analytics product, so they had already found paying customers and cared enough to measure them; the real odds from "idea" are lower. And the study counts companies, not founders' goals. A one-person product at $8,000 MRR is a very good outcome for its owner and a "failure to reach $1M" in this table.
 
-**Best startup ideas are organic.** They come when an entrepreneur notices a problem they need to solve or simply. When they see an emerging trend that they want to capitalize on before others do.
+Put next to the examples, the data agrees: Plausible (about three years from paid plans to $1M ARR) and Storemapper (about five years to $600,000 a year) both sit in the normal range, not the outlier one.
 
-These are some tips on how to get ideas for your startup:
+## The calculation: customers needed for a target
 
-- Keep looking at the problems around you and in your daily lives. Pay attention to what's becoming more frequent or is just "getting old". What will make people's life easier? Is there a trend that needs a solution, like artificial intelligence (AI) beating humans in games?
-- Find content that you relate to on the internet and read more about it.
-- Keep an idea journal by writing your ideas down as they come up or before going to sleep at night, even if it's just a couple of words or sentences. You'll be surprised how many good startup ideas can pop out of nowhere.
-- Keep an open mind and remember that there can be a lot of different types of startup ideas - not just apps.
+The useful question for a micro-SaaS isn't "how big is the market?" It's "how many people must pay me, and how many new ones do I need every month to stay there?" Here is the arithmetic for a $5,000 MRR target. We assumed 5% of customers cancel each month; that is an assumption for the example, not a benchmark, so put in your own.
 
-There are other ways to generate startup ideas as well, but these should not be your first choice. The ideas you generate non-organically can seem very promising at first but lead you to build a product where the idea sounds perfectly viable but is solving a problem no one actually has.
+| Price per month | Customers for $5,000 MRR | New customers a month just to replace 5% churn |
+|---|---|---|
+| $9 | 556 | 28 |
+| $29 | 173 | 9 |
+| $99 | 51 | 3 |
 
-Here are a few easy ways you can get started.
+What it means in practice:
 
-- The first is to simply brainstorm and create a list of ideas. This could be anything from helping people find the perfect match on Tinder or making it easier for companies to hire new employees.
-- Find a product similar to what you would love to build and look at its negative reviews. These reviews can help you find a problem with the product that your future customers want to resolve.
-- Another great way to come up with saas ideas is by solving your own problems as an entrepreneur. If you're struggling with launching a new product or marketing it, then try coming up with the solution yourself and see if there are others in the same boat.
-- Talk to other entrepreneurs and saas experts to see what they think are the biggest problems in saas.
-- The final way to generate saas ideas is by looking at what's currently popular in society and thinking of how you could make it better. For example, if there are a lot of people complaining about the lack of customer service available nowadays, then focus on providing that type of saas solution.
+- **At $9, you are running a marketing business.** Finding 28 new paying customers every month, forever, just to stand still takes steady search traffic or a large audience. Card fees also bite harder on small prices; we worked them out in [merchant of record fees at $9, $29 and $99](/articles/merchant-of-record-fees).
+- **At $99, you are running a sales business.** Three new customers a month is easy to say, but at that price people want a demo, an invoice and a reason to trust a small company.
+- **$29 to $49 is where most solo products land,** because it leaves room for both: enough customers to learn from, few enough that support stays manageable.
 
-### How to validate Micro-SaaS ideas?
+Our [MRR calculator](/tools/business/mrr-calculator/) does this for a mix of plans, and the [unit economics calculator](/tools/business/unit-economics-calculator/) adds what each customer costs to win.
 
-To validate SaaS ideas, you should first talk to potential customers and see if they want a product which you want to build.
+## How to start, in the order that saves the most time
 
-Polling your audience is one way of doing this without investing too much time or money in the idea. You could reach out to them about their problems with an existing SaaS product that's similar to what you're planning on building.
+1. **Pick the customer before the product.** The 2021 version of this guide said to play to your own expertise, and that is still the best filter. If you've worked in a trade, you know its paperwork, its jargon and where its people talk.
+2. **Look for a rule, a format or a country.** Small products earn where a big tool doesn't bother: one country's tax form, one industry's compliance step, one integration nobody maintains. These problems are boring, specific and easy to explain in a sentence.
+3. **Test demand before you build.** Our [idea validation guide](/articles/ultimate-guide-to-get-the-most-out-of-your-idea-validation-process) covers what desk research can and can't prove, and what a cheap test can. The short version: a pre-order or a paid pilot is evidence; a "sounds great" is not.
+4. **Build the smallest thing that does the job end to end.** Our post on [when to launch an MVP](/articles/when-is-the-right-time-to-launch-an-mvp) covers how small that can be.
+5. **Charge from day one.** Free users tell you what people will use; paying ones tell you what they'll keep. Both examples above earned from small subscriptions, not from free users converted years later.
+6. **Pick one channel and stay with it for six months.** For a one-person company, search content, a marketplace listing (Shopify, WordPress, Slack), or the community where your customers already talk usually beats spreading thin across social media and ads. Plausible says it grew without paid advertising ([Plausible](https://plausible.io/about)).
+7. **Know your runway.** If the base rate is two to five years to a meaningful number, the product has to be something you can afford to work on for that long. The [startup runway calculator](/tools/business/startup-runway-calculator/) shows how many months your savings or day job buy you.
 
-It's important not to get too attached or invested in one idea before you've validated it because it could take a while before you see any return on your time and efforts and most of the time startups have to pivot.
+## What a micro-SaaS is worth if you sell
 
-- Find products which are trying to solve a similar problem and see how well they're doing. Talking to potential customers about their experience with an existing saas product.
+Selling is a real exit for small products, and Storemapper is one example. Acquire.com's report on deals in the second half of 2022 put SaaS sales on its marketplace at an average of 2–3 times revenue, or about 5 times profit, and found profitable products sold fastest ([Acquire.com](https://blog.acquire.com/acquire-com-biannual-acquisition-multiples-report-feb-2023/)). It also advised founders with under $5,000 of trailing-year revenue to price below $25,000 to find a buyer. These are averages from one marketplace in one period, so treat them as a rough guide, not a price.
 
-  A startup called Dropoff talked to people about the difficulties they experienced when picking up and dropping off their kids at school. They found that parents would often worry about whether there would be any parking available, which is why Dropoff is now providing valet parking at various schools in New York City.
+The practical lesson: buyers pay for recurring, profitable revenue that doesn't depend on the founder. Monthly or yearly plans count; lifetime deals don't count the same way, because they don't repeat.
 
-- Platforms like Reddit are easy to use and have some of the largest communities on the internet. You can find a subreddit that matches your saas idea and talk to people about their problems with similar saas products.
-- Social media is another great place to validate saas ideas by reaching out to people and asking them if they'll be interested in your saas product.
+## What changed since 2021
 
-<x-quote>
-Try to find people with an interest in what you want to build and get them involved in your startup journey. These are the same people who will talk about your product and help you gain traction.
-</x-quote>
+- **Building got cheaper; finding customers didn't.** AI coding tools make a working first version a matter of weeks. Our post on [building an app without code](/articles/how-to-leverage-ai-and-build-an-app-without-coding) covers what that costs. It also means more competitors ship the obvious ideas, which pushes the advantage further towards knowing one group of customers well.
+- **Small, verifiable numbers beat big market sizes.** The 2021 post quoted a global SaaS market forecast. A market forecast tells a solo founder nothing. Fifty customers at $99 is a business; 0.001% of a large market is a slide.
 
-### How to build a Micro-SaaS product?
+## Sources
 
-Now that you've come up with your SaaS idea and have validated it, the next step is coming up with how exactly you want customers to access your SaaS service. There are two common ways this can be done:
-
-- The first option would be building an app for your SaaS product, which makes it available across all platforms.
-- The second option would be to build a website for your SaaS business that people can access through their web browser and is usually best if you have budget constraints.
-
-No matter what type of SaaS solution you want to offer, some programming knowledge is required to do build a SaaS product. If you are a non-technical founder we strongly recommend you to partner with an agency like us to help with the technical aspects of this process.
-
-You can contact us by \[booking a discovery call]({{ $page->discovery_call_url }}) to discuss your idea.
-
-### How to launch a Micro-SaaS product?
-
-The first step to launching SaaS products is figuring out the right time of year for you to release your SaaS solution, as this can depend on what type of product or service you're providing and how much money you have available at the start-up stage.
-
-Launching SaaS products can be an extremely exciting time for any entrepreneur. However, it's important not to get your hopes up too much with the first version of your product. You should also make sure to develop a product roadmap and an effective marketing plan in order to gain traction.
-
-### How to market a Micro-SaaS product?
-
-Marketing SaaS products can be one of the most challenging tasks for any SaaS entrepreneur. However, it's important not to put all your eggs in one basket and focus on developing different types of marketing campaigns. Below are five saas marketing channels that saas companies should be leveraging in today's digital landscape.
-
-- Email marketing: this is a good marketing channel for saas companies because they offer the ability to personalize each message and deliver it in specific ways.
-- SEO (search engine optimization): this marketing channel is especially important, as it allows businesses to rank higher on Google search results pages and generate more leads for their business. It's recommended that marketers focus on high-quality content and spend time building links to their website for SaaS products.
-- Social Media Marketing: this is an important strategy because it allows companies to reach out and connect with customers in the digital world by focusing on Facebook, Twitter, Instagram or LinkedIn posts that can help promote their business. It's also recommended for businesses to create content to grow their social media following.
-- PPC (pay per click) marketing: this is another important strategy because it allows SaaS companies to reach out and generate sales by paying a variable cost each time somebody clicks on the advertisement. This type of advertising can be especially effective for companies who have a good conversion rates on their landing page.
-
-### How to get first user feedback?
-
-The SaaS idea you've come up with is great, but how do you know if customers are going to like it once they start using the product or service? It's hard for any entrepreneur not to want validation when launching their SaaS business. The best way to figure out what your SaaS customers think of your SaaS product is to ask them for feedback.
-
-The best way to get feedback from SaaS users is by using a simple one-question survey that you can email out or create on Google Forms, and then follow up with those who answer the question in order to gauge their interest levels. You could also reach out to SaaS users and ask them for feedback on your SaaS solution through social media platforms like LinkedIn.
-
-<x-image
-    url="https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
-    alt="No time like the present"
-    caption="No time like the present"
-/>
-
-### Make It Happen
-
-<x-list :list='[
-"Find a problem to solve.",
-"Build a product that solves this problem.",
-"Determine the best way to reach your audience and get feedback on your SaaS idea - either through an app or website.",
-"Develop the saas product and launch it into the market.",
-"Collect feedback from customers, validate saas idea, iterate as needed, repeat steps 1-4 until you have found success in launching saas products."
-]'/>
-
-<br/>
-
-The saas market is growing and the right opportunity to take advantage of it is right now. The saas market was projected to reach \$284 billion by 2025. That means entrepreneurs like you have the potential to generate a lot of revenue in a short time span.
-
-If you're looking for a more in-depth guide that covers the strategies we use to build and launch SaaS products, check out more of our posts.
+- Tyler Tringas: [Micro-SaaS ebook introduction](https://tylertringas.com/micro-saas-ebook/) (read 29 October 2026).
+- Built to Sell: [A Small Giant Makes a Great Exit](https://builttosell.com/?p=717), interview with Tyler Tringas on Storemapper (30 November 2018).
+- Plausible Analytics: [About](https://plausible.io/about) (read 29 October 2026) and [How we built a $1M ARR open source SaaS](https://plausible.io/blog/open-source-saas) (22 June 2022).
+- Bannerbear: [Open startup page](https://www.bannerbear.com/open/) (read 29 October 2026).
+- ChartMogul and Kyle Poyar: [SaaS growth: the odds of making it](https://chartmogul.com/reports/saas-growth-the-odds-of-making-it/) (15 October 2025).
+- Acquire.com: [Biannual Acquisition Multiples Report, Feb 2023](https://blog.acquire.com/acquire-com-biannual-acquisition-multiples-report-feb-2023/) (April 2023).
+- Our calculations: customers needed for $5,000 MRR at each price, and the replacements needed at an assumed 5% monthly churn; revenue per Plausible subscriber from its June 2022 figures.

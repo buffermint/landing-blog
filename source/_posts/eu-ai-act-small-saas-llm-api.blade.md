@@ -108,7 +108,7 @@ These are ceilings, not tariffs. Authorities weigh the size of the company, the 
 5. **Write the AI literacy page** for your team.
 6. **Keep personal data out of prompts** where you don't need it. That's a GDPR point as much as an AI Act one. Our [PII redactor](/tools/ai/pii-redactor/) masks names, emails and numbers in text before you paste it anywhere, and runs in your browser.
 
-If you're also working out whether the feature pays for itself, our [LLM cost calculator](/tools/ai/llm-cost/) compares per-request prices across providers. For the broader picture of how AI changed SaaS products, see our earlier piece on [how AI and machine learning are changing the SaaS space](/articles/how-ai-and-machine-learning-is-changing-the-saas-space). If you sell to EU consumers, the [European Accessibility Act](/articles/european-accessibility-act-small-saas) has its own deadline already in force.
+If you're also working out whether the feature pays for itself, our [LLM cost calculator](/tools/ai/llm-cost/) compares per-request prices across providers. To see what the feature costs per user, read [what an AI feature really costs per user](/articles/ai-feature-cost-per-user). If you sell to EU consumers, the [European Accessibility Act](/articles/european-accessibility-act-small-saas) has its own deadline already in force.
 
 ## Sources
 

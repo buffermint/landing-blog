@@ -1,112 +1,112 @@
 ---
 featured_image: assets/img/uploads/product-to-market-fit-feature-image.jpeg
 featured_thumbnail: assets/img/uploads/product-to-market-fit-thubnail.jpeg
-title: How to Achieve a Product-Market Fit with Your Product
-seo_description: "What product-market fit is, how to tell when you have it and how to get there, with examples from Apple, Nike and Facebook."
+title: "Product-market fit: four tests and what each one misses"
+seo_description: "Andreessen, Rachleff, Sean Ellis's 40% survey and retention: four ways to tell if you have product-market fit, where they disagree, and when to pivot."
+keyword: product market fit
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-19
+updated: 2026-10-29
+category: idea_validation
 extends: _layouts.post
 section: postContent
 ---
-One of the most important concepts in [lean startup methodology](https://buffermint.com/articles/how-to-use-lean-methodology-to-innovate-faster) is product-market fit, but it is often poorly defined. 
+Our 2021 version of this post explained product-market fit with the iPod, the iPhone 4S and Nike. None of them helps a small software company decide anything on a Monday morning. This rewrite goes back to where the term came from, lays out the four tests people actually use, shows where they disagree, and adds a calculation most guides skip: how many survey answers you need before the famous "40% test" means anything. It also takes in our short 2021 post on pivoting, because deciding to pivot is the other side of the same question.
 
-Product-market fit is a term coined by Marc Andreessen in 2007 when he wrote
+## Where the term comes from
 
-> "Product market-fit means being in a good market with a product that can satisfy that market." 
+Marc Andreessen popularised the phrase in a 2007 essay titled "The only thing that matters". His definition is short: product-market fit "means being in a good market with a product that can satisfy that market" ([Andreessen](https://pmarchive.com/guide_to_startups_part4.html)). Note the order. In his view the market matters most: a great team with a mediocre product can still win in a market that badly wants something, and a great product can't save a market that doesn't.
 
-That's the idea, but how do you get there?
+He also described what the two states feel like. Without fit, customers aren't quite getting value, word of mouth isn't spreading and "lots of deals never close". With it, customers buy "just as fast as you can make it" and money piles up in the bank account.
 
-Some tech companies (such as Facebook) have achieved product-market fit almost immediately. They launched their products and they were an overnight success. The rest of us will probably take much longer to achieve the elusive condition of being in a good market with a product that can satisfy that market.
+That's a description, not a measurement. The four tests below are attempts to turn it into one.
 
-If you're starting a tech startup, it is critical to have an idea of what product-market fit looks like, how you can achieve it, and, most importantly, when. 
+## Test 1: the 40% "very disappointed" survey
 
-So, what is product-market fit?
+Sean Ellis, who led early growth at Dropbox, LogMeIn and Eventbrite, asks users one question: how would you feel if you could no longer use this product? The answers are "very disappointed", "somewhat disappointed" and "not disappointed". According to First Round Review's account, Ellis benchmarked nearly 100 startups and found that those under 40% "very disappointed" generally struggled to grow ([First Round Review](https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit/)).
 
-Product-market fit is the point where your product (or service) has reached a level of desirability that makes it attractive to enough customers so that you're able to sell it at an appealing rate, but not too fast.
+The best-documented use is Superhuman. Its score was 22% in summer 2017. It then narrowed its focus to the kinds of users who answered "very disappointed", built for what they valued, and reached 58% within about three quarters.
 
-In a nutshell, the demand for your product needs to match the supply that you produce. 
+**What it misses:** it measures how much current users like the product, not whether there are enough of them or whether they'll pay. A product loved by 60 people in a market of 200 passes the test and still fails as a business.
 
-This balance is more important during periods of high demand. If your customer base is demanding but you don't have enough inventory, you'll be forced to refuse new customers and lose some money on them. 
+## Test 2: growth without marketing
 
-One way to think of this balance is: are people buying it faster than you can produce it? If the answer to that question is yes, it's time to increase your production rate and find new customers. 
+Andy Rachleff, co-founder of Benchmark Capital, gives a harder test, quoted in Andreessen Horowitz's collection of product-market fit ideas: you have fit if your product grows exponentially with no marketing ([a16z](https://a16z.com/12-things-about-product-market-fit/)). The same piece notes that he treats a Net Promoter Score of 40 or more as a sign of likely fit, but calls it far less reliable than customers actually buying.
 
-If the answer is no, you're producing more than you can sell (inventory) and need to find more people who want what you're selling.
+**What it misses:** most small B2B products never grow "exponentially with no marketing", even when customers love them, because their buyers don't talk to each other much. A tool for dental clinics can have excellent fit and still need sales calls. Use this test for consumer and team products where users invite users; don't use it to give up on a niche B2B tool.
 
-Also, if your inventory is high and nobody wants what you are offering, you can't make any sales. 
+## Test 3: retention that flattens
 
-And if this does not give you proper understanding, stick with me as we take a look at how to achieve a product-market fit with your product and what the benefits are if you succeed.
+The test most investors look at today is a retention curve: of the customers who started in a given month, what share are still active or paying each month afterwards? Every curve falls at first. With product-market fit, it stops falling and flattens at a stable share. Without it, it keeps sliding towards zero.
 
-### The impact of product-market fit
+**What it misses:** it needs time. You need several monthly cohorts and several months of data before a flat line means anything, so it's a confirmation test, not an early one. Our [MRR calculator](/tools/business/mrr-calculator/) helps you see what a given level of churn does to revenue over a year.
 
-It's important to establish product-market fit because it can really help your startup to gain more profit. It is impactful in the long run.
+## Test 4: customers paying, at your price
 
-To emphasize the impact of product-to-market fit, let's take the example of iPod and Microsoft Zune. 
+The plainest version of Andreessen's description: are people paying, renewing and recommending without discounts or favours? It's the test Rachleff says beats any survey. For a small SaaS it's also the one that matters most, because a product that people say they love but won't pay for is not a business.
 
-Apple's first iPod had a very niche product-market fit, it only appealed to a small spectrum of people. The iPod changed the entire market as it shifted to digital music players, but the iTunes store and iPod mini were not able to reach product-market fit. 
+**What it misses:** early paying customers are often friends, former colleagues or people who like you. Count only customers you didn't know before.
 
-Apple's second attempt at an iPod was much more successful. It reached product-market fit by including features such as video playback, games, and wireless access, which made it more appealing to many different consumers.
+## Where the tests disagree
 
-But, Microsoft didn't quite get this right when they introduced their Zune back in 2006. The Zune was a failure because people perceived it as being just another mp3 player on the market.
+The four tests can give different answers about the same product:
 
-It failed to differentiate itself from others on the market and a lack of marketing made this even worse. Sales were poor - around 500,000 units - and it contributed to Microsoft's decision to sell its digital music business. 
+| Situation | Survey | Growth without marketing | Retention | Paying |
+|---|---|---|---|---|
+| Small, loved niche tool | Pass | Fail | Pass | Pass |
+| Viral free app nobody pays for | Pass | Pass | Often pass | Fail |
+| Sales-led B2B with long contracts | Mixed | Fail | Pass (contracts) | Pass |
+| Early product, 30 users | Too few answers | Too early | Too early | Mixed |
 
-By the time Apple launched the iPod, they had already found product-market fit and this new market was one that the Zune couldn't penetrate. 
+The table shows why "do we have fit?" depends on what business you're building. For a small subscription product, we'd weight the tests in this order: paying customers you didn't know first, retention second, the survey third (as a guide for what to build), and growth without marketing last.
 
-Finding product-market fit is crucial for a startup and it's important to find this before you launch, not after. If you're able to achieve this balance, your startup will grow organically and will be able to scale up with demand.
+## Our calculation: how many survey answers make the 40% test meaningful
 
-### How to find your perfect balance
+The 40% survey is popular because it's cheap. It's also easy to over-read, because most early products have few users. We worked out the margin of error, at 95% confidence, around a measured score of 40%:
 
-The first step is to identify a basic idea for the product. Ideally, this should be done earlier in the ideation process. There are ways of testing the idea before investing in it, such as exploring if people will pay for it and at what price they would be willing to pay.
+| Answers | Range the true score is likely in |
+|---|---|
+| 20 | about 19% to 61% |
+| 40 | about 25% to 55% |
+| 100 | about 30% to 50% |
+| 250 | about 34% to 46% |
 
-Once you have a good idea, come up with a minimum viable product. An MVP is your initial offering, but without all the extra features that you know may be desired by others. It is a product/service stripped down to just basic functionalities. This should give you a rough idea of your product's potential. 
+(We used the standard approximation for a proportion: 1.96 × √(0.4 × 0.6 ÷ n). It's rough for small samples, which makes the point stronger, not weaker.)
 
-Then do market research and see what customers think of this product. This will be represented in the form of an S-curve chart which will indicate when you have enough sales but not too many. 
+With 40 answers, a "40%" result is consistent with anything from a struggling product to a strong one. Superhuman's founder told First Round that results start to be "directionally correct" at around 40 respondents, and the numbers agree with the word "directionally": 40 answers tell you which way you're heading, not where you are. Two practical rules follow:
 
-![](/assets/img/uploads/product-market-fit-buffermint.jpeg "Product market fit - Scurve")
+- **Don't announce fit on fewer than about 100 answers.** Below that, treat the score as a direction and read the written answers instead.
+- **Survey only real users.** Superhuman followed Ellis's advice and surveyed people who had used the core product at least twice in the last two weeks, not everyone who had ever signed up.
 
-Apple achieved the perfect product-market fit balance with the iPhone 4s over earlier versions of the same product. People were more interested in purchasing their device at that time, this was partly due to an update over earlier versions.
+Our [sample size calculator](/tools/business/sample-size-calculator/) does this arithmetic for other scores and confidence levels.
 
-This was due to the better features and functionality that were included in this updated version of the phone. 
+## When to pivot instead
 
-Apple had not made too many changes to the device, but they had added enough for customers to be interested in buying it instead of sticking with their older model.
+Our 2021 post on pivoting compared a fixed strategy to a rocket launch and a flexible one to a ship's voyage. The metaphor still works, but it needs a rule for when to change course. Using the tests above:
 
-The company had found the "product-market fit", as they were now attracting a lot of customers with iPhone 4s. They continue to make improvements to it, while at the same time keep the price high enough that they are making a good profit on each one sold.
+- **Pivot the customer** when a small group scores very high on the survey and everyone else doesn't. That's what Superhuman did, without changing the product's purpose.
+- **Pivot the product** when customers have the problem but don't want your solution: they keep using spreadsheets after trying your tool.
+- **Pivot the whole idea** when nobody in your target market says the problem is painful, after real conversations. Our [idea validation guide](/articles/ultimate-guide-to-get-the-most-out-of-your-idea-validation-process) covers how to have those conversations.
 
-Nike is another great example of a company that has achieved a product-to-market fit by selling athletic wear. 
+The best-known example of the last kind is Slack. Its company, Tiny Speck, released an online game called Glitch in September 2011 and announced in November 2012, about 14 months later, that it would close. The team had built an internal messaging tool to coordinate its distributed developers, and that tool launched to the public as Slack at the end of 2013 ([TechCrunch](https://techcrunch.com/2019/05/30/the-slack-origin-story)). The pivot kept the team and the technology and threw away the original market.
 
-Their success can be attributed to the fact that Nike has been able to find a way of making footwear fashionable as well as functional. 
+A pivot isn't a failure, but it shouldn't be a habit either. Change one thing at a time (the customer, the problem or the product) so you know what made the difference.
 
-To achieve this, they have engaged in plenty of research into their product and also how customers perceive it. T
+## A routine you can run each month
 
-his has helped them come up with new ideas for shoes while at the same time working out what customers want in their products. 
+1. Count paying customers you didn't know before, and the share still paying from each starting month.
+2. Once you have 40 or more active users, send the one-question survey to those who used the product at least twice in the last two weeks, and wait for about 100 answers before you trust the number.
+3. Read every "very disappointed" answer and write down what those users have in common.
+4. Spend most of the next month's work on what that group values, and say no to requests from the rest.
+5. If after three or four months nothing moves, use the pivot rules above.
 
-The result: Nike brought shoes that have been remarkably innovative and unique from the rest on the market. 
+Before you get here, you need a product people can try. Our post on [when to launch an MVP](/articles/when-is-the-right-time-to-launch-an-mvp) covers how small that can be.
 
-By achieving a "product-market fit" with their athletic wear, Nike makes more money without having to lower its prices. They stand out by charging higher prices for their products than others who sell similar footwear.
+## Sources
 
-### What you can do if you're not there yet
-
-When you're not getting the product-market fit, you need to figure out where your potential customers would find your product, and how they might be able to buy it. For a new startup, this can require a significant investment in time and resources. 
-
-To achieve the product-market fit you must focus on your customers and pay close attention to what they want.
-
-When you know what the customers want, then it will be easy to adapt your product accordingly. You can do this while figuring out ways to sell it for a higher price.
-
-There are many ways to gather customer data like running research or even conducting surveys. The moment you find out what the customers want, adjust the product to meet that demand.
-
-If it is not possible to make the product better for customers, then take a step back and think of other ways of finding potential customers. Remember that not every company will have an opportunity to experience product-market fit.
-
-However, if your market research indicates that your product has potential, then congratulations! Improve on customer data and achieve the perfect product-market fit for your product.
-
-### Conclusion
-
-Product-market fit is when a company has a product that meets both the needs of the customers and the company. The company sells enough to make money while maintaining a fluid supply in the market.
-
-In this article, we've discussed how you might find your own sweet spot and provided some helpful tips on how you could get there if you haven't yet.
-
-If you are starting out with ideas and aim to launch a tech startup up, we can help with our [Lean startup](https://buffermint.com/articles/how-to-use-lean-methodology-to-innovate-faster) approach.  
-
-The team of experts at [BufferMint](https://buffermint.com/) will help you every step of the way to make sure your SaaS product gets a perfect launch from its initial development. 
-
-Book a [discovery call]({{ $page->discovery_call_url }}) today!
+- Marc Andreessen: [The only thing that matters](https://pmarchive.com/guide_to_startups_part4.html) (25 June 2007).
+- Tren Griffin for Andreessen Horowitz: [12 things about product-market fit](https://a16z.com/12-things-about-product-market-fit/) (18 February 2017).
+- First Round Review: [How Superhuman built an engine to find product/market fit](https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit/) (read 29 October 2026).
+- TechCrunch: [The Slack origin story](https://techcrunch.com/2019/05/30/the-slack-origin-story) (30 May 2019).
+- Our calculation: the 95% margin of error for a measured 40% score at 20, 40, 100 and 250 answers (normal approximation).

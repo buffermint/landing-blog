@@ -110,7 +110,7 @@ In order of how much they moved our figures:
 4. Add the result to your other per-user costs in the [unit economics calculator](/tools/business/unit-economics-calculator/) and see what's left of the plan price for a heavy user.
 5. If the heavy user is above about a third of the plan price, fix it before launch: a smaller model, a shorter answer, caching, or an allowance with a meter.
 
-We wrote earlier about [how AI is changing SaaS products](/articles/how-ai-and-machine-learning-is-changing-the-saas-space). The cost side is less exciting, but it's the side that decides whether an AI feature can live on a $19 plan.
+Cost is one half of shipping an AI feature to EU users; the other is the paperwork, which we covered in [the EU AI Act for a small SaaS that calls an LLM API](/articles/eu-ai-act-small-saas-llm-api).
 
 ## Sources
 

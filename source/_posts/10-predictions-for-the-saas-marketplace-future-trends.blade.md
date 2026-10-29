@@ -1,132 +1,87 @@
 ---
 featured_image: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
 featured_thumbnail: assets/img/uploads/photo-1485939551351-bc1a4ad5ce5a.jpeg
-title: "10 Predictions for the SaaS Marketplace: Future Trends"
-seo_description: "Ten predictions for the SaaS market, from vertical and micro-SaaS to AI and usage-based pricing, based on the trends shaping it today."
+title: "Our 2021 SaaS predictions, graded against 2026 evidence"
+seo_description: "In 2021 we made ten predictions about SaaS. Five years on we graded each against public data: two right, two partly right, and six we can't grade."
+keyword: saas predictions
 author: "Vivek Dixit "
 show_meta: true
 date: 2021-08-13
+updated: 2026-10-29
 extends: _layouts.post
 section: postContent
 ---
-It’s hard to predict what lies ahead in the SaaS industry. But there are some current trends that can help us see where we're headed. Let's take a look at ten predictions for what might happen in the SaaS marketplace as well as a few thoughts on future trends.
+In August 2021 we published ten predictions for the SaaS market. Most "future of SaaS" posts are never checked again. Five years on, we went back to ours, graded each one against public data from 2025 and 2026, and wrote down why the ones we can't grade fail. The short version: **two were right, two were partly right, one described what had already happened, and five were too vague to be wrong.** Those five turned out to be the most useful part of the exercise, because they show how not to write a prediction.
 
-### 1) The SaaS marketplace will continue to evolve
+## The scorecard
 
-New entrants into the SaaS space are a phenomenon that has been going on since long before Marc Benioff coined the term "software-as-a-service."
+| # | 2021 prediction | Grade | Evidence |
+|---|---|---|---|
+| 1 | The SaaS market will keep evolving | Can't grade | No measure, no date |
+| 2 | The balance of power will be disrupted | Can't grade | No measure, no date |
+| 3 | The rise of AI | Right, slower for small firms | US Census Bureau, 2026 |
+| 4 | Micro-SaaS is the future | Partly right | Plausible; ChartMogul |
+| 5 | Software will grow faster than hardware | Can't grade | Our 2021 figure was a 2015 forecast |
+| 6 | Companies investing in R&D will benefit | Can't grade | True by definition, and our 2021 numbers had no source |
+| 7 | APIs are the next big thing | Right | Postman, 2025 |
+| 8 | Software will be commoditised | Described the past | Our own 2021 text |
+| 9 | More startups will go after the long tail | Partly right | ChartMogul |
+| 10 | Big companies will partner with small SaaS | Can't grade | Our example couldn't be verified |
 
-Product companies ranging from Apple to Google have entered the B2B world by launching their products in a software-as-a-service (SaaS) model.
+## Prediction 3: the rise of AI. Right, but slower for small businesses
 
-Another example is Amazon Web Services (AWS), which offers cloud services that are used by companies that build SaaS products. For example, AWS powers many of the major SaaS tools including Cloudflare, ZenDesk, etc.
+In 2021 we wrote that AI would change how SaaS companies design, market and sell. The direction was right; the pace depends on who you ask.
 
-Even traditional product companies like Oracle have joined the fray by launching their own proprietary software-as-a-service (Oracle Saas) offerings.
+The US Census Bureau's survey of businesses is the broadest measure we found. From December 2025 to May 2026, the share of US businesses using AI in any business function hovered between 17% and 20%, and was 19.8% on 3 May 2026. It was 37% for firms with 250 or more employees, and under 20% for firms with four or fewer ([US Census Bureau](https://www.census.gov/library/stories/2026/05/ai-use-businesses.html)). The Information sector was highest at 39.7%, and retail around 14%.
 
-It's quite an exhibit that there will be a new wave of new entrants, potential acquirers, and products.
+The size split explains why AI adoption figures disagree so much: a survey that mostly asks large companies, or tech companies, will find far higher use than one of all businesses. Both pictures are true at once: AI is everywhere in large software companies and still a minority habit in small businesses. For a small SaaS selling to small businesses, that gap matters more than the headline. Your customers may not be ready for an AI feature you'd assume is expected.
 
-Many of today's leading SaaS companies began by providing a single solution – often a simpler, more narrowly scoped version of an on-premise software product. Notable examples include Slack (team communication), RingCentral (enterprise communications),
+AI also changed SaaS pricing, which our 2021 post hinted at in its description but didn't predict. GitHub moved every Copilot plan to usage-based billing on 1 June 2026, with credits consumed by token usage while base plan prices stayed the same ([GitHub](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)). We compared how 12 tools define a credit in [credits, seats or usage](/articles/credit-based-pricing-12-tools), and worked out [what an AI feature really costs per user](/articles/ai-feature-cost-per-user).
 
-### 2) The balance of power will be disrupted
+## Prediction 4: micro-SaaS. Partly right, for the wrong reasons
 
-The balance of power in the SaaS market has been disrupted as other companies (who were not typically) software companies enter the space with new and innovative products.
+We predicted that micro-SaaS was the future, and described it as low-complexity products on a "freemium" model. We also quoted a forecast of 6 million US micro-SaaS customers by 2022. We couldn't find a source for that number, so we've withdrawn it.
 
-As a corollary to this trend, traditional software vendors have launched their own SaaS products to address new markets in which they may not have been traditionally active. But the marketplace will remain healthy and vibrant. 
+What the evidence supports: small, focused, self-funded software companies can do very well. Plausible Analytics, a self-funded analytics product, passed $1 million in annual recurring revenue in 2022 and now lists more than 22,000 paying subscribers, with a team of ten ([Plausible](https://plausible.io/about)). It charges from the start rather than relying on a free tier, which is the opposite of the freemium model we described.
 
-### 3) The rise of AI
+What it doesn't support: that micro-SaaS is "the future" of SaaS as a whole. ChartMogul's 2025 study of 6,525 software companies found that about a quarter reached $1 million ARR within five years of first revenue ([ChartMogul](https://chartmogul.com/reports/saas-growth-the-odds-of-making-it/)). Small software companies are a real path, not a market shift. Our [micro-SaaS guide](/articles/launch-your-micro-saas-product) has the numbers in more detail.
 
-![](/assets/img/uploads/photo-1485827404703-89b55fcc595e.jpeg)
+## Prediction 7: APIs. Right, with a twist we didn't see
 
-The rise of artificial intelligence will cause SaaS vendors to have a new and different approach for everything, be it product design, marketing, or sales.
+We wrote that APIs were the next big thing in SaaS. Postman's 2025 State of the API report, a survey of more than 5,700 developers, architects and executives, found 82% of organisations had adopted an API-first approach to some degree, and 25% were fully API-first ([Postman](https://www.postman.com/state-of-api/2025/)).
 
-The most recent advances in artificial intelligence (AI) are changing the way SaaS companies do business. These developments will ultimately impact the SaaS industry. One big example is recently released, Google Brain is a deep learning neural network designed to simulate human thinking.
+The twist is who calls the APIs. The same report found that only 24% of developers design APIs with AI agents in mind, and that unauthorised or excessive calls from AI agents were their top security worry, at 51%. In 2021 we pictured APIs connecting businesses to each other. In 2026 the new consumer is software acting on a user's behalf. For a small SaaS, that means rate limits, scoped keys and clear errors are no longer optional extras.
 
-As claimed by Alphabet Inc., Google’s parent company - In 2016, Google Brain was used to creating a program that could design its own software.
+## Prediction 9: the long tail. Partly right
 
-Now, Google Brain is being put to work for enterprise-class machine learning tasks, including speech recognition and image analysis, such as detecting cancer in medical images. This technology looks promising to replace many jobs that are currently done by humans.
+We predicted more startups would serve niches. That is what happened among small, self-funded companies, and the tools to build them got much cheaper (we compare the main AI builders in [build an app without coding in 2026](/articles/how-to-leverage-ai-and-build-an-app-without-coding)). But the 2021 post's claim that a niche product's revenue "will be more than enough" was too confident. The ChartMogul data above shows most software companies take years to reach a meaningful size, niche or not.
 
-AI will have an increasing impact on the SaaS industry in many ways.
+## The six we can't grade, and why
 
-### 4) Micro SaaS is the future of SaaS
+- **1 and 2 ("will keep evolving", "balance of power will be disrupted").** No measure and no date: any outcome fits. A prediction that can't be wrong carries no information.
+- **5 (software over hardware).** Our evidence was a Gartner forecast for 2015, already six years old when we wrote it. We tried to check Gartner's 2026 forecasts, but couldn't open the pages, so we leave it ungraded rather than guess.
+- **6 (R&D pays off).** Companies that invest in products tend to have better products; that's close to a definition. We also wrote that SaaS sales grew only 1% in 2017, and we can't find where that number came from, so we've withdrawn it.
+- **8 (commoditisation).** Our own 2021 text said Microsoft and Adobe had already moved to subscriptions. That's a description of the past, not a prediction.
+- **10 (big companies partnering with small SaaS).** Our example was a partnership between Oracle and HighJump Software. We couldn't find a record of it, so we've withdrawn it.
 
-Micro-SaaS is a new industry term for SaaS products that are delivered in low complexity and low cost, to niche markets. The service tiers and pricing models for Micro-SaaS are more akin to the "freemium" model than traditional SaaS offerings.
+## How to write a prediction that can be graded
 
-With a prominent growth in the SaaS industry, Micro-Saas startups will be able to provide more generalized services with higher adoption rates as they continue to refine their offerings.
+The exercise taught us more than the grades. A useful prediction has four parts:
 
-This will allow for these micro-SaaS startups to become more viable companies in the SaaS marketplace as they grow their customer bases. Check out [why micro-SaaS is the future in SaaS?](https://buffermint.com/articles/micro-saas-is-the-future)
+1. **A measure:** something counted by someone else, such as a government survey or a vendor's published report.
+2. **A number:** "more than 30%", not "more".
+3. **A date:** "by the end of 2028", not "soon".
+4. **A source you'll check:** decide now where you'll look, so you can't pick a friendly source later.
 
-There are a number of micro-SaaS products that you can use regularly. For example, Amazon Assistant offers product comparisons and Grammarly provides grammar checking in Google Docs and MS Office. Some of these tools come as small browser extensions but add a big value to your work.
+For example, "AI will change SaaS" can't be graded. "The Census Bureau's survey will show more than 30% of US businesses using AI in any business function by the end of 2028" can. We'll hold ourselves to that format from now on.
 
-With the development of Micro-SaaS, we can see that there are ambitious goals for the United States. We see that by 2022, the market is predicted to grow to 6 million customers in the US which will amount to a 25% growth rate. It's projected that by 2020, this number will be at 3 million customers and it will be growing exponentially.
+If you're planning around trends, the free [sales forecast calculator](/tools/business/sales-forecast-calculator/) and [startup runway calculator](/tools/business/startup-runway-calculator/) turn assumptions into numbers you can check later, which is the same discipline on a smaller scale.
 
-Do you want to cut through the process of idea to launch your micro-SaaS in a matter of days? Then [booking a discovery call]({{ $page->discovery_call_url }}) with [BufferMint](https://buffermint.com/) will make it happen. See you on the other side.
+## Sources
 
-### 5) We are likely to see more growth software industry over hardware
-
-There has been much discussion about the move of IT sector spending from hardware-based products to software solutions and services. It's projected that by 2015, IT enterprise software spending will reach $264 billion dollars, source: Gartner.
-
-Needless to say, this is great news for SaaS companies and up-and-coming startup founders. The benefits are twofold: a) all products are cloud-based and easily upgradeable to keep up with technological advances; b) SaaS solutions can be purchased on a pay-as-you-go basis, an attractive proposition for companies that might only need the product or service for a short time.
-
-You'll see this trend continue as more IT companies shift budgets from hardware and services to software and hosted solutions.
-
-With the high costs of data centers and hardware, many businesses are choosing to go cloud-based for their data storage needs. Examples include companies such as Box, Dropbox, Google Drive, and Microsoft Office 365.
-
-### 6) Companies that are investing in SaaS R&D will gain more benefit
-
-For the past several years, the SaaS market has been characterized by a slight contraction in revenues. In 2017, the total increase in SaaS sales was 1% more than it was in 2016 figures.
-
-Some of this is due to growth in on-premises software but it also appears some founders and investors in the market are taking a more cautious approach to expansion.
-
-However, one area of growth seems to be tied directly into SaaS R&D spending. Most companies that are investing heavily in Research & Development (R&D) originally came from the enterprise software market but have grown into this space.
-
-Companies that are investing in SaaS R&D include Google, Box, Dropbox, and Microsoft Office 365. The benefits of these companies spending money on Research & Development are the continual innovation to the market and staying ahead of the competition.
-
-### 7) APIs are the next big thing in SaaS
-
-If you're not familiar with APIs, think of them as a set of instructions that allows your business to connect to other businesses or systems. By using an API, you'll have access to data from various sources all in one place.
-
-APIs are the core technology behind how most software-as-a-service (SaaS) solutions work, and they are a fundamental feature of cloud computing.
-
-One example of how APIs are changing the game is with Uber and Airbnb. Each company is developing its own API to connect drivers and hosts with people looking for a ride or place to stay, but neither wants to be limited to one city.
-
-There are some great exhibits of how companies like Uber, Airbnb, and Facebook have built platforms to support their ecosystems of businesses that rely on them.
-
-You must know that the trend toward a more connected, software-as-a-service world will continue. As it does, you will also see more and more APIs being offered by the software-as-a-service companies you use.
-
-### 8) SaaS and the commoditization of software
-
-Commodity software is software that's available in a store, such as Windows, Photoshop, etc. Commodity software is designed for a specific customer base and often requires customization by the user.
-
-Initially, SaaS providers were predominantly technology companies with their own infrastructure. The days of companies paying top dollar for expensive, proprietary solutions are quickly becoming part of the past.
-
-Big companies like Microsoft and Adobe have now entered the SaaS marketplace by providing their own productivity suite.
-
-The commoditization of software has occurred with the rise of sellers who offer professional solutions at a fraction of the cost through SaaS.
-
-### 9) More startups will go after the long tail SaaS
-
-For those who are not familiar with the term, long tail refers to a business’s ability to maximize its sales by catering to niches rather than focusing only on hits.
-
-This prediction is based on the idea that SaaS companies with a small number of customers will be successful. This is because their long-tail strategy allows them to have many individual customers at lower costs and still be profitable.
-
-A small start-up could also benefit from the long tail by providing niche targeted products that would not interest competitors. For example, a social network for pet owners. Or an app that teaches you new latte art every day. 
-
-The niche apps may attract a smaller number of customers–the long tail–but the revenue generated will be more than enough to cover costs and produce profits.
-
-### 10) We’ll see bigger companies partnering up and offer SaaS products and services
-
-Bigger companies will partner with smaller, more nimble SaaS providers to offer complementary products and services. For example, Oracle recently announced that it has partnered with HighJump Software to offer a hosted customer relationship management platform. 
-
-It’s easier for larger corporations to acquire small companies and work with more specialized partners to improve other areas of the business. In this case, Oracle’s customers will be able to benefit from HighJump’s outstanding customer service, which is a frequent concern for large organizations.
-
-Moreover, Oracle will benefit by pushing more customers towards its other offerings that were previously not as relevant to smaller businesses.
-
-### Conclusion
-
-To summarise everything: The SaaS marketplace will continue to evolve and the balance of power will be disrupted. The rise of AI, growth in enterprise AI, and more commoditization of software are all promising future trends for this industry. These changes may make it easier for SaaS startups with new ideas to get their products out there as well as shorten the time from idea to trial.
-
-We will also see bigger companies partnering up and offer SaaS products and services which is something that we haven’t seen before but could possibly lead to more innovation in both areas. Although it can be difficult to predict what lies ahead in the SaaS industry. But observing the current trends can help us see where we're headed.
-
-The ten predictions above for what might happen in the SaaS marketplace as well as a few thoughts on future trends were just ideas accumulated through keen observation. 
-
-Whether you’re an established SaaS company or just getting your feet wet with this space, these insights should give you plenty of ammo when planning out your own strategy and product roadmap.
-
-In, case you need someone to talk it through, [book a discovery call with us]({{ $page->discovery_call_url }}).
+- US Census Bureau: [Large firms with at least 20 employees biggest AI users](https://www.census.gov/library/stories/2026/05/ai-use-businesses.html) (26 May 2026).
+- GitHub: [GitHub Copilot is moving to usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) (27 April 2026).
+- Plausible Analytics: [About](https://plausible.io/about) (read 29 October 2026).
+- ChartMogul and Kyle Poyar: [SaaS growth: the odds of making it](https://chartmogul.com/reports/saas-growth-the-odds-of-making-it/) (15 October 2025).
+- Postman: [2025 State of the API Report](https://www.postman.com/state-of-api/2025/).
+- Our 2021 post, which this page replaces: its claims were checked one by one, and those we couldn't source are marked as withdrawn above.
