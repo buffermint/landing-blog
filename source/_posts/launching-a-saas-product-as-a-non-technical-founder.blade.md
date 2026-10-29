@@ -36,7 +36,7 @@ This is now the cheapest way to test an idea with real people. You describe the 
 The catch is that the builder writes code you can't read, and some of it guards your customers' data. Two independent findings from the last year show what goes wrong:
 
 - Escape, a security company, scanned more than 5,600 public apps made with AI builders in October 2025. It found more than 2,000 vulnerabilities, more than 400 exposed secrets such as API keys, and 175 cases of exposed personal data, including medical records and bank account numbers ([Escape](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding)).
-- In February 2026 The Register reported a single app, showcased on Lovable's own Discover page, that exposed 18,697 user records, including students at UC Berkeley and UC Davis. A sign-in check had been written backwards: it blocked logged-in users and let anonymous ones in ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said every project gets a free security scan before publishing, but acting on its findings is up to the owner.
+- In February 2026 The Register reported a single app, showcased on Lovable's own Discover page, that exposed 18,697 user records, including students at UC Berkeley and UC Davis. A sign-in check had been written backwards: it blocked logged-in users and let anonymous ones in ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said every project gets a free security scan before publishing, but acting on its findings is up to the owner, and that this project also used code and a database from outside Lovable.
 
 That last sentence is the important one for a non-technical founder: the builder's scan finds problems, but you have to understand and fix them. Our post on [the holes every scan of vibe-coded apps keeps finding](/articles/vibe-coded-app-security-scans) has a 15-minute self-check you can run without reading code.
 
@@ -44,7 +44,7 @@ That last sentence is the important one for a non-technical founder: the builder
 
 ## Route 2: a freelancer
 
-A good freelancer turns a clear specification into working software and, unlike a builder, can explain what they built. The cost is the main barrier. For a sense of scale: the US median pay for web developers was $47.85 an hour in May 2025 ([US Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm)). That's what employees earn; freelancers usually charge more, because the rate also covers their own taxes, tools and the gaps between projects, while rates in other countries can be much lower.
+A good freelancer turns a clear specification into working software and, unlike a builder, can explain what they built. The cost is the main barrier. For a sense of scale: the US median pay for web developers and digital designers was $47.85 an hour in May 2025 ([US Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm)). That's what employees earn; freelancers usually charge more, because the rate also covers their own taxes, tools and the gaps between projects, while rates in other countries can be much lower.
 
 Our arithmetic at that median: a small SaaS first version of 200 to 400 hours (sign-in, a few screens, a database, payments, an admin page) comes to roughly $9,600 to $19,100. Your quote will differ, but it shows why a clear scope matters more than an hourly rate.
 

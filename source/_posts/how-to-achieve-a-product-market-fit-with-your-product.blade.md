@@ -89,7 +89,7 @@ Our 2021 post on pivoting compared a fixed strategy to a rocket launch and a fle
 - **Pivot the product** when customers have the problem but don't want your solution: they keep using spreadsheets after trying your tool.
 - **Pivot the whole idea** when nobody in your target market says the problem is painful, after real conversations. Our [idea validation guide](/articles/ultimate-guide-to-get-the-most-out-of-your-idea-validation-process) covers how to have those conversations.
 
-The best-known example of the last kind is Slack. Its company, Tiny Speck, released an online game called Glitch in September 2011 and shut it down about 18 months later. The team had built an internal messaging tool to coordinate its distributed developers, and that tool launched to the public as Slack at the end of 2013 ([TechCrunch](https://techcrunch.com/2019/05/30/the-slack-origin-story)). The pivot kept the team and the technology and threw away the original market.
+The best-known example of the last kind is Slack. Its company, Tiny Speck, released an online game called Glitch in September 2011 and announced in November 2012, about 14 months later, that it would close. The team had built an internal messaging tool to coordinate its distributed developers, and that tool launched to the public as Slack at the end of 2013 ([TechCrunch](https://techcrunch.com/2019/05/30/the-slack-origin-story)). The pivot kept the team and the technology and threw away the original market.
 
 A pivot isn't a failure, but it shouldn't be a habit either. Change one thing at a time (the customer, the problem or the product) so you know what made the difference.
 

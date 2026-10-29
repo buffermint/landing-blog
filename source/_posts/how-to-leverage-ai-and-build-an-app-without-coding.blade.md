@@ -55,7 +55,7 @@ If you don't read code at all, start with the one whose output you can most easi
 AI builders write code that works; they don't always write code that keeps data private. Two independent reports show the pattern:
 
 - Escape's October 2025 scan of more than 5,600 public apps built with AI builders found more than 2,000 vulnerabilities, more than 400 exposed secrets and 175 cases of exposed personal data. More than 4,000 of the apps were built with Lovable, with smaller samples from Bolt and others ([Escape](https://escape.tech/blog/methodology-how-we-discovered-vulnerabilities-apps-built-with-vibe-coding)).
-- In February 2026, a researcher found 16 vulnerabilities, six critical, in one app featured on Lovable's Discover page. It exposed 18,697 user records, because a sign-in check let anonymous visitors in and kept signed-in users out ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said its pre-publish scan is free but acting on it is the owner's job.
+- In February 2026, a researcher found 16 vulnerabilities, six critical, in one app featured on Lovable's Discover page. It exposed 18,697 user records, because a sign-in check let anonymous visitors in and kept signed-in users out ([The Register](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/)). Lovable said its pre-publish scan is free but acting on it is the owner's job, and that the project also used code and a database from outside Lovable.
 
 Before your app holds customer data, check at least these:
 
