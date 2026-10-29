@@ -46,8 +46,7 @@ export function mountBlogSearch(root) {
     if (counter) counter.remove();
     counter = query !== "" ? group.appendChild(label(`${found.length} RESULTS`)) : null;
 
-    // The list is rebuilt for each query but the box itself stays while there are matches, so a list faded
-    // out by a click elsewhere stays hidden until the matches run out (as the Vue version did)
+    // The list is rebuilt for each query and shown again if a click elsewhere had hidden it
     let box = document.getElementById("search-results");
     if (found.length === 0) {
       if (box) box.remove();
@@ -60,15 +59,30 @@ export function mountBlogSearch(root) {
       resultsRow.appendChild(box);
     }
     box.firstChild.replaceChildren(...found.map(resultItem));
+    show(box);
+  }
+
+  // Fade with jQuery when the page has it; stop() first so a fade still running can't undo the other
+  function show(box) {
+    if (window.jQuery) window.jQuery(box).stop(true, true).fadeIn(200);
+    else box.style.display = "";
+  }
+  function hide(box) {
+    if (window.jQuery) window.jQuery(box).stop(true, true).fadeOut(200);
+    else box.style.display = "none";
   }
 
   input.addEventListener("input", render);
+  // Back in the box (focus or a click): the current matches show again
+  input.addEventListener("focus", () => {
+    const box = document.getElementById("search-results");
+    if (box) show(box);
+  });
 
-  // A click outside the list fades it in or out
+  // A click outside both the list and the box hides the list
   document.addEventListener("click", (e) => {
-    if (!e.target.closest("#search-results") && window.jQuery) {
-      window.jQuery("#search-results").fadeToggle(200);
-    }
+    const box = document.getElementById("search-results");
+    if (box && e.target !== input && !e.target.closest("#search-results")) hide(box);
   });
 
   fetch("/index.json")

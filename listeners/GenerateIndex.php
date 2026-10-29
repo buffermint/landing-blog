@@ -21,8 +21,9 @@ class GenerateIndex
             return $this->mappedObject($page, $jigsaw);
         })->values());
 
-        file_put_contents($jigsaw->getDestinationPath() . '/index.json', json_encode($data));
-        file_put_contents($jigsaw->getDestinationPath() . '/featured.json', json_encode($featured));
+        // JSON_THROW_ON_ERROR: invalid UTF-8 fails the build instead of writing an empty index.json
+        file_put_contents($jigsaw->getDestinationPath() . '/index.json', json_encode($data, JSON_THROW_ON_ERROR));
+        file_put_contents($jigsaw->getDestinationPath() . '/featured.json', json_encode($featured, JSON_THROW_ON_ERROR));
     }
 
     private function mappedObject($page, $jigsaw)

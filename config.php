@@ -84,15 +84,24 @@ return [
             return $cleaned;
         }
 
-        $truncated = substr($cleaned, 0, $length);
+        // cut by characters, not bytes: a split em dash or curly quote is invalid UTF-8 and breaks index.json
+        $truncated = mb_substr($cleaned, 0, $length);
 
         if (substr_count($truncated, '<code>') > substr_count($truncated, '</code>')) {
             $truncated .= '</code>';
         }
 
-        return strlen($cleaned) > $length
+        return mb_strlen($cleaned) > $length
             ? preg_replace('/\s+?(\S+)?$/', '', $truncated) . '...'
             : $cleaned;
+    },
+
+    // "Suggested Articles" under a post: its own category's posts first, topped up with the newest others
+    'suggestedPosts' => function ($page, $posts, $count = 3) {
+        $others = $posts->filter(fn ($post) => $post->getPath() !== $page->getPath());
+        $same = $page->category ? $others->where('category', $page->category) : collect();
+
+        return $same->concat($others->diffKeys($same))->take($count)->values();
     },
 
     'isActive' => function ($page, $path) {

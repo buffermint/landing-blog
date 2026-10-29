@@ -84,8 +84,29 @@ try {
     assert.match(want[0].link, /^\//);
 
     // a click outside the list fades it out
-    await page.mouse.click(5, options.viewport.height - 5);
-    await page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display === 'none');
+    const shown = () => page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display !== 'none' && getComputedStyle(document.getElementById('search-results')).opacity === '1');
+    const hidden = () => page.waitForFunction(() => getComputedStyle(document.getElementById('search-results')).display === 'none');
+    const outside = () => page.mouse.click(5, options.viewport.height - 5);
+    await outside();
+    await hidden();
+
+    // clicking back into the box shows the list again; another click in it keeps it shown
+    await input.click();
+    await shown();
+    await input.click();
+    await page.waitForTimeout(400);
+    assert.equal(await page.locator('#search-results').isVisible(), true, at('list stays for a click in the box'));
+
+    // hidden again, then typing more shows the new matches (never a counter with no list)
+    await outside();
+    await hidden();
+    await input.press('End');
+    await input.pressSequentially('s');
+    await shown();
+    const more = expected(`${query}s`);
+    assert.ok(more.length > 0);
+    assert.equal(await page.locator('#search-results .search-result-list a').count(), more.length, at('list for the longer query'));
+    assert.equal((await counter.textContent()).trim(), `${more.length} RESULTS`, at('counter for the longer query'));
 
     // no match: a 0 counter and no list; clearing removes both
     await input.fill('zzqqxxjj');
