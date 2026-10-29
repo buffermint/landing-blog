@@ -93,7 +93,7 @@ The last row is the one most comparisons leave out. Once you pay Stripe to handl
 Two break-even points from the same numbers:
 
 - **Polar Pro vs Polar Starter:** the $20 plan saves 1.2% + 10¢ per sale. On $29 sales that's about 45¢ a sale, so Pro pays off from about **45 sales a month**.
-- **Stripe with Tax Complete vs Paddle,** on this 60/40 customer mix at $29: Stripe saves about 20¢ per sale, so it takes about **446 sales a month (roughly $13,000 MRR)** to cover the $90 plan. Below that, the MoR is cheaper even before you count your own time.
+- **Stripe with Tax Complete vs Paddle,** on this 60/40 customer mix at $29: Stripe saves about 20¢ per sale, so it takes about **450 sales a month (roughly $13,000 MRR)** to cover the $90 plan. Below that, the MoR is cheaper even before you count your own time.
 
 ## The costs that aren't in the headline rate
 
