@@ -12,7 +12,8 @@ const POSTS = join(root, 'source/_posts');
 export const CUTOFF = '2026-10-29';
 const OUR_HOSTS = /^(www\.)?buffermint\.com$/i;
 
-// The front matter is flat `key: value` lines (quoted or not); that is all the posts use.
+// The front matter is flat `key: value` lines (quoted or not, with an optional `# comment` as in BLOG-PLAN.md's
+// template); that is all the posts use.
 export function parsePost(text, file = 'post') {
   const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!m) throw new Error(`${file}: no front matter`);
@@ -21,14 +22,18 @@ export function parsePost(text, file = 'post') {
     const kv = line.match(/^([A-Za-z_][\w-]*):\s*(.*?)\s*$/);
     if (!kv) continue;
     let v = kv[2];
-    if (/^(["']).*\1$/.test(v)) v = v.slice(1, -1).replace(/\\"/g, '"').replace(/''/g, "'");
+    const quoted = v.match(/^"((?:[^"\\]|\\.)*)"\s*(?:#.*)?$/) ?? v.match(/^'((?:[^']|'')*)'\s*(?:#.*)?$/);
+    if (quoted) v = quoted[1].replace(/\\"/g, '"').replace(/''/g, "'");
+    else v = v.replace(/(^|\s+)#.*$/, '');
     meta[kv[1]] = v;
   }
   return { file, meta, body: m[2] };
 }
 
 const day = (v) => (v ? String(v).slice(0, 10) : '');
-export const inScope = ({ meta }) => day(meta.date) >= CUTOFF || Boolean(meta.updated);
+const isDraft = ({ meta }) => meta.published === 'false';
+// a post with no date: is in scope (Jigsaw would date it 1970): new posts can't skip the bar by leaving it out
+export const inScope = ({ meta }) => !day(meta.date) || day(meta.date) >= CUTOFF || Boolean(meta.updated);
 
 // `## Sources` up to the next heading of the same or a higher level
 function sourcesSection(body) {
@@ -73,13 +78,17 @@ const isInternal = (u) => (u.startsWith('/') && !u.startsWith('//')) || (isAbsol
 export function bodyWords(body) {
   const text = body
     .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`[^`\n]*`/g, ' ')
+    .replace(/\{\{[\s\S]*?\}\}|\{!![\s\S]*?!!\}/g, ' ')
     .replace(/@php[\s\S]*?@endphp/g, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/!\[([^\]]*)\]\([^)]*\)/g, ' ')
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
     .replace(/<[^>]+>/g, ' ')
     .replace(/https?:\/\/\S+/g, ' ')
-    .replace(/[#*_>`|~-]+/g, ' ');
+    // markdown markers, but not the hyphen or underscore inside a word ("in-browser" is one word)
+    .replace(/[#*>`|~]+/g, ' ')
+    .replace(/(^|\s)[-_]+(?=\s|$)/g, ' ');
   return text.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 }
 
@@ -130,7 +139,9 @@ export function checkPost(post, all = []) {
 
   // config.php ignores an updated: that isn't after date:, so a post in scope only through it would be held to the bar
   // with no visible refresh: report the typo
-  if (meta.updated && day(meta.updated) <= day(meta.date)) problems.push(`updated: ${meta.updated} is not after date: ${meta.date}`);
+  if (!day(meta.date)) problems.push('no date: front matter');
+  if (meta.updated && !/^\d{4}-\d{2}-\d{2}$/.test(day(meta.updated))) problems.push(`updated: ${meta.updated} is not YYYY-MM-DD`);
+  else if (meta.updated && day(meta.updated) <= day(meta.date)) problems.push(`updated: ${meta.updated} is not after date: ${meta.date}`);
 
   const keyword = (meta.keyword ?? '').trim().toLowerCase();
   if (!keyword) problems.push('no keyword: front matter');
@@ -144,9 +155,12 @@ export function checkPost(post, all = []) {
 
 const read = () => readdirSync(POSTS).filter((f) => f.endsWith('.md')).sort().map((f) => parsePost(readFileSync(join(POSTS, f), 'utf8'), f));
 
+// [file, problems] for every published post in scope that fails; a draft (published: false) waits until it's published
+export const qualityFailures = (all) => all.filter((p) => inScope(p) && !isDraft(p)).map((p) => [p.file, checkPost(p, all)]).filter(([, problems]) => problems.length);
+
 test('every new or refreshed post meets the quality bar', () => {
   const all = read();
-  const failures = all.filter(inScope).map((p) => [p.file, checkPost(p, all)]).filter(([, problems]) => problems.length);
+  const failures = qualityFailures(all);
   assert.deepEqual(failures, [], failures.map(([f, p]) => `${f}:\n  - ${p.join('\n  - ')}`).join('\n'));
 });
 
@@ -256,4 +270,32 @@ test('siteOf groups a publisher\'s subdomains and keeps country suffixes apart',
   assert.equal(siteOf('https://www.bbc.co.uk/news'), 'bbc.co.uk');
   assert.equal(siteOf('https://ec.europa.eu/a'), 'europa.eu');
   assert.equal(siteOf('not a url'), null);
+});
+
+test('the parser drops # comments, as in BLOG-PLAN.md\'s front-matter template', () => {
+  const p = parsePost('---\ntitle: "Merchant of record fees, worked out"   # ≤ 65 chars\nseo_description: \'It\'\'s short\'  # 70–160 chars\nkeyword: compress pdf to 100kb   # the target keyword\nslug: a#b\n---\nx', 'c');
+  assert.equal(p.meta.title, 'Merchant of record fees, worked out');
+  assert.equal(p.meta.seo_description, "It's short");
+  assert.equal(p.meta.keyword, 'compress pdf to 100kb');
+  assert.equal(p.meta.slug, 'a#b', 'a # inside a word is not a comment');
+  assert.ok(checkPost(p).includes('seo_description is 10 characters (70–160)'), 'the comment does not count toward the length');
+});
+
+test('the checker: no date: is in scope and reported; a non-YYYY-MM-DD updated: is reported; drafts are skipped', () => {
+  const noDate = parsePost(`---\ntitle: T\n---\n${'w '.repeat(50)}`, 'nd.blade.md');
+  assert.equal(inScope(noDate), true);
+  assert.ok(checkPost(noDate).includes('no date: front matter'));
+  for (const v of ['"11/05/2026"', '"Nov 1 2020"', 'tomorrow']) {
+    const p = parsePost(`---\ntitle: T\ndate: 2021-07-10\nupdated: ${v}\n---\nx`, 'u.blade.md');
+    assert.ok(checkPost(p).some((x) => /is not YYYY-MM-DD$/.test(x)), `${v}: ${checkPost(p).join('; ')}`);
+  }
+  const draft = parsePost('---\ntitle: Draft\ndate: 2026-11-05\npublished: false\n---\nshort', 'd.blade.md');
+  assert.equal(inScope(draft), true, 'in scope by date');
+  assert.deepEqual(qualityFailures([draft, good]), [], 'a draft waits');
+  assert.equal(qualityFailures([{ ...draft, meta: { ...draft.meta, published: 'true' } }, good]).length, 1, 'published, it is checked');
+});
+
+test('bodyWords counts hyphenated and snake_case words once, and skips inline code and Blade echoes', () => {
+  assert.equal(bodyWords('An in-browser, client-side tool. `npm run file_size --x` {{ $page->title }} and file_size'), 6);
+  assert.equal(bodyWords('- a list item\n\n---\n\n**bold** _em_'), 5);
 });

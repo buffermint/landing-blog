@@ -78,9 +78,16 @@ return [
         if (! $updated) {
             return null;
         }
-        // a bare date is UTC midnight, like date:; a quoted one is read as UTC too. A number that isn't a plausible
-        // timestamp (e.g. 20261105) is a typo, not 1970.
-        $time = is_int($updated) ? $updated : strtotime((string) $updated . (preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) $updated) ? ' UTC' : ''));
+        // a bare date is UTC midnight, like date:; a quoted one must be YYYY-MM-DD and is read as UTC too (strtotime
+        // would take "tomorrow", a date that moves with every build, or roll 2026-02-30 into March). A number that
+        // isn't a plausible timestamp (e.g. 20261105) is a typo, not 1970.
+        $time = false;
+        if (is_int($updated)) {
+            $time = $updated;
+        } elseif (preg_match('/^\d{4}-\d{2}-\d{2}$/', (string) $updated)) {
+            $parsed = \DateTime::createFromFormat('!Y-m-d', (string) $updated, new \DateTimeZone('UTC'));
+            $time = $parsed && $parsed->format('Y-m-d') === (string) $updated ? $parsed->getTimestamp() : false;
+        }
         if ($time === false || $time < 946684800 /* 2000-01-01 */) {
             throw new \InvalidArgumentException("{$page->getFilename()}: updated: \"{$updated}\" is not a date");
         }

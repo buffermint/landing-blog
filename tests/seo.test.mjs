@@ -56,7 +56,7 @@ after(() => copies.forEach((c) => rmSync(c.dir, { recursive: true, force: true }
 
 test('updated: shows on the page and drives dateModified, article:modified_time, the feed and the sitemap', () => {
   const site = buildCopy({
-    'zz-refreshed': fixture('title: Fixture refreshed post\nseo_description: A refreshed fixture post.\ndate: 2026-10-30\nupdated: 2026-11-05\nkeyword: fixture keyword'),
+    'zz-refreshed': fixture('title: Fixture refreshed post\nseo_description: A refreshed fixture post.\ndate: 2099-10-30\nupdated: 2099-11-05\nkeyword: fixture keyword'),
     'zz-quoted': fixture('title: Fixture quoted date\ndate: 2021-07-11\nupdated: "2026-11-06"'),
     'zz-plain': fixture('title: Fixture plain post\ndate: 2021-07-12'),
     'zz-backdated': fixture('title: Fixture backdated update\ndate: 2021-07-13\nupdated: 2021-01-01'),
@@ -66,11 +66,11 @@ test('updated: shows on the page and drives dateModified, article:modified_time,
 
   const html = site.read('articles/zz-refreshed/index.html');
   const post = jsonld(html).find((j) => j['@type'] === 'BlogPosting');
-  assert.match(post.datePublished, /^2026-10-30T/); // newest post, so the feed (latest 20) has it
-  assert.match(post.dateModified, /^2026-11-05T/);
+  assert.match(post.datePublished, /^2099-10-30T/); // the newest post for good, so the feed (latest 20) always has it
+  assert.match(post.dateModified, /^2099-11-05T/);
   assert.equal(post.keywords, 'fixture keyword');
-  assert.match(meta(html, 'property', 'article:modified_time'), /^2026-11-05T/);
-  assert.match(html, /<time class="font-size-sm text-muted post-updated" datetime="2026-11-05">\s*Updated on November 5, 2026\s*<\/time>/);
+  assert.match(meta(html, 'property', 'article:modified_time'), /^2099-11-05T/);
+  assert.match(html, /<time class="font-size-sm text-muted post-updated" datetime="2099-11-05">\s*Updated on November 5, 2099\s*<\/time>/);
 
   assert.match(jsonld(site.read('articles/zz-quoted/index.html')).find((j) => j['@type'] === 'BlogPosting').dateModified, /^2026-11-06T/);
 
@@ -83,14 +83,15 @@ test('updated: shows on the page and drives dateModified, article:modified_time,
   }
 
   const sitemap = lastmods(site.read('sitemap.xml'));
-  assert.match(sitemap['https://buffermint.com/articles/zz-refreshed'], /^2026-11-05/);
+  assert.match(sitemap['https://buffermint.com/articles/zz-refreshed'], /^2099-11-05/);
   assert.match(sitemap['https://buffermint.com/articles/zz-plain'], /^2021-07-12/);
 
   const feed = site.read('feed.xml');
-  assert.match(feed, /<id>https:\/\/buffermint\.com\/articles\/zz-refreshed<\/id>\s*<published>2026-10-30T[^<]*<\/published>\s*<updated>2026-11-05T/);
+  assert.match(feed, /<id>https:\/\/buffermint\.com\/articles\/zz-refreshed<\/id>\s*<published>2099-10-30T[^<]*<\/published>\s*<updated>2099-11-05T/);
 });
 
-for (const [name, value] of [['words', '"next week-ish"'], ['number', '20261105']]) {
+// "tomorrow" and 2026-02-30 are dates to strtotime (one moves with every build, one rolls into March), so they must fail too
+for (const [name, value] of [['words', '"next week-ish"'], ['number', '20261105'], ['relative', '"tomorrow"'], ['impossible', '"2026-02-30"']]) {
   test(`an updated: that is not a date (${name}) fails the build instead of writing a wrong date`, () => {
     const site = buildCopy({ 'zz-bad': fixture(`title: Fixture bad date\ndate: 2021-07-10\nupdated: ${value}`) });
     copies.push(site);

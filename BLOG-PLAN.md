@@ -6,7 +6,7 @@ Research lane `t-20261029-blog-research-seo`, 2026-10-29. The article lanes (`t-
 - **Not generic.** If a post could have been written without research, it doesn't ship. Each post brings something new: our own numbers (tool usage, build experience, research data), a comparison or calculation we did, or a synthesis of 4+ sources from different publishers showing where they agree, where they disagree and why.
 - **Never copy.** No passage longer than a sentence from any source: paraphrase and cite. Quotes stay under 25 words, attributed and linked. Never invent a number, quote, study, company or person. Every fact links to its source in the text and again in `## Sources`.
 - **For the readers.** Give concrete steps, real costs and numbers, and examples from small SaaS. No filler intros, and no "in today's fast-paced world".
-- **Public copy stays neutral.** We're "BufferMint, we build useful software". Link the free tools where they genuinely help the reader. Never describe a funnel from tools to paid products. Never name or promote products that aren't public yet: only buffermint.com/tools and what's already on the site. That includes product-planner's candidate ideas: write about third-party examples, never about what we might build.
+- **Public copy stays neutral.** We're "BufferMint, we build useful software". Link the free tools where they genuinely help the reader. Write about third-party examples, never about our own plans, and mention only what is already public on buffermint.com. The full public-copy rule is in each blog lane's task file.
 - **Dates.** Write what's true on the publish date, and say "as of <month year>" for prices and stats.
 
 ### What `tests/posts.test.mjs` checks (so a lane can't merge a thin post)
@@ -15,7 +15,7 @@ Research lane `t-20261029-blog-research-seo`, 2026-10-29. The article lanes (`t-
 - A `## Sources` section linking at least 4 distinct external sites (subdomains of one publisher count once).
 - At least 2 internal links to distinct pages, outside Sources.
 - Alt text on every image (`![alt](…)`, `<img alt>`, `<x-image alt|caption>`).
-- No lorem/TODO/TBD/XXX/`[insert …]`/`{{SLOT}}`/"coming soon" placeholders.
+- No lorem/TODO/TBD/XXX/`[insert …]`/`{{SLOT}}` placeholders. ("Coming soon" in prose is allowed: a vendor's roadmap can say it; the review catches a stub section.)
 - A `keyword:` front-matter field, and no two posts (old ones included) share a title or a keyword.
 - The test can't judge whether the angle is new, whether the sources say what the post claims, or copying. The review lane checks those by hand, per the "Review" section of each task.
 
@@ -58,11 +58,11 @@ A refresh adds `updated: <date>` and keeps `date:`. Updating shows "Updated on �
 
 ## How demand was measured
 
-product-planner's keyless evidence tooling (`node planner.mjs assess --idea <file> --json --evidence`, METHOD.md §1; run 2026-10-29, cache `PLANNER_CACHE_DIR`):
+Our keyless keyword tooling (the workspace evidence CLI: `node planner.mjs assess --idea <file> --json --evidence`, METHOD.md §1; run 2026-10-29, cache `PLANNER_CACHE_DIR`):
 - **Autosuggest level 1–5** (Google, Bing, YouTube): 5 = the whole phrase is suggested after typing only its first word on every engine; 4 = suggested from a shorter prefix on 2+ engines; 3 = on one engine; 2 = the phrase has completions but isn't suggested from a prefix; 1 = no trace. It proves people type the phrase, not how many. One-word head terms ("dmarc", "peppol") can't score above 2 by construction.
 - **HN mentions**: stories + comments containing the exact phrase in the last 24 months (Algolia API). A founder/developer interest signal.
 - **Wikipedia**: average monthly views of the matching article over the last 3 full months. Topic interest, not search volume. Shown only where the article really matches the topic.
-- **Not available yet:** absolute search volume. Bing Webmaster keyword research and Search Console need the owner's setup (product-planner NEXT-STEPS A2–A4). When they exist, rerun `node planner.mjs demand` for each `now`/`next` keyword and put the volumes here.
+- **Not available yet:** absolute search volume. Bing Webmaster keyword research and Search Console need the owner's setup (the evidence CLI's NEXT-STEPS A2–A4). When they exist, rerun `node planner.mjs demand` for each `now`/`next` keyword and put the volumes here.
 - Full table: [Appendix A](#appendix-a-demand-evidence-2026-10-29).
 
 ## Topics (ranked)
@@ -247,7 +247,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 23. Programmatic SEO after the March 2026 spam update: what we noindexed and why · `later`
 - **Keyword:** `programmatic seo` (level 4; HN 46).
-- **New angle:** our decision rule for 752 tool pages: 59 hidden until they reach grade A, and an index list of about 150 (buffermint-tools `ops/SEO-INDEX-PROPOSAL.md`, `src/hidden.json`). Explain the criteria, and where sources disagree on what the update targeted. Don't describe tools as a funnel.
+- **New angle:** our decision rule for 752 tool pages: 59 hidden until they reach grade A, and an index list of about 150 (buffermint-tools `ops/SEO-INDEX-PROPOSAL.md`, `src/hidden.json`). Explain the criteria, and where sources disagree on what the update targeted.
 - **Sources:** Google Search Central spam policies (scaled content abuse), the Search Status Dashboard entry, Search Engine Roundtable, Ahrefs or Semrush volatility data, Lily Ray / Glenn Gabe analyses.
 - **Internal links:** /tools/, /tools/seo/sitemap-generator/, /tools/seo/robots-txt-generator/, topic 7.
 - **Status:** todo
@@ -268,7 +268,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 26. Making PDFs accessible: the ADA Title II dates and what a small office can fix itself · `later`
 - **Keyword:** `make pdf accessible` (level 2; Wikipedia "PDF/UA" 1,047/mo).
-- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (April 2027 for 50k+ population, April 2028 for smaller ones; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't. Mention no product plans.
+- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (April 2027 for 50k+ population, April 2028 for smaller ones; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't.
 - **Sources:** the Federal Register doc 2026-07663, ada.gov, W3C WCAG 2.1, the PDF Association on PDF/UA, HHS Section 504 rule.
 - **Internal links:** /tools/pdf/pdf-metadata/, /tools/pdf/ocr-pdf/, topic 4.
 - **Status:** todo
@@ -341,7 +341,7 @@ None of the old posts has a `## Sources` section or an external citation, except
 | how-to-leverage-ai-and-build-an-app-without-coding | 1,142 | **Keep, refresh** as topic 28 | Same keyword (`build an app without coding`, level 4). Keep the URL. |
 | how-ai-and-machine-learning-is-changing-the-saas-space | 1,399 | **Merge** → topic 6's post once it's published | 2021 predictions; topic 6 answers the live question (cost per user). Keep until topic 6 ships, then 301. |
 | 10-predictions-for-the-saas-marketplace-future-trends | 1,753 | **Keep, refresh** as a scorecard | A new angle on an old post: grade each 2021 prediction against 2026 evidence (right / wrong / too early), with sources. 3 views in the counted week. |
-| ultimate-guide-to-get-the-most-out-of-your-idea-validation-process | 1,581 | **Keep, refresh** (target `idea validation`, level 2; HN 68) | The idea-validation pillar (category page). Add what desk research can't prove and what a cheap market test can, with public third-party examples. Not our own candidates. |
+| ultimate-guide-to-get-the-most-out-of-your-idea-validation-process | 1,581 | **Keep, refresh** (target `idea validation`, level 2; HN 68) | The idea-validation pillar (category page). Add what desk research can't prove and what a cheap market test can, with public third-party examples. |
 | 6-amazing-startup-stories-of-successful-idea-validation | 1,430 | **Keep, refresh** | Popular format; it has no sources now. Verify each story (Dropbox video, Airbnb, …) against primary or reputable sources, and correct what's wrong. |
 | how-to-get-successful-startup-ideas | 1,193 | **Keep, refresh** | Startup-ideas category anchor (3 views in the counted week). It absorbs `the-4-types-of-products`. |
 | the-4-types-of-products-which-type-should-you-build | 378 | **Merge** → how-to-get-successful-startup-ideas | Thin (378 words). |
@@ -384,7 +384,7 @@ Result: 21 posts → 12 kept (9 refreshed, 3 left as they are) and 9 merged with
 
 ## Appendix A: demand evidence (2026-10-29)
 
-product-planner `assess --evidence` (keyless: Google/Bing/YouTube autosuggest, HN Algolia, Wikimedia pageviews). The engine column shows `d<n>` = the phrase is suggested after its first n words (– = not suggested from any shorter prefix), then the number of completions that extend it. Rerun: build an idea file with `evidence.suggest/wikipedia/hn` = the keywords and run `node planner.mjs assess --idea <file> --json --evidence`.
+The evidence CLI's `assess --evidence` (keyless: Google/Bing/YouTube autosuggest, HN Algolia, Wikimedia pageviews). The engine column shows `d<n>` = the phrase is suggested after its first n words (– = not suggested from any shorter prefix), then the number of completions that extend it. Rerun: build an idea file with `evidence.suggest/wikipedia/hn` = the keywords and run `node planner.mjs assess --idea <file> --json --evidence`.
 
 | keyword | autosuggest level (1–5) | per engine: depth/completions | HN mentions, 24 mo | Wikipedia article, avg views per month, last 3 full months |
 |---|---|---|---|---|
