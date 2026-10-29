@@ -52,6 +52,8 @@ The clearest recent example is GitHub. On 1 June 2026, Copilot replaced "premium
 3. **Abstract credits with a price list** (Lovable, Notion, HeyGen). Lovable is the best of these because it publishes examples per action. Notion and HeyGen sell the credit but don't say what an action costs.
 4. **Outcomes** (Intercom Fin). You pay only when something useful happened. It's the simplest for the buyer and pushes all the cost risk onto the seller, which is why Intercom has to define an "outcome" carefully: a confirmed resolution, a customer who doesn't ask for more help, or a completed workflow including a handoff.
 
+Cursor fits none of the four: its pool is described only as a multiple of another plan, with no unit at all.
+
 **The same plan can mean very different amounts of work.** A $25 Lovable Pro plan buys about 83 "add sign-up and login" changes at 1.20 credits each. A $25 Bolt Pro plan buys 10 million tokens, which could be a lot of messages on a small project and far fewer on a large one. A buyer comparing the two at "$25 a month" is comparing different things.
 
 **Expiry rules differ as much as the units.** Lovable's monthly credits expire two months after they're issued; Replit's Pro plan ($100 a month) rolls credits over for two months; Zapier's tasks reset monthly even on yearly plans; Cursor's pool refreshes weekly; Clay's own page gives two different rollover rules. A heavy month followed by a light one costs differently on each.

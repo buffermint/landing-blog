@@ -39,7 +39,7 @@ Why do the headline rates range from 10% to 98%? Three reasons.
 |---|---|---|---|---|
 | Tables readable without login | yes: 170 apps (10.3%) read or write | missing RLS listed as critical, no count | yes, no explicit RLS | 3.6% |
 | Tables changeable or deletable without login | (included above) | not broken out | yes: grades could be altered, accounts deleted | 16.0% change, 16.0% delete, 1.3% insert |
-| Secret keys in client code | third-party API keys found in exposed data | 400+ secrets | not reported | 2.2% |
+| Secret keys in client code | not counted (third-party keys leaked from exposed tables, not from code) | 400+ secrets | not reported | 2.2% |
 | Broken sign-in logic | not reported | not reported | yes: an AI-written check let signed-out users in and kept signed-in ones out | 6.4% email confirmation off |
 | Personal data exposed | names, emails, phone numbers, payment details | 175 instances (medical records, IBANs, emails) | 18,697 user records | 3.2% with sensitive columns exposed |
 
@@ -49,7 +49,7 @@ The pattern is consistent across all four: **the database is the hole**. The lea
 
 One row of that table puzzled us. In Symbiotic's data, unauthenticated **deletion** (16.0%) is more than four times as common as unauthenticated **reading** (3.6%). If a visitor can't read your rows, how can they delete them?
 
-We reproduced it on PostgreSQL 18.6, the same database Supabase runs on. We set up a `profiles` table with two rows and the roles Supabase's REST API uses (`anon` for signed-out visitors), then tried the policies AI tools commonly write. Results, as the signed-out `anon` role:
+We reproduced it on PostgreSQL 18.6 (Supabase runs PostgreSQL, though usually an older version). We set up a `profiles` table with two rows and the roles Supabase's REST API uses (`anon` for signed-out visitors), then tried the policies AI tools commonly write. Results, as the signed-out `anon` role:
 
 | Setup | Rows anon can see | Update every row | Delete every row |
 |---|---|---|---|
@@ -59,7 +59,11 @@ We reproduced it on PostgreSQL 18.6, the same database Supabase runs on. We set 
 | Same, but with `where plan = 'free'` or `returning id` added | 0 | no (0 rows) | no |
 | RLS on; owner-only policies `to authenticated` with `with check` | 0 | no | no |
 
-The third row is the trap. Your read policy is correct, the app looks private and a quick test shows no data. But a broad `using (true)` update or delete policy lets a signed-out visitor change or wipe the whole table, as long as the command doesn't read any columns. PostgreSQL documents why: an `UPDATE` or `DELETE` only needs the row to pass a `SELECT` policy when it reads columns, for example in a `WHERE` or `RETURNING` clause ([PostgreSQL CREATE POLICY](https://www.postgresql.org/docs/current/sql-createpolicy.html)). A blind "update everything" doesn't. That could explain Symbiotic's write-without-read numbers, but we can't tell how much of them it explains: Symbiotic says its scanner doesn't modify any data and doesn't say how it judged a write as allowed. A write that row level security filters down to zero rows still returns a success code, so a scanner that only checks the response would count it too. Our reproduction shows the trap is real; it doesn't show that one app in six has it.
+The third row is the trap. Your read policy is correct, the app looks private and a quick test shows no data. But a broad `using (true)` update or delete policy lets a signed-out visitor change or wipe the whole table, as long as the command doesn't read any columns. PostgreSQL documents why: an `UPDATE` or `DELETE` only needs the row to pass a `SELECT` policy when it reads columns, for example in a `WHERE` or `RETURNING` clause ([PostgreSQL CREATE POLICY](https://www.postgresql.org/docs/current/sql-createpolicy.html)). A blind "update everything" doesn't.
+
+That could explain Symbiotic's write-without-read numbers, but we can't tell how much of them it explains: Symbiotic says its scanner doesn't modify any data and doesn't say how it judged a write as allowed. A write that row level security filters down to zero rows still returns a success code, so a scanner that only checks the response would count it too. Our reproduction shows the trap is real in PostgreSQL; it doesn't show that one app in six has it.
+
+We also ran it directly in the database, not through Supabase's REST API. Through the API, the trap only works for a write with no filter at all, because any filter reads a column (the fourth row of our table), and Supabase offers the [pg-safeupdate](https://supabase.com/docs/guides/database/extensions/pg-safeupdate) extension, which refuses updates and deletes without a `WHERE` clause. Fix `using (true)` write policies anyway: signed-in users get the same access to every row, and the protection shouldn't rest on how a request is shaped.
 
 The lesson for a self-check: **testing that you can't read data proves nothing about writes.** Check every policy for every command.
 
@@ -111,7 +115,7 @@ None of this means you shouldn't build with these tools. The holes are few, well
 - The Register, [Lovable app vulnerabilities](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/), 27 February 2026.
 - Symbiotic Security, [We scanned 1,072 vibe-coded apps: 98% had security flaws](https://symbioticsec.ai/blog/we-scanned-1-072-vibe-coded-apps-98-had-security-flaws), June 2026.
 - Lovable, [Our response to the April 2026 incident](https://lovable.dev/blog/our-response-to-the-april-2026-incident).
-- Supabase docs: [Row level security](https://supabase.com/docs/guides/database/postgres/row-level-security), [API keys](https://supabase.com/docs/guides/api/api-keys), [database advisors](https://supabase.com/docs/guides/database/database-advisors).
+- Supabase docs: [Row level security](https://supabase.com/docs/guides/database/postgres/row-level-security), [API keys](https://supabase.com/docs/guides/api/api-keys), [database advisors](https://supabase.com/docs/guides/database/database-advisors), [pg-safeupdate](https://supabase.com/docs/guides/database/extensions/pg-safeupdate).
 - PostgreSQL 18 documentation, [CREATE POLICY](https://www.postgresql.org/docs/current/sql-createpolicy.html).
 - OWASP, [Top 10:2025](https://top10.owasp.org/2025).
 - Our own test: PostgreSQL 18.6 on Ubuntu, a throwaway database with Supabase-style `anon` and `authenticated` roles, 29 October 2026.

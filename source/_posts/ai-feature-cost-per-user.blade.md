@@ -20,11 +20,11 @@ So we took three feature shapes that small SaaS products ship all the time, coun
 
 We counted tokens with the o200k tokenizer, the one OpenAI's current models use and the one behind our [token counter](/tools/ai/token-counter/). Claude and Gemini use their own tokenizers, so the same text gives a somewhat different count there; we priced every model from the same count so the comparison stays about price, not tokenizers.
 
-**A. Summarize a 10-page PDF.** Our test file is a 10-page report from our PDF benchmark set (3,582 words of plain prose). Its extracted text is **4,711 tokens**, about 470 per page. The prompt asks for five bullets plus dates and amounts in under 250 words, which we budget as 330 output tokens. Dense pages cost far more: the 6-page IRS Form W-9 is 6,279 words and **8,933 tokens**, about 1,490 per page, three times the report's rate. If your users upload forms, contracts or bank statements, use the denser figure.
+**A. Summarize a 10-page PDF.** Our test file is a 10-page report from our PDF benchmark set (3,582 words of plain prose). Its extracted text is **4,711 tokens**, about 470 per page, plus about 40 tokens of instruction. The prompt asks for five bullets plus dates and amounts in under 250 words, which we budget as 330 output tokens. Dense pages cost far more: the 6-page IRS Form W-9 is 6,279 words and **8,933 tokens**, about 1,490 per page, three times the report's rate. If your users upload forms, contracts or bank statements, use the denser figure.
 
 **B. Answer a support ticket from 5 help articles.** We used five of our own tool help pages as the "knowledge base": 4,218 tokens together, plus a 49-token system prompt and about 30 tokens for the customer's question. The answer is capped at 150 words, about 200 tokens. The point of this shape is that 4,267 of its ~4,300 input tokens are the same on every call, which is what prompt caching is for.
 
-**C. Classify short texts.** We took the 752 one-line descriptions from our tools catalogue: median **34 tokens** each (90th percentile 39). With a 43-token instruction and a one-word answer, one classification is 77 tokens in and about 2 out. A user who classifies support tickets, leads or transactions might run thousands a month.
+**C. Classify short texts.** We took the 752 one-line descriptions from our tools catalog: median **34 tokens** each (90th percentile 39). With a 43-token instruction and a one-word answer, one classification is 77 tokens in and about 2 out. A user who classifies support tickets, leads or transactions might run thousands a month.
 
 You can redo all of this with your own prompts in the [token counter](/tools/ai/token-counter/) and plug the counts into the [LLM cost calculator](/tools/ai/llm-cost/).
 
@@ -96,11 +96,11 @@ That is the same flat-price trap at a much larger scale. A $19 plan with unlimit
 
 In order of how much they moved our figures:
 
-1. **Model size.** Going from a mid-tier to a small model cut cost per user by about 19 times in our table. Test whether the small model is good enough before tuning anything else. Route only the hard requests to the bigger model.
-2. **Output length.** Output tokens cost five times as much as input on every model above. Our summary's 330 output tokens are 26% of its cost on Sonnet 5.5 even though they're only 7% of its tokens. A word cap in the prompt is the cheapest optimization there is.
+1. **Model size.** Going from a mid-tier to a small model cut cost per user by 20 times in our table (every small-model price is exactly a twentieth of the mid-tier one). Test whether the small model is good enough before tuning anything else. Route only the hard requests to the bigger model.
+2. **Output length.** Output tokens cost at least five times as much as input on every model above (eight times on Flash-Lite). Our summary's 330 output tokens are 26% of its cost on Sonnet 5.5 even though they're only 7% of its tokens. A word cap in the prompt is the cheapest optimization there is.
 3. **Caching.** It cut the support answer's cost by 77% (from $0.011 to $0.0025 on the mid-tier models). Put the stable part (system prompt, documents, examples) first and the user's question last, because caches match from the start of the prompt. Note the cache lifetime: 5 minutes by default on Claude, refreshed on each hit, and at least 30 minutes on OpenAI's newer models. A feature that's used once an hour keeps paying the cache-write rate (1.25× input on Claude, and on OpenAI's GPT-5.6 and later per its caching guide) and rarely gets a hit, so caching helps most when many users share the same prefix.
 4. **Batching.** Anything that can wait, like nightly classification, tagging or report generation, costs half as much on all three providers' batch APIs.
-5. **Reasoning tokens.** Models that "think" bill those tokens as output; Google's price table labels its output column as including thinking tokens. A thousand reasoning tokens on a mid-tier model add $0.01 per call, which nearly doubles our summary's cost. Turn reasoning down or off for tasks that don't need it.
+5. **Reasoning tokens.** Models that "think" bill those tokens as output; Google's price table labels its output column as including thinking tokens. A thousand reasoning tokens on a mid-tier model add $0.01 per call, which raises our summary's cost by about three quarters. Turn reasoning down or off for tasks that don't need it.
 
 ## How to work out your own number in 15 minutes
 
@@ -119,4 +119,4 @@ We wrote earlier about [how AI is changing SaaS products](/articles/how-ai-and-m
 - Google, [Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing) and [context caching](https://ai.google.dev/gemini-api/docs/caching), read 29 October 2026.
 - GitHub, [GitHub Copilot is moving to usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), 2026.
 - Bessemer Venture Partners, [The State of AI 2025](https://www.bvp.com/atlas/the-state-of-ai-2025).
-- Token counts: our own, with the o200k tokenizer (gpt-tokenizer 2.9.0) on a 10-page report from our PDF benchmark set, the IRS Form W-9 (Rev. March 2024), five of our tool help pages (compress PDF, merge PDF, image compressor, background remover, token counter) and the 752 descriptions in our tools catalogue, 29 October 2026.
+- Token counts: our own, with the o200k tokenizer (gpt-tokenizer 2.9.0) on a 10-page report from our PDF benchmark set, the IRS Form W-9 (Rev. March 2024), five of our tool help pages (compress PDF, merge PDF, image compressor, background remover, token counter) and the 752 descriptions in our tools catalog, 29 October 2026.
