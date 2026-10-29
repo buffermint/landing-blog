@@ -68,7 +68,7 @@ test('a merged post is gone from the build, the sitemap and the feed; its target
     assert.ok(!existsSync(join(root, 'source/_posts', `${from}.blade.md`)), `source/_posts/${from}.blade.md still exists`);
     assert.ok(!isPost(from), `articles/${from} is still built`);
     assert.ok(!new RegExp(`/articles/${from}/?<`).test(sitemap), `${from} is still in sitemap.xml`);
-    assert.ok(!feed.includes(`/articles/${from}`), `${from} is still in feed.xml`);
+    assert.ok(!new RegExp(`/articles/${from}(?![\\w-])`).test(feed), `${from} is still in feed.xml`);
     assert.ok(isPost(to), `the merge target articles/${to} isn't built`);
   }
 });

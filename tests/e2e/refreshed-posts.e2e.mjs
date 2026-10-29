@@ -56,7 +56,8 @@ try {
         const c = col.getBoundingClientRect();
         const imgs = [...col.querySelectorAll('img')];
         for (const img of imgs) { img.loading = 'eager'; img.scrollIntoView(); }
-        await Promise.all(imgs.map((img) => (img.complete ? null : new Promise((ok) => { img.onload = img.onerror = ok; }))));
+        // bounded: an image that never settles fails as not loaded instead of hanging the run (and the chrome lock)
+        await Promise.all(imgs.map((img) => (img.complete ? null : new Promise((ok) => { img.onload = img.onerror = ok; setTimeout(ok, 15000); }))));
         const h2s = [...col.querySelectorAll('h2, h3')].map((h) => h.textContent.trim());
         return {
           h1: document.querySelector('h1')?.textContent.trim() ?? '',
