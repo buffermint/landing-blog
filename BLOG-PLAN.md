@@ -166,7 +166,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **New angle:** measured quality (our converter: SSIM 0.982/0.970 on real iPhone HEICs, QUALITY-MEDIA.md) and file sizes before/after on 10 photos. Add a table of which big platforms accept HEIC, each from its own help page.
 - **Sources:** Apple support on HEIF/HEVC, the MPEG HEIF spec page / Nokia HEIF docs, caniuse.com for HEIC/AVIF support, 2+ platform help pages (Google Photos, Windows/Microsoft Store HEIF extension).
 - **Internal links:** /tools/files/heic-to-jpg/, /tools/files/heic-to-png/, /tools/photo/resize-image/, topic 13.
-- **Status:** todo
+- **Status:** published 2026-10-30 → `/articles/heic-to-jpg-what-you-lose` (own sweep 30 Oct 2026: 5 HEICs (iPhone 13 Pro HDR sample, 3 Apple-encoded 12 MP NASA photos, libheif example) decoded with libheif 1.23.5, MozJPEG q60–100: q92 = 1.17–1.70× the HEIC at SSIM ≥0.989; PNG 5–10×; HDR gain map and tiles shown with ExifTool; 10-place acceptance table from each help page; US visa 240 kB worked example)
 
 ### 12. Your photos carry your location: which apps strip EXIF (tested) · `next`
 - **Keyword:** `remove exif data` (level 4; Wikipedia "Exif" 7,697/mo), `exif viewer` (level 4).

@@ -1,6 +1,10 @@
 # buffermint-landing — status
 
-Last updated: 2026-10-29 (old posts refreshed and merged). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+Last updated: 2026-10-30 (scheduled post: HEIC to JPG). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
+
+## Scheduled post 2026-10-30 (lane `lane/t-20261030-blog-post`, not merged or deployed yet)
+- New post `heic-to-jpg-what-you-lose` (BLOG-PLAN topic 11, keyword `heic to jpg`, ~2,300 words, 13 publishers in Sources). Own data: 5 HEICs decoded with libheif 1.23.5 and saved with MozJPEG at q60–100 (sizes, SSIM via FFmpeg), a 200% crop figure, ExifTool findings on an iPhone 13 Pro HDR sample (gain map, 6-tile grid), a 10-place HEIC acceptance table from each help page, and a US visa 240 kB worked example. Cover and figure: NASA AS11-40-5903 (public domain), JPEG + WebP in `assets/img/uploads/`.
+- Checked at 1280 and 390 px through `bin/one-chrome` (no horizontal overflow, no page errors, figure loads); `node --test tests/` 46/46.
 
 ## Old posts refreshed and merged (2026-10-29, lane `lane/t-20261029-blog-refresh-old-posts`, not merged or deployed yet)
 - The 21 posts from 2021, per BLOG-PLAN.md "Old posts": **9 refreshed** (rewritten to the editorial rules, slug and `date:` kept, `updated: 2026-10-29`, 4–8 publishers in Sources each, our own calculations or measurements), **9 merged** into a stronger post and deleted, **3 left** as they are (the `-copy` post waits on PLAN 11). The table of what each became is in BLOG-PLAN.md.
