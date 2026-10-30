@@ -8,7 +8,7 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-08
 extends: _layouts.post
 ---
 
@@ -16,7 +16,7 @@ extends: _layouts.post
 
 ## What we did
 
-On 29 October 2026 we opened the "compress PDF" page of six well-known services and of our own tool in an automated Chromium browser at desktop size. We used no account and didn't click any cookie banner. On each site we:
+In October 2026 we opened the "compress PDF" page of six well-known services and of our own tool in an automated Chromium browser at desktop size. We used no account and didn't click any cookie banner. On each site we:
 
 1. loaded the page and waited five seconds;
 2. picked the same test file, a 302.6 KB PDF of public-domain text that we generated for our benchmarks;
@@ -37,7 +37,7 @@ An upload shows up as a POST or PUT request about the size of the file (310,000 
 | Adobe Acrobat online | Not tested: the site refused our automated browser | – | its servers, per Adobe | – |
 | BufferMint (ours) | No | no upload | – | 2 |
 
-*Measured 29 October 2026, headless Chromium, desktop, no consent given, one run per site. "Servers contacted" counts distinct host names over about 40 seconds.*
+*Measured in October 2026, headless Chromium, desktop, no consent given, one run per site. "Servers contacted" counts distinct host names over about 40 seconds.*
 
 Three findings matter more than the table.
 
@@ -103,7 +103,7 @@ Same task, same file: whether it leaves your computer is the difference that mat
 
 ## Sources
 
-- Our test: headless Chromium (Playwright) on 29 October 2026, one run per site, the request log kept on our side.
+- Our test: headless Chromium (Playwright) in October 2026, one run per site, the request log kept on our side.
 - iLovePDF: [Privacy policy](https://www.ilovepdf.com/help/privacy) (last updated 19 February 2026).
 - Smallpdf: [Compress PDF page, security section](https://smallpdf.com/compress-pdf).
 - PDF24: [Compress PDF page, security section](https://tools.pdf24.org/en/compress-pdf).

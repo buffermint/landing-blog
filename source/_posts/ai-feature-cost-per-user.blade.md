@@ -8,13 +8,13 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-18
 extends: _layouts.post
 ---
 
 Most "how much does an LLM cost" articles stop at the price per million tokens. That number is easy to find and almost useless for pricing a plan. What a founder needs is the cost of one user using one feature for a month, and that depends on how many tokens the feature really sends, how often it runs, and which discounts it can actually get.
 
-So we took three feature shapes that small SaaS products ship all the time, counted their tokens on real text, and priced them from the official pricing pages of Anthropic, OpenAI and Google as they read on 29 October 2026. Then we put the result next to a $19 a month plan.
+So we took three feature shapes that small SaaS products ship all the time, counted their tokens on real text, and priced them from the official pricing pages of Anthropic, OpenAI and Google as they read in October 2026. Then we put the result next to a $19 a month plan.
 
 ## The three features and their measured tokens
 
@@ -40,7 +40,7 @@ You can redo all of this with your own prompts in the [token counter](/tools/ai/
 | Gemini 4 Argon from 1 Dec 2026 | $4.00 | $20.00 | $0.20 | $2.00 / $10.00 |
 | [Gemini 3.5 Flash-Lite](https://ai.google.dev/gemini-api/docs/pricing) | $0.30 | $2.50 | $0.03 | $0.15 / $1.25 |
 
-*Read on each provider's own page on 29 October 2026. Batch prices are input / output.*
+*Read on each provider's own page in October 2026. Batch prices are input / output.*
 
 Two things in this table matter more than the headline prices. First, the mid-tier models from all three providers now list the same $2 / $10, so switching providers to save money on a mid-tier model buys you nothing; the savings come from a smaller model, caching and batching. Second, Google's page already shows Gemini 4 Argon **doubling** on 1 December 2026, and Gemini 3.8 Flash doubling on 1 January 2027. A cost model built in October on Argon is wrong a month later.
 
@@ -114,9 +114,9 @@ Cost is one half of shipping an AI feature to EU users; the other is the paperwo
 
 ## Sources
 
-- Anthropic, [Claude pricing](https://claude.com/pricing) and [prompt caching documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), read 29 October 2026.
-- OpenAI, [API pricing](https://developers.openai.com/api/docs/pricing) and [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching), read 29 October 2026.
-- Google, [Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing) and [context caching](https://ai.google.dev/gemini-api/docs/caching), read 29 October 2026.
+- Anthropic, [Claude pricing](https://claude.com/pricing) and [prompt caching documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), read in October 2026.
+- OpenAI, [API pricing](https://developers.openai.com/api/docs/pricing) and [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching), read in October 2026.
+- Google, [Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing) and [context caching](https://ai.google.dev/gemini-api/docs/caching), read in October 2026.
 - GitHub, [GitHub Copilot is moving to usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), 2026.
 - Bessemer Venture Partners, [The State of AI 2025](https://www.bvp.com/atlas/the-state-of-ai-2025).
-- Token counts: our own, with the o200k tokenizer (gpt-tokenizer 2.9.0) on a 10-page report from our PDF benchmark set, the IRS Form W-9 (Rev. March 2024), five of our tool help pages (compress PDF, merge PDF, image compressor, background remover, token counter) and the 752 descriptions in our tools catalog, 29 October 2026.
+- Token counts: our own, with the o200k tokenizer (gpt-tokenizer 2.9.0) on a 10-page report from our PDF benchmark set, the IRS Form W-9 (Rev. March 2024), five of our tool help pages (compress PDF, merge PDF, image compressor, background remover, token counter) and the 752 descriptions in our tools catalog, October 2026.

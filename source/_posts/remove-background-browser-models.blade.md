@@ -8,7 +8,7 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-28
 extends: _layouts.post
 ---
 
@@ -79,11 +79,11 @@ If you're putting one of these models into your own web app, two problems cost u
 
 ## The license trap
 
-The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA license with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licenses. Its code agrees: on 29 October 2026, `remove()` without a session loads `bria-rmbg` ([rembg source](https://github.com/danielgatis/rembg/blob/main/rembg/bg.py)). So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
+The best-scoring model in our reference run, BRIA's RMBG-2.0, is licensed CC BY-NC 4.0: its model card says it's released "for non-commercial use", and commercial use needs a separate agreement with BRIA ([RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0)). The older RMBG-1.4 has its own BRIA license with a commercial purchase option too. Here's the catch: rembg itself is MIT-licensed, but its README lists `bria-rmbg` (RMBG-2.0) as **the default model**, and notes that model weights carry their own licenses. Its code agrees: in October 2026, `remove()` without a session loads `bria-rmbg` ([rembg source](https://github.com/danielgatis/rembg/blob/main/rembg/bg.py)). So a product that installs rembg and calls it with no options ships a non-commercial model. If your app makes money, check which weights it loads, and pass the model name explicitly.
 
 BEN2 is similar in a different way: its base model is MIT, but the page describes the stronger full model as available only through the company's own demo and API. BiRefNet (MIT), IS-Net and U²-Net (Apache-2.0) and ORMBG (Apache-2.0) are free to ship commercially, as long as you keep their license notices.
 
-We checked the projects' upkeep too, on 29 October 2026: BiRefNet's repository was last updated on 25 October 2026 and rembg's on 21 October 2026, while the IS-Net and U²-Net repositories were last updated in 2024. The older models still work, but nobody is improving them.
+We checked the projects' upkeep too, in October 2026: BiRefNet's repository was last updated on 25 October 2026 and rembg's on 21 October 2026, while the IS-Net and U²-Net repositories were last updated in 2024. The older models still work, but nobody is improving them.
 
 ## Browser models vs the paid services
 
@@ -101,7 +101,7 @@ What the services still do better: batch processing of hundreds of images, very 
 - Peng Zheng et al., [BiRefNet](https://github.com/ZhengPeng7/BiRefNet), "Bilateral Reference for High-Resolution Dichotomous Image Segmentation", CAAI Artificial Intelligence Research, 2024 (MIT license).
 - BRIA AI, [RMBG-2.0 model card](https://huggingface.co/briaai/RMBG-2.0) (CC BY-NC 4.0).
 - PramaLLC, [BEN2 model card](https://huggingface.co/PramaLLC/BEN2); onnx-community, [ORMBG ONNX model card](https://huggingface.co/onnx-community/ormbg-ONNX).
-- Xuebin Qin et al., [U²-Net](https://github.com/xuebinqin/U-2-Net) and [IS-Net (DIS)](https://github.com/xuebinqin/DIS) repositories; Daniel Gatis, [rembg](https://github.com/danielgatis/rembg) (README, model list and default model). Licenses and last-commit dates from the GitHub API, 29 October 2026.
+- Xuebin Qin et al., [U²-Net](https://github.com/xuebinqin/U-2-Net) and [IS-Net (DIS)](https://github.com/xuebinqin/DIS) repositories; Daniel Gatis, [rembg](https://github.com/danielgatis/rembg) (README, model list and default model). Licenses and last-commit dates from the GitHub API, October 2026.
 - Hugging Face, [Transformers.js: running models on WebGPU](https://huggingface.co/docs/transformers.js/guides/webgpu); Microsoft, [ONNX Runtime Web WebGPU execution provider](https://onnxruntime.ai/docs/tutorials/web/ep-webgpu.html).
 - remove.bg, [maximum image resolution](https://www.remove.bg/help/a/what-is-the-maximum-image-resolution-file-size).
 - Our benchmark: 8 CC0/CC-BY ground-truth cut-outs, rembg reference run and our browser pipeline (Chrome, WebGPU on an Apple M5 Mac), measured 22 October 2026.

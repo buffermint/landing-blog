@@ -8,7 +8,7 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-10
 extends: _layouts.post
 ---
 
@@ -23,7 +23,7 @@ If you built your app with Lovable, Bolt, v0 or Replit on a Supabase backend, yo
 | [The Register, one app](https://www.theregister.com/2026/02/27/lovable_app_vulnerabilities/) | 1 Lovable app on Supabase | Feb 2026 | Featured on Lovable's Discover page | 18,697 user records exposed; 16 vulnerabilities, 6 critical |
 | [Symbiotic Security](https://symbioticsec.ai/blog/we-scanned-1-072-vibe-coded-apps-98-had-security-flaws) | 1,072 Supabase-backed apps (Lovable, v0, Bolt, Replit, Windsurf) | published Jun 2026 | Search dorking, Common Crawl, DNS, certificate logs | 98% with at least one finding; 16% critical |
 
-*Figures as each publisher reports them, read 29 October 2026.*
+*Figures as each publisher reports them, read in October 2026.*
 
 Why do the headline rates range from 10% to 98%? Three reasons.
 
@@ -118,4 +118,4 @@ None of this means you shouldn't build with these tools. The holes are few, well
 - Supabase docs: [Row level security](https://supabase.com/docs/guides/database/postgres/row-level-security), [API keys](https://supabase.com/docs/guides/api/api-keys), [database advisors](https://supabase.com/docs/guides/database/database-advisors), [pg-safeupdate](https://supabase.com/docs/guides/database/extensions/pg-safeupdate).
 - PostgreSQL 18 documentation, [CREATE POLICY](https://www.postgresql.org/docs/current/sql-createpolicy.html).
 - OWASP, [Top 10:2025](https://top10.owasp.org/2025).
-- Our own test: PostgreSQL 18.6 on Ubuntu, a throwaway database with Supabase-style `anon` and `authenticated` roles, 29 October 2026.
+- Our own test: PostgreSQL 18.6 on Ubuntu, a throwaway database with Supabase-style `anon` and `authenticated` roles, October 2026.

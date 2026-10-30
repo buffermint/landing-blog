@@ -1,4 +1,4 @@
-// Post quality (BLOG-PLAN.md, editorial rules): every post dated on or after 2026-10-29, or carrying `updated:`, must
+// Post quality (BLOG-PLAN.md, editorial rules): every post dated in 2026 or later, or carrying `updated:`, must
 // be a real article: a short title, a search description of the right length, 1,200+ words, a `## Sources` section
 // citing 4+ publishers, internal links, alt text, no placeholder text, and its own title and `keyword:`. Older posts
 // without `updated:` are exempt until a refresh lane touches them. The checks read source/_posts, so they need no build.
@@ -9,7 +9,9 @@ import { join } from 'node:path';
 import { root } from './helpers.mjs';
 
 const POSTS = join(root, 'source/_posts');
-export const CUTOFF = '2026-10-29';
+// The relaunched blog's posts start in October 2026 (backdated as far as 2026-10-05 on the owner's word, 2026-10-30);
+// every older post is from 2021.
+export const CUTOFF = '2026-01-01';
 const OUR_HOSTS = /^(www\.)?buffermint\.com$/i;
 
 // The front matter is flat `key: value` lines (quoted or not, with an optional `# comment` as in BLOG-PLAN.md's
@@ -164,6 +166,49 @@ test('every new or refreshed post meets the quality bar', () => {
   assert.deepEqual(failures, [], failures.map(([f, p]) => `${f}:\n  - ${p.join('\n  - ')}`).join('\n'));
 });
 
+// Dates (owner, 2026-10-30): "Never put a future date in any active blog. Any blogs that have same date must be spaced
+// out by 2-3 dates." So: no published post dated after today, no two published posts on one date, and the relaunched
+// blog's posts (in scope by date) at least 2 days apart.
+export const MIN_GAP_DAYS = 2;
+export function dateProblems(all, today) {
+  const problems = [];
+  const live = all.filter((p) => !isDraft(p) && /^\d{4}-\d{2}-\d{2}$/.test(day(p.meta.date)));
+  const byDate = new Map();
+  for (const p of live) {
+    const d = day(p.meta.date);
+    if (d > today) problems.push(`${p.file} is dated ${d}, after today (${today})`);
+    if (byDate.has(d)) problems.push(`${p.file} has the same date (${d}) as ${byDate.get(d)}`);
+    else byDate.set(d, p.file);
+  }
+  const recent = live.filter((p) => day(p.meta.date) >= CUTOFF).sort((a, b) => day(a.meta.date).localeCompare(day(b.meta.date)));
+  for (let i = 1; i < recent.length; i++) {
+    const [a, b] = [recent[i - 1], recent[i]];
+    const gap = (Date.parse(day(b.meta.date)) - Date.parse(day(a.meta.date))) / 864e5;
+    if (gap > 0 && gap < MIN_GAP_DAYS) problems.push(`${b.file} (${day(b.meta.date)}) is only ${gap} day after ${a.file}`);
+  }
+  return problems;
+}
+const localToday = () => new Date().toLocaleDateString('sv');
+
+test('post dates: none in the future, none shared, new posts 2+ days apart', () => {
+  const problems = dateProblems(read(), localToday());
+  assert.deepEqual(problems, [], problems.join('\n'));
+});
+
+test('the date checker: future, shared and too-close dates are reported; drafts and old posts are not held to the gap', () => {
+  const post = (file, date, extra = '') => parsePost(`---\ntitle: ${file}\ndate: ${date}\n${extra}---\nx`, file);
+  const problems = dateProblems([
+    post('a', '2026-10-05'), post('b', '2026-10-05'), post('c', '2026-10-06'), post('d', '2026-11-09'),
+    post('e', '2026-11-20', 'published: false\n'), post('old1', '2021-08-10'), post('old2', '2021-08-11'),
+  ], '2026-11-01');
+  assert.deepEqual(problems, [
+    'b has the same date (2026-10-05) as a',
+    'd is dated 2026-11-09, after today (2026-11-01)',
+    'c (2026-10-06) is only 1 day after b',
+  ]);
+  assert.deepEqual(dateProblems([post('a', '2026-10-05'), post('b', '2026-10-07'), post('c', '2026-10-10')], '2026-10-30'), []);
+});
+
 test('no two posts share a title or a keyword (old posts included)', () => {
   const all = read();
   const seen = new Map();
@@ -248,6 +293,7 @@ test('the checker: missing Sources, duplicate keyword, scope', () => {
   assert.equal(inScope(parsePost('---\ntitle: Old\ndate: 2021-07-10\n---\nx', 'o')), false);
   assert.equal(inScope(parsePost('---\ntitle: Old\ndate: 2021-07-10\nupdated: 2026-11-05\n---\nx', 'o')), true);
   assert.equal(inScope(parsePost('---\ntitle: New\ndate: 2026-10-29\n---\nx', 'o')), true);
+  assert.equal(inScope(parsePost('---\ntitle: Backdated\ndate: 2026-10-05\n---\nx', 'o')), true);
 });
 
 test('the checker: real link text, code samples and odd URLs are not problems', () => {

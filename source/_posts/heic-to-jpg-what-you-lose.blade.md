@@ -8,7 +8,7 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-30
+date: 2026-10-13
 extends: _layouts.post
 ---
 
@@ -49,7 +49,7 @@ We took five HEIC files we're allowed to use and publish numbers on:
 - **Three 12-megapixel photos** (4000 × 3000, the size iPhones saved by default before the iPhone 15, whose main camera now saves 24 MP) encoded by Apple's own HEIC encoder (macOS `sips`, quality 80) from public-domain NASA photos: the Apollo 11 photo on our cover in two different crops, and the Apollo 17 "Blue Marble".
 - **The libheif example image** (1280 × 854), from the [libheif](https://github.com/strukturag/libheif) project, the open-source decoder most HEIC converters use.
 
-Each file was decoded once with libheif 1.23.5 (the same WebAssembly build our converter ships), then saved as JPG with MozJPEG at quality 60, 75, 85, 92 (our default) and 100, using our tool's encoder settings. Sizes are the image data alone; our converter also writes the EXIF details and color profile, usually a few KB more. We scored each JPG with SSIM against the decoded HEIC, using FFmpeg 8.0 on all three color channels. SSIM is a similarity score where 1.0 means identical. Sizes are in KB of 1,000 bytes. The run was on 30 October 2026.
+Each file was decoded once with libheif 1.23.5 (the same WebAssembly build our converter ships), then saved as JPG with MozJPEG at quality 60, 75, 85, 92 (our default) and 100, using our tool's encoder settings. Sizes are the image data alone; our converter also writes the EXIF details and color profile, usually a few KB more. We scored each JPG with SSIM against the decoded HEIC, using FFmpeg 8.0 on all three color channels. SSIM is a similarity score where 1.0 means identical. Sizes are in KB of 1,000 bytes. The run was in October 2026.
 
 ## Results: size and similarity
 
@@ -120,7 +120,7 @@ HEIC to JPG costs you three things: some space (about 1.2 to 1.7 times for a typ
 
 - Apple Support: [Using HEIF or HEVC media on Apple devices](https://support.apple.com/en-us/HT207022) (updated 5 December 2025).
 - Nokia Technologies: [HEIF technical information](https://nokiatech.github.io/heif/technical.html) (structure, auxiliary images, JPEG vs HEVC bitrate comparison).
-- Can I use: [HEIF/HEIC image format](https://caniuse.com/heif) (browser support, read 30 October 2026).
+- Can I use: [HEIF/HEIC image format](https://caniuse.com/heif) (browser support, read in October 2026).
 - Microsoft Support: [Photos app Video Editor error: Can't view this file type](https://support.microsoft.com/en-us/windows/photos-app-video-editor-error-can-t-view-this-file-type-173ae0be-2b7d-d413-589e-84ccca0de02e).
 - Google Photos Help: [supported file types and sizes](https://support.google.com/photos/answer/6193313?hl=en).
 - Etsy Help: [How to add photos and videos to your listings](https://help.etsy.com/hc/en-us/articles/115015663347-How-to-Add-Photos-and-Videos-to-Your-Listings).
@@ -131,4 +131,4 @@ HEIC to JPG costs you three things: some space (about 1.2 to 1.7 times for a typ
 - GOV.UK: [Photos for passports](https://www.gov.uk/photos-for-passports).
 - strukturag: [libheif](https://github.com/strukturag/libheif) (HEIF and AVIF decoder and encoder, LGPL).
 - johncf: [apple-hdr-heic](https://github.com/johncf/apple-hdr-heic) (converts iPhone HDR gain-map photos; source of the MIT-licensed iPhone 13 Pro test photo).
-- Our measurements: libheif 1.23.5 and MozJPEG (jSquash) on 30 October 2026, SSIM with FFmpeg 8.0; the HEIC test files are NASA public-domain photos (AS11-40-5903, AS17-148-22727) encoded with macOS `sips`, the apple-hdr-heic sample and the libheif example.
+- Our measurements: libheif 1.23.5 and MozJPEG (jSquash) in October 2026, SSIM with FFmpeg 8.0; the HEIC test files are NASA public-domain photos (AS11-40-5903, AS17-148-22727) encoded with macOS `sips`, the apple-hdr-heic sample and the libheif example.

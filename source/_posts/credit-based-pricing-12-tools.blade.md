@@ -8,13 +8,13 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-20
 extends: _layouts.post
 ---
 
 "Credits" are now the default way to sell AI features, and the word means something different on almost every pricing page. On one, a credit is a dollar of model usage. On another it's a character of speech, a successful automation step, or a unit the company never defines. If you're pricing an AI feature, or trying to compare two tools before you buy, that difference is the whole question.
 
-We read the public pricing pages and billing docs of 12 tools that small SaaS founders actually use, all on 29 October 2026, and asked the same three questions of each: what is one credit, what does it cost, and can you work out the price of a typical task from the public page alone?
+We read the public pricing pages and billing docs of 12 tools that small SaaS founders actually use, all in October 2026, and asked the same three questions of each: what is one credit, what does it cost, and can you work out the price of a typical task from the public page alone?
 
 ## Why everyone moved to credits
 
@@ -39,7 +39,7 @@ The clearest recent example is GitHub. On 1 June 2026, Copilot replaced "premium
 | [ElevenLabs](https://elevenlabs.io/pricing) | Credits = characters of text (1 per character on standard models) | Creator $22/mo for 121,000 credits | Narrating a 1,000-word article (about 6,000 characters, our estimate): about $1.09 | Yes |
 | [HeyGen](https://www.heygen.com/pricing) | Credits | Creator $29/mo for 600 credits | Not published; "varies by model, duration and complexity" | No |
 
-*All read on 29 October 2026 from each company's own pricing page or billing docs. "Our calculation" uses the plan prices in the table; check the pages before you buy, since several had promotions running.*
+*All read in October 2026 from each company's own pricing page or billing docs. "Our calculation" uses the plan prices in the table; check the pages before you buy, since several had promotions running.*
 
 ## What the table shows
 
@@ -79,7 +79,7 @@ What confuses buyers, from the same pages: two currencies in one plan (Clay's Ac
 
 ## Sources
 
-- The 12 pricing pages and billing docs linked in the table, all read 29 October 2026: GitHub, v0, Replit (pricing and [AI billing docs](https://docs.replit.com/billing/ai-billing)), Lovable ([pricing](https://lovable.dev/pricing) and [subscription plans](https://docs.lovable.dev/introduction/subscription-plans)), Bolt, Cursor, Notion, Zapier, Intercom, Clay, ElevenLabs and HeyGen.
+- The 12 pricing pages and billing docs linked in the table, all read in October 2026: GitHub, v0, Replit (pricing and [AI billing docs](https://docs.replit.com/billing/ai-billing)), Lovable ([pricing](https://lovable.dev/pricing) and [subscription plans](https://docs.lovable.dev/introduction/subscription-plans)), Bolt, Cursor, Notion, Zapier, Intercom, Clay, ElevenLabs and HeyGen.
 - GitHub, [GitHub Copilot is moving to usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), and [GitHub docs on premium requests](https://docs.github.com/en/copilot/concepts/billing/copilot-requests).
 - Kyle Poyar, Growth Unhinged, [What's changing with AI monetization](https://www.growthunhinged.com/p/whats-changing-with-ai-monetization), January 2025.
 - Our token cost figures: [What an AI feature really costs per user](/articles/ai-feature-cost-per-user), October 2026.

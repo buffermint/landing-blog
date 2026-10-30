@@ -8,7 +8,7 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-23
 extends: _layouts.post
 ---
 
@@ -40,7 +40,7 @@ We downsampled every image to a fixed resolution with Ghostscript 10.06 (`pdfwri
 | 50 dpi | 24 | 195 KB | 44 KB | 155 KB |
 | 36 dpi | 14 | 113 KB | 22 KB | 152 KB |
 
-*Measured 29 October 2026, Ghostscript 10.06.0, color output. 1 KB = 1,024 bytes in this table.*
+*Measured in October 2026, Ghostscript 10.06.0, color output. 1 KB = 1,024 bytes in this table.*
 
 Three things stand out.
 
@@ -108,4 +108,4 @@ For a larger budget, the general [Compress PDF](/tools/pdf/compress-pdf/) tool k
 - qpdf manual: [Running qpdf, command-line options](https://qpdf.readthedocs.io/en/stable/cli.html) (object streams, `--optimize-images`).
 - Microsoft Learn: [TrueType hinting](https://learn.microsoft.com/en-us/typography/truetype/hinting).
 - Zhou Wang, Alan Bovik, Hamid Sheikh, Eero Simoncelli: [The SSIM index for image quality assessment](https://www.cns.nyu.edu/~lcv/ssim/) (IEEE Transactions on Image Processing, 2004).
-- Our measurements: Ghostscript 10.06.0 resolution sweep on 29 October 2026, and our tool benchmark of 23 October 2026, on a public-domain test corpus (NASA photos, the US Constitution text).
+- Our measurements: Ghostscript 10.06.0 resolution sweep in October 2026, and our tool benchmark of 23 October 2026, on a public-domain test corpus (NASA photos, the US Constitution text).

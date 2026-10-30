@@ -8,11 +8,11 @@ author: Rishabh Pandey
 show_meta: true
 section: postContent
 published: true
-date: 2026-10-29
+date: 2026-10-05
 extends: _layouts.post
 ---
 
-Search "Paddle vs Stripe" or "best merchant of record" and most of the comparisons you'll read are published by one of the payment companies being compared. That doesn't make them wrong, but each picks the example that flatters its own price. So we went to each provider's own pricing page on 29 October 2026 and worked out what each one keeps from the same sale, at the three prices small SaaS products actually charge.
+Search "Paddle vs Stripe" or "best merchant of record" and most of the comparisons you'll read are published by one of the payment companies being compared. That doesn't make them wrong, but each picks the example that flatters its own price. So we went to each provider's own pricing page in October 2026 and worked out what each one keeps from the same sale, at the three prices small SaaS products actually charge.
 
 We don't take a cut from any of these companies, and we've linked every number to its source.
 
@@ -35,7 +35,7 @@ So the honest comparison is MoR fee against Stripe fees plus the cost of doing t
 | [Creem](https://www.creem.io/pricing) | 3.9% + 40¢ | "no international card fees" | none listed | Payouts on the 1st and 15th |
 | [Stripe](https://stripe.com/us/pricing) + Billing + Tax Basic (not an MoR) | 2.9% + 30¢, +0.7% Billing, +0.5% Tax | +1.5% (+1% if currency is converted) | the 0.7% Billing fee | You register for and file tax yourself |
 
-*Read on each provider's own page on 29 October 2026. Prices change. Check before you sign up.*
+*Read on each provider's own page in October 2026. Prices change. Check before you sign up.*
 
 Two things stand out before any maths. The fixed fee (30–50¢) is the same whether you charge $9 or $99, so it hurts small prices most. And the "extra" columns are where comparisons get selective: a provider that looks cheapest on a US card can be mid-table once most of your buyers are abroad, which is normal for a small SaaS selling online.
 
@@ -113,10 +113,10 @@ To run these numbers on your own prices, our [profit margin calculator](/tools/b
 
 ## Sources
 
-- Paddle: [Pricing](https://www.paddle.com/pricing) (read 29 October 2026).
-- Lemon Squeezy: [Pricing](https://www.lemonsqueezy.com/pricing) and [Fees documentation](https://docs.lemonsqueezy.com/help/getting-started/fees) (read 29 October 2026).
-- Polar: [Merchant of record fees](https://polar.sh/docs/merchant-of-record/fees) (read 29 October 2026).
-- Dodo Payments: [Pricing](https://dodopayments.com/pricing) (read 29 October 2026).
-- Creem: [Pricing](https://www.creem.io/pricing) (read 29 October 2026).
-- Stripe: [US pricing](https://stripe.com/us/pricing), including Billing, Tax Basic, Tax Complete and dispute fees (read 29 October 2026).
+- Paddle: [Pricing](https://www.paddle.com/pricing) (read in October 2026).
+- Lemon Squeezy: [Pricing](https://www.lemonsqueezy.com/pricing) and [Fees documentation](https://docs.lemonsqueezy.com/help/getting-started/fees) (read in October 2026).
+- Polar: [Merchant of record fees](https://polar.sh/docs/merchant-of-record/fees) (read in October 2026).
+- Dodo Payments: [Pricing](https://dodopayments.com/pricing) (read in October 2026).
+- Creem: [Pricing](https://www.creem.io/pricing) (read in October 2026).
+- Stripe: [US pricing](https://stripe.com/us/pricing), including Billing, Tax Basic, Tax Complete and dispute fees (read in October 2026).
 - Our calculations: each provider's list price applied to one subscription payment at $9, $29 and $99, and to 100 customers at $29 with 60% non-US cards.
