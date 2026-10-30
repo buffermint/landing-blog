@@ -32,8 +32,8 @@ The short answer: big photo and shop platforms now accept HEIC, while browsers o
 | Etsy listing photos | Yes | .jpg, .gif, .png, .svg or .heic; files over 1 MB "may not finish uploading" ([Etsy Help](https://help.etsy.com/hc/en-us/articles/115015663347-How-to-Add-Photos-and-Videos-to-Your-Listings)) |
 | Shopify product images | Yes | HEIC listed with TIFF, BMP, GIF, SVG and WebP; under 20 MB, up to 25 MP ([Shopify Help Center](https://help.shopify.com/en/manual/products/product-media/product-media-types)) |
 | eBay listing photos | Yes | JPEG, PNG, GIF, TIFF, BMP, WEBP, HEIC or AVIF; 12 MB per file ([eBay Help](https://www.ebay.com/help/selling/listings/adding-pictures-listings?id=4148)) |
-| US passport renewal online | Yes | JPG, JPEG, PNG, HEIC or HEIF, 54 KB to 10 MB ([US Department of State](https://adoption.state.gov/en/passports/renew-replace/online/upload-digital-photo.html)) |
-| US visa photo | **No** | JPEG only, at most 240 kB, square, 600 to 1200 px, sRGB ([US Department of State](https://adoption.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html)) |
+| US passport renewal online | Yes | JPG, JPEG, PNG, HEIC or HEIF, 54 KB to 10 MB ([US Department of State](https://travel.state.gov/en/passports/renew-replace/online/upload-digital-photo.html)) |
+| US visa photo | **No** | JPEG only, at most 240 kB, square, 600 to 1200 px, sRGB ([US Department of State](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html)) |
 | LinkedIn Page images | **No** | "All images must be PNG or JPEG files", up to 3 MB ([LinkedIn Help](https://www.linkedin.com/help/linkedin/answer/a563309)) |
 | UK passport online | Not stated | Format not named; 50 KB to 10 MB, at least 600 × 750 px ([GOV.UK](https://www.gov.uk/photos-for-passports)) |
 | Chrome, Edge, Firefox | **No** | No version displays HEIC in a web page; Safari 17 and later do, about 17% of users ([Can I use](https://caniuse.com/heif)) |
@@ -61,19 +61,19 @@ Each file was decoded once with libheif 1.23.5 (the same WebAssembly build our c
 | Apollo 11, portrait crop, 12 MP | 1,082 KB | 859 KB (0.979) | 1,251 KB (0.985) | 1,809 KB (0.994) | 4,879 KB (0.999) | 11,196 KB |
 | libheif example, 1.1 MP | 718 KB | 217 KB (0.946) | 319 KB (0.969) | 475 KB (0.985) | 1,150 KB (0.999) | 1,871 KB |
 
-*SSIM against the decoded HEIC in brackets. PNG is lossless, so its SSIM is 1.0.*
+*SSIM against the decoded HEIC in brackets. PNG is lossless, so its SSIM is 1.0. Quality 60, not shown, gave 0.22 to 0.60 times the HEIC size at SSIM 0.919 to 0.976.*
 
-![Three 400 by 300 pixel crops of the Apollo 11 photo at 200% zoom: the decoded HEIC, the quality 75 JPG with smoother grain, and the quality 92 JPG that matches the original](/assets/img/uploads/heic-to-jpg-quality-compare.jpeg)
+![Three side-by-side crops of the same patch of the Apollo 11 photo, enlarged: the decoded HEIC, the quality 75 JPG with smoother grain, and the quality 92 JPG that matches the original](/assets/img/uploads/heic-to-jpg-quality-compare.jpeg)
 
-*Left to right: the decoded HEIC, JPG quality 75, JPG quality 92 (Apollo 11, NASA, public domain; 200% zoom). At 75 the lunar soil loses some grain; at 92 we couldn't tell it from the original.*
+*Left to right, separated by white gaps: the decoded HEIC, JPG quality 75, JPG quality 92 (a 400 × 300 px patch of the Apollo 11 photo, NASA, public domain, enlarged 1.3 times). At 75 the lunar soil loses some grain; at 92 we couldn't tell it from the original.*
 
 What this says:
 
-1. **At a quality you'd keep, the JPG is bigger.** For the three Apple-encoded 12 MP photos, quality 92 gave files 1.66 to 1.70 times the HEIC size, and quality 85 gave 1.16 times. Only around quality 75 did the JPG come out smaller than the HEIC, and at 200% zoom that setting visibly smooths fine grain (see the crops above).
+1. **At a quality you'd keep, the JPG is bigger.** For the three Apple-encoded 12 MP photos, quality 92 gave files 1.66 to 1.70 times the HEIC size, and quality 85 gave 1.16 times. Only around quality 75 did those three come out smaller than the HEIC (the smaller iPhone sample was already smaller at 85), and enlarged, that setting visibly smooths fine grain (see the crops above).
 2. **The size depends on how the HEIC was saved, not only on the format.** The libheif example is a high-quality HEIC (718 KB for 1.1 MP), so every JPG below quality 100 is smaller than it. "JPG is always twice the size" isn't true; it depends on the source.
-3. **Quality 100 is almost never worth it.** It took the files to 3.0 to 4.5 times the HEIC size for an SSIM gain from about 0.994 to 0.999 that we couldn't see.
+3. **Quality 100 is almost never worth it.** It took the Apple-encoded files to 3.0 to 4.5 times the HEIC size (the libheif example to 1.6 times) for an SSIM gain from about 0.994 to 0.999 that we couldn't see.
 4. **The jump from 85 to 92 is partly color.** At 92 and above, the encoder keeps color at full resolution (4:4:4, checked in the files' headers); below 90 it stores color at reduced resolution. That's part of why the files grow by 43 to 52% between those two settings.
-5. **PNG is the wrong "lossless" choice for photos.** It came out 5 to 10 times the HEIC size and gets you nothing a quality-92 JPG doesn't, unless you plan to edit and resave the picture many times.
+5. **PNG is the wrong "lossless" choice for photos.** It came out 2.6 to 10.4 times the HEIC size and gets you nothing a quality-92 JPG doesn't, unless you plan to edit and resave the picture many times.
 
 ## Where the sources disagree on size
 
@@ -85,15 +85,15 @@ These don't contradict each other. Nokia compared both codecs against the same u
 
 The pixels are only part of an iPhone photo. Reading our iPhone 13 Pro sample with ExifTool shows what else is in the file:
 
-- **An HDR gain map.** The sample carries a second, 756 × 426 image (half the main size) of type `urn:com:apple:photo:2020:aux:hdrgainmap`, plus Apple's HDR headroom values. The apple-hdr-heic project describes the gain map as "an inverse tone-map": on an HDR screen it brightens highlights beyond the normal image. A standard JPG converter, ours included, writes only the main image, so the photo looks the same on an ordinary screen and loses its extra brightness on an HDR one.
-- **Tiles.** The main image is stored as 512 × 512 tiles that the decoder stitches together. In our sample, the 1512 × 850 picture is a grid of six tiles. This matters for old converters: our first version used heic2any, built on a 2020-era libheif, and scored 0.870 SSIM on a real tiled iPhone HEIC in our October benchmark; after we moved to libheif 1.23 the same file scored 0.9992. If an older tool gives you a blocky or cropped JPG, this is the usual cause.
+- **An HDR gain map.** The sample carries a second, 756 × 426 image (about half the main size) of type `urn:com:apple:photo:2020:aux:hdrgainmap`, plus Apple's HDR headroom values. The apple-hdr-heic project describes the gain map as "an inverse tone-map": on an HDR screen it brightens highlights beyond the normal image. A standard JPG converter, ours included, writes only the main image, so the photo looks the same on an ordinary screen and loses its extra brightness on an HDR one.
+- **Tiles.** The main image is stored as 512 × 512 tiles that the decoder stitches together. In our sample, the 1512 × 850 picture is a grid of six tiles. This matters for old converters: our first version used heic2any, built on a 2020-era libheif, and scored 0.870 SSIM on a real tiled iPhone HEIC in our October benchmark, where Apple's own converter scored 0.996; after we moved to libheif 1.23 our output scored 0.999 against Apple's decode of the same file. If an older tool gives you a blocky or cropped JPG, this is the usual cause.
 - **Depth and other auxiliary images.** HEIF can store a depth map next to the photo (Nokia's overview names it as an example of an auxiliary image). A JPG has nowhere to put it.
 - **Wide color.** The sample is tagged Display P3. A careful converter copies that color profile into the JPG so colors stay the same; a careless one drops it and colors look slightly duller. The US visa page asks for sRGB, so a P3-tagged JPG isn't strictly what it asks for. We haven't tested whether that portal rejects one.
 - **Location.** Exif data, including GPS, can be copied into the JPG. Our converter keeps the date taken and removes the location by default. If you use another tool, check the result with an [EXIF viewer](/tools/photo/exif-viewer/) or clean it with the [EXIF stripper](/tools/photo/exif-stripper/) before you post it anywhere public.
 
 ## A worked example: the 240 KB visa photo
 
-The visa row in the table is the strict one: JPEG, square, 600 to 1200 px, at most 240 kB. We took the 12 MP Apollo 11 photo, cropped it square and resized it, then saved it at our four usual quality settings:
+The visa row in the table is the strict one: JPEG, square, 600 to 1200 px, at most 240 kB. We took the 12 MP Apollo 11 photo, cropped it square and resized it, then saved it at four of the quality settings:
 
 | Size | q75 | q85 | q92 | q100 |
 |---|---|---|---|---|
@@ -126,7 +126,7 @@ HEIC to JPG costs you three things: some space (about 1.2 to 1.7 times at a qual
 - Etsy Help: [How to add photos and videos to your listings](https://help.etsy.com/hc/en-us/articles/115015663347-How-to-Add-Photos-and-Videos-to-Your-Listings).
 - Shopify Help Center: [Product media types](https://help.shopify.com/en/manual/products/product-media/product-media-types).
 - eBay Help: [Adding pictures to your listings](https://www.ebay.com/help/selling/listings/adding-pictures-listings?id=4148).
-- US Department of State: [Upload a digital photo for online passport renewal](https://adoption.state.gov/en/passports/renew-replace/online/upload-digital-photo.html) and [visa photo digital image requirements](https://adoption.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html).
+- US Department of State: [Upload a digital photo for online passport renewal](https://travel.state.gov/en/passports/renew-replace/online/upload-digital-photo.html) and [visa photo digital image requirements](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/photos/digital-image-requirements.html).
 - LinkedIn Help: [Page and Career Page image requirements](https://www.linkedin.com/help/linkedin/answer/a563309).
 - GOV.UK: [Photos for passports](https://www.gov.uk/photos-for-passports).
 - strukturag: [libheif](https://github.com/strukturag/libheif) (HEIF and AVIF decoder and encoder, LGPL).
