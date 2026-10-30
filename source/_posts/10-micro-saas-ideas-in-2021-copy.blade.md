@@ -16,7 +16,7 @@ date: 2021-08-26
 extends: _layouts.post
 section: postContent
 ---
-For anyone looking to start a successful business, micro SaaS ideas are a great way to get into that space. Demand for SaaS services has been growing considerably in the last decade and [micro-SaaS is raging at the moment](https://buffermint.com/articles/micro-saas-is-the-future#:~:text=Micro-SaaS%20is%20all%20the%20rage%20right%20now.).
+For anyone looking to start a successful business, micro SaaS ideas are a great way to get into that space. Demand for SaaS services has been growing considerably in the last decade and [micro-SaaS is raging at the moment](https://buffermint.com/articles/launch-your-micro-saas-product).
 
 It's evident that founders are already turning to micro-SaaS, which turns out to be an extremely profitable decision for some of them. So before talking about finding micro-SaaS ideas, let's talk about micro-SaaS.
 
