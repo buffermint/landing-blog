@@ -205,7 +205,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 17. E-invoicing in 2026–27: what a small SaaS selling into the EU must do · `next`
 - **Keyword:** `e invoicing france` (level 4), `e invoicing belgium` (level 3), `peppol` (level 2; HN 50; Wikipedia 1,135/mo).
-- **New angle:** a dated country table from government sources: Belgium B2B since 1 Jan 2026, France receiving from 1 Sep 2026 (now past: confirm at impots.gouv.fr that it started as planned; search on 2026-10-31 found no post-launch source) and SME issuing from Sep 2027, Germany receiving since 2025, Poland KSeF (large taxpayers 1 Feb 2026, others 1 Apr 2026, micro from Jan 2027, per secondary sources), and ViDA 2030. Most mandates are domestic B2B, so say which ones touch a non-EU SaaS selling cross-border, and which don't.
+- **New angle:** a dated country table from government sources: Belgium B2B since 1 Jan 2026, France receiving from 1 Sep 2026 (now past: confirm at impots.gouv.fr that it started as planned; search on 2026-10-31 found no post-launch source) and SME issuing from Sep 2027, Germany receiving since 2025, Poland KSeF (large taxpayers 1 Feb 2026, others 1 Apr 2026, micro from Jan 2027, per https://vatit.com/?p=90235, found 2026-10-31; confirm at the Ministry of Finance), and ViDA 2030. Most mandates are domestic B2B, so say which ones touch a non-EU SaaS selling cross-border, and which don't.
 - **Sources:** Belgian FPS Finance (einvoice.belgium.be), the French impots.gouv.fr e-invoicing pages, the German BMF letter on E-Rechnung, the European Commission ViDA page, OpenPeppol.
 - **Internal links:** /tools/everyday/invoice-generator/, /tools/business/vat-calculator-belgium/, /tools/business/vat-calculator-france/, topic 18.
 - **Status:** todo
@@ -268,7 +268,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 26. Making PDFs accessible: the ADA Title II dates and what a small office can fix itself · `later`
 - **Keyword:** `make pdf accessible` (level 2; Wikipedia "PDF/UA" 1,047/mo).
-- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (26 April 2027 for 50k+ population, 26 April 2028 for smaller ones and special districts, per several law-firm notes on 2026-10-31; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't.
+- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (26 April 2027 for 50k+ population, 26 April 2028 for smaller ones and special districts, per https://www.reedsmith.com/articles/doj-extends-digital-accessibility-compliance-dates-under-title-ii-of-the-ada/ and other law-firm notes found 2026-10-31; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't.
 - **Sources:** the Federal Register doc 2026-07663, ada.gov, W3C WCAG 2.1, the PDF Association on PDF/UA, HHS Section 504 rule.
 - **Internal links:** /tools/pdf/pdf-metadata/, /tools/pdf/ocr-pdf/, topic 4.
 - **Status:** todo
@@ -291,6 +291,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Keyword:** `dummy file generator` (level 4). Still our most-visited tool page: 13 views in the first counted week, 20 by 31 Oct (`/var/log/caddy/stats.log` from 23 Oct, same count as above).
 - **New angle:** a table of documented upload/attachment limits (Gmail, Outlook, Slack, WhatsApp, Discord, Google Forms, Typeform, S3 single PUT, Cloudflare Workers request body…), each from the vendor's docs. Add how to test the edges (exactly at the limit, 1 byte over) with generated files.
 - **Sources:** each vendor's docs page (dated), MDN on File/Blob, RFC 9110 on 413 responses.
+- **Note:** Discord's limit moved to 20 MB on 13 Aug 2026 (see topic 39): read every limit fresh.
 - **Internal links:** /tools/dev/dummy-file-generator/, /tools/dev/file-checksum/, /tools/files/file-type-checker/.
 - **Status:** todo
 
@@ -324,10 +325,10 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** todo
 
 ### 34. Redacting a PDF: four methods tested with pdftotext · `next`
-- **Keyword:** `redact pdf` (level 4; HN 3; Wikipedia "Redaction" 2,591/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Keyword:** `how to redact a pdf` (level 4; HN 1; Wikipedia "Redaction" 2,591/mo). `redact pdf` (level 4; HN 3) is the tool page's term, for context only. Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** how-to with a safety worry. Someone must hide a name, account number or SSN before sending a PDF, and needs a method that actually removes it.
 - **New angle:** a repeatable test on one sample PDF with a planted string. White text, a drawn black rectangle, a black box in Word exported to PDF, and true redaction; check each with `pdftotext`, `qpdf` and a metadata read. Include our tool's real trade-off from `QUALITY-DOCUMENTS.md`: the secret is gone from text, streams and metadata, but the redacted page becomes an image (0 characters kept, 74 → 628 KB). Disclose that next to Acrobat Pro's removal under the box only.
-- **Sources:** https://www.mnd.uscourts.gov/sites/mnd/files/Best_Practices-Redaction_of_Information.pdf *(read 2026-10-31: names white text and word-processor black boxes as methods not to use)*, https://daringfireball.net/linked/2025/12/23/trump-doj-pdf-redactions (found 2026-10-31; accounts of this incident conflict, so use it only if a primary source settles it), https://www.dccourts.gov/sites/default/files/COA-efiling-cases-online-PDFs/Tips%20for%20Redacting%20Briefs.pdf (found 2026-10-31), Adobe's redaction help page.
+- **Sources:** https://www.mnd.uscourts.gov/sites/mnd/files/Best_Practices-Redaction_of_Information.pdf *(read 2026-10-31: names white text and word-processor black boxes as methods not to use)*, https://daringfireball.net/linked/2025/12/23/trump-doj-pdf-redactions (found 2026-10-31; accounts of this incident conflict, so use it only if a primary source settles it), https://www.dccourts.gov/sites/default/files/COA-efiling-cases-online-PDFs/Tips%20for%20Redacting%20Briefs.pdf (found 2026-10-31), https://helpx.adobe.com/acrobat/using/removing-sensitive-content-pdfs.html (403 to our fetcher, open in a browser).
 - **Internal links:** /tools/pdf/redact-pdf/, /tools/pdf/pdf-metadata/, /tools/pdf/flatten-pdf/, /articles/are-online-pdf-converters-safe.
 - **Status:** todo
 
@@ -339,7 +340,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Internal links:** /tools/dev/uuid-v7-generator/, /tools/dev/uuid/, /tools/dev/ulid-generator/, /tools/dev/sql-playground/.
 - **Status:** todo
 
-### 36. Are AI detectors accurate? Vendor claims against independent tests · `next`
+### 36. Are AI detectors accurate? Vendor claims vs independent tests · `next`
 - **Keyword:** `are ai detectors accurate` (level 4). Also `ai detector` (level 4; HN 229; Wikipedia "Artificial intelligence content detection" 6,573/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** checking a claim. A student, teacher, editor or hiring manager has a score and wants to know whether to trust it.
 - **New angle:** a claim-against-test table, plus a base-rate calculation most articles skip: for a given share of AI text, how many flags are wrong at a 1%, 5% and 18% false positive rate. Primary anchors: the Liang et al. paper (seven detectors, 91 TOEFL essays, average false positive rate 61.22%) and the FTC on Workado (98% advertised, 53% in testing, per the complaint). Treat the 2026 vendor-blog figures in search results as leads only, and say we don't offer a detector.
@@ -347,11 +348,11 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Internal links:** /tools/seo/readability-checker/, /tools/ai/text-similarity/, /tools/ai/ai-output-cleaner/.
 - **Status:** todo
 
-### 37. Do QR codes expire? Static vs dynamic, and what the fine print says · `next`
+### 37. Do QR codes expire? Static vs dynamic, and the fine print · `next`
 - **Keyword:** `do qr codes expire` (level 4). Also `dynamic qr code` (level 4; HN 10), `qr code generator` (level 4; HN 114; Wikipedia "QR code" 235,202/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** a pre-print worry, or a broken code. A small business about to print 5,000 menus, or one whose code just stopped working.
 - **New angle:** show that a static code is only the data: decode one offline and print the URL it holds. Then read the terms of 8 popular generators on one date and tabulate what happens to dynamic codes when a trial or plan ends. Search found only one press release on this, so the dated table is the new part. Add a size-and-scan test (error-correction level against print size) and a short note on fake codes pasted over real ones.
-- **Sources:** https://stocks.observer-reporter.com/observerreporter/article/businesnewswire-2026-3-28-the-subscription-trap-how-qr-code-platforms-weaponize-your-printed-materials (found 2026-10-31; a syndicated press release, a lead and not evidence), https://www.nbcnewyork.com/news/national-international/watch-out-before-you-scan-the-hidden-dangers-of-qr-codes/4985836/ (found 2026-10-31; find the FTC's own alert, as our first URL guess returned 404), the generators' terms pages (dated), the ISO/IEC 18004 summary from https://www.qrcode.com/en/ (Denso Wave).
+- **Sources:** https://stocks.observer-reporter.com/observerreporter/article/businesnewswire-2026-3-28-the-subscription-trap-how-qr-code-platforms-weaponize-your-printed-materials (found 2026-10-31; a syndicated press release, a lead and not evidence), https://www.nbcnewyork.com/news/national-international/watch-out-before-you-scan-the-hidden-dangers-of-qr-codes/4985836/ (found 2026-10-31; find the FTC's own alert, as our first URL guess returned 404), the generators' terms pages (dated), https://www.wjhg.com/2024/10/30/alerts-issued-over-rise-qr-code-scams-known-quishing (found 2026-10-31), the ISO/IEC 18004 summary from https://www.qrcode.com/en/ (Denso Wave).
 - **Internal links:** /tools/privacy/qr-generator/, /tools/privacy/wifi-qr-code/, /tools/privacy/qr-scanner/, /tools/privacy/bulk-qr-code-generator/.
 - **Status:** todo
 
@@ -359,15 +360,15 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Keyword:** `flesch reading ease` (level 5; HN 1; Wikipedia "Flesch–Kincaid readability tests" 11,053/mo). Also `readability score` (level 4; HN 8). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** informational. A writer or marketer wants the formula, what a good score is, and why their tools don't match.
 - **New angle:** our own finding (`buffermint-tools/QUALITY-TEXT-CALC.md`): our readability checker gave FRE 31.5 where the reference syllable counter gave 27.5, and the notes put that gap down to syllable counts. Sentence counting is a separate risk: our word counter broke on "p.m." and "U.S." (the same notes), so test whether the checker does too, and whether that fix shipped, before saying so. Run 5 passages through Word, 3 free online checkers and ours, then show the spread and which step causes it.
-- **Sources:** https://pubmed.ncbi.nlm.nih.gov/18867058/ (found 2026-10-31; Flesch 1948, *J Appl Psychol* 32(3):221–33), https://readabilityformulas.com/learn-about-the-flesch-reading-ease-formula/ (found 2026-10-31), Microsoft's readability statistics help page, the Kincaid 1975 Navy report (DTIC).
+- **Sources:** https://pubmed.ncbi.nlm.nih.gov/18867058/ (found 2026-10-31; Flesch 1948, *J Appl Psychol* 32(3):221–33), https://readabilityformulas.com/learn-about-the-flesch-reading-ease-formula/ (found 2026-10-31), https://askem.com/glossary/flesch-reading-ease/ and https://metricgate.com/calculator/text-readability-flesch (found 2026-10-31; two more published versions of the formula to compare), Microsoft's readability statistics help page, the Kincaid 1975 Navy report (DTIC).
 - **Internal links:** /tools/seo/readability-checker/, /tools/seo/headline-analyzer/, /tools/seo/keyword-density/.
 - **Status:** todo
 
-### 39. Compress a video for Discord: the bitrate math for the 20 MB limit · `next`
+### 39. Compress a video for Discord: the math for the 20 MB limit · `next`
 - **Keyword:** `compress video for discord` (level 4). Also `discord file size limit` (level 4; HN 1), `compress video` (level 4; HN 14). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** do it now. Discord rejected a clip, and the reader wants the limit and the setting that fits.
 - **New angle:** the limit changed: 25 → 10 MB in September 2024, then 20 MB on 13 August 2026 per Dexerto, so most guides are out of date. Confirm it on Discord's own page (403 to our fetcher; open it in a browser). Give a table of target bitrate for 20 MB at 15, 30, 60 and 120 seconds, and which resolution still looks acceptable at each, measured with `buffermint-tools/bench/video-size`. State our encoder gap honestly: on one clip ours gave 1,199 KB at SSIM 0.975 where x264 gave 818 KB at 0.982 (`QUALITY-MEDIA.md`).
-- **Sources:** https://www.dexerto.com/entertainment/discord-raises-free-upload-limit-to-20mb-after-lowering-it-two-years-ago-3398251/ *(read 2026-10-31)*, https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ (403 to our fetcher), https://dexerto.com/tech/discord-lowers-free-upload-limit-to-10mb-storage-management-is-expensive-2887809 (found 2026-10-31), FFmpeg's H.264 encoding guide (https://trac.ffmpeg.org/wiki/Encode/H.264).
+- **Sources:** https://www.dexerto.com/entertainment/discord-raises-free-upload-limit-to-20mb-after-lowering-it-two-years-ago-3398251/ *(read 2026-10-31)*, https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ (403 to our fetcher), https://dexerto.com/tech/discord-lowers-free-upload-limit-to-10mb-storage-management-is-expensive-2887809 (found 2026-10-31), https://techradar.com/computing/social-media/discord-changes-course-and-lowers-free-upload-limit-to-10gb-how-will-that-affect-you (found 2026-10-31), FFmpeg's H.264 encoding guide (https://trac.ffmpeg.org/wiki/Encode/H.264).
 - **Internal links:** /tools/files/video-compressor/, /tools/files/video-trimmer/, /tools/photo/discord-image-resizer/.
 - **Status:** todo
 
@@ -375,7 +376,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Keyword:** `how much does stripe charge` (level 4; HN 0). Also `stripe processing fees` (level 4; HN 2), `stripe fees` (level 2; HN 27; Wikipedia "Stripe, Inc." 36,541/mo). We have no Stripe calculator, so `stripe fee calculator` (level 4) is not a target. Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** a factual question with a sum behind it. A founder pricing a plan wants the net per sale, beyond the headline 2.9% + 30¢.
 - **New angle:** the line items the headline leaves out, stacked for one $29 sale: card fee, Billing's 0.7%, international cards, currency conversion, Stripe Tax, plus the three separate dispute charges and what one lost dispute does to a month's margin. Work it for a US, an EU and an Indian buyer. It goes one level deeper than `/articles/merchant-of-record-fees` (its sibling, so link it and don't repeat its table). Both stripe.com pricing URLs served Canadian rates to our fetcher, so read the US figures in a browser.
-- **Sources:** https://stripe.com/us/pricing *(read 2026-10-31, CA$ version: 2.9% + CA$0.30, +0.8% international, +2% conversion, Billing 0.7%, three CA$15 dispute charges)*, https://www.chargeback.io/fr/blog/stripe-chargeback-fee (found 2026-10-31; a vendor), https://swipesum.com/insights/guide-to-stripe-fees-rates-for-2025 (found 2026-10-31; a vendor).
+- **Sources:** https://stripe.com/us/pricing *(read 2026-10-31, CA$ version: 2.9% + CA$0.30, +0.8% international, +2% conversion, Billing 0.7%, three CA$15 dispute charges)*, https://www.chargeback.io/fr/blog/stripe-chargeback-fee (found 2026-10-31; a vendor), https://swipesum.com/insights/guide-to-stripe-fees-rates-for-2025 (found 2026-10-31; a vendor), https://priceworld.com/merchant-fees/stripe/ (found 2026-10-31; to cross-check the US rates).
 - **Internal links:** /tools/business/profit-margin-calculator/, /tools/business/unit-economics-calculator/, /tools/business/mrr-calculator/, /articles/merchant-of-record-fees.
 - **Status:** todo
 
@@ -387,7 +388,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Internal links:** /tools/business/unit-economics-calculator/, /tools/business/break-even-calculator/, /articles/vibe-coded-app-security-scans.
 - **Status:** todo
 
-### 42. Cloudflare Pages vs Vercel vs Netlify: the bill at 100 GB, 1 TB and 2 TB · `later`
+### 42. Cloudflare Pages vs Vercel vs Netlify: the bill at 2 TB · `later`
 - **Keyword:** `cloudflare pages vs vercel` (level 4). Also `vercel pricing` (level 4; HN 13; Wikipedia "Vercel" 21,830/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** a commercial comparison. A small team asks when a free or $20 host stops being that.
 - **New angle:** the search results disagree on Netlify ($20 vs $55 per 100 GB) because it moved to credits. Work the bill from today's pages at three traffic levels. For example, 2 TB is $20 + 1,000 GB × $0.15 = $170 on Vercel Pro, 20 credits per GB on Netlify, and $0 for static assets on Cloudflare, whose paid part is Functions. Note that Vercel's Hobby plan is non-commercial. Check what Netlify does when credits run out: its pricing page doesn't say.
@@ -403,7 +404,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Internal links:** /tools/privacy/email-header-analyzer/, /tools/seo/email-subject-tester/, /tools/business/unit-economics-calculator/.
 - **Status:** todo
 
-### 44. Free trial conversion rates: why the benchmarks run from 9% to 60% · `later`
+### 44. Free trial conversion rates: why the benchmarks disagree · `later`
 - **Keyword:** `free trial conversion rate` (level 4; HN 1). Also `freemium vs free trial` (level 4; HN 1; Wikipedia "Freemium" 9,102/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** a benchmark lookup. A founder wants to know whether their rate is good, and whether to ask for a card.
 - **New angle:** the published numbers use different denominators. Line up each study's sample and definition, then convert to visitor-to-paid. First Page Sage's own organic table gives 8.5% × 18.2% = 1.55% for no-card trials against 2.5% × 48.8% = 1.22% with a card, so the "48.8%" winner loses per visitor. It also counts one paid month as a conversion, so model what retention does to the comparison. Check ChartMogul's figures at the source: search shows them only second-hand.
@@ -415,7 +416,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Keyword:** `passport photo size` (level 4). Also `passport photo maker` (level 3; HN 3; Wikipedia "Passport" 14,180/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** a lookup, then do it now. An applicant wants the exact size for their country, and why an upload was refused.
 - **New angle:** one table of print size, pixel size, file-size limit and head height, each cell from the government's page and dated (third-party guides disagree, and search shows UK pixel limits only on non-official sites). Add our measured output from `QUALITY-MEDIA.md`: US 600×600, UK 900×1157, India 630×810, Schengen 413×531, each printing at its document size. Don't suggest a free photo guarantees acceptance.
-- **Sources:** https://www.gov.uk/photos-for-passports/digital-photo-rules (found 2026-10-31), https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/photos.html (found 2026-10-31), https://travel.state.gov (blocks our fetcher; the HEIC post used the adoption.state.gov mirror), ICAO Doc 9303 (find the current URL; our guess returned 404).
+- **Sources:** https://www.gov.uk/photos-for-passports/digital-photo-rules (found 2026-10-31), https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/photos.html (found 2026-10-31), https://travel.state.gov (blocks our fetcher; the HEIC post used the adoption.state.gov mirror), https://photogov.net/knowledge/requirements/canada-passport-photo-requirements/ (found 2026-10-31; a vendor, to compare with the official page), ICAO Doc 9303 (find the current URL; our guess returned 404).
 - **Internal links:** /tools/photo/passport-photo-maker/, /tools/photo/us-passport-photo/, /tools/photo/uk-passport-photo/, /tools/photo/india-passport-photo/, /tools/photo/compress-image-to-50kb/.
 - **Status:** todo
 
@@ -443,7 +444,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 **Demand:** we reran the 27 keywords the open older topics target (the second table in Appendix C). The 3 other phrases on those lines (`vat on saas eu`, `transcribe audio offline`, `mcp server for saas`) are marked there as not worth targeting, so we skipped them. All 27 kept their 2026-10-29 level. Only two HN counts moved (`mcp server` 5,505 → 5,518, `whisper transcription` 26 → 25), so no entry falls on demand. Two days is too short to show a trend; rerun in a month. None of this is search volume: autosuggest, HN and Wikipedia are proxies, and this plan holds no volume figures, measured or estimated, until Bing or Search Console exist.
 
-**Older entries whose evidence no longer held (all fixed above):**
+**Older entries whose evidence no longer held (changed in the topics above; topic 32 needed no edit beyond its note):**
 | Topic | What changed | Source |
 |---|---|---|
 | 25 FAQ schema | The angle was wrong: FAQ rich results ended on 7 May 2026, so nothing is left to test in Search. Rewritten. | https://developers.google.com/search/docs/appearance/structured-data/faqpage |
@@ -641,7 +642,7 @@ Found in web search on 2026-10-29; the writing lane opens each before citing it,
 
 ## Appendix C: demand evidence (2026-10-31)
 
-The same tool, scale and columns as Appendix A, run 2026-10-31 for topics 33–47 (`PLANNER_CACHE_DIR` set; Wikipedia is the average over the last 3 full months, shown only where the article matches). None of these is a search volume or an estimate of one: they show that people type the phrase, not how many.
+The same tool, scale and columns as Appendix A, run 2026-10-31 for topics 33–47 (fresh: `PLANNER_CACHE_DIR` pointed at a new, empty folder; Wikipedia is the average over the last 3 full months, shown only where the article matches). None of these is a search volume or an estimate of one: they show that people type the phrase, not how many.
 
 Where each column comes from, so anyone can repeat it:
 - Autosuggest: https://suggestqueries.google.com/complete/search (Google and, with `ds=yt`, YouTube) and https://api.bing.com/osjson.aspx, with `gl=us`, `hl=en`.
@@ -665,6 +666,7 @@ Where each column comes from, so anyone can repeat it:
 | free trial conversion rate | 4 | google d3/7; bing d3/1; youtube –/0 | 1 | — |
 | freemium vs free trial | 4 | google d2/2; bing d2/0; youtube d2/0 | 1 | Freemium: 9,102/mo |
 | how much does stripe charge | 4 | google d4/9; bing d4/9; youtube d4/0 | 0 | — |
+| how to redact a pdf | 4 | google d3/9; bing d3/9; youtube d4/9 | 1 | — |
 | passport photo size | 4 | google d2/9; bing d2/18; youtube –/9 | 0 | — |
 | pdf to excel | 4 | google d2/9; bing d1/19; youtube –/9 | 10 | — |
 | pdf to word without losing formatting | 4 | google d4/5; bing –/5; youtube d3/7 | 0 | — |
@@ -684,6 +686,7 @@ Where each column comes from, so anyone can repeat it:
 | block ai crawlers | 2 | google –/8; bing –/1; youtube –/0 | 27 | — |
 | gptbot | 2 | google –/9; bing –/7; youtube –/2 | 110 | Robots.txt: 12,172/mo |
 | hacker news launch | 2 | google –/3; bing –/0; youtube –/0 | 2 | Hacker News: 5,900/mo |
+| show hn | 2 | google –/4; bing –/9; youtube –/0 | n/a (every Show HN contains it) | — |
 | stripe fees | 2 | google –/9; bing –/15; youtube –/3 | 27 | Stripe, Inc.: 36,541/mo |
 | transactional email | 2 | google –/10; bing –/12; youtube –/6 | 98 | — |
 

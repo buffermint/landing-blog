@@ -6,31 +6,13 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { root } from './helpers.mjs';
+import { parsePost, root } from './helpers.mjs';
 
 const POSTS = join(root, 'source/_posts');
 // The relaunched blog's posts start in October 2026 (backdated as far as 2026-10-05 on the owner's word, 2026-10-30);
 // every older post is from 2021.
 export const CUTOFF = '2026-01-01';
 const OUR_HOSTS = /^(www\.)?buffermint\.com$/i;
-
-// The front matter is flat `key: value` lines (quoted or not, with an optional `# comment` as in BLOG-PLAN.md's
-// template); that is all the posts use.
-export function parsePost(text, file = 'post') {
-  const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-  if (!m) throw new Error(`${file}: no front matter`);
-  const meta = {};
-  for (const line of m[1].split(/\r?\n/)) {
-    const kv = line.match(/^([A-Za-z_][\w-]*):\s*(.*?)\s*$/);
-    if (!kv) continue;
-    let v = kv[2];
-    const quoted = v.match(/^"((?:[^"\\]|\\.)*)"\s*(?:#.*)?$/) ?? v.match(/^'((?:[^']|'')*)'\s*(?:#.*)?$/);
-    if (quoted) v = quoted[1].replace(/\\"/g, '"').replace(/''/g, "'");
-    else v = v.replace(/(^|\s+)#.*$/, '');
-    meta[kv[1]] = v;
-  }
-  return { file, meta, body: m[2] };
-}
 
 const day = (v) => (v ? String(v).slice(0, 10) : '');
 const isDraft = ({ meta }) => meta.published === 'false';
