@@ -6,7 +6,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { parsePost, root } from './helpers.mjs';
+import { hostOf, parsePost, root, siteOf } from './helpers.mjs';
 
 const POSTS = join(root, 'source/_posts');
 // The relaunched blog's posts start in October 2026 (backdated as far as 2026-10-05 on the owner's word, 2026-10-30);
@@ -36,24 +36,6 @@ function links(text) {
   return out;
 }
 
-// Hosts where each subdomain is a different publisher
-const SHARED_HOSTS = /^(github\.io|substack\.com|medium\.com|blogspot\.com|wordpress\.com|pages\.dev|vercel\.app|netlify\.app|beehiiv\.com|dev\.to)$/;
-
-// example.com, bbc.co.uk, alice.github.io: the last two labels; three when the second-level label is a short public
-// suffix part (co.uk) or the host is shared by many publishers (github.io). A leading www. never counts.
-export function siteOf(url) {
-  const host = hostOf(url);
-  if (!host) return null;
-  const parts = host.replace(/^www\./, '').split('.');
-  if (parts.length <= 2) return parts.join('.');
-  const [sld, tld] = parts.slice(-2);
-  const shortSuffix = tld.length === 2 && /^(co|com|org|net|gov|ac|edu|gob|go|or|ne)$/.test(sld);
-  return parts.slice(shortSuffix || SHARED_HOSTS.test(`${sld}.${tld}`) ? -3 : -2).join('.');
-}
-
-function hostOf(url) {
-  try { return new URL(url).hostname.toLowerCase().replace(/\.$/, '') || null; } catch { return null; }
-}
 const isAbsolute = (u) => /^https?:\/\//i.test(u);
 const isExternal = (u) => isAbsolute(u) && hostOf(u) && !OUR_HOSTS.test(hostOf(u));
 const isInternal = (u) => (u.startsWith('/') && !u.startsWith('//')) || (isAbsolute(u) && OUR_HOSTS.test(hostOf(u) ?? ''));

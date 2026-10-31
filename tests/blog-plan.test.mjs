@@ -5,14 +5,15 @@
 // landing lane. A topic's target is the first keyword on its line; the others are context.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { parsePost, root } from './helpers.mjs';
+import { parsePost, root, siteOf } from './helpers.mjs';
 
 const POSTS = join(root, 'source/_posts');
 const TOOLS = join(root, '..', 'buffermint-tools');
-// The batch with the full field set and its evidence in Appendix C (later top-ups date their own evidence).
-const BATCH = { first: 33, last: 47 };
+// From this topic on, each has the full field set and its evidence in an appendix (Appendix C, and later top-ups').
+const FULL_FIELDS_FROM = 33;
 
 function parseTopics(plan) {
   const body = plan.split(/^## Old posts/m)[0];
@@ -32,6 +33,28 @@ function parseTopics(plan) {
 }
 
 const isOpen = ({ status }) => status === 'todo' || status === 'writing';
+
+// Counted as tests/posts.test.mjs counts a post's Sources, so a topic that passes here can pass there
+const sourceSites = (text) => new Set([...text.matchAll(/https?:\/\/[^\s),]+/g)].map((m) => siteOf(m[0])).filter(Boolean));
+
+// A diagnostic list, never a throw: the catalogue belongs to another repo
+function toolLinkProblems(openTopics, toolsDir) {
+  try {
+    const catalogue = JSON.parse(readFileSync(join(toolsDir, 'TOOL-STATUS.json'), 'utf8')).tools;
+    const hidden = JSON.parse(readFileSync(join(toolsDir, 'src/hidden.json'), 'utf8')).tools;
+    return openTopics.flatMap((topic) => topicLinks(topic).filter((l) => l.startsWith('tools/')).flatMap((link) => {
+      const [, category, slug] = link.split('/');
+      return [
+        ...(catalogue[slug]?.category === category ? [] : [`topic ${topic.number}: /${link} is not in the catalogue`]),
+        ...(hidden.includes(slug) ? [`topic ${topic.number}: /${link} is hidden`] : []),
+      ];
+    }));
+  } catch (err) {
+    return [`tools catalogue unreadable: ${err.message}`];
+  }
+}
+
+const topicLinks = (topic) => [...topic.section.matchAll(/(?<![\w./-])\/(tools\/[\w-]+\/[\w-]+|articles\/[\w-]+)/g)].map((m) => m[1]);
 
 const postKeywords = () => readdirSync(POSTS).filter((f) => f.endsWith('.md')).flatMap((name) => {
   const { keyword } = parsePost(readFileSync(join(POSTS, name), 'utf8'), name).meta;
@@ -57,7 +80,7 @@ test('the plan parses: numbered topics, each with a keyword and a status', () =>
   assert.equal(new Set(numbers).size, numbers.length, 'topic numbers repeat');
   for (const t of topics) {
     assert.ok(t.keyword, `topic ${t.number}: no \`keyword\``);
-    assert.ok(t.status, `topic ${t.number}: no Status`);
+    assert.match(t.status, /^(todo|writing|published)$/, `topic ${t.number}: Status must start with todo, writing or published`);
   }
 });
 
@@ -77,34 +100,51 @@ test('no two open topics target the same keyword', () => {
   }
 });
 
-test('open topics link only real pages', (t) => {
-  const links = (t) => [...t.section.matchAll(/(?<![\w./-])\/(tools\/[\w-]+\/[\w-]+|articles\/[\w-]+)/g)].map((m) => m[1]);
-  for (const topic of open) for (const link of links(topic).filter((l) => l.startsWith('articles/'))) {
+test('open topics link only real posts; tool links are reported as diagnostics', (t) => {
+  for (const topic of open) for (const link of topicLinks(topic).filter((l) => l.startsWith('articles/'))) {
     assert.ok(existsSync(join(POSTS, `${link.split('/')[1]}.blade.md`)), `topic ${topic.number}: /${link} is not a post`);
   }
-  if (!existsSync(join(TOOLS, 'TOOL-STATUS.json'))) return;
-  const catalogue = JSON.parse(readFileSync(join(TOOLS, 'TOOL-STATUS.json'), 'utf8')).tools;
-  const hidden = JSON.parse(readFileSync(join(TOOLS, 'src/hidden.json'), 'utf8')).tools;
-  for (const topic of open) for (const link of links(topic).filter((l) => l.startsWith('tools/'))) {
-    const [, category, slug] = link.split('/');
-    if (catalogue[slug]?.category !== category) t.diagnostic(`topic ${topic.number}: /${link} is not in the catalogue`);
-    if (hidden.includes(slug)) t.diagnostic(`topic ${topic.number}: /${link} is hidden`);
+  if (!existsSync(TOOLS)) return;
+  for (const problem of toolLinkProblems(open, TOOLS)) t.diagnostic(problem);
+});
+
+test('toolLinkProblems reports bad links and survives a catalogue it cannot read', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'blog-plan-'));
+  try {
+    const topic = { number: 1, section: '/tools/pdf/ok/, /tools/pdf/secret/, /tools/pdf/gone/, /tools/dev/ok/' };
+    writeFileSync(join(dir, 'TOOL-STATUS.json'), JSON.stringify({ tools: { ok: { category: 'pdf' }, secret: { category: 'pdf' } } }));
+    assert.match(toolLinkProblems([topic], dir)[0], /unreadable/, 'src/hidden.json is missing');
+    mkdirSync(join(dir, 'src'));
+    writeFileSync(join(dir, 'src/hidden.json'), JSON.stringify({ tools: ['secret'] }));
+    assert.deepEqual(toolLinkProblems([topic], dir), [
+      'topic 1: /tools/pdf/secret is hidden',
+      'topic 1: /tools/pdf/gone is not in the catalogue',
+      'topic 1: /tools/dev/ok is not in the catalogue',
+    ]);
+    writeFileSync(join(dir, 'TOOL-STATUS.json'), '{}');
+    assert.match(toolLinkProblems([topic], dir)[0], /unreadable/, 'a changed schema');
+  } finally {
+    rmSync(dir, { recursive: true });
   }
 });
 
-test('the 2026-10-31 batch carries evidence, intent, an angle and 2+ internal links', () => {
-  const batch = topics.filter((t) => t.number >= BATCH.first && t.number <= BATCH.last);
-  const appendixC = plan.split(/^## Appendix C/m)[1] ?? '';
+test('sourceSites counts a publisher once, like the post gate', () => {
+  assert.deepEqual([...sourceSites('https://docs.stripe.com/a, https://stripe.com/us/pricing (found), https://www.gov.uk/x')], ['stripe.com', 'gov.uk']);
+});
+
+test('topics from 33 on carry evidence, intent, an angle, 4+ source sites and 2+ internal links', () => {
+  const batch = topics.filter((t) => t.number >= FULL_FIELDS_FROM);
+  const appendices = plan.split(/^## Appendix/m).slice(1).join('');
   assert.ok(batch.length, 'no batch topics');
   for (const t of batch) {
     assert.match(t.field('Keyword'), /level \d/, `topic ${t.number}: no autosuggest level`);
-    assert.ok(appendixC.includes(`\n| ${t.keyword} |`), `topic ${t.number}: ${t.keyword} has no row in Appendix C`);
+    assert.ok(appendices.includes(`\n| ${t.keyword} |`), `topic ${t.number}: ${t.keyword} has no row in an appendix`);
     const title = t.section.split('\n')[0].replace(/^\d+\.\s*/, '').replace(/\s*·.*$/, '');
     assert.ok(title.length <= 65, `topic ${t.number}: title is ${title.length} characters`);
     assert.ok(t.field('Search intent').trim(), `topic ${t.number}: no search intent`);
     assert.ok(t.field('New angle').trim(), `topic ${t.number}: no new angle`);
-    const hosts = new Set([...t.field('Sources').matchAll(/https?:\/\/([^/\s)]+)/g)].map((m) => m[1].replace(/^www\./, '')));
-    assert.ok(hosts.size >= 4, `topic ${t.number}: ${hosts.size} source sites, need 4`);
+    const sites = sourceSites(t.field('Sources'));
+    assert.ok(sites.size >= 4, `topic ${t.number}: ${sites.size} source sites, need 4`);
     const internal = new Set([...t.field('Internal links').matchAll(/\/(?:tools|articles)\/[\w/-]+/g)].map((m) => m[0]));
     assert.ok(internal.size >= 2, `topic ${t.number}: ${internal.size} internal links`);
   }
