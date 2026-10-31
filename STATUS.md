@@ -4,7 +4,7 @@ Last updated: 2026-10-30 (all blog lanes live at 99c8c02: 11 new posts, 9 refres
 
 ## Blog topics research 2026-10-31 (lane `lane/t-20261031-blog-topics-research`, BM-349; not merged yet)
 - `BLOG-PLAN.md`: 20 topics were unwritten; added 15 (33–47) with keyword, demand (Appendix C: 2026-10-31 autosuggest, HN, Wikipedia; proxies, no volumes), search intent, new angle, sources and internal links. A new "Plan check" section lists the older entries that no longer held; the main fix is topic 25 (FAQ rich results ended 7 May 2026). Topic 20's hidden tool link was replaced.
-- `tests/blog-plan.test.mjs`: no open topic reuses a post's `keyword:` or another open topic's keyword, open topics link only real listed pages, and new topics have every field.
+- `tests/blog-plan.test.mjs`: no open topic reuses a post's `keyword:` or another open topic's keyword, open topics link only real posts (and a diagnostic flags unlisted tools), and the batch has every field.
 
 ## Scheduled post 2026-10-30 (lane `lane/t-20261030-blog-post`; merged, live 2026-10-30 at 99c8c02)
 - New post `heic-to-jpg-what-you-lose` (BLOG-PLAN topic 11, keyword `heic to jpg`, ~2,300 words, 13 publishers in Sources). Own data: 5 HEICs decoded with libheif 1.23.5 and saved with MozJPEG at q60–100 (sizes, SSIM via FFmpeg), a 1.3× crop figure (q75 vs q92), ExifTool findings on an iPhone 13 Pro HDR sample (gain map, 6-tile grid), a 10-place HEIC acceptance table from each help page, and a US visa 240 kB worked example. Cover and figure: NASA AS11-40-5903 (public domain), JPEG + WebP in `assets/img/uploads/`.

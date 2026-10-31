@@ -288,7 +288,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** published 2026-10-29 (refresh lane) → `/articles/how-to-leverage-ai-and-build-an-app-without-coding` (dated plan table from the Lovable docs, Bolt and Replit pages; Lovable credits per change worked out from its documented examples; Escape and The Register on the security side). No independent hands-on review was used; the security sources stand in for it.
 
 ### 29. Testing file upload limits with dummy files: the real limits of 12 services · `later`
-- **Keyword:** `dummy file generator` (level 4). Still our most-visited tool page: 13 views in the first counted week, 20 by 31 Oct (log from 23 Oct).
+- **Keyword:** `dummy file generator` (level 4). Still our most-visited tool page: 13 views in the first counted week, 20 by 31 Oct (`/var/log/caddy/stats.log` from 23 Oct, same count as above).
 - **New angle:** a table of documented upload/attachment limits (Gmail, Outlook, Slack, WhatsApp, Discord, Google Forms, Typeform, S3 single PUT, Cloudflare Workers request body…), each from the vendor's docs. Add how to test the edges (exactly at the limit, 1 byte over) with generated files.
 - **Sources:** each vendor's docs page (dated), MDN on File/Blob, RFC 9110 on 413 responses.
 - **Internal links:** /tools/dev/dummy-file-generator/, /tools/dev/file-checksum/, /tools/files/file-type-checker/.
@@ -316,8 +316,8 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** todo
 
 ### 33. PDF to Word: what survives the conversion, measured · `next`
-- **Keyword:** `pdf to word` (level 5; HN 6). Also `pdf to excel` (level 4; HN 10). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
-- **Search intent:** do it now (a transactional query). The reader has a PDF to edit and wants to know why the result looks wrong and what to use instead. Tool page first; the post serves the "why did my tables break" follow-up.
+- **Keyword:** `pdf to word without losing formatting` (level 4; HN 0). `pdf to word` (level 5; HN 6) and `pdf to excel` (level 4; HN 10) are the tool pages' terms, for context only. Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a how-to with a problem behind it. The reader's converted file looks wrong, and they want to know why and what to use instead. The tool page keeps the plain "pdf to word" query; the post answers this follow-up.
 - **New angle:** our benchmark (`buffermint-tools/QUALITY-DOCUMENTS.md`): a bank statement kept word recall and precision of 1, 3 of 3 tables with all 335 cells exact and 18 bold runs; a scan goes through OCR first. Add a test on 4 document types (text report, table-heavy, multi-column, scan), scored the same way against Word's own PDF Reflow. Say what we can't claim: there is no LibreOffice layout reference in that benchmark, so run one or state the gap.
 - **Sources:** https://support.microsoft.com/en-us/word/opening-pdfs-in-word (found 2026-10-31; it doesn't list what is lost, so find Microsoft's fuller page), https://camelot-py.readthedocs.io/ and https://www.github.com/camelot-dev/camelot/wiki/Comparison-with-other-PDF-Table-Extraction-libraries-and-tools (found 2026-10-31; the maintainers' own comparison), https://pdfa.org (PDF Association, on why a PDF has no paragraphs or tables as such; 403 to our fetcher, open in a browser).
 - **Internal links:** /tools/pdf/pdf-to-word/, /tools/pdf/ocr-pdf/, /tools/pdf/pdf-to-excel/, /articles/are-online-pdf-converters-safe.
@@ -358,7 +358,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 ### 38. Flesch Reading Ease: one text, different scores in every checker · `next`
 - **Keyword:** `flesch reading ease` (level 5; HN 1; Wikipedia "Flesch–Kincaid readability tests" 11,053/mo). Also `readability score` (level 4; HN 8). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
 - **Search intent:** informational. A writer or marketer wants the formula, what a good score is, and why their tools don't match.
-- **New angle:** our own finding (`buffermint-tools/QUALITY-TEXT-CALC.md`): our checker gave FRE 31.5 where the reference syllable counter gave 27.5, because syllable counts differ, and sentence counts break on "p.m." and "U.S.". Run 5 passages through Word, 3 free online checkers and ours, then show the spread and which step causes it. Check `QUALITY-TEXT-CALC.md` for whether those fixes shipped before quoting them as current.
+- **New angle:** our own finding (`buffermint-tools/QUALITY-TEXT-CALC.md`): our readability checker gave FRE 31.5 where the reference syllable counter gave 27.5, and the notes put that gap down to syllable counts. Sentence counting is a separate risk: our word counter broke on "p.m." and "U.S." (the same notes), so test whether the checker does too, and whether that fix shipped, before saying so. Run 5 passages through Word, 3 free online checkers and ours, then show the spread and which step causes it.
 - **Sources:** https://pubmed.ncbi.nlm.nih.gov/18867058/ (found 2026-10-31; Flesch 1948, *J Appl Psychol* 32(3):221–33), https://readabilityformulas.com/learn-about-the-flesch-reading-ease-formula/ (found 2026-10-31), Microsoft's readability statistics help page, the Kincaid 1975 Navy report (DTIC).
 - **Internal links:** /tools/seo/readability-checker/, /tools/seo/headline-analyzer/, /tools/seo/keyword-density/.
 - **Status:** todo
@@ -372,8 +372,8 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** todo
 
 ### 40. What Stripe really takes from a $29 subscription · `next`
-- **Keyword:** `stripe fee calculator` (level 4). Also `stripe fees` (level 2; HN 27; Wikipedia "Stripe, Inc." 36,541/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
-- **Search intent:** a calculation. A founder pricing a plan wants the net per sale, beyond the headline 2.9% + 30¢.
+- **Keyword:** `how much does stripe charge` (level 4; HN 0). Also `stripe processing fees` (level 4; HN 2), `stripe fees` (level 2; HN 27; Wikipedia "Stripe, Inc." 36,541/mo). We have no Stripe calculator, so `stripe fee calculator` (level 4) is not a target. Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a factual question with a sum behind it. A founder pricing a plan wants the net per sale, beyond the headline 2.9% + 30¢.
 - **New angle:** the line items the headline leaves out, stacked for one $29 sale: card fee, Billing's 0.7%, international cards, currency conversion, Stripe Tax, plus the three separate dispute charges and what one lost dispute does to a month's margin. Work it for a US, an EU and an Indian buyer. It goes one level deeper than `/articles/merchant-of-record-fees` (its sibling, so link it and don't repeat its table). Both stripe.com pricing URLs served Canadian rates to our fetcher, so read the US figures in a browser.
 - **Sources:** https://stripe.com/us/pricing *(read 2026-10-31, CA$ version: 2.9% + CA$0.30, +0.8% international, +2% conversion, Billing 0.7%, three CA$15 dispute charges)*, https://www.chargeback.io/fr/blog/stripe-chargeback-fee (found 2026-10-31; a vendor), https://swipesum.com/insights/guide-to-stripe-fees-rates-for-2025 (found 2026-10-31; a vendor).
 - **Internal links:** /tools/business/profit-margin-calculator/, /tools/business/unit-economics-calculator/, /tools/business/mrr-calculator/, /articles/merchant-of-record-fees.
@@ -441,7 +441,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 **Unwritten before this lane:** 20 topics marked `todo` (12–27 and 29–32), none `writing`. **Added:** 15 (33–47), so 35 are open.
 
-**Demand:** we reran all 27 search keywords of the open older topics. Each one kept its 2026-10-29 level, and HN counts moved by at most 13 (`mcp server` 5,505 → 5,518), so no entry falls on demand. Two days is too short to show a trend; rerun in a month. None of this is search volume: autosuggest, HN and Wikipedia are proxies, and this plan holds no volume figures, measured or estimated, until Bing or Search Console exist.
+**Demand:** we reran the 27 keywords the open older topics target (the second table in Appendix C). The 3 other phrases on those lines (`vat on saas eu`, `transcribe audio offline`, `mcp server for saas`) are marked there as not worth targeting, so we skipped them. All 27 kept their 2026-10-29 level. Only two HN counts moved (`mcp server` 5,505 → 5,518, `whisper transcription` 26 → 25), so no entry falls on demand. Two days is too short to show a trend; rerun in a month. None of this is search volume: autosuggest, HN and Wikipedia are proxies, and this plan holds no volume figures, measured or estimated, until Bing or Search Console exist.
 
 **Older entries whose evidence no longer held (all fixed above):**
 | Topic | What changed | Source |
@@ -456,7 +456,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 **Still unchecked, left for the writing lane:** topic 16's 0.3% spam-rate figure (search again found it only on vendor sites; open Google's page).
 
-**Measured, not chosen:** `soc 2 for startups` (level 4; we'd have no data of our own, only vendor ranges), and `invoice generator`, `json formatter`, `merge pdf`, `password generator` and other level 3–4 tool terms where a post can't beat the tool page.
+**Measured, not chosen:** `soc 2 for startups` (level 4; we'd have no data of our own, only vendor ranges), and `invoice generator`, `json formatter`, `merge pdf`, `password generator` and other level 3–4 tool terms where a post can't beat the tool page. In topics 35, 37 and 39, `uuid generator`, `qr code generator` and `compress video` are the same kind: context, not the post's `keyword:`, which is always the first one listed.
 
 ## Old posts (21, all dated 2021)
 
@@ -664,14 +664,17 @@ Where each column comes from, so anyone can repeat it:
 | dynamic qr code | 4 | google d2/9; bing d2/10; youtube d2/9 | 10 | — |
 | free trial conversion rate | 4 | google d3/7; bing d3/1; youtube –/0 | 1 | — |
 | freemium vs free trial | 4 | google d2/2; bing d2/0; youtube d2/0 | 1 | Freemium: 9,102/mo |
+| how much does stripe charge | 4 | google d4/9; bing d4/9; youtube d4/0 | 0 | — |
 | passport photo size | 4 | google d2/9; bing d2/18; youtube –/9 | 0 | — |
 | pdf to excel | 4 | google d2/9; bing d1/19; youtube –/9 | 10 | — |
+| pdf to word without losing formatting | 4 | google d4/5; bing –/5; youtube d3/7 | 0 | — |
 | product hunt launch | 4 | google d2/9; bing d2/3; youtube d2/3 | 63 | — |
 | qr code generator | 4 | google d1/9; bing d1/24; youtube d2/9 | 114 | QR code: 235,202/mo |
 | readability score | 4 | google d1/9; bing d1/9; youtube –/0 | 8 | — |
 | redact pdf | 4 | google d1/9; bing d1/9; youtube –/9 | 3 | Redaction: 2,591/mo |
 | resend vs postmark | 4 | google d2/7; bing d2/0; youtube d2/0 | 0 | — |
 | stripe fee calculator | 4 | google d2/9; bing d2/8; youtube –/0 | 0 | — |
+| stripe processing fees | 4 | google d2/9; bing d2/11; youtube d2/0 | 2 | — |
 | supabase pricing | 4 | google d1/9; bing d1/13; youtube –/2 | 0 | — |
 | uuid v7 | 4 | google d1/9; bing d1/10; youtube –/3 | 69 | Universally unique identifier: 31,225/mo |
 | uuid vs ulid | 4 | google d2/6; bing d2/2; youtube d2/0 | 0 | — |
@@ -683,3 +686,35 @@ Where each column comes from, so anyone can repeat it:
 | hacker news launch | 2 | google –/3; bing –/0; youtube –/0 | 2 | Hacker News: 5,900/mo |
 | stripe fees | 2 | google –/9; bing –/15; youtube –/3 | 27 | Stripe, Inc.: 36,541/mo |
 | transactional email | 2 | google –/10; bing –/12; youtube –/6 | 98 | — |
+
+Older keywords rerun on 2026-10-31 (open topics 12–32; compare with Appendix A):
+
+| keyword | autosuggest level (1–5) | per engine: depth/completions | HN mentions, 24 mo |
+|---|---|---|---|
+| churn rate | 4 | google d1/9; bing d1/9; youtube –/9 | 81 |
+| convert images to webp | 4 | google d2/9; bing d2/6; youtube –/2 | 3 |
+| cookieless analytics | 4 | google d1/9; bing d1/2; youtube –/0 | 7 |
+| core web vitals | 4 | google d2/9; bing d2/11; youtube d2/9 | 68 |
+| dummy file generator | 4 | google d2/9; bing d2/5; youtube –/0 | 0 |
+| e invoicing france | 4 | google d2/9; bing d2/10; youtube –/2 | 0 |
+| exif viewer | 4 | google d1/9; bing d1/12; youtube –/2 | 4 |
+| gmail bulk sender requirements | 4 | google d3/0; bing d3/0; youtube –/0 | 0 |
+| gst on export of services | 4 | google d3/8; bing d3/4; youtube d3/3 | 0 |
+| image compressor | 4 | google d1/9; bing d1/16; youtube –/9 | 47 |
+| ltv calculator | 4 | google d1/9; bing d1/12; youtube –/1 | 0 |
+| mcp server | 4 | google d1/9; bing d1/24; youtube –/10 | 5518 |
+| plausible analytics | 4 | google d1/9; bing d1/8; youtube –/3 | 44 |
+| privacy policy generator | 4 | google d2/9; bing d2/13; youtube d2/9 | 3 |
+| programmatic seo | 4 | google –/9; bing d1/10; youtube d1/9 | 46 |
+| remove exif data | 4 | google d2/9; bing d2/9; youtube –/2 | 4 |
+| startup runway calculator | 4 | google d2/0; bing d2/0; youtube –/0 | 0 |
+| e invoicing belgium | 3 | google –/9; bing –/7; youtube d2/0 | 0 |
+| eu vat digital services | 3 | google d3/0; bing –/1; youtube –/0 | 0 |
+| faq schema | 3 | google –/9; bing d1/10; youtube –/9 | 2 |
+| get cited by chatgpt | 3 | google d2/2; bing –/2; youtube –/1 | 2 |
+| whisper transcription | 3 | google –/9; bing d1/12; youtube –/9 | 25 |
+| dmarc | 2 | google –/8; bing –/24; youtube –/2 | 690 |
+| make pdf accessible | 2 | google –/8; bing –/7; youtube –/1 | 0 |
+| oss vat | 2 | google –/9; bing –/11; youtube –/1 | 0 |
+| peppol | 2 | google –/9; bing –/23; youtube –/8 | 50 |
+| saas price increase | 2 | google –/8; bing –/3; youtube –/0 | 0 |
