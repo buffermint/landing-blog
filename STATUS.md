@@ -2,7 +2,7 @@
 
 Last updated: 2026-10-31 (brand bump to 7a2f905; blog topics 33–47 merged, see below); 2026-10-30 (all blog lanes live at 99c8c02: 11 new posts, 9 refreshed, 9 merged with 301s). The publish was held 2026-10-29 18:45 by a false live-check alarm (fixed in bin/landing-autopublish), then by one broken link in the -copy post to a merged URL (fixed in 99c8c02; the blog template check now runs seo-check). **Dates (owner, 2026-10-30):** no future dates, posts 2–3 days apart: the 11 new posts are dated 2026-10-05 → 10-30 (dd9e673, live); any October day later than a post's own date reads "in October 2026"; `tests/posts.test.mjs` now covers every 2026 post and checks dates (none after today, none shared, 2+ days apart). The blog plan is `BLOG-PLAN.md`. The master plan is in `../PLAN.md`.
 
-## Brand bump 2026-10-31 (lane `lane/t-20261031-landing-brand-bump`, BM-338)
+## Brand bump 2026-10-31 (lane `lane/t-20261031-landing-brand-bump`, BM-338; merged after review, publishes with the next landing release)
 - `brand/` moved from 176a224 to 7a2f905 (brand main: code-review fixes dd3af40, GSC report work, BM-362). `brand/dist` is unchanged, so `build_production` is byte-identical to the old pin. seo-check output is the same on both: 31 pages, 0 errors, 0 warnings. Tools stays pinned until its next release.
 
 ## Blog topics research 2026-10-31 (lane `lane/t-20261031-blog-topics-research`, BM-349; merged after review)
