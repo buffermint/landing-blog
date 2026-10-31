@@ -37,28 +37,36 @@ const isOpen = ({ status }) => status === 'todo' || status === 'writing';
 // Counted as tests/posts.test.mjs counts a post's Sources, so a topic that passes here can pass there
 const sourceSites = (text) => new Set([...text.matchAll(/https?:\/\/[^\s),]+/g)].map((m) => siteOf(m[0])).filter(Boolean));
 
-// Throws when anything is missing or has changed shape, so a broken checkout reads as "unreadable", not as dead links
+// What build.mjs reads: src/<category>/_tools.json, minus internal workflow steps, which have no page of their own.
+// Throws when anything is missing or has changed shape, so a broken checkout reads as "unreadable", not as dead links.
 function readCatalogue(toolsDir) {
   const read = (file) => JSON.parse(readFileSync(join(toolsDir, file), 'utf8'));
-  const { tools } = read('TOOL-STATUS.json');
+  const categories = new Map(readdirSync(join(toolsDir, 'src')).filter((dir) => existsSync(join(toolsDir, 'src', dir, '_tools.json'))).map((dir) => {
+    const tools = read(`src/${dir}/_tools.json`);
+    if (!Array.isArray(tools) || !tools.every((tool) => tool.slug)) throw new Error(`unexpected shape in src/${dir}/_tools.json`);
+    return [dir, new Set(tools.filter((tool) => !tool.internal).map((tool) => tool.slug))];
+  }));
   const { tools: hidden } = read('src/hidden.json');
   const workflows = read('src/recipes-live.json');
-  if (!tools || !Array.isArray(hidden) || !Array.isArray(workflows)) throw new Error('unexpected shape');
-  return { tools, hidden: new Set(hidden), workflows: new Set(workflows) };
+  if (!categories.size || !Array.isArray(hidden) || !Array.isArray(workflows)) throw new Error('unexpected shape');
+  return { categories, hidden: new Set(hidden), workflows: new Set(workflows) };
 }
 
-// Site-relative or on buffermint.com; a lookalike path such as /assets/tools/ or example.com/tools/ doesn't count
-const toolLinks = (text) => [...text.matchAll(/(?:(?<![\w.-])(?:www\.)?buffermint\.com|(?<![\w./-]))\/tools\/((?:[\w-]+\/?)*)/g)]
-  .map((m) => m[1].split('/').filter(Boolean));
+// Site-relative or on buffermint.com, outside code samples; /assets/tools/, ~/tools/, ?u=/tools/ and example.com/tools/
+// don't count. A sentence's full stop is not part of the link.
+const toolLinks = (text) => [...text.replace(/```[\s\S]*?```|`[^`\n]*`/g, '')
+  .matchAll(/(?:(?<![\w.-])(?:www\.)?buffermint\.com|(?<![\w./~=-]))\/tools\/((?:[\w.-]+\/?)*)/gi)]
+  .map((m) => m[1].replace(/\.+$/, '').split('/').filter(Boolean));
 
-// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex.
-function deadReason([category, slug, ...rest], { tools, hidden, workflows }) {
-  if (!category) return null;
-  if (rest.length) return 'is not in the catalogue';
-  if (category === 'workflows') return !slug || workflows.has(slug) ? null : 'is not a live workflow';
-  const inCategory = Object.entries(tools).filter(([, tool]) => tool.category === category);
-  if (!slug) return inCategory.some(([name]) => !hidden.has(name)) ? null : 'is not a category with listed tools';
-  if (!inCategory.some(([name]) => name === slug)) return 'is not in the catalogue';
+// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex. A file such as
+// /tools/llms.txt is not a tool page, and the catalogue can't say anything about it.
+function deadReason(path, { categories, hidden, workflows }) {
+  const [category, slug, ...rest] = path;
+  if (!category || path.at(-1).includes('.')) return null;
+  if (category === 'workflows') return !rest.length && (slug ? workflows.has(slug) : workflows.size) ? null : 'is not a live workflow';
+  const tools = categories.get(category);
+  if (!slug) return [...tools ?? []].some((name) => !hidden.has(name)) ? null : 'is not a category with listed tools';
+  if (rest.length || !tools?.has(slug)) return 'is not in the catalogue';
   return hidden.has(slug) ? 'is hidden' : null;
 }
 
@@ -136,27 +144,29 @@ test('every /tools/ link in a post or an open topic is live and listed', (t) => 
 
 test('toolLinks finds site and buffermint.com links, and nothing else', () => {
   const text = '[a](/tools/pdf/ok/) <a href="/tools/pdf/two">b</a> https://buffermint.com/tools/dev/abs/#x, www.buffermint.com/tools/dev/www/?a=1 '
-    + '/tools/seo/ /tools/ /tools /assets/tools/a/b/ https://example.com/tools/c/d/ https://notbuffermint.com/tools/e/f/ tools.pdf24.org/en/g';
-  assert.deepEqual(toolLinks(text).map((p) => p.join('/')), ['pdf/ok', 'pdf/two', 'dev/abs', 'dev/www', 'seo', '']);
+    + 'HTTPS://BufferMint.com/tools/dev/caps/ See /tools/dev/end. /tools/seo/ /tools/ /tools /assets/tools/a/b/ ~/tools/bin/ https://x.io?u=/tools/h/i '
+    + 'https://example.com/tools/c/d/ https://notbuffermint.com/tools/e/f/ tools.pdf24.org/en/g `POST /tools/call`\n```\ncurl /tools/list\n```\n';
+  assert.deepEqual(toolLinks(text).map((p) => p.join('/')), ['pdf/ok', 'pdf/two', 'dev/abs', 'dev/www', 'dev/caps', 'dev/end', 'seo', '']);
 });
 
 test('toolLinkProblems fails a fixture post and topic with dead links, and passes live ones', () => {
   const dir = mkdtempSync(join(tmpdir(), 'tool-links-'));
   try {
     assert.throws(() => readCatalogue(dir), /ENOENT/, 'no checkout');
-    mkdirSync(join(dir, 'src'));
-    mkdirSync(join(dir, 'posts'));
-    writeFileSync(join(dir, 'TOOL-STATUS.json'), JSON.stringify({ tools: { ok: { category: 'pdf' }, secret: { category: 'pdf' }, shy: { category: 'text' } } }));
+    for (const sub of ['src/pdf', 'src/text', 'src/dev', 'posts']) mkdirSync(join(dir, sub), { recursive: true });
     assert.throws(() => readCatalogue(dir), /ENOENT/, 'src/hidden.json is missing');
+    writeFileSync(join(dir, 'src/pdf/_tools.json'), JSON.stringify([{ slug: 'ok' }, { slug: 'secret' }, { slug: 'step', internal: true }]));
+    writeFileSync(join(dir, 'src/text/_tools.json'), JSON.stringify([{ slug: 'shy' }]));
+    writeFileSync(join(dir, 'src/dev/_tools.json'), JSON.stringify([{ slug: 'hash' }]));
     writeFileSync(join(dir, 'src/hidden.json'), JSON.stringify({ tools: ['secret', 'shy'] }));
     writeFileSync(join(dir, 'src/recipes-live.json'), JSON.stringify(['merge']));
     const catalogue = readCatalogue(dir);
 
-    writeFileSync(join(dir, 'posts/live.blade.md'), 'See [ok](/tools/pdf/ok/), [all](/tools/), [pdf](/tools/pdf/), [flow](/tools/workflows/merge/), [hub](/tools/workflows/).');
+    writeFileSync(join(dir, 'posts/live.blade.md'), 'See [ok](/tools/pdf/ok/), [all](/tools/), [pdf](/tools/pdf/), [flow](/tools/workflows/merge/), [hub](/tools/workflows/), [llms](/tools/llms.txt).');
     assert.deepEqual(toolLinkProblems(postSources(join(dir, 'posts')), catalogue), []);
 
     writeFileSync(join(dir, 'posts/dead.blade.md'), 'A [gone](/tools/pdf/gone/), twice (/tools/pdf/gone/), [hidden](/tools/pdf/secret/), [wrong](/tools/dev/ok/), '
-      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/).');
+      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/), [step](/tools/pdf/step/), [more](/tools/workflows/merge/x/).');
     const topic = { number: 7, section: 'Internal links: /tools/pdf/secret/, /tools/pdf/ok/.' };
     assert.deepEqual(toolLinkProblems([...postSources(join(dir, 'posts')), ...topicSources([topic])], catalogue), [
       'dead.blade.md: /tools/pdf/gone/ is not in the catalogue',
@@ -166,10 +176,15 @@ test('toolLinkProblems fails a fixture post and topic with dead links, and passe
       'dead.blade.md: /tools/nope/ is not a category with listed tools',
       'dead.blade.md: /tools/text/ is not a category with listed tools',
       'dead.blade.md: /tools/workflows/old/ is not a live workflow',
+      'dead.blade.md: /tools/pdf/step/ is not in the catalogue',
+      'dead.blade.md: /tools/workflows/merge/x/ is not a live workflow',
       'topic 7: /tools/pdf/secret/ is hidden',
     ]);
 
-    writeFileSync(join(dir, 'TOOL-STATUS.json'), '{}');
+    writeFileSync(join(dir, 'src/recipes-live.json'), '[]');
+    assert.equal(deadReason(['workflows'], readCatalogue(dir)), 'is not a live workflow', 'no workflows, no hub');
+
+    writeFileSync(join(dir, 'src/pdf/_tools.json'), '{}');
     assert.throws(() => readCatalogue(dir), /unexpected shape/, 'a changed schema');
   } finally {
     rmSync(dir, { recursive: true });
