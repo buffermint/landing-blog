@@ -57,11 +57,14 @@ function readCatalogue(toolsDir) {
 const toolLinks = (text) => [...text.matchAll(/(?:(?<![\w.-])(?:www\.)?[Bb]uffer[Mm]int\.com|(?<![\w./~=-]))\/tools\/((?:[\w.-]+\/?)*)/g)]
   .map((m) => m[1].replace(/\.+$/, '').split('/').filter(Boolean));
 
-// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex. A file at the top
-// such as /tools/llms.txt is not a tool page, and the catalogue can't say anything about it.
+// build.mjs and src/static publish these beside the tool pages, and the catalogue can't say anything about them
+const TOP_FILES = new Set(['feed.xml', 'llms-full.txt', 'llms.txt', 'manifest.webmanifest', 'robots.txt', 'sitemap.xml', 'tools.json']);
+const OTHER_ROOTS = new Set(['assets', 'data', 'embed']);
+
+// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex.
 function deadReason(path, { categories, hidden, workflows }) {
   const [category, slug, ...rest] = path;
-  if (!category || (path.length === 1 && category.includes('.'))) return null;
+  if (!category || OTHER_ROOTS.has(category) || (path.length === 1 && TOP_FILES.has(category))) return null;
   if (category === 'workflows') return !rest.length && (slug ? workflows.has(slug) : workflows.size) ? null : 'is not a live workflow';
   const tools = categories.get(category);
   if (!slug) return [...tools ?? []].some((name) => !hidden.has(name)) ? null : 'is not a category with listed tools';
@@ -75,13 +78,25 @@ const toolLinkProblems = (sources, catalogue) => [...new Set(sources.flatMap(({ 
   return reason ? [`${name}: /tools/${path.join('/')}/ ${reason}`] : [];
 })))];
 
-// A post's code samples aren't links: a post about an API can show `POST /tools/call`. A topic's backticks can be one.
 const postSources = (dir) => readdirSync(dir).filter((f) => f.endsWith('.md')).map((name) => ({
   name,
   text: readFileSync(join(dir, name), 'utf8'),
 }));
-const withoutCode = ({ name, text }) => ({ name, text: text.replace(/```[\s\S]*?```|~~~[\s\S]*?~~~|<pre[\s\S]*?<\/pre>|`[^`\n]*`/g, '') });
+// A post's code samples and comments aren't links: a post about an API can show `POST /tools/call`. A topic's backticks can be one.
+const withoutCode = (text) => text.replace(/```[\s\S]*?```|~~~[\s\S]*?~~~|<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<!--[\s\S]*?-->|`[^`\n]*`/g, '');
+// A draft is not on the site yet, as in tests/posts.test.mjs; it answers to this gate when it is published
+const livePostSources = (dir) => postSources(dir).flatMap(({ name, text }) => {
+  const { meta, body } = parsePost(text, name);
+  return meta.published === 'false' ? [] : [{ name, text: withoutCode(body) }];
+});
 const topicSources = (openTopics) => openTopics.map((topic) => ({ name: `topic ${topic.number}`, text: topic.section }));
+
+// null with no checkout. A checkout that is there but corrupt, partial or reshaped throws: a skip would switch the
+// gate off unseen.
+function checkToolLinks(toolsDir, postsDir, openTopics) {
+  if (!existsSync(toolsDir)) return null;
+  return toolLinkProblems([...livePostSources(postsDir), ...topicSources(openTopics)], readCatalogue(toolsDir));
+}
 
 const articleLinks = (topic) => [...topic.section.matchAll(/(?<![\w./-])\/articles\/([\w-]+)/g)].map((m) => m[1]);
 
@@ -136,15 +151,9 @@ test('open topics link only real posts', () => {
 });
 
 test('every /tools/ link in a post or an open topic is live and listed', (t) => {
-  let catalogue;
-  try {
-    catalogue = readCatalogue(TOOLS);
-  } catch (err) {
-    if (!err.code) throw err; // Present but corrupt or reshaped: a skip here would switch the gate off unseen
-    t.skip(`tool links not checked: can't read the catalogue in ../buffermint-tools (${err.message})`);
-    return;
-  }
-  assert.deepEqual(toolLinkProblems([...postSources(POSTS).map(withoutCode), ...topicSources(open)], catalogue), []);
+  const problems = checkToolLinks(TOOLS, POSTS, open);
+  if (!problems) return t.skip('tool links not checked: no ../buffermint-tools checkout here');
+  assert.deepEqual(problems, []);
 });
 
 test('toolLinks finds site and buffermint.com links, and nothing else', () => {
@@ -155,8 +164,8 @@ test('toolLinks finds site and buffermint.com links, and nothing else', () => {
 });
 
 test('withoutCode drops a post\'s code samples, so their paths are not links', () => {
-  const text = 'A `POST /tools/call`\n```\ncurl /tools/list\n```\n~~~\n/tools/a\n~~~\n<pre><code>/tools/b</code></pre>\n[x](/tools/dev/hash/)';
-  assert.deepEqual(toolLinks(withoutCode({ name: 'p', text }).text), [['dev', 'hash']]);
+  const text = 'A `POST /tools/call`\n```\ncurl /tools/list\n```\n~~~\n/tools/a\n~~~\n<pre><code>/tools/b</code></pre>\n<code>GET /tools/c</code> <!-- /tools/d/ -->\n[x](/tools/dev/hash/)';
+  assert.deepEqual(toolLinks(withoutCode(text)), [['dev', 'hash']]);
 });
 
 test('toolLinkProblems fails a fixture post and topic with dead links, and passes live ones', () => {
@@ -172,11 +181,11 @@ test('toolLinkProblems fails a fixture post and topic with dead links, and passe
     writeFileSync(join(dir, 'src/recipes-live.json'), JSON.stringify(['merge']));
     const catalogue = readCatalogue(dir);
 
-    writeFileSync(join(dir, 'posts/live.blade.md'), 'See [ok](/tools/pdf/ok/), [all](/tools/), [pdf](/tools/pdf/), [flow](/tools/workflows/merge/), [hub](/tools/workflows/), [llms](/tools/llms.txt).');
+    writeFileSync(join(dir, 'posts/live.blade.md'), 'See [ok](/tools/pdf/ok/), [all](/tools/), [pdf](/tools/pdf/), [flow](/tools/workflows/merge/), [hub](/tools/workflows/), [llms](/tools/llms.txt), [embed](/tools/embed/pdf/ok/), [logo](/tools/assets/brand/logo.svg), [data](/tools/data/emoji.json).');
     assert.deepEqual(toolLinkProblems(postSources(join(dir, 'posts')), catalogue), []);
 
     writeFileSync(join(dir, 'posts/dead.blade.md'), 'A [gone](/tools/pdf/gone/), twice (/tools/pdf/gone/), [hidden](/tools/pdf/secret/), [wrong](/tools/dev/ok/), '
-      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/), [step](/tools/pdf/step/), [more](/tools/workflows/merge/x/), [file](/tools/pdf/gone.html).');
+      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/), [step](/tools/pdf/step/), [more](/tools/workflows/merge/x/), [file](/tools/pdf/gone.html), [typo](/tools/llm.txt).');
     const topic = { number: 7, section: 'Internal links: `/tools/pdf/secret/`, /tools/pdf/ok/.' };
     assert.deepEqual(toolLinkProblems([...postSources(join(dir, 'posts')), ...topicSources([topic])], catalogue), [
       'dead.blade.md: /tools/pdf/gone/ is not in the catalogue',
@@ -189,6 +198,7 @@ test('toolLinkProblems fails a fixture post and topic with dead links, and passe
       'dead.blade.md: /tools/pdf/step/ is not in the catalogue',
       'dead.blade.md: /tools/workflows/merge/x/ is not a live workflow',
       'dead.blade.md: /tools/pdf/gone.html/ is not in the catalogue',
+      'dead.blade.md: /tools/llm.txt/ is not a category with listed tools',
       'topic 7: /tools/pdf/secret/ is hidden',
     ]);
 
@@ -221,5 +231,34 @@ test('topics from 33 on carry evidence, intent, an angle, 4+ source sites and 2+
     assert.ok(sites.size >= 4, `topic ${t.number}: ${sites.size} source sites, need 4`);
     const internal = new Set([...t.field('Internal links').matchAll(/\/(?:tools|articles)\/[\w/-]+/g)].map((m) => m[0]));
     assert.ok(internal.size >= 2, `topic ${t.number}: ${internal.size} internal links`);
+  }
+});
+
+test('checkToolLinks skips with no checkout, fails a broken one, and covers live posts and open topics', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'tool-gate-'));
+  const tools = join(dir, 'tools');
+  const posts = join(dir, 'posts');
+  const post = (name, front, body) => writeFileSync(join(posts, name), `---\ntitle: T\n${front}---\n${body}\n`);
+  try {
+    mkdirSync(posts);
+    assert.equal(checkToolLinks(tools, posts, []), null, 'no checkout');
+
+    mkdirSync(join(tools, 'src/pdf'), { recursive: true });
+    writeFileSync(join(tools, 'src/pdf/_tools.json'), JSON.stringify([{ slug: 'ok' }]));
+    writeFileSync(join(tools, 'src/hidden.json'), JSON.stringify({ tools: [] }));
+    assert.throws(() => checkToolLinks(tools, posts, []), /ENOENT/, 'a partial checkout fails, it does not skip');
+
+    writeFileSync(join(tools, 'src/recipes-live.json'), '[]');
+    post('live.blade.md', '', '[ok](/tools/pdf/ok/) `/tools/sample/`');
+    post('draft.blade.md', 'published: false\n', '[soon](/tools/pdf/soon/)');
+    assert.deepEqual(checkToolLinks(tools, posts, []), [], 'a draft and a code sample are not links on the site');
+
+    post('dead.blade.md', 'description: /tools/pdf/front/\n', '[gone](/tools/pdf/gone/)');
+    assert.deepEqual(checkToolLinks(tools, posts, [{ number: 3, section: '`/tools/pdf/old/`' }]), [
+      'dead.blade.md: /tools/pdf/gone/ is not in the catalogue',
+      'topic 3: /tools/pdf/old/ is not in the catalogue',
+    ]);
+  } finally {
+    rmSync(dir, { recursive: true });
   }
 });
