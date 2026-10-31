@@ -1,6 +1,6 @@
 # Blog plan: buffermint.com/articles
 
-Research lane `t-20261029-blog-research-seo`, 2026-10-29. The article lanes (`t-20261029-blog-articles-1`, `-2`), the refresh lane (`t-20261029-blog-refresh-old-posts`) and the scheduled post lanes (`company/templates/blog-post.md`) all work from this file. **Update the topic's `Status:` when you start (`writing`) and when you publish (`published <date>`).** `tests/posts.test.mjs` enforces the mechanical half of the rules below on every post dated 2026-10-29 or later, and on every post with `updated:`.
+Research lane `t-20261029-blog-research-seo`, 2026-10-29. Topics 33–47 and the plan check come from `t-20261031-blog-topics-research`, 2026-10-31. The article lanes (`t-20261029-blog-articles-1`, `-2`), the refresh lane (`t-20261029-blog-refresh-old-posts`) and the scheduled post lanes (`company/templates/blog-post.md`) all work from this file. **Update the topic's `Status:` when you start (`writing`) and when you publish (`published <date>`).** `tests/posts.test.mjs` enforces the mechanical half of the rules below on every post dated 2026-10-29 or later, and on every post with `updated:`.
 
 ## Editorial rules (the owner's, 2026-10-29; every lane and review holds to them)
 - **Not generic.** If a post could have been written without research, it doesn't ship. Each post brings something new: our own numbers (tool usage, build experience, research data), a comparison or calculation we did, or a synthesis of 4+ sources from different publishers showing where they agree, where they disagree and why.
@@ -67,7 +67,7 @@ Our keyless keyword tooling (the workspace evidence CLI: `node planner.mjs asses
 
 ## Topics (ranked)
 
-Rank = demand evidence × how well we can add something new × fit with the readers. `now` = the next 10 to write (lanes `-articles-1` takes 1–5, `-articles-2` takes 6–10). Sources marked *(read 2026-10-29)* were opened in this lane; *(found 2026-10-29)* were found in search, and the writing lane must open and check them. Search results on several topics were mostly vendor blogs: prefer the primary source listed, and treat vendor figures as claims to check.
+Rank = demand evidence × how well we can add something new × fit with the readers. Take `next` topics first, then `later`, lowest number first within a band (topics 33–47 joined on 2026-10-31). `now` = the next 10 to write (lanes `-articles-1` takes 1–5, `-articles-2` takes 6–10). Sources marked *(read 2026-10-29)* were opened in this lane; *(found 2026-10-29)* were found in search, and the writing lane must open and check them. Search results on several topics were mostly vendor blogs: prefer the primary source listed, and treat vendor figures as claims to check.
 
 ### 1. Compress a PDF to 100 KB without wrecking it · `now`
 - **Keyword:** `compress pdf to 100kb`. Autosuggest level 4 (suggested after "compress pdf to" on Google, Bing and YouTube; 9/12/2 completions). Also `pdf compressor` (level 4, 21 Bing completions). Our page is one of the most-used tools (3 views + 8 use events in our first week of counting).
@@ -184,7 +184,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 14. Core Web Vitals on a small marketing site: what actually moved ours · `next`
 - **Keyword:** `core web vitals` (level 4; HN 68).
-- **New angle:** our before/after log: vendor.js 479 → 104 KB, Vue removed (main.js 123,549 → 18,741 B), Lighthouse home 65 → 67, post 63 → 68, About 66 → 76. Include what didn't help. Every number is from STATUS.md with its date and tool version.
+- **New angle:** our before/after log: vendor.js 479 → 104 KB, Vue removed (main.js 123,549 → 18,741 B), Lighthouse home 65 → 67, post 63 → 68, About 66 → 76. Those Lighthouse runs (2026-10-25) predate the Vue removal (2026-10-28), so rerun Lighthouse before crediting it. Include what didn't help. Every number is from STATUS.md with its date and tool version.
 - **Sources:** web.dev Core Web Vitals, the Chrome UX Report docs, the Lighthouse scoring docs, HTTP Archive Web Almanac (performance chapter), Google Search Central on page experience.
 - **Internal links:** /tools/dev/minifier/, /tools/dev/js-minifier/, /tools/photo/image-compress/, topic 13.
 - **Status:** todo
@@ -205,7 +205,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 17. E-invoicing in 2026–27: what a small SaaS selling into the EU must do · `next`
 - **Keyword:** `e invoicing france` (level 4), `e invoicing belgium` (level 3), `peppol` (level 2; HN 50; Wikipedia 1,135/mo).
-- **New angle:** a dated country table from government sources: Belgium B2B since 1 Jan 2026, France receiving from 1 Sep 2026 and SME issuing from Sep 2027, Germany receiving since 2025, Poland KSeF, and ViDA 2030. Most mandates are domestic B2B, so say which ones touch a non-EU SaaS selling cross-border, and which don't.
+- **New angle:** a dated country table from government sources: Belgium B2B since 1 Jan 2026, France receiving from 1 Sep 2026 (now past: confirm at impots.gouv.fr that it started as planned; search on 2026-10-31 found no post-launch source) and SME issuing from Sep 2027, Germany receiving since 2025, Poland KSeF (large taxpayers 1 Feb 2026, others 1 Apr 2026, micro from Jan 2027, per secondary sources), and ViDA 2030. Most mandates are domestic B2B, so say which ones touch a non-EU SaaS selling cross-border, and which don't.
 - **Sources:** Belgian FPS Finance (einvoice.belgium.be), the French impots.gouv.fr e-invoicing pages, the German BMF letter on E-Rechnung, the European Commission ViDA page, OpenPeppol.
 - **Internal links:** /tools/everyday/invoice-generator/, /tools/business/vat-calculator-belgium/, /tools/business/vat-calculator-france/, topic 18.
 - **Status:** todo
@@ -228,7 +228,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Keyword:** `churn rate` (level 4; HN 81; Wikipedia 1,728/mo).
 - **New angle:** take one public or self-made sample subscription data set (say so), compute logo and revenue churn with each vendor's *documented* formula, and show the spread and why.
 - **Sources:** Stripe Billing analytics docs, ChartMogul's churn docs, Baremetrics' metric docs, ProfitWell/Paddle research on churn benchmarks, a SaaS benchmarks report (e.g. KeyBanc/SaaS Capital).
-- **Internal links:** /tools/business/churn-rate-calculator/, /tools/business/mrr-calculator/, /tools/business/clv-calculator/, topic 21.
+- **Internal links:** /tools/business/mrr-calculator/, /tools/business/clv-calculator/, /tools/business/unit-economics-calculator/, topic 21. (`churn-rate-calculator` is hidden; add it back when it is listed.)
 - **Status:** todo
 
 ### 21. LTV for a SaaS under a year old: why the formula lies, and what to use instead · `next`
@@ -261,14 +261,14 @@ Rank = demand evidence × how well we can add something new × fit with the read
 
 ### 25. FAQ and HowTo schema in 2026: what still shows in Google · `later`
 - **Keyword:** `faq schema` (level 3; Wikipedia "Schema.org" 1,654/mo).
-- **New angle:** Google's 2023 changes (FAQ rich results limited to authoritative government/health sites; HowTo removed) checked against the current docs. Test our generator's output in the Rich Results Test and say what each type earns today.
-- **Sources:** Google Search Central structured data docs + the Aug 2023 blog post, schema.org, Bing Webmaster guidelines, an independent SERP-feature tracker.
+- **New angle:** *(rewritten 2026-10-31)* FAQ rich results are gone: Google's docs changelog says they stopped appearing on 7 May 2026, and the documentation was removed by 15 June. So the post is now "what FAQ schema still does". Google's 2023 limits, then the 2026 end. Secondary reports say Google still reads the markup and that the Rich Results Test dropped it, so check both in the current docs. Say what our generator's output earns today, and which types still show.
+- **Sources:** https://developers.google.com/search/docs/appearance/structured-data/faqpage *(read 2026-10-31; the changelog)*, Google Search Central structured data docs + the Aug 2023 blog post, schema.org, Bing Webmaster guidelines, https://jsonld.com/google-faq-rich-results-deprecated/ (found 2026-10-31).
 - **Internal links:** /tools/seo/faq-schema-generator/, /tools/seo/article-schema-generator/, /tools/seo/product-schema-generator/ (one of our most-visited tools).
 - **Status:** todo
 
 ### 26. Making PDFs accessible: the ADA Title II dates and what a small office can fix itself · `later`
 - **Keyword:** `make pdf accessible` (level 2; Wikipedia "PDF/UA" 1,047/mo).
-- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (April 2027 for 50k+ population, April 2028 for smaller ones; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't.
+- **New angle:** the dates after the DOJ's 20 April 2026 interim final rule (26 April 2027 for 50k+ population, 26 April 2028 for smaller ones and special districts, per several law-firm notes on 2026-10-31; check the Federal Register text), plus a checklist of what can be done without paid software (title, language, tags, reading order, alt text) and what can't.
 - **Sources:** the Federal Register doc 2026-07663, ada.gov, W3C WCAG 2.1, the PDF Association on PDF/UA, HHS Section 504 rule.
 - **Internal links:** /tools/pdf/pdf-metadata/, /tools/pdf/ocr-pdf/, topic 4.
 - **Status:** todo
@@ -288,7 +288,7 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** published 2026-10-29 (refresh lane) → `/articles/how-to-leverage-ai-and-build-an-app-without-coding` (dated plan table from the Lovable docs, Bolt and Replit pages; Lovable credits per change worked out from its documented examples; Escape and The Register on the security side). No independent hands-on review was used; the security sources stand in for it.
 
 ### 29. Testing file upload limits with dummy files: the real limits of 12 services · `later`
-- **Keyword:** `dummy file generator` (level 4). Our most-visited tool page in the first counted week (13 views).
+- **Keyword:** `dummy file generator` (level 4). Still our most-visited tool page: 13 views in the first counted week, 20 by 31 Oct (log from 23 Oct).
 - **New angle:** a table of documented upload/attachment limits (Gmail, Outlook, Slack, WhatsApp, Discord, Google Forms, Typeform, S3 single PUT, Cloudflare Workers request body…), each from the vendor's docs. Add how to test the edges (exactly at the limit, 1 byte over) with generated files.
 - **Sources:** each vendor's docs page (dated), MDN on File/Blob, RFC 9110 on 413 responses.
 - **Internal links:** /tools/dev/dummy-file-generator/, /tools/dev/file-checksum/, /tools/files/file-type-checker/.
@@ -309,13 +309,154 @@ Rank = demand evidence × how well we can add something new × fit with the read
 - **Status:** todo
 
 ### 32. Raising SaaS prices: notice periods and grandfathering, from 15 public announcements · `later`
-- **Keyword:** `saas price increase` (level 2). Weak autosuggest: measure in Bing first, and drop it if it stays weak.
+- **Keyword:** `saas price increase` (level 2, unchanged 2026-10-31). Weak autosuggest: measure in Bing first, and drop it if it stays weak. Bing's data still needs the owner's setup, so it stays last in the queue.
 - **New angle:** a table of 15 public price-increase announcements (notice given, grandfathering, discount offered), each linked, plus what the research says about churn after increases.
 - **Sources:** the 15 announcements (vendor blogs/changelogs), Paddle/ProfitWell pricing research, Patrick Campbell's talks, OpenView or Kyle Poyar on pricing changes.
 - **Internal links:** /tools/business/price-increase-calculator/, /tools/business/pricing-tier-calculator/, topic 9.
 - **Status:** todo
 
+### 33. PDF to Word: what survives the conversion, measured · `next`
+- **Keyword:** `pdf to word` (level 5; HN 6). Also `pdf to excel` (level 4; HN 10). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** do it now (a transactional query). The reader has a PDF to edit and wants to know why the result looks wrong and what to use instead. Tool page first; the post serves the "why did my tables break" follow-up.
+- **New angle:** our benchmark (`buffermint-tools/QUALITY-DOCUMENTS.md`): a bank statement kept word recall and precision of 1, 3 of 3 tables with all 335 cells exact and 18 bold runs; a scan goes through OCR first. Add a test on 4 document types (text report, table-heavy, multi-column, scan), scored the same way against Word's own PDF Reflow. Say what we can't claim: there is no LibreOffice layout reference in that benchmark, so run one or state the gap.
+- **Sources:** https://support.microsoft.com/en-us/word/opening-pdfs-in-word (found 2026-10-31; it doesn't list what is lost, so find Microsoft's fuller page), https://camelot-py.readthedocs.io/ and https://www.github.com/camelot-dev/camelot/wiki/Comparison-with-other-PDF-Table-Extraction-libraries-and-tools (found 2026-10-31; the maintainers' own comparison), https://pdfa.org (PDF Association, on why a PDF has no paragraphs or tables as such; 403 to our fetcher, open in a browser).
+- **Internal links:** /tools/pdf/pdf-to-word/, /tools/pdf/ocr-pdf/, /tools/pdf/pdf-to-excel/, /articles/are-online-pdf-converters-safe.
+- **Status:** todo
+
+### 34. Redacting a PDF: four methods tested with pdftotext · `next`
+- **Keyword:** `redact pdf` (level 4; HN 3; Wikipedia "Redaction" 2,591/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** how-to with a safety worry. Someone must hide a name, account number or SSN before sending a PDF, and needs a method that actually removes it.
+- **New angle:** a repeatable test on one sample PDF with a planted string. White text, a drawn black rectangle, a black box in Word exported to PDF, and true redaction; check each with `pdftotext`, `qpdf` and a metadata read. Include our tool's real trade-off from `QUALITY-DOCUMENTS.md`: the secret is gone from text, streams and metadata, but the redacted page becomes an image (0 characters kept, 74 → 628 KB). Disclose that next to Acrobat Pro's removal under the box only.
+- **Sources:** https://www.mnd.uscourts.gov/sites/mnd/files/Best_Practices-Redaction_of_Information.pdf *(read 2026-10-31: names white text and word-processor black boxes as methods not to use)*, https://daringfireball.net/linked/2025/12/23/trump-doj-pdf-redactions (found 2026-10-31; accounts of this incident conflict, so use it only if a primary source settles it), https://www.dccourts.gov/sites/default/files/COA-efiling-cases-online-PDFs/Tips%20for%20Redacting%20Briefs.pdf (found 2026-10-31), Adobe's redaction help page.
+- **Internal links:** /tools/pdf/redact-pdf/, /tools/pdf/pdf-metadata/, /tools/pdf/flatten-pdf/, /articles/are-online-pdf-converters-safe.
+- **Status:** todo
+
+### 35. UUIDv4 vs UUIDv7 in Postgres 18: our benchmark, reads included · `next`
+- **Keyword:** `uuid v7` (level 4; HN 69; Wikipedia "Universally unique identifier" 31,225/mo). Also `uuid generator` (level 5; HN 18), `uuid vs ulid` (level 4). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a technical decision. A developer starting a table asks which ID to use, and whether v7's timestamp is a risk.
+- **New angle:** published results range from 22–35% to "10×", and search found no read benchmark on Postgres 18. Run our own on the local PostgreSQL 18: 1M and 10M rows, insert time, index size, point lookups, range scans and join reads, each on a stated machine, with the script published in the post. Add the privacy trade-off: RFC 9562 says the embedded timestamp reveals creation order and recommends v4 for security uses.
+- **Sources:** https://www.rfc-editor.org/rfc/rfc9562.html *(read 2026-10-31)*, https://www.postgresql.org/docs/current/functions-uuid.html *(read 2026-10-31; it makes no ordering guarantee on this page, so check the release notes before repeating "monotonic")*, https://dev.to/umangsinha12/postgresql-uuid-performance-benchmarking-random-v4-and-time-based-v7-uuids-n9b (found 2026-10-31), https://www.depesz.com/tag/uuidv7/ (found 2026-10-31), https://thenile.dev/blog/uuidv7 (found 2026-10-31).
+- **Internal links:** /tools/dev/uuid-v7-generator/, /tools/dev/uuid/, /tools/dev/ulid-generator/, /tools/dev/sql-playground/.
+- **Status:** todo
+
+### 36. Are AI detectors accurate? Vendor claims against independent tests · `next`
+- **Keyword:** `are ai detectors accurate` (level 4). Also `ai detector` (level 4; HN 229; Wikipedia "Artificial intelligence content detection" 6,573/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** checking a claim. A student, teacher, editor or hiring manager has a score and wants to know whether to trust it.
+- **New angle:** a claim-against-test table, plus a base-rate calculation most articles skip: for a given share of AI text, how many flags are wrong at a 1%, 5% and 18% false positive rate. Primary anchors: the Liang et al. paper (seven detectors, 91 TOEFL essays, average false positive rate 61.22%) and the FTC on Workado (98% advertised, 53% in testing, per the complaint). Treat the 2026 vendor-blog figures in search results as leads only, and say we don't offer a detector.
+- **Sources:** https://arxiv.org/abs/2304.02819 *(read 2026-10-31; published in Patterns)*, https://www.ftc.gov/node/88167 *(read 2026-10-31: the April 2025 proposed order)*, https://www.crowell.com/en/insights/client-alerts/ftc-cracks-down-on-ai-models-ai-detection-claims (found 2026-10-31; the final order, August 2025), https://aibusiness.com/responsible-ai/openai-quietly-shuts-ai-plagiarism-detector-tool (found 2026-10-31; find OpenAI's own note, and don't repeat its 26%/9% figures until it's read).
+- **Internal links:** /tools/seo/readability-checker/, /tools/ai/text-similarity/, /tools/ai/ai-output-cleaner/.
+- **Status:** todo
+
+### 37. Do QR codes expire? Static vs dynamic, and what the fine print says · `next`
+- **Keyword:** `do qr codes expire` (level 4). Also `dynamic qr code` (level 4; HN 10), `qr code generator` (level 4; HN 114; Wikipedia "QR code" 235,202/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a pre-print worry, or a broken code. A small business about to print 5,000 menus, or one whose code just stopped working.
+- **New angle:** show that a static code is only the data: decode one offline and print the URL it holds. Then read the terms of 8 popular generators on one date and tabulate what happens to dynamic codes when a trial or plan ends. Search found only one press release on this, so the dated table is the new part. Add a size-and-scan test (error-correction level against print size) and a short note on fake codes pasted over real ones.
+- **Sources:** https://stocks.observer-reporter.com/observerreporter/article/businesnewswire-2026-3-28-the-subscription-trap-how-qr-code-platforms-weaponize-your-printed-materials (found 2026-10-31; a syndicated press release, a lead and not evidence), https://www.nbcnewyork.com/news/national-international/watch-out-before-you-scan-the-hidden-dangers-of-qr-codes/4985836/ (found 2026-10-31; find the FTC's own alert, as our first URL guess returned 404), the generators' terms pages (dated), the ISO/IEC 18004 summary from https://www.qrcode.com/en/ (Denso Wave).
+- **Internal links:** /tools/privacy/qr-generator/, /tools/privacy/wifi-qr-code/, /tools/privacy/qr-scanner/, /tools/privacy/bulk-qr-code-generator/.
+- **Status:** todo
+
+### 38. Flesch Reading Ease: one text, different scores in every checker · `next`
+- **Keyword:** `flesch reading ease` (level 5; HN 1; Wikipedia "Flesch–Kincaid readability tests" 11,053/mo). Also `readability score` (level 4; HN 8). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** informational. A writer or marketer wants the formula, what a good score is, and why their tools don't match.
+- **New angle:** our own finding (`buffermint-tools/QUALITY-TEXT-CALC.md`): our checker gave FRE 31.5 where the reference syllable counter gave 27.5, because syllable counts differ, and sentence counts break on "p.m." and "U.S.". Run 5 passages through Word, 3 free online checkers and ours, then show the spread and which step causes it. Check `QUALITY-TEXT-CALC.md` for whether those fixes shipped before quoting them as current.
+- **Sources:** https://pubmed.ncbi.nlm.nih.gov/18867058/ (found 2026-10-31; Flesch 1948, *J Appl Psychol* 32(3):221–33), https://readabilityformulas.com/learn-about-the-flesch-reading-ease-formula/ (found 2026-10-31), Microsoft's readability statistics help page, the Kincaid 1975 Navy report (DTIC).
+- **Internal links:** /tools/seo/readability-checker/, /tools/seo/headline-analyzer/, /tools/seo/keyword-density/.
+- **Status:** todo
+
+### 39. Compress a video for Discord: the bitrate math for the 20 MB limit · `next`
+- **Keyword:** `compress video for discord` (level 4). Also `discord file size limit` (level 4; HN 1), `compress video` (level 4; HN 14). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** do it now. Discord rejected a clip, and the reader wants the limit and the setting that fits.
+- **New angle:** the limit changed: 25 → 10 MB in September 2024, then 20 MB on 13 August 2026 per Dexerto, so most guides are out of date. Confirm it on Discord's own page (403 to our fetcher; open it in a browser). Give a table of target bitrate for 20 MB at 15, 30, 60 and 120 seconds, and which resolution still looks acceptable at each, measured with `buffermint-tools/bench/video-size`. State our encoder gap honestly: on one clip ours gave 1,199 KB at SSIM 0.975 where x264 gave 818 KB at 0.982 (`QUALITY-MEDIA.md`).
+- **Sources:** https://www.dexerto.com/entertainment/discord-raises-free-upload-limit-to-20mb-after-lowering-it-two-years-ago-3398251/ *(read 2026-10-31)*, https://support.discord.com/hc/en-us/articles/25444343291031-File-Attachments-FAQ (403 to our fetcher), https://dexerto.com/tech/discord-lowers-free-upload-limit-to-10mb-storage-management-is-expensive-2887809 (found 2026-10-31), FFmpeg's H.264 encoding guide (https://trac.ffmpeg.org/wiki/Encode/H.264).
+- **Internal links:** /tools/files/video-compressor/, /tools/files/video-trimmer/, /tools/photo/discord-image-resizer/.
+- **Status:** todo
+
+### 40. What Stripe really takes from a $29 subscription · `next`
+- **Keyword:** `stripe fee calculator` (level 4). Also `stripe fees` (level 2; HN 27; Wikipedia "Stripe, Inc." 36,541/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a calculation. A founder pricing a plan wants the net per sale, beyond the headline 2.9% + 30¢.
+- **New angle:** the line items the headline leaves out, stacked for one $29 sale: card fee, Billing's 0.7%, international cards, currency conversion, Stripe Tax, plus the three separate dispute charges and what one lost dispute does to a month's margin. Work it for a US, an EU and an Indian buyer. It goes one level deeper than `/articles/merchant-of-record-fees` (its sibling, so link it and don't repeat its table). Both stripe.com pricing URLs served Canadian rates to our fetcher, so read the US figures in a browser.
+- **Sources:** https://stripe.com/us/pricing *(read 2026-10-31, CA$ version: 2.9% + CA$0.30, +0.8% international, +2% conversion, Billing 0.7%, three CA$15 dispute charges)*, https://www.chargeback.io/fr/blog/stripe-chargeback-fee (found 2026-10-31; a vendor), https://swipesum.com/insights/guide-to-stripe-fees-rates-for-2025 (found 2026-10-31; a vendor).
+- **Internal links:** /tools/business/profit-margin-calculator/, /tools/business/unit-economics-calculator/, /tools/business/mrr-calculator/, /articles/merchant-of-record-fees.
+- **Status:** todo
+
+### 41. Supabase vs Firebase: the bill at 1,000, 10,000 and 100,000 users · `later`
+- **Keyword:** `supabase vs firebase` (level 5; HN 1; Wikipedia "Firebase" 4,065/mo). Also `supabase pricing` (level 4). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a commercial comparison. A founder choosing a backend wants a monthly number, not a feature list.
+- **New angle:** one sample app with stated usage per user, priced at three sizes from each pricing page. The two bill different things: Supabase bills compute, disk and egress on a plan ($25 Pro, $10 compute credit, 100,000 MAU, 250 GB egress, 8 GB disk), while Firestore bills reads and writes per day (free to 50K reads and 20K writes). The result will depend on the read pattern, so show the read-heavy case where the winner flips, if it does.
+- **Sources:** https://supabase.com/pricing *(read 2026-10-31)*, https://firebase.google.com/pricing *(read 2026-10-31)*, https://makerkit.dev/pricing-calculator/supabase (found 2026-10-31; an independent calculator to compare with), https://schematichq.com/blog/supabase-pricing (found 2026-10-31).
+- **Internal links:** /tools/business/unit-economics-calculator/, /tools/business/break-even-calculator/, /articles/vibe-coded-app-security-scans.
+- **Status:** todo
+
+### 42. Cloudflare Pages vs Vercel vs Netlify: the bill at 100 GB, 1 TB and 2 TB · `later`
+- **Keyword:** `cloudflare pages vs vercel` (level 4). Also `vercel pricing` (level 4; HN 13; Wikipedia "Vercel" 21,830/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a commercial comparison. A small team asks when a free or $20 host stops being that.
+- **New angle:** the search results disagree on Netlify ($20 vs $55 per 100 GB) because it moved to credits. Work the bill from today's pages at three traffic levels. For example, 2 TB is $20 + 1,000 GB × $0.15 = $170 on Vercel Pro, 20 credits per GB on Netlify, and $0 for static assets on Cloudflare, whose paid part is Functions. Note that Vercel's Hobby plan is non-commercial. Check what Netlify does when credits run out: its pricing page doesn't say.
+- **Sources:** https://vercel.com/pricing *(read 2026-10-31)*, https://www.netlify.com/pricing/ *(read 2026-10-31)*, https://developers.cloudflare.com/pages/functions/pricing/ *(read 2026-10-31)*, https://dev.to/lazydev_oh/vercel-vs-netlify-vs-cloudflare-pages-2026-deep-comparison-with-real-numbers-8pl (found 2026-10-31; to cross-check).
+- **Internal links:** /tools/photo/image-compress/, /tools/business/unit-economics-calculator/, /tools/dev/minifier/.
+- **Status:** todo
+
+### 43. Resend vs Postmark vs Amazon SES: cost at 10k, 100k and 1M emails · `later`
+- **Keyword:** `resend vs postmark` (level 4). Also `transactional email` (level 2; HN 98). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a commercial comparison. A founder picks a sender for password resets and receipts.
+- **New angle:** a neutral cost table from the three pricing pages, explaining why roundups disagree on SES: $0.10 per 1,000 is à la carte and $0.16 is the Essentials tier. At 100,000 emails a month that's about $10–16 on SES, $35 on Resend, and $15 + 90 × $1.80 = $177 on Postmark's entry plan (check whether a higher tier is cheaper). Search found no independent inbox-placement test, so say so plainly and don't rank deliverability. It pairs with topic 16's DNS checklist.
+- **Sources:** https://resend.com/pricing *(read 2026-10-31)*, https://postmarkapp.com/pricing *(read 2026-10-31)*, https://aws.amazon.com/ses/pricing/ *(read 2026-10-31)*, https://devtoollab.com/blog/best-email-api-providers (found 2026-10-31; to cross-check).
+- **Internal links:** /tools/privacy/email-header-analyzer/, /tools/seo/email-subject-tester/, /tools/business/unit-economics-calculator/.
+- **Status:** todo
+
+### 44. Free trial conversion rates: why the benchmarks run from 9% to 60% · `later`
+- **Keyword:** `free trial conversion rate` (level 4; HN 1). Also `freemium vs free trial` (level 4; HN 1; Wikipedia "Freemium" 9,102/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a benchmark lookup. A founder wants to know whether their rate is good, and whether to ask for a card.
+- **New angle:** the published numbers use different denominators. Line up each study's sample and definition, then convert to visitor-to-paid. First Page Sage's own organic table gives 8.5% × 18.2% = 1.55% for no-card trials against 2.5% × 48.8% = 1.22% with a card, so the "48.8%" winner loses per visitor. It also counts one paid month as a conversion, so model what retention does to the comparison. Check ChartMogul's figures at the source: search shows them only second-hand.
+- **Sources:** https://www.firstpagesage.com/seo-blog/saas-free-trial-conversion-rate-benchmarks/ *(read 2026-10-31)*, https://visionary-marketing.co.uk/blog/saas-free-trial-conversion-statistics-2026 (found 2026-10-31), https://userpilot.com/blog/free-trial-conversion-rate/ (found 2026-10-31), ChartMogul's own report (https://chartmogul.com/reports/).
+- **Internal links:** /tools/business/conversion-rate-calculator/, /tools/business/sample-size-calculator/, /tools/business/ab-test-calculator/, /articles/credit-based-pricing-12-tools.
+- **Status:** todo
+
+### 45. Passport photo sizes by country, from each government's own page · `later`
+- **Keyword:** `passport photo size` (level 4). Also `passport photo maker` (level 3; HN 3; Wikipedia "Passport" 14,180/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a lookup, then do it now. An applicant wants the exact size for their country, and why an upload was refused.
+- **New angle:** one table of print size, pixel size, file-size limit and head height, each cell from the government's page and dated (third-party guides disagree, and search shows UK pixel limits only on non-official sites). Add our measured output from `QUALITY-MEDIA.md`: US 600×600, UK 900×1157, India 630×810, Schengen 413×531, each printing at its document size. Don't suggest a free photo guarantees acceptance.
+- **Sources:** https://www.gov.uk/photos-for-passports/digital-photo-rules (found 2026-10-31), https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/photos.html (found 2026-10-31), https://travel.state.gov (blocks our fetcher; the HEIC post used the adoption.state.gov mirror), ICAO Doc 9303 (find the current URL; our guess returned 404).
+- **Internal links:** /tools/photo/passport-photo-maker/, /tools/photo/us-passport-photo/, /tools/photo/uk-passport-photo/, /tools/photo/india-passport-photo/, /tools/photo/compress-image-to-50kb/.
+- **Status:** todo
+
+### 46. llms.txt and robots.txt: what AI bots actually read · `later`
+- **Keyword:** `llms txt` (level 3; HN 66). Also `block ai crawlers` (level 2; HN 27), `gptbot` (level 2; HN 110; Wikipedia "Robots.txt" 12,172/mo). Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** a decision. A site owner asks whether to add llms.txt, and whether a robots.txt block stops AI bots.
+- **New angle:** the adoption figures clash because the samples do: 28% of Ahrefs' 137,210 domains (an upper bound, by its own note), 10.13% of SE Ranking's 300,000, 7.4% of the Fortune 500, and 36,120 files in Originality.ai's 3M sites. Reconcile them, then pair the file with what bots did: 97% of files had zero requests in May 2026, AI retrieval bots made 1.1% of the requests, and SE Ranking found no link to citations. For robots.txt, use Kim et al.'s table: GPTBot 1.000 and ClaudeBot 1.000 on disallow-all, Bytespider 0.000, average 0.307 across bots. It feeds topic 24.
+- **Sources:** https://ahrefs.com/blog/llmstxt-study/ *(read 2026-10-31)*, https://www.searchenginejournal.com/llms-txt-shows-no-clear-effect-on-ai-citations-based-on-300k-domains/ *(read 2026-10-31; find SE Ranking's original)*, https://ppc.land/llms-txt-adoption-rises-8-8x-but-97-of-files-get-zero-ai-requests/ *(read 2026-10-31)*, https://originality.ai/blog/llms-txt-tracking-study (found 2026-10-31), https://arxiv.org/html/2505.21733v2 *(read 2026-10-31; a preprint)*.
+- **Internal links:** /tools/seo/robots-txt-generator/, /tools/seo/robots-txt-tester/, /tools/seo/sitemap-generator/.
+- **Status:** todo
+
+### 47. Launching on Hacker News: what 12 months of Show HN scores show · `later`
+- **Keyword:** `hacker news launch` (level 2; HN 2; Wikipedia "Hacker News" 5,900/mo). Also `product hunt launch` (level 4; HN 63). `show hn` is level 2, and its HN count is meaningless because every Show HN contains the phrase. Weakest search demand in this batch: ranked here for the founder audience and the data. Evidence: [Appendix C](#appendix-c-demand-evidence-2026-10-31).
+- **Search intent:** how-to. A founder about to launch wants to know the odds and what a good post looks like.
+- **New angle:** the most-cited number is from 2014 (Minimaxir: about 20,000 Show HN posts, 16.37% reached the front page), and search found no recent study. Pull 12 months from the Algolia API and report score distribution, title patterns, and link type (repo, site, demo). A first query for 1 Oct 2025 – 30 Sep 2026: 3,799 posts at 10+ points and 767 at 100+ (both exact counts). The total came back as an estimate we don't trust, so page through for the denominator. Say which traffic results come from founders' own write-ups, not from us.
+- **Sources:** https://hn.algolia.com/api (the data), https://minimaxir.com/2014/07/show-hn/ *(read 2026-10-31)*, https://www.amplifypartners.com/blog-posts/what-gets-to-the-front-page-of-hacker-news (found 2026-10-31), https://www.lucasfcosta.com/blog/hn-launch (found 2026-10-31), https://www.indiehackers.com/post/front-page-of-hn-the-full-postmortem-traffic-lessons-surprises-cbe9e0a7f6 (found 2026-10-31).
+- **Internal links:** /articles/launch-your-micro-saas-product, /articles/when-is-the-right-time-to-launch-an-mvp, /tools/seo/headline-analyzer/.
+- **Status:** todo
+
 **Measured and dropped as targets** (no autosuggest trace): `micro saas costs`, `schema markup for saas`, `vat on saas eu`, `dmarc for cold email`, `european accessibility act saas`, `how much does it cost to build a saas`, `how to validate a saas idea`. Fold them into the topics above as H2s, not titles.
+
+## Plan check (2026-10-31, lane `t-20261031-blog-topics-research`)
+
+**Unwritten before this lane:** 20 topics marked `todo` (12–27 and 29–32), none `writing`. **Added:** 15 (33–47), so 35 are open.
+
+**Demand:** we reran all 27 search keywords of the open older topics. Each one kept its 2026-10-29 level, and HN counts moved by at most 13 (`mcp server` 5,505 → 5,518), so no entry falls on demand. Two days is too short to show a trend; rerun in a month. None of this is search volume: autosuggest, HN and Wikipedia are proxies, and this plan holds no volume figures, measured or estimated, until Bing or Search Console exist.
+
+**Older entries whose evidence no longer held (all fixed above):**
+| Topic | What changed | Source |
+|---|---|---|
+| 25 FAQ schema | The angle was wrong: FAQ rich results ended on 7 May 2026, so nothing is left to test in Search. Rewritten. | https://developers.google.com/search/docs/appearance/structured-data/faqpage |
+| 20 churn | Linked a hidden tool, `/tools/business/churn-rate-calculator/`. Replaced. | `buffermint-tools/src/hidden.json` |
+| 17 e-invoicing | France's 1 Sep 2026 start has passed; it needs a post-launch source. Poland's dates added. | (found) https://vatit.com/?p=90235 |
+| 14 Core Web Vitals | Its Lighthouse scores predate the Vue removal they sit beside. | `STATUS.md` |
+| 26 PDF accessibility | Dates made exact. | (found) https://www.reedsmith.com/articles/doj-extends-digital-accessibility-compliance-dates-under-title-ii-of-the-ada/ |
+| 29 upload limits | Traffic updated. Any Discord limit must be read fresh: it moved to 20 MB on 13 Aug 2026. | topic 39 |
+| 32 price increases | Still level 2; the Bing check it waits on is still not possible. | Appendix C method |
+
+**Still unchecked, left for the writing lane:** topic 16's 0.3% spam-rate figure (search again found it only on vendor sites; open Google's page).
+
+**Measured, not chosen:** `soc 2 for startups` (level 4; we'd have no data of our own, only vendor ranges), and `invoice generator`, `json formatter`, `merge pdf`, `password generator` and other level 3–4 tool terms where a post can't beat the tool page.
 
 ## Old posts (21, all dated 2021)
 
@@ -496,4 +637,49 @@ Found in web search on 2026-10-29; the writing lane opens each before citing it,
 - **Spam update:** tripledart.com/google-algorithm-update-tracker/march-2026-spam-update; almcorp.com/blog/google-march-2026-spam-update.
 - **ADA Title II:** federalregister.gov/documents/2026/04/20/2026-07663 (blocked to our fetcher; open in a browser); venable.com/insights/publications/2026/04/ada-title-ii-website-accessibility-regulations.
 - **PDF upload leaks:** techradar.com/pro/security/two-top-pdf-tools-have-been-found-leaking-user-documents-and-data-online; bgr.com/tech/online-pdf-converters-leaked-thousands-of-user-uploaded-documents.
-- **Not yet covered** (the scheduled lanes add these when they top up the list): Hacker News "Show HN" launch analysis, Reddit r/SaaS and r/microsaas threads (Reddit's API needs commercial approval; read the pages in a browser and cite the thread URL), founder newsletters (Lenny's, Growth Unhinged, Indie Hackers posts).
+- **Not yet covered** (the scheduled lanes add these when they top up the list; the Show HN analysis became topic 47): Reddit r/SaaS and r/microsaas threads (Reddit's API needs commercial approval; read the pages in a browser and cite the thread URL), founder newsletters (Lenny's, Growth Unhinged, Indie Hackers posts).
+
+## Appendix C: demand evidence (2026-10-31)
+
+The same tool, scale and columns as Appendix A, run 2026-10-31 for topics 33–47 (`PLANNER_CACHE_DIR` set; Wikipedia is the average over the last 3 full months, shown only where the article matches). None of these is a search volume or an estimate of one: they show that people type the phrase, not how many.
+
+Where each column comes from, so anyone can repeat it:
+- Autosuggest: https://suggestqueries.google.com/complete/search (Google and, with `ds=yt`, YouTube) and https://api.bing.com/osjson.aspx, with `gl=us`, `hl=en`.
+- HN mentions: https://hn.algolia.com/api, exact phrase, last 24 months.
+- Wikipedia: https://wikimedia.org/api/rest_v1/ pageviews.
+
+| keyword | autosuggest level (1–5) | per engine: depth/completions | HN mentions, 24 mo | Wikipedia article, avg views per month, last 3 full months |
+|---|---|---|---|---|
+| flesch reading ease | 5 | google d1/9; bing d1/11; youtube d1/1 | 1 | Flesch–Kincaid readability tests: 11,053/mo |
+| pdf to word | 5 | google d1/9; bing d1/21; youtube d1/9 | 6 | — |
+| supabase vs firebase | 5 | google d1/9; bing d1/7; youtube d1/7 | 1 | Firebase: 4,065/mo |
+| uuid generator | 5 | google d1/9; bing d1/14; youtube d1/1 | 18 | — |
+| ai detector | 4 | google d1/9; bing d1/24; youtube –/9 | 229 | Artificial intelligence content detection: 6,573/mo |
+| are ai detectors accurate | 4 | google d2/9; bing d2/9; youtube d3/0 | 0 | — |
+| cloudflare pages vs vercel | 4 | google d2/7; bing d3/1; youtube d2/0 | 0 | — |
+| compress video | 4 | google d1/9; bing d1/20; youtube –/9 | 14 | — |
+| compress video for discord | 4 | google d2/9; bing d2/5; youtube d3/0 | 0 | — |
+| discord file size limit | 4 | google d2/9; bing d2/6; youtube d2/2 | 1 | — |
+| do qr codes expire | 4 | google d2/6; bing d2/8; youtube d2/0 | 0 | — |
+| dynamic qr code | 4 | google d2/9; bing d2/10; youtube d2/9 | 10 | — |
+| free trial conversion rate | 4 | google d3/7; bing d3/1; youtube –/0 | 1 | — |
+| freemium vs free trial | 4 | google d2/2; bing d2/0; youtube d2/0 | 1 | Freemium: 9,102/mo |
+| passport photo size | 4 | google d2/9; bing d2/18; youtube –/9 | 0 | — |
+| pdf to excel | 4 | google d2/9; bing d1/19; youtube –/9 | 10 | — |
+| product hunt launch | 4 | google d2/9; bing d2/3; youtube d2/3 | 63 | — |
+| qr code generator | 4 | google d1/9; bing d1/24; youtube d2/9 | 114 | QR code: 235,202/mo |
+| readability score | 4 | google d1/9; bing d1/9; youtube –/0 | 8 | — |
+| redact pdf | 4 | google d1/9; bing d1/9; youtube –/9 | 3 | Redaction: 2,591/mo |
+| resend vs postmark | 4 | google d2/7; bing d2/0; youtube d2/0 | 0 | — |
+| stripe fee calculator | 4 | google d2/9; bing d2/8; youtube –/0 | 0 | — |
+| supabase pricing | 4 | google d1/9; bing d1/13; youtube –/2 | 0 | — |
+| uuid v7 | 4 | google d1/9; bing d1/10; youtube –/3 | 69 | Universally unique identifier: 31,225/mo |
+| uuid vs ulid | 4 | google d2/6; bing d2/2; youtube d2/0 | 0 | — |
+| vercel pricing | 4 | google d1/9; bing d1/13; youtube –/1 | 13 | Vercel: 21,830/mo |
+| llms txt | 3 | google –/9; bing –/9; youtube d1/9 | 66 | — |
+| passport photo maker | 3 | google –/9; bing d2/14; youtube –/9 | 3 | Passport: 14,180/mo |
+| block ai crawlers | 2 | google –/8; bing –/1; youtube –/0 | 27 | — |
+| gptbot | 2 | google –/9; bing –/7; youtube –/2 | 110 | Robots.txt: 12,172/mo |
+| hacker news launch | 2 | google –/3; bing –/0; youtube –/0 | 2 | Hacker News: 5,900/mo |
+| stripe fees | 2 | google –/9; bing –/15; youtube –/3 | 27 | Stripe, Inc.: 36,541/mo |
+| transactional email | 2 | google –/10; bing –/12; youtube –/6 | 98 | — |
