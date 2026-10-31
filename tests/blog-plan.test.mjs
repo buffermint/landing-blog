@@ -1,7 +1,7 @@
 // BLOG-PLAN.md's open topics feed the scheduled post lanes (company/blog-workflow.md). A topic that reuses a post's
 // `keyword:` would fail tests/posts.test.mjs only after the post is written, so this catches it while the topic is
 // still a plan. A /tools/ link that is dead or hidden fails here too, in a post or an open topic: seo-check skips
-// /tools/, and a dead link in a topic gets copied into its post. The catalogue is a sibling repo, so without a readable
+// /tools/, and a dead link in a topic gets copied into its post. The catalogue is a sibling repo, so without a
 // checkout that test skips and says why. A topic's target is the first keyword on its line; the others are context.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -38,7 +38,7 @@ const isOpen = ({ status }) => status === 'todo' || status === 'writing';
 const sourceSites = (text) => new Set([...text.matchAll(/https?:\/\/[^\s),]+/g)].map((m) => siteOf(m[0])).filter(Boolean));
 
 // What build.mjs reads: src/<category>/_tools.json, minus internal workflow steps, which have no page of their own.
-// Throws when anything is missing or has changed shape, so a broken checkout reads as "unreadable", not as dead links.
+// Throws when anything is missing or has changed shape, so a broken checkout never reads as dead links.
 function readCatalogue(toolsDir) {
   const read = (file) => JSON.parse(readFileSync(join(toolsDir, file), 'utf8'));
   const categories = new Map(readdirSync(join(toolsDir, 'src')).filter((dir) => existsSync(join(toolsDir, 'src', dir, '_tools.json'))).map((dir) => {
@@ -52,17 +52,16 @@ function readCatalogue(toolsDir) {
   return { categories, hidden: new Set(hidden), workflows: new Set(workflows) };
 }
 
-// Site-relative or on buffermint.com, outside code samples; /assets/tools/, ~/tools/, ?u=/tools/ and example.com/tools/
-// don't count. A sentence's full stop is not part of the link.
-const toolLinks = (text) => [...text.replace(/```[\s\S]*?```|`[^`\n]*`/g, '')
-  .matchAll(/(?:(?<![\w.-])(?:www\.)?buffermint\.com|(?<![\w./~=-]))\/tools\/((?:[\w.-]+\/?)*)/gi)]
+// Site-relative or on buffermint.com; /assets/tools/, ~/tools/, ?u=/tools/ and example.com/tools/ don't count. A
+// sentence's full stop is not part of the link.
+const toolLinks = (text) => [...text.matchAll(/(?:(?<![\w.-])(?:www\.)?[Bb]uffer[Mm]int\.com|(?<![\w./~=-]))\/tools\/((?:[\w.-]+\/?)*)/g)]
   .map((m) => m[1].replace(/\.+$/, '').split('/').filter(Boolean));
 
-// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex. A file such as
-// /tools/llms.txt is not a tool page, and the catalogue can't say anything about it.
+// Why a link under /tools/ is dead, or null. Hidden tools count: they are unlisted and noindex. A file at the top
+// such as /tools/llms.txt is not a tool page, and the catalogue can't say anything about it.
 function deadReason(path, { categories, hidden, workflows }) {
   const [category, slug, ...rest] = path;
-  if (!category || path.at(-1).includes('.')) return null;
+  if (!category || (path.length === 1 && category.includes('.'))) return null;
   if (category === 'workflows') return !rest.length && (slug ? workflows.has(slug) : workflows.size) ? null : 'is not a live workflow';
   const tools = categories.get(category);
   if (!slug) return [...tools ?? []].some((name) => !hidden.has(name)) ? null : 'is not a category with listed tools';
@@ -76,13 +75,18 @@ const toolLinkProblems = (sources, catalogue) => [...new Set(sources.flatMap(({ 
   return reason ? [`${name}: /tools/${path.join('/')}/ ${reason}`] : [];
 })))];
 
-const postSources = (dir) => readdirSync(dir).filter((f) => f.endsWith('.md')).map((name) => ({ name, text: readFileSync(join(dir, name), 'utf8') }));
+// A post's code samples aren't links: a post about an API can show `POST /tools/call`. A topic's backticks can be one.
+const postSources = (dir) => readdirSync(dir).filter((f) => f.endsWith('.md')).map((name) => ({
+  name,
+  text: readFileSync(join(dir, name), 'utf8'),
+}));
+const withoutCode = ({ name, text }) => ({ name, text: text.replace(/```[\s\S]*?```|~~~[\s\S]*?~~~|<pre[\s\S]*?<\/pre>|`[^`\n]*`/g, '') });
 const topicSources = (openTopics) => openTopics.map((topic) => ({ name: `topic ${topic.number}`, text: topic.section }));
 
 const articleLinks = (topic) => [...topic.section.matchAll(/(?<![\w./-])\/articles\/([\w-]+)/g)].map((m) => m[1]);
 
-const postKeywords = () => readdirSync(POSTS).filter((f) => f.endsWith('.md')).flatMap((name) => {
-  const { keyword } = parsePost(readFileSync(join(POSTS, name), 'utf8'), name).meta;
+const postKeywords = () => postSources(POSTS).flatMap(({ name, text }) => {
+  const { keyword } = parsePost(text, name).meta;
   return keyword ? [[keyword.toLowerCase(), name]] : [];
 });
 
@@ -136,17 +140,23 @@ test('every /tools/ link in a post or an open topic is live and listed', (t) => 
   try {
     catalogue = readCatalogue(TOOLS);
   } catch (err) {
+    if (!err.code) throw err; // Present but corrupt or reshaped: a skip here would switch the gate off unseen
     t.skip(`tool links not checked: can't read the catalogue in ../buffermint-tools (${err.message})`);
     return;
   }
-  assert.deepEqual(toolLinkProblems([...postSources(POSTS), ...topicSources(open)], catalogue), []);
+  assert.deepEqual(toolLinkProblems([...postSources(POSTS).map(withoutCode), ...topicSources(open)], catalogue), []);
 });
 
 test('toolLinks finds site and buffermint.com links, and nothing else', () => {
   const text = '[a](/tools/pdf/ok/) <a href="/tools/pdf/two">b</a> https://buffermint.com/tools/dev/abs/#x, www.buffermint.com/tools/dev/www/?a=1 '
     + 'HTTPS://BufferMint.com/tools/dev/caps/ See /tools/dev/end. /tools/seo/ /tools/ /tools /assets/tools/a/b/ ~/tools/bin/ https://x.io?u=/tools/h/i '
-    + 'https://example.com/tools/c/d/ https://notbuffermint.com/tools/e/f/ tools.pdf24.org/en/g `POST /tools/call`\n```\ncurl /tools/list\n```\n';
+    + 'https://example.com/tools/c/d/ https://notbuffermint.com/tools/e/f/ tools.pdf24.org/en/g /TOOLS/j/k/';
   assert.deepEqual(toolLinks(text).map((p) => p.join('/')), ['pdf/ok', 'pdf/two', 'dev/abs', 'dev/www', 'dev/caps', 'dev/end', 'seo', '']);
+});
+
+test('withoutCode drops a post\'s code samples, so their paths are not links', () => {
+  const text = 'A `POST /tools/call`\n```\ncurl /tools/list\n```\n~~~\n/tools/a\n~~~\n<pre><code>/tools/b</code></pre>\n[x](/tools/dev/hash/)';
+  assert.deepEqual(toolLinks(withoutCode({ name: 'p', text }).text), [['dev', 'hash']]);
 });
 
 test('toolLinkProblems fails a fixture post and topic with dead links, and passes live ones', () => {
@@ -166,8 +176,8 @@ test('toolLinkProblems fails a fixture post and topic with dead links, and passe
     assert.deepEqual(toolLinkProblems(postSources(join(dir, 'posts')), catalogue), []);
 
     writeFileSync(join(dir, 'posts/dead.blade.md'), 'A [gone](/tools/pdf/gone/), twice (/tools/pdf/gone/), [hidden](/tools/pdf/secret/), [wrong](/tools/dev/ok/), '
-      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/), [step](/tools/pdf/step/), [more](/tools/workflows/merge/x/).');
-    const topic = { number: 7, section: 'Internal links: /tools/pdf/secret/, /tools/pdf/ok/.' };
+      + '[deep](/tools/pdf/ok/more/), [cat](/tools/nope/), [hidden cat](/tools/text/), [flow](/tools/workflows/old/), [step](/tools/pdf/step/), [more](/tools/workflows/merge/x/), [file](/tools/pdf/gone.html).');
+    const topic = { number: 7, section: 'Internal links: `/tools/pdf/secret/`, /tools/pdf/ok/.' };
     assert.deepEqual(toolLinkProblems([...postSources(join(dir, 'posts')), ...topicSources([topic])], catalogue), [
       'dead.blade.md: /tools/pdf/gone/ is not in the catalogue',
       'dead.blade.md: /tools/pdf/secret/ is hidden',
@@ -178,6 +188,7 @@ test('toolLinkProblems fails a fixture post and topic with dead links, and passe
       'dead.blade.md: /tools/workflows/old/ is not a live workflow',
       'dead.blade.md: /tools/pdf/step/ is not in the catalogue',
       'dead.blade.md: /tools/workflows/merge/x/ is not a live workflow',
+      'dead.blade.md: /tools/pdf/gone.html/ is not in the catalogue',
       'topic 7: /tools/pdf/secret/ is hidden',
     ]);
 

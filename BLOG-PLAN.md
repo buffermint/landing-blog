@@ -17,7 +17,7 @@ Research lane `t-20261029-blog-research-seo`, 2026-10-29. Topics 33–47 and the
 - Alt text on every image (`![alt](…)`, `<img alt>`, `<x-image alt|caption>`).
 - No lorem/TODO/TBD/XXX/`[insert …]`/`{{SLOT}}` placeholders. ("Coming soon" in prose is allowed: a vendor's roadmap can say it; the review catches a stub section.)
 - A `keyword:` front-matter field, and no two posts (old ones included) share a title or a keyword.
-- Every `/tools/` link in a post or an open topic is live and not hidden (`tests/blog-plan.test.mjs`, against `../buffermint-tools`; skipped, with the reason, when that checkout can't be read).
+- Every `/tools/` link in a post or an open topic is live and not hidden (`tests/blog-plan.test.mjs`, against `../buffermint-tools`; skipped, with the reason, when that checkout isn't there).
 - The test can't judge whether the angle is new, whether the sources say what the post claims, or copying. The review lane checks those by hand, per the "Review" section of each task.
 
 ### Front matter for a new post
